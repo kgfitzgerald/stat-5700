@@ -1,8 +1,8 @@
 ---
-title: Week 0 Announcement
+title: Week 0 Announcements
 week: 0
-date: 2019-04-01
+date: 2025-08-01
 ---
 
-Hello world!
+Welcome to STAT 5700!
 {: .fs-5 }
