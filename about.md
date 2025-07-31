@@ -19,6 +19,6 @@ nav_exclude: false
 
 ## Homework
 
-[Test HW 01 link](https://kgfitzgerald.github.io/VU_STAT_5700/HW_01.pdf)
+[Test HW 01 link](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_01.pdf)
 
 ## Labs
