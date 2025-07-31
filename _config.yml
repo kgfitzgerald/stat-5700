@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: STAT 5700: Probability
+title: STAT 5700 Probability
 tagline: Dr. Fitzgerald
 description: Course website for STAT 5700 Probability taught by Dr. Fitzgerald at Villanova University, Department of Mathematics & Statistics
 author: Kaitlyn Fitzgerald
