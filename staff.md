@@ -1,7 +1,8 @@
 ---
-layout: page
-title: Staff
-nav_exclude: true
+layout: home
+title: Important Course Info
+nav_order: 1
+permalink: /
 description: A listing of all the course staff members.
 ---
 
