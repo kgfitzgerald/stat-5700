@@ -2,7 +2,7 @@
 layout: page
 title: Instructor
 description: About the instructor
-nav_exclude: false
+nav_exclude: true
 ---
 
 ## Instructors
