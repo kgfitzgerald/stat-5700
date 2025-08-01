@@ -32,6 +32,3 @@ Clicking on a link below will download a template Quarto document (.qmd) for eac
 [Lab 01](https://kgfitzgerald.github.io/stat-5700/assets/labs/Lab_01.qmd)
 \
 
-## Other assignments
-
-Note, most weeks you will also have communal reading Annotations and a brief weekly check-in due. You can access links to these assignments directly in Blackboard.
