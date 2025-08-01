@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Important Course Info
+nav_order: 1
+permalink: /
 description: A listing of all the course staff members.
 ---
 
