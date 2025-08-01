@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 title: Important Course Info
 nav_order: 1
 permalink: /

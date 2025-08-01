@@ -1,8 +1,7 @@
 ---
-layout: home
+layout: page
 title: STAT 5700 Probability
-nav_exclude: false
-permalink: /:path/
+nav_exclude: true
 seo:
   type: Course
   name: Just the Class
