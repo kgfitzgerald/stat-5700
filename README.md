@@ -1,7 +1,7 @@
 ---
 layout: home
 title: STAT 5700 Probability
-nav_exclude: true
+nav_exclude: false
 permalink: /:path/
 seo:
   type: Course
