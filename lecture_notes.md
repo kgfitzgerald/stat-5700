@@ -2,6 +2,7 @@
 layout: page
 title: Lecture Notes
 nav_exclude: false
+nav_order: 3
 description: A page containing links to all lecture notes.
 ---
 

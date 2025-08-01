@@ -4,6 +4,7 @@ title: Assignments
 description: >-
     Course policies and information.
 nav_exclude: false
+nav_order: 4
 ---
 
 # Assignments
