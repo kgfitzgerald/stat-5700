@@ -2,6 +2,14 @@
 title: Week 01 ()
 ---
 
+<style>
+table th:last-child,
+table td:last-child {
+  white-space: nowrap;
+}
+</style>
+
+
 | Week | Dates        | Topics                                                                                                                                                           | DUE (Th, 11:59pm)                                                                                                               |
 |------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | 1    | Aug 25–29    | Introduction & Syllabus<br>2.1–2.5: Probability basics, Set Notation                                                                                              | **Lab 01**{: .label .label-purple }<br>**Reading Annotation 01**{: .label .label-green }<br>**Week 01 check-in**{: .label .label-blue } |
