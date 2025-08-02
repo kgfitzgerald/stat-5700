@@ -8,9 +8,9 @@ nav_order: 4
 ---
 
  
-# AI /LLM policy (i.e. usage of ChatGPT, Gemini, etc.)[^1] 
+# AI /LLM policy (i.e. usage of ChatGPT, etc.)[^1] 
  
-**TLDR: you’re responsible for understanding how to solve problems, cite any use of AI **
+#### TLDR: you’re responsible for understanding how to solve problems, cite any use of AI
  
 In general, we treat AI-based assistance, such as ChatGPT, the same way we treat collaboration with other people; you are welcome to talk about your ideas with other people, both inside and outside the classroom, as well as with AI-based assistants. 
  
