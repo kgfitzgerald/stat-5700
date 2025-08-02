@@ -26,7 +26,7 @@ seo:
 
 ## Important Links
 
-Syllabus
+[Syllabus](/stat-5700/assets/STAT 5700 Fitzgerald F25.pdf)
 
 [Extension request form](https://forms.office.com/r/WNFzPwjWgW)
 
