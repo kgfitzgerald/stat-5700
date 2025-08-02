@@ -35,5 +35,16 @@ Navigate to [https://posit.co/download/rstudio-desktop/](https://posit.co/downlo
 + Click on the download link corresponding to your computer's operating system
 + Open the download file and follow your computer's instructions for installing the software. For Mac users, begin the installation process by dragging the RStudio icon (right) into the Applications folder (left)
 
-![](/assets/images/rstudio.png)
+![](/stat-5700/assets/images/rstudio.png)
+
++ Once installed, make sure you can open RStudio on your computer.
+
+### Step 3 - Set up and R project for STAT 5700
+
+Follow the instructions in the video to set up at STAT_5700 R Project on your computer. *Note, the video references MATH_250, but you should create STAT_5700*
+
+<video width="640" height="360" controls>
+  <source src="/stat=5700/assets/images/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 

@@ -30,7 +30,7 @@ Syllabus
 
 [Extension request form](https://forms.office.com/r/WNFzPwjWgW)
 
-[R & RStudio Getting Started](/rstudio/)
+[R & RStudio Getting Started](/stat-5700/rstudio/)
 
 
 ## How this course is set up
