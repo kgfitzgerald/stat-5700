@@ -21,18 +21,6 @@ baseurl: '/stat-5700' # the subpath of your site, e.g. /blog
 url: 'https://kgfitzgerald.github.io' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "/assets/lecture_notes/"]
 
-nav:
-  - title: "Important Course Info"
-    url: "/"
-  - title: "Weekly Agendas & Announcements"
-    url: "/announcements/"
-  - title: "Lecture Notes"
-    url: "/lecture_notes/"    
-  - title: "Assignments"
-    url: "/assignments/"
-
-
-
 # Theme settings
 remote_theme: just-the-docs/just-the-docs@v0.10.1
 color_scheme: light

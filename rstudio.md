@@ -44,7 +44,7 @@ Navigate to [https://posit.co/download/rstudio-desktop/](https://posit.co/downlo
 Follow the instructions in the video to set up at STAT_5700 R Project on your computer. *Note, the video references MATH_250, but you should create STAT_5700*
 
 <video width="640" height="360" controls>
-  <source src="{{ '/assets/images/RProject.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ '/assets/images/Rproject.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
