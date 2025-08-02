@@ -22,13 +22,15 @@ seo:
 
 ### Textbook
 
+*Mathematical Statistics with Applications*, 7th edition, by Wackerly, Mendenhall, and Scheaffer (ISBN 978-0-495-11081-1)
+
 ## Important Links
 
 Syllabus
 
-Extension request form
+[Extension request form](https://forms.office.com/r/WNFzPwjWgW)
 
-R & RStudio Getting Started
+[R & RStudio Getting Started](/rstudio/)
 
 
 ## How this course is set up
