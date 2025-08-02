@@ -1,6 +1,6 @@
 ---
 layout: page
-title: AI / LLM policy
+title: Course schedule
 description: >-
     Software intro
 nav_exclude: false
