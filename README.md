@@ -28,6 +28,10 @@ seo:
 
 [Syllabus](/stat-5700/assets/STAT 5700 Fitzgerald F25.pdf)
 
+[Piazza](https://piazza.com/class/mdttdxk0ilg6e3)
+
+[AI / LLM policy](/stat-5700/ai_policy/)
+
 [Extension request form](https://forms.office.com/r/WNFzPwjWgW)
 
 [R & RStudio Getting Started](/stat-5700/rstudio/)
@@ -39,13 +43,19 @@ seo:
 
 This website serves as the central hub for all files for the course as well as weekly agendas & announcements. Use the navigation pane to view [Lecture Notes](kgfitzgerald.github.io/stat-5700/lecture_notes/) and [Assignments](kgfitzgerald.github.io/stat-5700/lecture_notes/).
 
-
 ### Blackboard
 
 [Blackboard](https://elearning.villanova.edu/ultra/courses/_182880_1/cl/outline) will be used for assignment submission and grade reporting only. 
 
-### Perusall
-
 ### Piazza
 
-## How to get help in this class
+[Piazza](https://piazza.com/class/mdttdxk0ilg6e3) will be our preferred platform for questions about homework, code, and general course questions. The system is integrated with Blackboard and is highly catered to getting you help quickly and efficiently from classmates and the instructor. Rather than emailing questions to the instructor, you should post your questions on Piazza. Email should be reserved for personal questions such as those regarding absences or grades. 
+
+## Getting Started Checklist
+
++ Fill out the Intro Survey (emailed to you by Dr. Fitz, the week before the semester)
++ Bookmark this course website in your browser (https://kgfitzgerald.github.io/stat-5700/)
++ Read the [syllabus](/stat-5700/assets/STAT 5700 Fitzgerald F25.pdf)
++ Get the textbook
++ [Install R & RStudio](/stat-5700/rstudio/)
++ Turn on notifications for our [course Piazza page](https://piazza.com/class/mdttdxk0ilg6e3)
