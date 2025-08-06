@@ -42,7 +42,7 @@ An alternative definition: probability is the mathematics of uncertainty.
 
 Even if random events can't be predicted with certainty, the relative frequency with which they occur in a long series of trials is often remarkably stable.
 
-## A goofy (and absurd) example: Random babies
+### A goofy (and absurd) example: Random babies
 
 ::: {.activitybox data-latex=""}
 
@@ -132,12 +132,6 @@ knitr::include_graphics("./images/random_babies_S.png")
 + What is the exact (theoretical) probability that at least one mother gets the correct baby?
 \
 \
-\
-\
-\
-\
-\
-\
 
 + Finally, let's return to our original question... order these from least
 likely to most likely:
@@ -145,9 +139,6 @@ likely to most likely:
   A.   None of the four mothers gets the correct baby.
   B.   At least one of the four mothers gets the correct baby.
   C.   All of the four mothers gets the correct baby.
-\
-\
-\
 \
 :::
 
@@ -169,8 +160,6 @@ the long run
 :::
 ::::
 
-\pagebreak
-
 # 2.2 Probability & Inference
 
 ### What does probability have to do with inference?
@@ -185,27 +174,27 @@ His data: 10 rolls of the die, all 1s. Rejects the hypothesis because even thoug
 
 His judgement is probably based on intuition. 
 
-What if he got five 1s, and a mix of other numbers? Is that highly improbable? Or four 1s? Many events are in a grey area that intuition alone makes it difficult to guess the probability. 
+What if he got five 1s, and a mix of other numbers? Is that highly improbable? Or four 1s? 
 
-We need a rigorous method for finding a number (a probability) that will agree with the actual relative frequency of occurrence of an event in a long series of trials. 
+Many events are in a grey area that intuition alone makes it difficult to guess the probability. We need a rigorous method for finding a number (a probability) that will agree with the actual relative frequency of occurrence of an event in a long series of trials. 
 
 We need a **theory of probability** that will permit us to calculate the probability of observing specified outcomes, assuming that our hypothesized model is correct.
 
 Set theory is a first set of tools that will help us in constructing probabilistic models for experiments. 
 
+\pagebreak
+
 # 2.3 A Review of Set Notation
 
 We use capital letters, $A, B, C$, etc to denote sets of points. E.g., if $a_1, a_2, a_3$ are elements in the set $A$, we write $$A = \{a_1, a_2, a_3\}$$
 
-## Set Theory / Activity
+### Set Theory / Activity
 
-```{r, echo = FALSE, out.width="65%", fig.align="center"}
+```{r, echo = FALSE, out.width="65%", out.height="30%", fig.align="center"}
 knitr::include_graphics("./images/1.1-1_venn_diagram.png")
 ```
 
-\pagebreak
-
-## Notation / terminology
+### Notation / terminology
 
 $A \cup B$ is the \textcolor{red}{\textbf{union}} of $A$ and $B$
 
@@ -229,6 +218,9 @@ $A \subset B$ means $A$ is a \textcolor{red}{\textbf{subset}} of $B$ (all elemen
     \textcolor{red}{\textbf{Disjoint}} = Events that cannot occur
     simultaneously
 $$A\cap B = \emptyset$$
+\textcolor{red}{\textbf{Mutually Exhuastive}}= a set of events that completely cover the sample space
+
+$$A\cup B \cup C= S$$
 
 ::: {.activitybox data-latex=""}
 
@@ -240,15 +232,13 @@ $$A\cap B = \emptyset$$
 
 > A and B cannot both happen $\implies$ A & B are disjoint
 
-```{r, echo = FALSE, out.width="20%", out.height = "20%", fig.align="center"}
+```{r, echo = FALSE, out.width="10%", out.height = "5%", fig.align="center"}
 knitr::include_graphics("./images/venn_mutually_exclusive.png")
 ```
 
 :::
 
-\textcolor{red}{\textbf{Mutually Exhuastive}}= a set of events that completely cover the sample space
 
-$$A\cup B \cup C= S$$
 
 ::: {.activitybox data-latex=""}
 
@@ -264,7 +254,7 @@ $$A\cup B \cup C= S$$
 
 :::
 
-## Laws of Set Algebra
+### Laws of Set Algebra
 
 ::: {.highlightbox data-latex=""}
 
@@ -312,7 +302,7 @@ $$\begin{aligned}
 
 # 2.4 A Probabilistic Model for an Experiment: The Discrete Case
 
-## Some definitions
+### Some definitions
 
 \textcolor{red}{\textbf{Experiment}} = process by which an observation is made.
 
@@ -346,7 +336,7 @@ A \textcolor{red}{\textbf{simple event}} is an event that cannot be decomposed. 
 An *event* in a discrete sample space $S$ is a collection of sample points - that is, any subset of $S$. 
 
 
-## What is Probability? (more formally)
+### What is Probability? (more formally)
 
 ::: {.highlightbox data-latex=""}
 
@@ -374,7 +364,7 @@ Example: Suppose a coin yielded 800 heads in 1000 tosses. Consider the experimen
 
 *Specific assignments of probabilities must be consistent with reality in order for the probabilistic model to be useful.*
 
-## Probability Laws
+### Some Probability Laws
 
 ::: {.highlightbox data-latex=""}
 
@@ -393,7 +383,7 @@ The last law is known as the "Additional Rule"
 
 Must avoid "double counting" the intersection of the two events
 
-```{r, echo = FALSE, out.width="25%", fig.align="center"}
+```{r, eval = FALSE, echo = FALSE, out.width="25%", fig.align="center"}
 knitr::include_graphics("./images/Venn_AB.png")
 ```
 
@@ -456,46 +446,43 @@ A fair coin is tossed 3 times, and the sequence of heads and tails is observed. 
 \
 \
 \
+:::
 
+::: {.activitybox data-latex=""}
 
-Define the following additional events: 
+**Example (cont'd)**: Using the same scenario as above (three coin tosses), define the following additional events: 
 
++ $A = \{\text{at least two heads}\}$
 + $B =  \{\text{at most two heads}\}$
 + $C = \{\text{heads on the 2nd toss}\}$
 + $D = \{\text{1 head and 2 tails}\}$
 
 Find:
 
-a) $P(A)$
+a) $P(B)$
 \
 \
 b) $P(A \cap B)$
 \
 \
-c) $P(B)$
+c) $P(A \cap C)$
 \
 \
-d) $P(A \cap C)$
+d) $P(D)$
 \
 \
-e) $P(D)$
+e) $P(A \cup C)$
 \
 \
-f) $P(A \cup C)$
-\
-\
-g) $P(B \cap D)$
-
+f) $P(B \cap D)$
 
 \
 \
-
-
 :::
 
 The sample-point method is direct and powerful, but is a bit of a bulldozer approach. It can be cumbersome to list all the events, and it can be susceptible to human error. Orderliness, computers, and the mathematical theory of counting (combinatorics) can help reduce effort and human error in carrying out the sample-point method for calculating probabilities. 
 
-# 2.5 Tools for Counting Sample Points
+# 2.6 Tools for Counting Sample Points
 
 Combinatorics can help you calculate the total number of sample points in a sample space $S$ or an event of interest $A$, which can provide a confirmation (or avoidance) of your listing of simple events. Sometimes counting methods are the only way to calculate a probability if the sample space is very large. 
 
@@ -506,13 +493,11 @@ If a sample space $S$ contains $N$ equiprobable sample points and an event $A$ c
 :::
 
 
-## Multiplication Rule or "$mn$" Rule
+### Multiplication Rule or "$mn$" Rule
 
 ::: {.activitybox data-latex=""}
 
-**Example**:
-
-A sandwich shop offers 3 types of bread and 4 meats. How many different sandwiches are possible?
+**Example**: A sandwich shop offers 3 types of bread and 4 meats. How many different sandwiches are possible?
 
 > *Hint: think in terms of "slots" for each element of the sandwich, and ask how many ways to fill 1st slot, then 2nd etc.*
 
@@ -547,7 +532,7 @@ This multiplication rule can be extended to any number of sets.
 
 ::: {.activitybox data-latex=""}
 
-Refer back to the experiment of tossing 3 coins. Use the extension of the $mn$ rule to confirm the number of sample points. 
+**Example**: Refer back to the experiment of tossing 3 coins. Use the extension of the $mn$ rule to confirm the number of sample points. 
 
 \
 \
@@ -580,7 +565,7 @@ Define $A$ = set of all 20-tuples where there are no repeat numbers. We need to 
 
 :::
 
-## Permutations
+### Permutations
 
 We've seen that sample points are often represented by a sequence of numbers or symbols (e.g., HHH). Often, it will be clear that the total number of sample points equals the number of distinct ways that the representative symbols can be arranged in sequence.
 
@@ -696,15 +681,13 @@ $$N = \binom{n}{n_1 \ \ n_2 \ \cdots \ \ n_k} = \frac{n!}{n_1! n_2! \cdots n_k!}
 \
 :::
 
-## Combinations
+### Combinations
 
 Sometimes the *order* of sample points in a subset is unimportant, and all that matters is which sample points are chosen. 
 
 ::: {.activitybox data-latex=""}
 
-**Exercise**:
-
-What if there are 10 people and 3 identical prizes - how many
+**Exercise**: What if there are 10 people and 3 identical prizes - how many
 arrangements of prize winners if we don't care about order (i.e we just want to pick 3 people)?
 
 > *Hint: for one set of 3 people, how many extra sets do we get if order mattered? That is, think of how many ways to order the letters ABC*
@@ -737,8 +720,9 @@ Example: How many ways are there to have a 3 daughters among a family of 5 child
 
 :::
 
+\pagebreak 
 
-## Binomial Coefficients & Pascal's triangle
+### Binomial Coefficients & Pascal's triangle
 
 $$_nC_r = \binom{n}{r} = \frac{n!}{(n-r)!r!}$$
 ```{r, echo = FALSE, fig.align="center", out.width="70%"}
@@ -753,7 +737,82 @@ knitr::include_graphics("./images/PascalTriangleAnimated.gif")
 
 **Seeing Theory website:** [https://seeing-theory.brown.edu/compound-probability/index.html#section2](https://seeing-theory.brown.edu/compound-probability/index.html#section2)
 
-\pagebreak
+# 2.8 A few theorems & laws of probability
+
+::: {.highlightbox data-latex=""}
+**Theorem 2.5: The Multiplicative Law of Probability** The probability of the intersection of two events A and B is
+
+$$\begin{aligned}
+P(A \cap B) &= P(A) P(B|A) \\
+&= P(B)P(A|B)
+\end{aligned}$$
+
+If A and B are independent, then
+
+$$P(A \cap B) = P(A)P(B)$$
+:::
+
+::: {.highlightbox data-latex=""}
+**Theorem 2.6: The Additive Law of Probability** The probability of the union of two events A and B is
+
+$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+
+If A and B are mutually exclusive events, $P(A \cup B) = P(A) + P(B)$
+
+:::
+
+::: {.highlightbox data-latex=""}
+
+**Theorem 2.7**: If A is an event, then $P(A) = 1 - P(A')$
+
+:::
+
+::: {.highlightbox data-latex=""}
+If $A$ and $B$ are independent events, then the
+following pairs of events are also independent:
+
+(a) $A$ and $B'$  
+(b) $A'$ and $B$  
+(c) $A'$ and $B'$
+:::
+
+PROOF:
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+
+# 2.9 Calculating the Probability of an Event: The Event-Composition Method
+
+We've seen that sets (events) can often be expressed as unions, intersections, or complements of other events. The event-composition method for calculating the probability of an event $A$, expresses $A$ as a composition involving unions and/or intersections of other events. The laws of probability are then applied to find $P(A)$. 
+
+::: {.activitybox data-latex=""}
+
+**Example**: Of a group of patients having injuries, 28% visit both a physical therapist and a chiropractor and 8% visit neither. Say that the probability of visiting a physical therapist exceeds the probability of visiting a chiropractor by 16%. What is the probability of a randomly selected person from this group visiting a physical therapist?
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+:::
 
 # 2.7 Conditional Probability and the Independence of Events
 
@@ -763,7 +822,7 @@ knitr::include_graphics("./images/PascalTriangleAnimated.gif")
 
 Roll two dice. Let Event B = the dice add to 4.
 
-```{r, echo = FALSE, out.width="50%", out.height = "50%", fig.align="center"}
+```{r, echo = FALSE, out.width="50%", out.height = "10%", fig.align="center"}
 knitr::include_graphics("./images/dice_sample_space.png")
 ```
 
@@ -791,7 +850,7 @@ $$P(B|A) = \text{probability of }B  \textbf{ given } A$$
 
 Rolling a 1 reduced the sample space from 36 possible outcomes to 6:
 
-```{r, echo = FALSE, out.width="50%", out.height = "50%", fig.align="left"}
+```{r, echo = FALSE, out.width="50%", out.height = "10%", fig.align="left"}
 knitr::include_graphics("./images/dice_conditional.png")
 ```
 
@@ -803,7 +862,7 @@ $$P(B|A) = \frac{1}{6}$$
 
 What does Conditional Probability look like in a Venn Diagram?
 
-```{r, echo = FALSE, out.width="50%", out.height = "50%", fig.align="center"}
+```{r, echo = FALSE, out.width="30%", out.height = "10%", fig.align="center"}
 knitr::include_graphics("./images/Venn_AB.png")
 ```
 
@@ -832,36 +891,59 @@ Conditional probabilities satisfy the axioms of Probability:
 
 :::
 
-```{r, echo = FALSE, out.width="40%", out.height = "40%", fig.align="center"}
+```{r, echo = FALSE, out.width="30%", out.height = "30%", fig.align="center"}
 knitr::include_graphics("./images/cond_prob_serial_killer.png")
 ```
 
+\pagebreak 
 
-
-# 1.4 Independent Events
-
-FOR SPRING 2025 - UPDATE TO INCLUDE EXAMPLES FROM AGQ: https://askgoodquestions.blog/2021/04/26/95-independence-day-part-1/
-
-PARTS 2 AND 3 ARE ALSO RELEVENT. MAKE PART 3 ABOUT "CONNECTED IN SERIES" EITHER GROUP WORK OR HOMEWORK - WOULD BE GOOD FOR ENGINEERING FOLKS
+### Independence Day Activity (courtesy of Allan Rossman)
 
 ::: {.activitybox data-latex=""}
 
-**Example: flipping 2 coins**
+In 2025, the New York times released a list of the 100 best movies from the 20th century so far. See their list [here](https://www.nytimes.com/interactive/2025/movies/best-movies-21st-century.html). Below is some real data of which of the 100 movies my sister and I have seen.
 
-> Event A = heads on 1st flip
+|  | Anna has seen the film       | Anna has NOT seen the film | Total |
+|----------------------|--------------------|--------------|-------- |
+| Katie has seen the film | 42 | 6 | 48 |
+| Katie has NOT seen the film | 17 |35 |52 |
+| Total | 59 | 41 | 100|
 
-> Event B = tails on second flip
+Suppose a movie is chosen at random (meaning each movie is equally likely to be chosen) 
 
-> Event C = tails on both flips
-
-Define the events above and then compute the following probabilities
-
--   $P(B)$ 
--   $P(B|C)$ 
--   $P(B|A)$
-
+a) What is the probability that Anna has seen the film?
 \
 \
+b) Given the partial information that Katie has seen the film, what is the updated (conditional) probability that Anna has seen it?
+\
+\
+\
+
+c) Does learning that Katie has seen the randomly selected film change the probability that Anna has seen it?  In which direction?  Why might this make sense?
+\
+\
+\
+\
+d) Repeat this analysis based on the following table (of made-up data) for two other people, Nathalia and Joe:
+
+|  | Joe has seen the film       | Joe has NOT seen the film | Total |
+|----------------------|--------------------|--------------|-------- |
+| Nathalia has seen the film | 42 | 28 | 70 |
+| Nathalia has NOT seen the film | 18 |12 |30 |
+| Total | 60 | 40 | 100|
+\
+\
+\
+\
+\
+\
+\
+
+e) In which case (Katie-Anna) or (Nathalia-Joe) would it make sense to say that the events are *independent*?
+\
+\
+
+f) Based on these data, would you still say that (Katie having seen the film) and (Anna having seen the film) are dependent events, even if they never saw any films together and perhaps did not even know each other?
 \
 \
 \
@@ -869,10 +951,35 @@ Define the events above and then compute the following probabilities
 
 :::
 
+::: {.highlightbox data-latex=""}
 
 Statistical \textcolor{red}{\textbf{Independence}} = the occurance of
 another event (A) has **no effect** on the probability of B occurring:
-$$P(B|A) = P(B)$$ Which events are independent in the above example?
+$$P(B|A) = P(B)$$ 
+
+:::
+
+::: {.activitybox data-latex=""}
+
+Suppose we roll two fair, six-sided die. Let's assume one is red and the other is green, so we can tell them apart. Consider these four events: 
+
++ A = {green die lands on 6}
++ B = {red die lands on 5}
++ C = {sum equals 11}
++ D = {sum equals 7}. 
+
+For each pair of events, determine whether or not the events are independent.  Justify your answers with appropriate probability calculations.
+\
+\
+\
+\
+\
+\
+
+
+::: 
+
+
 
 
 Recall that
@@ -884,98 +991,77 @@ IF A and B are independent, this becomes:
 $$P(A \cap B) = P(B|A)\times P(A) = P(B) \times P(A)$$
 
 ::: {.highlightbox data-latex=""}
-**Definition 1.4-1**     Events $A$ and $B$ are
-\textcolor{red}{\textbf{independent}} if and only if
-$P(A\cap B) = P(A)P(B).$ Otherwise, $A$ and $B$ are called
-\textcolor{red}{\textbf{dependent}} events.
-:::
+**Definition 2.10**     Events $A$ and $B$ are said to be
+\textcolor{red}{\textbf{independent}} if and only if any of the following holds:
 
-::: {.highlightbox data-latex=""}
-**Theorem 1.4-1**     If $A$ and $B$ are independent events, then the
-following pairs of events are also independent:
++ $P(A\cap B) = P(A)P(B)$ 
++ $P(A|B) = P(A)$
++ $P(B|A) = P(B)$
 
-(a) $A$ and $B'$  
-(b) $A'$ and $B$  
-(c) $A'$ and $B'$
-:::
-
-PROOF:
-
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-
-
-::: {.activitybox data-latex=""}
-
-**Exercise:**
-
-An urn contains four balls numbered 1, 2, 3, and 4. One ball is to be drawn at random from the urn. Let the events $A$, $B$, and $C$ be defined by $A = \{1,2\}$, $B = \{1,3\}$, and $C = \{1, 4\}$. Then $P(A) = P(B) = P(C) = 1/2$. Are pairs of events $AB, AC \text{ and } BC$ independent?
-
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-
-:::
-
-## Mutual Independence
-
-::: {.highlightbox data-latex=""}
-
-**Definition 1.4-2**     Events $A$, $B$, and $C$ are
-\textcolor{red}{\textbf{mutually independent}} if and only if the
-following two conditions hold:
-
-1.  $A$, $B$, and $C$ are pairwise independent; that is,
-    $$P(A\cap B) = P(A)P(B),$$ $$P(A\cap C) = P(A)P(C),$$ and
-    $$P(B\cap C) = P(B)P(C)$$
-2.  $P(A \cap B \cap C) = P(A)P(B)P(C).$
-
+Otherwise, $A$ and $B$ are called \textcolor{red}{\textbf{dependent}} events.
 :::
 
 ::: {.activitybox data-latex=""}
 
+**Example:** Suppose that you have applied to two internship programs E and F.  Based on your research about how competitive the programs are and how strong your application is, you believe that you have a 60% chance of being accepted for program E and an 80% chance of being accepted for program F.  Assume that your acceptance into one program is independent of your acceptance into the other program.
 
-**Exercise (cont'd)**:
-
-Are the events $A$, $B$, and $C$ in the urn exercise mutually
-independent?
-
+a) What is the probability that you will be accepted by both programs?
 \
 \
+
+b) What is the probability that you will be accepted by at least one of the two programs?  Show two different ways to calculate this.
+\
+\
+\
+\
+c) What is the probability that you will be accepted by all four programs?  Is this pretty unlikely?
+\
+\
+\
+\
+d) What is the probability that you will be accepted by at least one of the four programs?  Is this very likely?
+\
+\
+\
+\
+e) Explain why the assumption of independence is probably not reasonable in this situation.
 \
 \
 \
 \
 
 :::
+
+\pagebreak
 
 ::: {.activitybox data-latex=""}
 
-**Example**:
+Suppose that every day you play a lottery game in which a three-digit number is randomly selected.  Your probability of winning for each day is 1/1000.
 
-Of a group of patients having injuries, 28% visit both a physical therapist and a chiropractor and 8% visit neither. Say that the probability of visiting a physical therapist exceeds the probability of visiting a chiropractor by 16%. What is the probability of a randomly selected person from this group visiting a physical therapist?
-
+a) Is it reasonable to assume that whether you win or lose is independent from day to day?  Explain.
+b) Determine the probability that you win at least once in a 7-day week.  Report your answer with five decimal places.  Also explain why this probability is not exactly equal to 7/1000.
+c) Determine the probability that you win at least once in a 365-day year.
+d) Suppose that your friend says that because there are only 1000 three-digit numbers, you’re guaranteed to win once if you play for 1000 days.  How would you respond?
+e) Express the probability of winning at least once as a function of the number of days that you play.  Also produce a graph of this function, from 1 to 3652 days (about 10 years).  Describe the function’s behavior.
+f) For how many days would you have to play in order to have at least a 90% chance of winning at least once?  How many years is this?
+g) Suppose that the lottery game costs $1 to play and pays $500 when you win.  If you were to play for that many days (your answer to the previous part), is it likely that you would end up with more or less money than you started with?
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
 \
 \
 \
@@ -990,15 +1076,15 @@ Of a group of patients having injuries, 28% visit both a physical therapist and 
 :::
 
 
-# 1.5 Bayes Theorem
+# 2.10 Law of Total Probability & Bayes Rule
 
-RE-DO THIS WITH EXAMPLES FROM AGQ: https://askgoodquestions.blog/2020/10/19/68-knowing-or-guessing/
+<!-- RE-DO THIS WITH EXAMPLES FROM AGQ: https://askgoodquestions.blog/2020/10/19/68-knowing-or-guessing/ -->
 
 ::: {.activitybox data-latex=""}
 
 **Example:**
 
-*TRUE STORY (from a previous APU prof)*
+*TRUE STORY (from a former colleague)*
 
 After giving blood one year, Dr. S. received a letter saying the blood was rejected due to a positive test result for a Hepatitus A virus. The letter further stated this was "nothing to worry about"...?!? Suppose some research reveals that only 1% of people in the U.S. have HepA. The blood screening test is known to be correct 99% of the time when the person has the disease and 95% when the person does not. Should Dr. S. have worried? 
 
@@ -1040,84 +1126,45 @@ Create a tree diagram:
 
 :::
 
-## Bayes' Rule
+### Bayes' Rule
 
 $$P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B|A)P(A)}{P(B)}$$
 
-More generally, for $k$ possible outcomes (in our example $k=2$):
+::: {.highlightbox data-latex=""}
+**Definition 2.10:** For some positive integer $k$, let the sets $B_1, B_2, \dots B_k$ be such that
 
-$P(A_k|B) = \frac{P(A_k)P(B|A_k)}{P(B)}=\frac{P(A_k)P(B|A_k)}{\sum_{i = 1}^mP(A_i)P(B|A_i)}, \ \ \ \ k = 1, 2, ..., m$
+1. $S = B_1 \cup B_2 \cup \dots \cup B_k$
+2. $B_i \cap B_j = \emptyset$, for $i \neq j$
+
+Then the collection of sets $\{B_1, B_2, \dots B_k\}$ is said to be a **partition** of $S$
+
+:::
+
+::: {.highlightbox data-latex=""}
+
+**Theorem 2.8**: Assume that $\{B_1, B_2, \dots B_k\}$ is a partition of $S$ such that $P(B_i) > 0$ for $i = 1,2, \dots, k$. Then for any event A
+
+$$P(A) = \sum_{i = 1}^kP(A|B_i)P(B_i)$$
+
+:::
+
+::: {.highlightbox data-latex=""}
+
+**Theorem 2.9** (Bayes' Rule, more generally): Assume that $\{B_1, B_2, \dots B_k\}$ is a partition of $S$ such that $P(B_i) > 0$ for $i = 1,2, \dots, k$. Then
+
+$$P(B_j|A) = \frac{P(A|B_j)P(B_j)}{P(A)}=\frac{P(A|B_j)P(B_j)}{\sum_{i = 1}^kP(A|B_i)P(B_i)}$$
+:::
 
 + Numerator is simply re-writing the intersection REVERSING THE CONDITIONAL PROBABILITY
 + Denominator is known as the **Law of Total Probability**
-    $$\begin{aligned}
-    P(B) &= \sum_{i = 1}^mP(A_i \cap B)\\
-    &= \sum_{i = 1}^mP(A_i)P(B|A_i)
-    \end{aligned}$$ 
 
-## Bayes' Terminology
+### Bayes' Terminology
 
-\textcolor{red}{\textbf{Prior probability - }}$P(A_k)$ the probability BEFORE we observe information B
+\textcolor{red}{\textbf{Prior probability - }}$P(B_j)$ the probability BEFORE we observe information $A$
 
-\textcolor{red}{\textbf{Posterior probability - }}$P(A_k|B)$ the probability AFTER we observe B ... "updated" probability of the event
+\textcolor{red}{\textbf{Posterior probability - }}$P(B_j|A)$ the probability AFTER we observe A ... "updated" probability of the event
 based on "new data/information"
 
-<!-- ::: {.activitybox data-latex=""} -->
-
-<!-- **Example:** -->
-
-<!-- A hospital receives two fifths of its flu vaccine from Company A and the remainder from Company B. Each shipment contains a large number of vials of vaccine. From Company A, 3% of the vials are ineffective; from Company B, 2% are ineffective. A hospital tests $n = 25$ randomly selected vials from one shipment and finds that 2 are ineffective. What is the conditional probability that this shipment came from Company A? -->
-
-<!-- > *Hint: define C to be the event that 2/25 vials are ineffective* -->
-
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-<!-- \ -->
-
-<!-- ::: -->
-
-## Let's Make a Deal (The Monty Hall Problem)
-
-::: {.activitybox data-latex=""}
-
-There are 3 doors, one with a big prize behind it. You picked one of 3 doors. The dealer then revealed one of the doors you did not selected...not the big prize. He offers you the chance to keep your door or change to the remaining door. **Should you switch doors?**
-\
-Without loss of generality, assume you choose door A. Use Bayes' theorem to calculate the probability the BIG PRIZE is behind your door. What is the best strategy? When the host reveals a goat behind B (or C), should you switch to C (or B), or stick with A?  How does the dealer opening one door update the probability for each door?
-\
-*Hint: Set up a tree diagram with the three doors (and their probability of containing the prize) as the first set of branches, and the hosts' choice "B" or "C" as the second set of branches. Then, determine how to represent P(Win|Stay) and P(Win|Switch) in terms of these events A, B, C.* 
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-
-:::
 
 \pagebreak
 
@@ -1183,3 +1230,138 @@ data.frame(c("$A_1$", "$A_2$", "Totals"),
 ```
 
 
+<!-- ::: {.activitybox data-latex=""} -->
+
+<!-- **Exercise:** -->
+
+<!-- An urn contains four balls numbered 1, 2, 3, and 4. One ball is to be drawn at random from the urn. Let the events $A$, $B$, and $C$ be defined by $A = \{1,2\}$, $B = \{1,3\}$, and $C = \{1, 4\}$. Then $P(A) = P(B) = P(C) = 1/2$. Are pairs of events $AB, AC \text{ and } BC$ independent? -->
+
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+<!-- ::: -->
+
+<!-- ## Mutual Independence -->
+
+<!-- ::: {.highlightbox data-latex=""} -->
+
+<!-- **Definition 1.4-2**     Events $A$, $B$, and $C$ are -->
+<!-- \textcolor{red}{\textbf{mutually independent}} if and only if the -->
+<!-- following two conditions hold: -->
+
+<!-- 1.  $A$, $B$, and $C$ are pairwise independent; that is, -->
+<!--     $$P(A\cap B) = P(A)P(B),$$ $$P(A\cap C) = P(A)P(C),$$ and -->
+<!--     $$P(B\cap C) = P(B)P(C)$$ -->
+<!-- 2.  $P(A \cap B \cap C) = P(A)P(B)P(C).$ -->
+
+<!-- ::: -->
+
+<!-- ::: {.activitybox data-latex=""} -->
+
+
+<!-- **Exercise (cont'd)**: -->
+
+<!-- Are the events $A$, $B$, and $C$ in the urn exercise mutually -->
+<!-- independent? -->
+
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+<!-- ::: -->
+
+<!-- ::: {.activitybox data-latex=""} -->
+
+<!-- **Example: flipping 2 coins** -->
+
+<!-- > Event A = heads on 1st flip -->
+
+<!-- > Event B = tails on second flip -->
+
+<!-- > Event C = tails on both flips -->
+
+<!-- Define the events above and then compute the following probabilities -->
+
+<!-- -   $P(B)$  -->
+<!-- -   $P(B|C)$  -->
+<!-- -   $P(B|A)$ -->
+
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+<!-- ::: -->
+
+<!-- ::: {.activitybox data-latex=""} -->
+
+<!-- **Example:** -->
+
+<!-- A hospital receives two fifths of its flu vaccine from Company A and the remainder from Company B. Each shipment contains a large number of vials of vaccine. From Company A, 3% of the vials are ineffective; from Company B, 2% are ineffective. A hospital tests $n = 25$ randomly selected vials from one shipment and finds that 2 are ineffective. What is the conditional probability that this shipment came from Company A? -->
+
+<!-- > *Hint: define C to be the event that 2/25 vials are ineffective* -->
+
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+<!-- ::: -->
+
+<!-- ## Let's Make a Deal (The Monty Hall Problem) -->
+
+<!-- ::: {.activitybox data-latex=""} -->
+
+<!-- There are 3 doors, one with a big prize behind it. You picked one of 3 doors. The dealer then revealed one of the doors you did not selected...not the big prize. He offers you the chance to keep your door or change to the remaining door. **Should you switch doors?** -->
+<!-- \ -->
+<!-- Without loss of generality, assume you choose door A. Use Bayes' theorem to calculate the probability the BIG PRIZE is behind your door. What is the best strategy? When the host reveals a goat behind B (or C), should you switch to C (or B), or stick with A?  How does the dealer opening one door update the probability for each door? -->
+<!-- \ -->
+<!-- *Hint: Set up a tree diagram with the three doors (and their probability of containing the prize) as the first set of branches, and the hosts' choice "B" or "C" as the second set of branches. Then, determine how to represent P(Win|Stay) and P(Win|Switch) in terms of these events A, B, C.*  -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+<!-- ::: -->
