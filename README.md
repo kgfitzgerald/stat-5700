@@ -24,7 +24,7 @@ seo:
 
 ### Course website
 
-This website serves as the central hub for all files for the course as well as weekly agendas & announcements. Use the navigation pane to view [Lecture Notes](kgfitzgerald.github.io/stat-5700/lecture_notes/) and [Assignments](kgfitzgerald.github.io/stat-5700/assignments/).
+This website serves as the central hub for all files for the course as well as weekly agendas & announcements. Use the navigation pane to view [Lecture Notes](lecture_notes/) and [Assignments](assignments/).
 
 ### Blackboard
 
