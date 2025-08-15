@@ -32,7 +32,7 @@ This website serves as the central hub for all files for the course as well as w
 
 ### Piazza
 
-[Piazza]([https://piazza.com/class/mdttdxk0ilg6e3](https://piazza.com/villanova/fall2025/fall25_stat_5700_001/home)) will be our preferred platform for questions about homework, code, and general course questions. The system is integrated with Blackboard and is highly catered to getting you help quickly and efficiently from classmates and the instructor. Rather than emailing questions to the instructor, you should post your questions on Piazza. Email should be reserved for personal questions such as those regarding absences or grades. 
+[Piazza](https://piazza.com/villanova/fall2025/fall25_stat_5700_001/home) will be our preferred platform for questions about homework, code, and general course questions. The system is integrated with Blackboard and is highly catered to getting you help quickly and efficiently from classmates and the instructor. Rather than emailing questions to the instructor, you should post your questions on Piazza. Email should be reserved for personal questions such as those regarding absences or grades. 
 
 ## Important Links
 
@@ -42,7 +42,7 @@ This website serves as the central hub for all files for the course as well as w
 
 [Blackboard - submit assignments](https://elearning.villanova.edu/webapps/blackboard/content/listContentEditable.jsp?content_id=_5566792_1&course_id=_182880_1)
 
-[Piazza]([https://piazza.com/class/mdttdxk0ilg6e3](https://piazza.com/villanova/fall2025/fall25_stat_5700_001/home)
+[Piazza](https://piazza.com/villanova/fall2025/fall25_stat_5700_001/home)
 
 [AI / LLM policy](/stat-5700/ai_policy/)
 
