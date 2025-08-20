@@ -1227,6 +1227,7 @@ data.frame(c("$A_1$", "$A_2$", "Totals"),
            Totals = c(12,23,35),
            row.names = 1) %>% 
   kable(col.names = c("$B_1$", "$B_2$", "Totals"))
+#
 ```
 
 
