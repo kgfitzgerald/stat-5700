@@ -183,7 +183,7 @@ Use the function `min()` to compute the minimum value in `L1`. Compare this to t
 
 ## Task 7
 
-Once you have completed Tasks 1 - 6, render the document one last time. Look over the .html document to make sure that everything is visible and formatted as you intended. To submit this lab assignment, you will upload your Lab_01.html file to Blackboard under the Lab 01 assignment. This file exists in the MATH_361 folder you created on your computer.
+Once you have completed Tasks 1 - 6, render the document one last time. Look over the .html document to make sure that everything is visible and formatted as you intended. To submit this lab assignment, you will upload your Lab_01.html file to Blackboard under the Lab 01 assignment. This file exists in the STAT_5700 folder you created on your computer.
 
 To submit on Blackboard, follow these steps:
 
@@ -195,15 +195,15 @@ To submit on Blackboard, follow these steps:
 
 -   Click "Choose File"
 
--   In the pop-up window, navigate to your MATH_361 folder and select your html file
+-   In the pop-up window, navigate to your STAT_5700 folder and select your html file
 
 -   Click "Submit Assignment"
 
 ## OPTIONAL (Very) Brief Intro to LaTeX
 
-RMarkdown also makes it easy to seamlessly type mathematical notation and formulas, using what's known as LaTeX code. LaTeX (pronounced LAY-tekh, or LAH-tekh) is a tool for typesetting professional scientific documents. It has a broad range of capabilities and is a software system in and of itself, but its basic functioning for typing mathematical notation is pretty easy to pick up. You won't be expected to type your own formulas in this course, but you may nonetheless find it interesting or useful to know the basics.
+Quarto also makes it easy to seamlessly type mathematical notation and formulas, using what's known as LaTeX code. LaTeX (pronounced LAY-tekh, or LAH-tekh) is a tool for typesetting professional scientific documents. It has a broad range of capabilities and is a software system in and of itself, but its basic functioning for typing mathematical notation is pretty easy to pick up. You won't be expected to type your own formulas in this course, but you may nonetheless find it interesting or useful to know the basics.
 
-To type in mathematical notation in an RMarkdown document, use single dollar signs: $x^2 + y^2 = 9$. To center an equation, use double dollar signs: $$x^2 + y^2 = 9$$.
+To type in mathematical notation in an Quarto document, use single dollar signs: $x^2 + y^2 = 9$. To center an equation, use double dollar signs: $$x^2 + y^2 = 9$$.
 
 Here is some common mathematical notation that will appear in this class (see .qmd for how to typeset these symbols, see rendered .html for how they appear when formatted):
 
