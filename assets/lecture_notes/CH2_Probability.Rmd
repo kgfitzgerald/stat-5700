@@ -856,9 +856,9 @@ In 2025, the New York times released a list of the 100 best movies from the 20th
 
 |  | Anna has seen the film       | Anna has NOT seen the film | Total |
 |----------------------|--------------------|--------------|-------- |
-| Katie has seen the film | 42 | 6 | 48 |
-| Katie has NOT seen the film | 17 |35 |52 |
-| Total | 59 | 41 | 100|
+| Katie has seen the film | 27 | 9 | 36 |
+| Katie has NOT seen the film | 20 |44 |64 |
+| Total | 47 | 53 | 100|
 
 Suppose a movie is chosen at random (meaning each movie is equally likely to be chosen) 
 
@@ -1185,18 +1185,18 @@ based on "new data/information"
     a. six games?
     a. seven games?
 
-4. Suppose that 78% of the students at a particular college have a TikTok account and 43% have a Twitter account. Using only this information, 
+4. Suppose that 78% of the students at a particular college have a TikTok account and 43% have a Facebook account. Using only this information, 
 
-    a. what is the largest possible value for the percentage who have both a TikTok account and a Twitter account?  Describe the (unrealistic) situation in which this occurs.
-    b. what is the smallest possible value for the percentage who have both a TikTok account and a Twitter account?  Describe the (unrealistic) situation in which this occurs.
+    a. what is the largest possible value for the percentage who have both a TikTok account and a Facebook account?  Describe the (unrealistic) situation in which this occurs.
+    b. what is the smallest possible value for the percentage who have both a TikTok account and a Facebook account?  Describe the (unrealistic) situation in which this occurs.
     
-| | Twitter | No Twitter | Total|
+| | Facebook | No Facebook | Total|
 |----|-----|-----|------|
 TikTok | | | 0.78
 No TikTok | | | 0.22
 Total | 0.43 | 0.57 | 1.00
     
- > Now assume you know that 36% of students have both a TikTok and a Twitter account.
+ > Now assume you know that 36% of students have both a TikTok and a Facebook account.
     
 > c. What percentage of students have at least one of these accounts?
 > d. What percentage of students have neither of these accounts?
