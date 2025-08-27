@@ -28,11 +28,11 @@ This website serves as the central hub for all files for the course as well as w
 
 ### Blackboard
 
-[Blackboard](https://elearning.villanova.edu/ultra/courses/_182880_1/cl/outline) will be used for assignment submission and grade reporting only. 
+[Blackboard](https://elearning.villanova.edu/ultra/courses/_182880_1/cl/outline) will be used for assignment submission and grade reporting and to access private course links such as Zoom, Perusall, and Piazza. 
 
 ### Piazza
 
-[Piazza](https://piazza.com/villanova/fall2025/fall25_stat_5700_001/home) will be our preferred platform for questions about homework, code, and general course questions. The system is integrated with Blackboard and is highly catered to getting you help quickly and efficiently from classmates and the instructor. Rather than emailing questions to the instructor, you should post your questions on Piazza. Email should be reserved for personal questions such as those regarding absences or grades. 
+Piazza will be our preferred platform for questions about homework, code, and general course questions. The system is integrated with Blackboard and is highly catered to getting you help quickly and efficiently from classmates and the instructor. Rather than emailing questions to the instructor, you should post your questions on Piazza. Email should be reserved for personal questions such as those regarding absences or grades. You can access Piazza via Blackboard. 
 
 ## Important Links
 
@@ -42,7 +42,7 @@ This website serves as the central hub for all files for the course as well as w
 
 [Blackboard - submit assignments](https://elearning.villanova.edu/webapps/blackboard/content/listContentEditable.jsp?content_id=_5566792_1&course_id=_182880_1)
 
-[Piazza](https://piazza.com/villanova/fall2025/fall25_stat_5700_001/home)
+Piazza - access through Blackboard home page
 
 [AI / LLM policy](/stat-5700/ai_policy/)
 
@@ -61,4 +61,4 @@ This website serves as the central hub for all files for the course as well as w
 + Read the [syllabus](/stat-5700/assets/STAT 5700 Fitzgerald F25.pdf)
 + Get the textbook
 + [Install R & RStudio](/stat-5700/rstudio/)
-+ Turn on notifications for our [course Piazza page](https://piazza.com/class/mdttdxk0ilg6e3)
++ Turn on notifications for our course Piazza page (access via Blackboard home page)
