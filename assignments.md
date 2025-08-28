@@ -34,9 +34,9 @@ The links below take you to a template Quarto (.qmd) file for each lab. You shou
 
 ## Reading annotations
 
-Most weeks you will be assigned an article, book chapter, and/or video about applications of probability & statistics and/or ethical issues in the field. Rather than a traditional discussion board, we will use Perusall, a community annotation tool, where you can engage with the text by highlighting, commenting, asking questions, and responding to your peers' comments/questions, all on a shared document. You can access these assignments [here](https://elearning.villanova.edu/webapps/blackboard/content/listContent.jsp?course_id=_182880_1&content_id=_5566839_1), or by navigating in Blackboard to Submit Assignments > Perusall - Reading Annotations. 
+Most weeks you will be assigned an article, book chapter, and/or video about applications of probability & statistics and/or ethical issues in the field. Rather than a traditional discussion board, we will use Perusall, a community annotation tool, where you can engage with the text by highlighting, commenting, asking questions, and responding to your peers' comments/questions, all on a shared document. You can access these assignments [here](https://elearning.villanova.edu/webapps/blackboard/content/listContent.jsp?course_id=_182880_1&content_id=_5566839_1), or by navigating on the Blackboard home page to Perusall - Reading Annotations. 
 
 ## Weekly check-ins
 
-Finally, each week you should fill out the brief weekly check-in surveys, which are made available at the end of class each Thursday and due at 11:59pm. It consists of a few short questions for you to reflect and provide feedback about the course each week; it should not take more than 5 minutes to complete. You can access these surveys [here](https://elearning.villanova.edu/webapps/blackboard/content/listContentEditable.jsp?content_id=_5566838_1&course_id=_182880_1) or by navigating in Blackboard to Submit Assignments > Submit Weekly Check-ins.
+Finally, each week you should fill out the brief weekly check-in surveys, which are emailed out at the end of class each Thursday and due at 11:59pm. It consists of a few short questions for you to reflect and provide feedback about the course each week; it should not take more than 5 minutes to complete. 
 

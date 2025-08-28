@@ -40,8 +40,6 @@ Piazza will be our preferred platform for questions about homework, code, and ge
 
 [Blackboard - home page](https://elearning.villanova.edu/ultra/courses/_182880_1/cl/outline)
 
-[Blackboard - submit assignments](https://elearning.villanova.edu/webapps/blackboard/content/listContentEditable.jsp?content_id=_5566792_1&course_id=_182880_1)
-
 Piazza - access through Blackboard home page
 
 [AI / LLM policy](/stat-5700/ai_policy/)
