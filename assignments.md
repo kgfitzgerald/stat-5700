@@ -30,7 +30,11 @@ The links below provide the assigned problems for each homework. Your work must 
 
 The links below take you to a template Quarto (.qmd) file for each lab. You should download the .qmd and place it in the STAT_5700 folder you created on your computer. Complete the lab by typing your code & answers in the .qmd. You will turn in a rendered .html file to Blackboard. 
 
-{% include download.html path="assets/labs/Lab_01.qmd" %}
+
+<a href="{{ '/assets/qmd/Lab_01.qmd' | relative_url }}" download>
+  <button>⬇ Download Lab_01.qmd</button>
+</a>
+
 
 
 ## Reading annotations
