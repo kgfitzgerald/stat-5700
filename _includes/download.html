@@ -1,0 +1,5 @@
+<a href="https://raw.githubusercontent.com/{{ site.github.repository_nwo }}/main/{{ include.path }}" download="{{ include.name | default: include.path | split:'/' | last }}">
+  <button style="padding:0.5em 1em; border-radius:8px; background:#2563eb; color:white; border:none;">
+    ⬇ Download {{ include.name | default: include.path | split:'/' | last }}
+  </button>
+</a>
