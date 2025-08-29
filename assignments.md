@@ -37,6 +37,7 @@ The links below take you to a template Quarto (.qmd) file for each lab. You shou
 
 
 
+
 ## Reading annotations
 
 Most weeks you will be assigned an article, book chapter, and/or video about applications of probability & statistics and/or ethical issues in the field. Rather than a traditional discussion board, we will use Perusall, a community annotation tool, where you can engage with the text by highlighting, commenting, asking questions, and responding to your peers' comments/questions, all on a shared document. You can access these assignments [here](https://elearning.villanova.edu/webapps/blackboard/content/listContent.jsp?course_id=_182880_1&content_id=_5566839_1), or by navigating on the Blackboard home page to Perusall - Reading Annotations. 
