@@ -6,6 +6,8 @@ date: 2025-09-02
 
 ## Tuesday announcements
 
+-   First in-class quiz will be on Thursday. Closed book, closed notes.
+
 -   HW 01 & Lab 01 due Thursday 11:59pm
 
     -   Blackboard doesn't like html submissions. Zip files are fine for Lab 01, pdf will be best moving forward
