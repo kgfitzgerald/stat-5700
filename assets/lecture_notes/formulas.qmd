@@ -1,0 +1,17 @@
+---
+title: "STAT 5700 formulas"
+format: pdf
+---
+
+$(A \cup B)' = A' \cap B'$
+
+$(A \cap B)' = A' \cup B'$
+
+$P(A) = 1 - P(A')$
+
+$P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+
+$_nP_r =\frac{n!}{(n-r)!}$
+
+$_nC_r = \frac{_nP_r}{r!} = \frac{n!}{(n - r)!r!}$
+
