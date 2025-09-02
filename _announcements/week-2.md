@@ -11,7 +11,7 @@ date: 2025-09-02
 -   HW 01 & Lab 01 due Thursday 11:59pm
 
     -   Blackboard doesn't like html submissions. Zip files are fine for Lab 01, pdf will be best moving forward
-    -   To render to a pdf, add format: pdf to your YAML (top section between --- in the .qmd)
+    -   To render to a pdf, add format: pdf to your YAML (top section between the three dashes in the .qmd)
         -   ![](images/pdf_YAML.png)
 
 ## What to put on your attendance notecard
