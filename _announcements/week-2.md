@@ -4,6 +4,18 @@ week: 0
 date: 2025-09-02
 ---
 
+## Thursday announcements
+
+-   First quiz to start class today (\~5mins). Closed book, closed notes.
+
+-   HW 01 & Lab 01 due tonight
+
+    -   html -\> zip still fine for Lab 01 submission
+
+    -   make sure you can render to pdf before Lab 02 due date
+
+    -   see Piazza announcement for more details/help and/or come to student hours!
+
 ## Tuesday announcements
 
 -   First in-class quiz will be on Thursday. Closed book, closed notes.
