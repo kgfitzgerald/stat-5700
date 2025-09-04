@@ -25,6 +25,7 @@ Most weeks, you will have 4 things to submit by Thursdays at 11:59pm. See below 
 The links below provide the assigned problems for each homework. Your work must be hand-written, and you should submit a single pdf to the corresponding assignment on Blackboard.
 
 [HW 01](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_01.pdf)
+
 [HW 02](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_02.pdf)
 
 ## Labs
