@@ -1,0 +1,177 @@
+---
+title: "Chapter 3 Group Work"
+subtitle: "SOLUTIONS"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(tidyverse)
+```
+
+## Problem 1
+
+Find the mean, variance, and mgf for a continuous uniform distribution.
+
+### Solution
+
+$X \sim U(a, b)$ has pmf $f(x) = \frac{1}{b - a}, \ \ a \leq x \leq b$
+
+$$
+\begin{aligned}
+E(X) &= \int_a^bx\frac{1}{b - a}dx \\
+&= \frac{x^2}{2(b - a)}\Big|_a^b \\
+&= \frac{b^2 - a^2}{2(b-a)} = \frac{(b-a)(b+a)}{2(b-a)} \\
+&= \frac{b + a}{2}
+\end{aligned}
+$$
+
+
+$$
+\begin{aligned}
+E(X^2) &= \int_a^bx^2\frac{1}{b - a}dx \\
+&= \frac{x^3}{3(b - a)}\Big|_a^b \\
+&= \frac{b^3 - a^3}{3(b-a)} = \frac{(b-a)(b^2 +ab + a^2)}{3(b-a)} \\
+&= \frac{(b^2 +ab + a^2)}{3}
+\end{aligned}
+$$
+
+
+$$
+\begin{aligned}
+V(X) &= \frac{(b^2 +ab + a^2)}{3} - \left[\frac{b + a}{2}\right]^2 \\
+&= \frac{4b^2 + 4ab + 4a^2 - 3b^2 - 6ab - 3a^2}{12} \\
+&= \frac{b^2 - 2ab + a^2}{12}\\
+&= \frac{(b - a)^2}{12}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+E(e^{tx}) &= \int_a^b e^{tx}\frac{1}{b - a}dx \\
+&= \frac{1}{(b - a)}\frac{1}{t}e^{tx}\Big|_a^b \\
+&= \frac{e^{bt} - e^{at}}{t(b-a)}
+\end{aligned}
+$$
+    
+## Problem 2
+
+Let $X$ be a continuous random variable with pdf $f(x) = c(x - x^2), \ \ \ 0 < x < 1$
+
+  a. Find c
+  b. Find $P(0.3 < X < 0.6)$
+  c. Find the median of $X$
+    
+### Solution part a
+
+For $f(x)$ to be a valid pmf, we need 
+
+$$\int_0^1 c(x - x^2) dx = 1$$
+
+$$\begin{aligned}
+\int_0^1 c(x - x^2) dx &= c(\frac{x^2}{2} - \frac{x^3}{3})|_0^1 \\ 
+&=c(\frac{1}{2} - \frac{1}{3}) \\&=c(\frac{1}{6})\\
+&= 1 \\
+&\implies c = 6
+\end{aligned}$$
+
+### Solution part b
+
+$$\begin{aligned}
+P(0.3 < X < 0.6) &= \int_{0.3}^{0.6} 6(x - x^2) dx \\ &= 6(\frac{x^2}{2} - \frac{x^3}{3})|_{0.3}^{0.6} \\ 
+&=6\left[(\frac{0.6^2}{2} - \frac{0.6^3}{3}) - (\frac{0.3^2}{2} - \frac{0.3^3}{3})\right] \\
+&= 0.432
+\end{aligned}
+$$
+
+
+### Solution part c
+
+The median is the value $x$ such that $F(x) = 0.5$. To first find $F(X)$, we take
+
+$$\begin{aligned}
+F(x) &= \int_0^x f(t)dt \\
+&= \int_0^x 6(t - t^2)dt \\
+&= 6(\frac{t^2}{2} - \frac{t^3}{3})|_{0}^{x} \\
+&= 6(\frac{x^2}{2} - \frac{x^3}{3}) \\
+&= 3x^2 - 2x^3
+\end{aligned}$$
+
+Setting equal to 0.5, we get $0.5 = 3x^2 - 2x^3$. The three roots of this equation are $x = 1/2$, $x = 1/2(1 - \sqrt{3})$, and $x = 1/2(1 + \sqrt{3})$. The only one of these in the support $0 < x < 1$ is $x = 1/2$, so that is our median.
+
+
+## Problem 3
+
+The pdf of $Y$ is given by
+    $f(y) = \frac{2}{y^3}, \ \ \ \ \ 1 < y < \infty$. Find $E(Y)$ and $V(Y)$.
+    
+### Solution
+    
+$$E(Y) = \int_1^{\infty}y\frac{2}{y^3}dy = \int_1^{\infty}2y^{-2}dy = \frac{2}{y}\Big|_1^{\infty} = 2$$
+
+$$E(Y^2) = \int_1^{\infty}y^2\frac{2}{y^3}dy = \int_1^{\infty}\frac{2}{y}dy = 2ln(y)\Big|_1^{\infty} = \infty \implies V(Y) \ \ DNE$$
+
+
+## Problem 4
+
+For the function $f(x) = 4x^c, \ \ 0<x<1,$
+
+  a.  Find the constant $c$ such that $f(x)$ is a valid pdf <br/>
+  b.  Find the cdf <br/>
+  c.  Find $\mu$ and $\sigma$ <br/>
+  d.  Find $P(0.25 < X < 0.75)$ using the cdf <br/>
+
+### Solution 
+
+#### Part a
+
+$$\int_0^14x^cdx = \frac{4}{c+1}x^{c+1}\Big|_0^1 = \frac{4}{c + 1} = 1 \implies c = 3$$
+
+#### Part b
+
+$$F(x) = \int_0^x 4t^3dt = \frac{4}{4}t^{4}\Big|_0^x = x^4 \ \ 0 < x < 1$$
+
+#### Part c
+
+$$E(X) = \int_0^1 x 4x^3 dx =\int_0^1 4x^4 dx = \frac{4}{5}x^{5}\Big|_0^1 = \frac{4}{5} = \mu$$
+
+$$E(X^2) = \int_0^1 x^2 4x^3dx =\int_0^1 4x^5 dx =\frac{4}{6} x^{6} \Big|_0^1 = \frac{4}{6} = \frac{2}{3}$$
+
+$$\sigma^2 = \frac{2}{3} - \left(\frac{4}{5}\right)^2 = \frac{2}{75}$$
+
+$$\sigma = \sqrt{\frac{2}{75}}$$
+
+#### Part d
+
+$$\begin{aligned}
+P(0.25 < X < 0.75) &= F(0.75) - F(0.25) = \\
+&= \left(\frac{3}{4}\right)^4 - \left(\frac{1}{4}\right)^4 \\
+&= \frac{80}{256} \\
+&= \frac{5}{16}
+\end{aligned}$$
+    
+
+## Problem 5
+
+Cars arrive at a tollbooth at a mean rate of five cars every ten minutes according to a Poisson process. Find the probability that the toll collector will have to wait longer than 26.30 minutes before collecting the 8th toll. 
+
+### Solution
+
+Note that $\lambda = 5/10 = 1/2$ is the mean number of arrivals per minute. Therefore, $\theta = 2$. So, the waiting time before the 8th toll can be modeled as a gamma random variable with $\alpha = 8$ and $\theta = 2$. The pdf is therefore given by
+
+$$f(x) = \frac{1}{\Gamma(8)2^8}x^{8 - 1}e^{-x/2}$$
+
+We can find $P(X > 26.3)$ by the following R code:
+
+```{r}
+pgamma(26.3, shape = 8, scale = 2, lower.tail = FALSE)
+```
+
+Note since $\theta = 2$, this situation can also be represented by a chi-squared distribution with 16 degrees of freedom:
+
+$$f(x) = \frac{1}{\Gamma(\frac{16}{2})2^{16/2}}x^{16/2 - 1}e^{-x/2}$$
+
+```{r}
+pchisq(26.3, df = 16, lower.tail = FALSE)
+```
+
