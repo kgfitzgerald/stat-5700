@@ -12,6 +12,7 @@ output:
 editor_options: 
   markdown: 
     wrap: 72
+  chunk_output_type: console
 ---
 
 ```{r, echo = FALSE, message=FALSE, warning = FALSE}
@@ -40,7 +41,7 @@ Random phenomenon = anything we cannot predict with certainty
 
 E.g. randomly delivering 4 babies to 4 mothers
 
-```{r, echo = FALSE, fig.align="center", out.width="90%"}
+```{r, echo = FALSE, fig.align="center", out.width="70%", out.height="10%"}
 knitr::include_graphics("./images/random_babies_S.png")
 ```
 
@@ -77,40 +78,32 @@ We can think of a random variable as a numerical "summary" of some
 aspect of a random experiment
 :::
 
-Research physician is interested in the event that 10 of 10 patients; business person is interested in the event that sales exceed \$5 million. If $Y$ denotes a value to be measured in an experiment (e.g., number of patients that survive, or amount of sales in USD), because the value of $Y$ depends on the outcome of the (random) experiment, $Y$ is said to be a random variable. 
+Why study random variables and the theory of probability? The probability of an observed event is often used to make inferences about a population. And events of interest are often numerical events that correspond to values of discrete random variables. For example:
 
-When you collect data on a random sample of people from a population, each piece of information you collect (e.g., age, income, opinion on YYZ, transportation habits, etc) is considered a random variable. The way you randomly select people into your sample affects the probability of observing that sample, which in turn plays a major role in the inferences you are able to make about the whole population. See Section 2.12 for a primer, but there is a whole branch of statistics called Survey Sampling that handles this in depth. 
++ number of bacteria per unit area in the study of drug control on bacterial growth
++ number of defective television sets in a shipment of 100 sets
++ number of patients out of 10 that survive a disease
++ amount of sales in USD
++ When you collect data on a random sample of people from a population, each piece of information you collect (e.g., age, income, opinion on XYZ, transportation habits, etc) is considered a random variable. The way you randomly select people into your sample affects the probability of observing that sample, which in turn plays a major role in the inferences you are able to make about the whole population. See Section 2.12 for a primer, but there is a whole branch of statistics called Survey Sampling that handles this in depth. 
 
 ::: {.activitybox data-latex=""}
 **Example:**
 
 A coin is tossed three times, and the sample space is defined as
 
-$$S = \{hhh, hht, hth, htt, thh, tht, tth, ttt\}$$ Examples of random
-variables that are defined on $S$:
+\
 
--   $Y$ = the total number of heads
+$$S = \{hhh, hht, hth, htt, thh, tht, tth, ttt\}$$ 
+
+\
+
+Examples of random variables that are defined on $S$:
+
+-   $X$ = the total number of heads
 -   $Y$ = whether or not there is a heads on the 2nd flip
 -   $Z$ = the number of heads minus the number of tails
 
-\
-
-Define the **support** for each of the above random variables
-
-$$\mathbb{S}_Y = $$
-
-\
-\
-
-$$\mathbb{S}_Y = $$
-
-\
-\
-
-$$\mathbb{S}_Z = $$
-
-\
-\
+Define the **support** for each of the above random variables.
 :::
 
 ::: {.activitybox data-latex=""}
@@ -127,10 +120,6 @@ $Y$ is a random variable, and its support is the set of numbers
 $\{y: y = 0,1\}$
 :::
 
-Why study random variables and the theory of probability? The probability of an observed event is often used to make inferences about a population. And events of interest are often numerical events that correspond to values of discrete random variables. For example:
-
-+ number of bacteria per unit area in the study of drug control on bacterial growth
-+ number of defective television sets in a shipment of 100 sets
 
 
 ## Distributions & random variables
@@ -141,25 +130,25 @@ behavior using a **distribution**. Below is the distribution of the
 random variables $Y, Y, Z$ defined above, based on 100,000 simulations
 of the random experiment of tossing 3 coins.
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, out.height="30%"}
 set.seed(437)
 data <- data.frame(toss1 = rbinom(100000, 1, 0.5),
                    toss2 = rbinom(100000, 1, 0.5),
                    toss3 = rbinom(100000, 1, 0.5)) %>% 
-  mutate(Y = toss1 + toss2 + toss3,
+  mutate(X = toss1 + toss2 + toss3,
          Y = if_else(toss2 == 1, 1, 0),
          num_tails = abs((toss1 - 1) + (toss2 - 1) + (toss3 - 1)),
-         Z = Y - num_tails)
+         Z = X - num_tails)
 
 p1 <- data %>% 
-  count(Y) %>% 
+  count(X) %>% 
   mutate(prop = n/sum(n)) %>% 
-  ggplot(aes(x = Y, y = prop)) +
+  ggplot(aes(x = X, y = prop)) +
   geom_col(width = 0.75) +
   theme_minimal() +
-  labs(x = "y",
-       y = "p(y)",
-       title = "Distribution of Y",
+  labs(x = "x",
+       y = "p(x)",
+       title = "Distribution of X",
        subtitle = "total number of heads")
 
 p2 <- data %>% 
@@ -307,11 +296,6 @@ What would the probability distribution be for the result of a four-sided die? A
 \
 \
 \
-\
-\
-\
-\
-\
 :::
 
 ## Uniform Distribution
@@ -320,10 +304,6 @@ In the previous example, we constructed the probability distribution for what's 
 
 Draw a picture of the uniform probability distribution:
 
-\
-\
-\
-\
 \
 \
 \
@@ -339,10 +319,6 @@ a normal 6-sided die. What is $P(Y \leq y)$ for each value $y$ in the
 support? Draw a graph with $P(Y \leq y)$ on the y-axis. *Hint: it will
 be a step function*
 
-\
-\
-\
-\
 \
 \
 \
@@ -407,28 +383,13 @@ assume each of these points $(d_1, d_2)$ has equal probability. What is
 the probability distribution of $Y$? *Hint: start by listing the possible outcomes*
 $(d_1, d_2)$ and the corresponding values of $Y$
 
-|       | 1   | 2   | 3   | 4   |
-|---------------|---------------|---------------|---------------|---------------|
-| **1** |     |     |     |     |
-|  |     |     |     |     |
-| **2** |     |     |     |     |
-|  |     |     |     |     |
-| **3** |     |     |     |     |
-|  |     |     |     |     |
-| **4**     |     |     |     |     |
+\
+\
+\
+\
+\
+\
 
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
 
 Draw a bar graph of the distribution of $Y$.
 
@@ -436,15 +397,10 @@ Draw a bar graph of the distribution of $Y$.
 \
 \
 \
-\
-\
-\
-\
+
 :::
 
-### Group Work
 
-Problems 1 - 2 & SIMULATION ACTIVITY
 
 <!-- # Exercise -->
 
@@ -478,7 +434,6 @@ Problems 1 - 2 & SIMULATION ACTIVITY
 
 <!--  -->
 
-\pagebreak
 
 # 3.3 Expected Value
 
@@ -500,10 +455,8 @@ break even? *Hint: think about the following three probabilities, and determine 
 -   $P(\text{they win \$1})$
 \
 \
-\
 
 -   $P(\text{they win \$2})$
-\
 \
 \
 
@@ -529,13 +482,12 @@ break even? *Hint: think about the following three probabilities, and determine 
 probability distribution, then the \textcolor{red}{\textbf{expected value}} of $Y$ is defined
 as
 
-$$E(Y) = \sum_{y \in \mathbb{S}}xp(y),$$ provided the summation exists.
+$$E(Y) = \sum_{y \in \mathbb{S}}yp(y),$$ provided the summation exists.
 <br/><br/>
 :::
 
 ::: {.activitybox data-latex=""}
 In the previous example, $\mathbb{S} = {1,2,3}$.  Find $E(Y)$
-\
 \
 \
 \
@@ -560,9 +512,9 @@ by $$E[g(Y)] = \sum_{y \in \mathbb{S}}g(y)p(y),$$ provided the summation exists.
 **Example:**
 
 Suppose $Y$ has the probability distribution $p(y) = 1/3$ for $S = \{-1, 0, 1\}$. Let
-$Y = g(Y) = Y^2$. Find the expected value of $Y$ in two different ways:
+$X = g(Y) = Y^2$. Find the expected value of $X$ in two different ways:
 
-1.  First defining the probability distribution of $Y$ and then computing $E(Y)$
+1.  First defining the probability distribution of $X$ and then computing $E(X)$
 2.  Using the above theorem
 
 \
@@ -680,17 +632,12 @@ b. $E(2Y^2 - 6Y)$
 \
 \
 \
-\
-\
-\
-\
-\
 :::
 
 
 ### Mean isn't the only thing that matters...
 
-```{r, echo = FALSE, warning = FALSE, message=FALSE, out.width="60%", out.height = "60%"}
+```{r, echo = FALSE, warning = FALSE, message=FALSE, out.width="40%", out.height = "25%"}
 library(tidyverse)
 data <- data.frame(`Game A` = rnorm(10000, 100, 10),
                    `Game B` = rnorm(10000, 100, 50)) %>% 
@@ -747,12 +694,7 @@ variance of $Y$ and is often denoted by $V(Y)$, $Var(Y)$, or $\sigma^2$
 :::
 
 Variance is a *measure of spread*: $(y - \mu)$ measures how far each
-value of $y$ falls from the mean, and it is called the second moment
-because those distances are raised to the second power.
-
-We can think of variance as a *weighted sum* of squared distances from
-the mean. This is an example of a "sum of squares," which occur often
-and are very useful in statistics (e.g. regression, ANOVA).
+value of $y$ falls from the mean. We can think of variance as a *weighted sum* of squared distances from the mean. This is an example of a "sum of squares," which occur often and are very useful in statistics (e.g. regression, ANOVA).
 
 ::: {.highlightbox data-latex=""}
 **Definition:**
@@ -776,11 +718,12 @@ PROOF:
 \
 \
 \
-
+\
+\
 
 ### Statistical motivation for why we care about variance
 
-```{r, echo = FALSE, out.width="50%", out.height = "50%"}
+```{r, echo = FALSE, out.width="50%", out.height = "25%"}
 knitr::include_graphics("./images/bias-precision.png")
 ```
 
@@ -801,7 +744,7 @@ Let $Y$ have probability distribution $p(y) = 1/3$ for $y = -1, 0, 1$
     
 
 2.  Suppose the probability distribution is unchanged, but the support is instead
-    $y = -2, 0, 2$. Note that this is a new random variable $Y = 2Y$.
+    $y = -2, 0, 2$. Note that this is a new random variable $X = 2Y$.
     How do the mean, variance, and standard deviation change? What do
     the variance and standard deviation measure?
 
@@ -878,7 +821,7 @@ PROOF:
 Given $E(Y + 4) = 10$ and $E[(Y + 4)^2] = 116,$ determine:
 
 1.  $\mu = E(Y)$
-2.  $V(Y + 4)$ *Hint: define $Y = Y + 4$ and make use of the fact that $V(Y) = E(Y^2) - (E(Y))^2$*
+2.  $V(Y + 4)$ *Hint: define $X = Y + 4$ and make use of the fact that $V(X) = E(X^2) - (E(X))^2$*
 3.  $\sigma^2 = V(Y)$
 
 \
@@ -958,10 +901,12 @@ p <- arrangeGrob(pB, pA, nrow = 1)
 ggsave(plot = p, filename = "/Volumes/GoogleDrive/My Drive/MATH_361_KF/MATH_361/IN-CLASS/NOTES/images/quiz_score_dists.png", width = 7, height = 5)
 ```
 
-```{r, echo = FALSE, out.width="50%", out.height = "50%"}
+```{r, echo = FALSE, out.width="50%", out.height = "25%"}
 knitr::include_graphics("./images/quiz_score_dists.png")
 ```
 :::
+
+\pagebreak
 
 # 3.4 Binomial Distribution
 
@@ -1026,11 +971,10 @@ variable.\
 ::: {.activitybox data-latex=""}
 **Exercise**:
 
-Brandon Ingram, the young forward drafted with the #2 pick by the Los
-Angeles Lakers, made 67% of his free throws in his rookie season.
-Suppose Brandon is fouled while attempting a 3 point shot with 1 second
-left in the game and the Lakers down by 2 points. What is the
-probability the Lakers win the game? Tie? Lose? Develop a random
+Joel Embiid, star player drafted as the #3 overall pick by the Philadelphia 76ers, made 86% of his free throws in his rookie season.
+Suppose Embiid is fouled while attempting a 3 point shot with 1 second
+left in the game and the Sixers down by 2 points. What is the
+probability the Sixers win the game? Tie? Lose? Develop a random
 variable (and probability distribution) to answer these questions.\
 \
 \
@@ -1049,6 +993,10 @@ variable (and probability distribution) to answer these questions.\
 \
 \
 \
+\
+\
+\
+
 :::
 
 ### Binomial distribution
@@ -1087,7 +1035,7 @@ A binomial experiment satisfies the following properties:
     trials.
 :::
 
-```{r, echo = FALSE,  fig.align="center", out.width="60%"}
+```{r, echo = FALSE,  fig.align="center", out.width="50%", out.height="25%"}
 knitr::include_graphics("./images/binom_dists.png")
 ```
 
@@ -1108,20 +1056,14 @@ a.  What is the probability none of the selected items are defective?\
     \
     \
     \
-    \
-    \
 
 b.  What is the probability of 1 or fewer defective?\
     \
     \
     \
     \
-    \
-    \
 
 c.  What is the probability more than 2 are defective?\
-    \
-    \
     \
     \
     \
@@ -1141,7 +1083,7 @@ $$F(Y) = P(Y \leq y) = \sum_{y = 0}^y {n \choose y} p^y(1-p)^{n - y}$$
 ### Binomial expansion
 
 The binomial expansion is given by
-$$(a + b)^n = \sum_{y = 0}^n {n\choose y}a^xb^{n-y}$$
+$$(a + b)^n = \sum_{y = 0}^n {n\choose y}a^yb^{n-y}$$
 
 ::: {.activitybox data-latex=""}
 **Exercise:**
@@ -1173,24 +1115,24 @@ distribution is a valid probability distribution.\
 For each of the following, determine the constant $c$ so that $p(y)$ satisfies the conditions of being a probability distribution for a random variable $Y$. That is, find $c$ such that $\sum_{y \in S} p(y) = 1$.
 
   a. $p(y) = y/c, \ \ \ \ \ y = 1,2,3,4$<br/>
-  b. $p(y) = cx, \ \ \ \ \ y = 1,2,3,\dots,10$<br/>
+  b. $p(y) = cy, \ \ \ \ \ y = 1,2,3,\dots,10$<br/>
   c. $p(y) = c(1/4)^y, \ \ \ \ \ y = 1,2,3,\dots \ \ \ \ $ <br/> *Hint: use the infinite series identity from calculus that tells us* $\sum_{n = 1}^{\infty}a_1(r)^{n-1} = \frac{a_1}{1-r}$<br/>
 
 ### Problem 2
 
-Recall the non-uniform example where we rolled a fair four-sided die twice and let $Y$ be the maximum of the two outcomes. We determined that the probability distribution of $Y$ was given by $$p(y) = \frac{2x - 1}{16}, \ \ \ y = 1,2,3,4.$$ Define the cdf of $Y$. That is define $F(y) = P(Y \leq y)$ for each value of $y$ in the support.
+Recall the non-uniform example where we rolled a fair four-sided die twice and let $Y$ be the maximum of the two outcomes. We determined that the probability distribution of $Y$ was given by $$p(y) = \frac{2y - 1}{16}, \ \ \ y = 1,2,3,4.$$ Define the cdf of $Y$. That is define $F(y) = P(Y \leq y)$ for each value of $y$ in the support.
 
 ### Problem 3
 
 *(Should be done AFTER Simulation Activity)* 
-Return to our 70% shooter 3-free throw example. We found the probability distributions of the random variables $Y$ (total number of makes), $Y$ (whether or not 2nd shot was a make), and $Z$ (number of makes - number of misses), listed below. Use the probability distributions to find the expected value of each random variable.
+Return to our 70% shooter 3-free throw example. We found the probability distributions of the random variables $X$ (total number of makes), $Y$ (whether or not 2nd shot was a make), and $Z$ (number of makes - number of misses), listed below. Use the probability distributions to find the expected value of each random variable.
 
 $$
-p(y) = \begin{cases}
-0.027, & y=0 \\
-0.189, & y=1\\
-0.441, & y=2\\
-0.343, & y=3
+p(x) = \begin{cases}
+0.027, & x=0 \\
+0.189, & x=1\\
+0.441, & x=2\\
+0.343, & x=3
 \end{cases}
 $$
 
@@ -1254,7 +1196,7 @@ A random variable Y has a binomial distribution with mean 6 and variance 3.6. Fi
 
 ### Problem 9
 
-Return to the Brandon Ingram example (he makes 67% of his free throws, he's fouled shooting a 3-pointer). Describe in detail how you could, in principle, perform a by hand simulation involving physical objects (e.g. coins, dice, spinners, etc.) to estimate the probability that the Lakers lose. Be sure to describe (1) what one repetition of the simulation entails, and (2) how you would use the results of many repetitions. Note: you do NOT need to compute any numerical values.
+Return to the Joel Embiid example (he makes 87% of his free throws, he's fouled shooting a 3-pointer). Describe in detail how you could, in principle, perform a by hand simulation involving physical objects (e.g. coins, dice, spinners, etc.) to estimate the probability that the 76ers lose. Be sure to describe (1) what one repetition of the simulation entails, and (2) how you would use the results of many repetitions. Note: you do NOT need to compute any numerical values.
 
 \pagebreak
 
@@ -1266,7 +1208,7 @@ $$S = \{hhh, hht, hth, htt, thh, tht, tth, ttt\}$$
 
 We defined the following random variables:
 
--   $Y$ = the total number of heads
+-   $X$ = the total number of heads
 -   $Y$ = whether or not there is a heads on the 2nd flip
 -   $Z$ = the number of heads minus the number of tails
 
@@ -1274,8 +1216,8 @@ In this activity, we are going to consider this to be a **weighted coin with a 7
 
 Your job is to develop two things:
 
-1) psuedocode for how to simulate this experiment and investigate the distributions of $Y$, $Y$, and $Z$
-2) the probability mass function (probability distribution) for $Y$, $Y$, and $Z$ (using mathematics & rules of probability)
+1) psuedocode for how to simulate this experiment and investigate the distributions of $X$, $Y$, and $Z$
+2) the probability mass function (probability distribution) for $X$, $Y$, and $Z$ (using mathematics & rules of probability)
 
 Some tips are provided below to get you started.
 
@@ -1283,47 +1225,32 @@ Some tips are provided below to get you started.
 
 Anytime we simulate a random experiment, it’s important to ask ourselves a few questions (in order):
 
-  a. How would I simulate one run of the random experiment?
-  a. How would I calculate my random variable(s) of interest from one run of the experiment?
-  a. How could I adapt my code to do this *many* times (e.g. 10,000+), and end up with *many* observed values of my random variable(s) of interest?
-  a. How could I aggregate my *many* observations to summarize the distribution of my random variable(s) of interest? 
++ How would I simulate one run of the random experiment?
++ How would I calculate my random variable(s) of interest from one run of the experiment?
++ How could I adapt my code to do this *many* times (e.g. 10,000+), and end up with *many* observed values of my random variable(s) of interest?
++ How could I aggregate my *many* observations to summarize the distribution of my random variable(s) of interest? 
 
-Some information about the mechanics of R that might helpful is provided below.
+### Part 1A
 
-### Part a
-
-The follow code would generate one toss of a **fair** coin and save it into an object called `toss1`
+Write psuedocode for the experiment described above for tossing three coins. 
+*Hint: you need to create `toss1`, `toss2`, and `toss3`. The following code would generate one toss of a FAIR coin and save it into an object called `toss1` The first argument controls the number of runs of the experiment, and the second controls the probability of a "success". It will return the value `TRUE` for a "success" and the value `FALSE` for a "failure".*
 
 ```{r, warning = FALSE}
 toss1 <- rbernoulli(1, 0.5)
 toss1
 ```
 
-The first argument controls the number of runs of the experiment, and the second controls the probability of a "success". It will return the value `TRUE` for a "success" and the value `FALSE` for a "failure". 
+### Part 1B 
 
-Write psuedocode for the experiment described above for tossing three coins. *Hint: you need to create `toss1`, `toss2`, and `toss3`.* 
+Write psuedocode for creating the three random variables X, Y, and Z, based on your three tosses created in Part 1A. 
 
-\
-\
-\
-\
-\
-\
-\
-
-### Part B 
-
-We want to use our results from `toss1`, `toss2`, and `toss3` to determine `Y`, `Y`, and `Z`.
-
-Note, R assigns the value 1 to `TRUE` and 0 to `FALSE`, and you can add and subtract these logical results. For example, 
+*Hint: R assigns the value 1 to `TRUE` and 0 to `FALSE`, and you can add and subtract these logical results. For example,:*
 
 ```{r}
 TRUE + TRUE
 TRUE + FALSE
 ```
 
-Write psuedocode for creating the three random variables Y,Y, and Z, based on your three tosses created in Part A.
-
 \
 \
 \
@@ -1332,9 +1259,9 @@ Write psuedocode for creating the three random variables Y,Y, and Z, based on yo
 \
 \
 
-### Part C
+### Part 1C
 
-How can you adapt your code from Parts A & B to do the experiment *many* times (e.g. 10,000 times)? You want to end up with three vectors Y, Y, and Z, each with 10,000 random observations. 
+How can you adapt your code from Parts A & B to do the experiment *many* times (e.g. 10,000 times)? You want to end up with three vectors X, Y, and Z, each with 10,000 random observations. 
 
 ```{r, echo = FALSE, eval = FALSE}
 toss1 <- rbernoulli(10000, .7)
@@ -1395,16 +1322,16 @@ $$
 
 \pagebreak
 
-### Part D
+### Part 1D
 
 Describe in words how you could use a vector of 10,000 random observations to summarize the distribution of that random variable? For example, how might you estimate the following:
 
-| y | P(Y = y) = p(y) = 
+| x | P(X = x) = p(x) = 
 |----|--------------------------------------------|
-|0 | P(Y = 0) = p(0) =  
-|1 | P(Y = 1) = p(1) =  
-|2 | P(Y = 2) = p(2) =  
-|3 | P(Y = 3) = p(3) =
+|0 | P(X = 0) = p(0) =  
+|1 | P(X = 1) = p(1) =  
+|2 | P(X = 2) = p(2) =  
+|3 | P(X = 3) = p(3) =
 
 
 
@@ -1417,9 +1344,9 @@ For each random variable, ask
 + What are all the different ways its possible to end up with each value in the support? 
 + What is the probability of ending up with each value in the support? That is, for a random variable $W$, what is $P(W = w)$ for each value $w$ in the support?
 
-For example, there is only one way for $Y = 0$: when the outcome is $ttt$. The probability of this happening is $(0.3)(0.3)(0.3) = 0.027$.
+For example, there is only one way for $X = 0$: when the outcome is $ttt$. The probability of this happening is $(0.3)(0.3)(0.3) = 0.027$.
 
-Use the above steps (three times) to produce a probability distribution for each random variable: Y, Y, and Z. 
+Use the above steps (three times) to produce a probability distribution for each random variable: X, Y, and Z. 
 
 <!-- # Example -->
 
