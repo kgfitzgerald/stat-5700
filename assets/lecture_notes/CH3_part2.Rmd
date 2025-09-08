@@ -1,0 +1,250 @@
+---
+title: "Chapter 3 Part 2"
+subtitle: "STAT 5700: Probability"
+author: "Prof. Katie Fitzgerald, PhD"
+institute: "Villanova University Department of Mathematics & Statistics"
+date: "Fall 2025"
+output: 
+  pdf_document:
+    includes:
+      in_header: preamble.tex
+    toc: true
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r, echo = FALSE, message=FALSE, warning = FALSE}
+library(tidyverse)
+library(gridExtra)
+library(cowplot)
+```
+
+\pagebreak
+
+# 3.5 Geometric Distribution
+
+# 3.6 Negative Binomial Distribution
+
+# 3.7 Hypergeometric Distribution
+
+# 3.8 Poisson Distribution
+
+# 3.9 Moments and Moment Generating Functions
+
+# 3.11 Tcheysheff's Theorem
+
+## Special Expectations: Moments
+
+::: {.highlightbox data-latex=""}
+**Definition:** The $r$th \textcolor{red}{\textbf{moment}} of a random
+variable $X$ is the expected value of $X^r$ and is denoted by $E(X^r)$,
+for each integer $r$. That is,
+$$E(X^r) = \sum_{x\in \mathbb{S}}x^rp(x)$$
+:::
+
+The term "moment" comes from physics: if the quantities $p(x)$ are point
+masses acting perpendicularly to the $x-$axis at distances $y$ from the
+origin, $E(X^1)$ would be the $x-$coordinate of the center of gravity,
+and $E(X^2)$ would be the moment of inertia.
+
+```{r, echo = FALSE, out.width="60%", out.height = "60%", fig.align="center"}
+knitr::include_graphics("./images/moments-garfield.png")
+```
+
+### First Moment = Mean
+
+Note that the first moment where $r=1$, we have
+
+$$\begin{aligned}
+E(Y^1) &= \sum_{y \in \mathbb{S}} y^1 p(y) \\
+&= E(Y) = \sum_{y \in \mathbb{S}}xp(y)\\
+&= \mu
+\end{aligned}$$
+
+Therefore, we usually refer to the first moment as $\mu,$ the mean of $Y$.
+
+::: {.activitybox data-latex=""}
+**Example:**
+
+Suppose $Y$ is a random variable with support $\{1,2,3\}$ and $probability distribution$ is
+given by $p(1) = 0.5$, $p(2) = 0.2$, $p(3) = 0.3$. Find the mean and
+show that the negative distances from the mean balance the positive.\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+## Special Expectations: Central Moments
+
+::: {.highlightbox data-latex=""}
+**Definition** The $r$th \textcolor{red}{\textbf{central moment}} of a
+random variable $Y$ is the expected value of $(Y - \mu)^r$ and is
+denoted by $E[(Y - \mu)^r]$, for each integer $r$. That is,
+$$E[(Y - \mu)^r] = \sum_{y\in \mathbb{S}}(y-\mu)^rp(y)$$
+:::
+
+Recall that $\mu = E(Y)$ is the mean of $Y$, so the central moments are
+sometimes refered to as **moments about the mean**.
+
+::: {.activitybox data-latex=""}
+**Exercise:**
+
+What is $E(Y - \mu)$?\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+<!-- Make point that you can center any data around 0 by subtracting the mean from all data points (show this in sims) -->
+
+## Moment-generating functions
+
+::: {.highlightbox data-latex=""}
+**Definition 2.3-1** <br/> Let $Y$ be a discrete random variable with
+probability distribution $p(y)$ and support $\mathbb{S}$. If there is a positive number $h$ such that
+$$E(e^{tY}) = \sum_{y \in \mathbb{S}} e^{tx}p(y)$$ exists and is finite for
+$-h < t < h,$ then the function defined by $M_Y(t) = E(e^{tY})$ is
+called the \textcolor{red}{\textbf{moment-generating function}} of $Y$.
+This function is often abbreviated as mgf.
+:::
+
+$M_Y(t) = E(e^{tY})$ is called the moment-generating function, because
+by taking derivatives of $M_Y(t)$ at $t=0$ can generate expressions for
+all the moments of a random variable $Y$!
+
+::: {.highlightbox data-latex=""}
+**Theorem** <br/> $$\frac{d^r}{dt^r}M_Y(t)|_{t=0} = E(Y^r)$$ That
+is, the $r$th moment of $Y$ is equal to the $r$th derivative of $M_Y(t)$
+evaluated at $t = 0$.
+:::
+
+<!--  -->
+
+<!-- # Using the mgf -->
+
+<!-- Use $M_Y(t) = E(e^{tY}) = \sum e^{tx}p(y)$ to find the mean and variance of $Y$.  -->
+
+::: {.activitybox data-latex=""}
+**Example:**
+
+<!-- Let $Y$ equal an integer selected at random from the $m$ positive integers $\{1, 2, \dots, m\}$. Find the value of $m$ for which $E(Y) = V(Y)$ -->
+
+<!-- From Hogg et. al #2.3-7 -->
+
+Let $Y$ be a uniformly distributed random variable. Recall that the probability distribution
+of the uniform distribution is given by
+
+$$p(y) = \frac{1}{m}, \ \ \ \ \ y = 1,2,...,m$$
+
+Find an expression for the moment-generating function of the
+distribution. Then use the mgf to find the mean of $Y$.\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+::: {.activitybox data-latex=""}
+**Example:**
+
+If the moment-generating function of $Y$ is
+$M_Y(t) = \frac{2}{5}e^t + \frac{1}{5}e^{2t} + \frac{2}{5}e^{3t},$ find
+the mean, variance, and probability distribution of $Y$.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+### Moments of the Binomial Distribution
+
+::: {.activitybox data-latex=""}
+**Exercise:**
+
+1.  Find the mgf of the Binomial distribution.
+
+2.  Use the mgf to find the mean and the variance of the binomial
+    distribution
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+### Problem 7
+
+Let $Y$ be a random variable with probability distribution $p(y) = \frac{y}{6}, \ \ \ y = 1, 2, 3$
+
+  a) Find an expression for the moment generating function of $Y$. That is, write $E(e^{tY})$ as a sum.
+  b) Use the mgf to show that $E(Y) = 7/3$
+  c) Use the mgf to show that $E(Y^2) = 6$
+  d) Find $V(Y)$
