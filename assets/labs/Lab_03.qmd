@@ -3,13 +3,7 @@ title: "Lab 03"
 subtitle: "Intro to simulations"
 author: "STAT 5700"
 date: "Insert due date here"
-format: 
-  html:
-    self-contained: true
-    toc: true
-    toc_float: true
-    number-section: false
-    highlight: tango
+format: pdf
 editor: visual
 editor_options: 
   chunk_output_type: console

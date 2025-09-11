@@ -4,6 +4,11 @@ week: 3
 date: 2025-09-09
 ---
 
+## Thursday announcements
+
++ Will have quiz at END of class today (give feedback on notecard/weekly check-in about whether you prefer beginning or end of class)
++ HW 02, Lab 02, annotations due tonight
+
 ## Tuesday announcements
 
 + [ASA StatFest 2025](https://community.amstat.org/cmis/events/statfest/statfest2025) - free virtual event designed to connect undergraduate students from historically underrepresented groups with industry experts, academic leaders, and peers. Three Thursday evenings 7 - 9pm starting this week.
