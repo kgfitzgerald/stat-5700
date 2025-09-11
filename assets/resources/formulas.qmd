@@ -15,3 +15,9 @@ $_nP_r =\frac{n!}{(n-r)!}$
 
 $_nC_r = \frac{_nP_r}{r!} = \frac{n!}{(n - r)!r!}$
 
+$P(B | A) = \frac{P(A \cap B)}{P(A)}$
+
+$P(B'|A) = 1 - P(B|A)$
+
+Bayes Rule: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
+
