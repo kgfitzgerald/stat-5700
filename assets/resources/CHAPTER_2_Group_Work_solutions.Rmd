@@ -150,29 +150,29 @@ P(\text{TikTok but not Facebook}) &+ P(\text{Facebook but not TikTok}) \\
 = 0.49
 \end{aligned}$$
 
-<!-- # Problem 5 -->
+# Problem 5
 
-<!-- Let $A_1$ and $A_2$ be the events that a person is left- eye dominant or right-eye dominant, respectively. When a person folds their hands, let $B_1$ and $B_2$ be the events that the left thumb and right thumb, respectively, are on top. A survey in one statistics class yielded the following table: -->
+Let $A_1$ and $A_2$ be the events that a person is left- eye dominant or right-eye dominant, respectively. When a person folds their hands, let $B_1$ and $B_2$ be the events that the left thumb and right thumb, respectively, are on top. A survey in one statistics class yielded the following table:
 
-<!-- | | $B_1$ | $B_2$ | Totals | -->
-<!-- |-----|---|---|-----| -->
-<!-- |$A_1$ | 5 | 7 | 12 | -->
-<!-- | $A_2$ | 14 | 9 | 23 | -->
-<!-- | Totals | 19 | 16 | 35 | -->
+| | $B_1$ | $B_2$ | Totals |
+|-----|---|---|-----|
+|$A_1$ | 5 | 7 | 12 |
+| $A_2$ | 14 | 9 | 23 |
+| Totals | 19 | 16 | 35 |
 
-<!-- If a student is selected randomly, find the following probabilities:	 -->
+If a student is selected randomly, find the following probabilities:
 
-<!-- ### Solution: -->
+### Solution:
 
-<!-- > (a)	$P(A_1 \cap B_1) = 5/35 = 1/7$,	 -->
+> (a)	$P(A_1 \cap B_1) = 5/35 = 1/7$,
 
-<!-- > (b) $P(A_1 \cup B_1) = (12+19-5)/35 = 26/35$,     -->
+> (b) $P(A_1 \cup B_1) = (12+19-5)/35 = 26/35$,
 
-<!-- > (c) $P(A_1|B_1) = 5/19$,    -->
+> (c) $P(A_1|B_1) = 5/19$,
 
-<!-- > (d) $P(B_2 | A_2) = 9/23$.    -->
+> (d) $P(B_2 | A_2) = 9/23$.
 
-<!-- > (e) If the students had their hands folded and you hoped to select a right-eye-dominant student, would you select a “right thumb on top” or a “left thumb on top” student? Why? $P(A_2 | B_1) = 14/19 > P(A_2 | B_2) = 9/16$ so we should choose a left-thumb person.  -->
+> (e) If the students had their hands folded and you hoped to select a right-eye-dominant student, would you select a “right thumb on top” or a “left thumb on top” student? Why? $P(A_2 | B_1) = 14/19 > P(A_2 | B_2) = 9/16$ so we should choose a left-thumb person.
 
 ```{r, echo = FALSE, eval = FALSE}
 data.frame(c("$A_1$", "$A_2$", "Totals"), 
@@ -183,7 +183,26 @@ data.frame(c("$A_1$", "$A_2$", "Totals"),
   kable(col.names = c("$B_1$", "$B_2$", "Totals"))
 ```
 
+# Problem 6
 
+Let $A$ and $B$ be independent events. Prove that $A'$ and $B$ are also independent. 
+
+### Solution
+
+We want to show that $P(A' \cap B) = P(A')P(B)$ to prove they are independent.
+
+The proof is provided below. To see the first line, draw a Venn Diagram. The 2nd line relies on the fact that A and B are independent, and the 3rd line applies the rule of complements.
+
+$$\begin{aligned}
+P(A' \cap B) &= P(B) - P(B \cap A) \\
+&= P(B) - P(B)P(A)\\
+&= P(B)[1 - P(A)] \\
+&= P(B)P(A')
+\end{aligned}
+$$
+
+
+7. Two processes of a company produce rolls of materials: The rolls of Process I are 3% defective and the rolls of Process II are 1% defective. Process I produces 60% of the company’s output, Process II 40%. A roll is selected at random from the total output. Given that this roll is defective, what is the conditional probability that it is from Process I?
 
 <!-- # Problem 4 -->
 
