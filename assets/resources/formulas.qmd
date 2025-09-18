@@ -15,9 +15,26 @@ $_nP_r =\frac{n!}{(n-r)!}$
 
 $_nC_r = \frac{_nP_r}{r!} = \frac{n!}{(n - r)!r!}$
 
+$\binom{n}{n_1 \ \ n_2 \ \cdots \ \ n_k} = \frac{n!}{n_1! n_2! \cdots n_k!}$
+
 $P(B | A) = \frac{P(A \cap B)}{P(A)}$
 
 $P(B'|A) = 1 - P(B|A)$
 
 Bayes Rule: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
+
+$\mu = E(Y) = \sum_{y \in \mathbb{S}}yp(y)$
+
+$\sigma^2 = V(Y) = \sum_{y \in \mathbb{S}}(y - \mu)^2p(y)$
+\
+\
+**Discrete Uniform distribution:**
+
+$$p(y) = \frac{1}{m}\ \ \ y = 1, 2, \dots, m,$$
+
+$$F(y) = P(Y \leq y) = \begin{cases}
+0, & y < 1,\\
+\frac{k}{m} & k \leq y < k+1,\\
+1, & m \leq y.
+\end{cases}$$
 
