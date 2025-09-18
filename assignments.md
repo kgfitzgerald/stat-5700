@@ -30,9 +30,7 @@ The links below provide the assigned problems for each homework. Your work must 
 
 [HW 03](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_03.pdf)
 
-[HW 04](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_04.pdf) - Note: When working with the Binomial distribution, you can use the fact that if 
-\( Y \sim \text{Binom}(n,p) \) then \( E(Y) = np \) and \( V(Y) = np(1-p) \). 
-We will prove this later on.
+[HW 04](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_04.pdf)
 
 ## Labs
 
@@ -45,9 +43,7 @@ The links below take you to a template Quarto (.qmd) file for each lab. You shou
 
 {% include download.html path="assets/labs/Lab_03.qmd" %}
 
-{% include download.html path="assets/labs/Lab_04.qmd" %} - Note: When working with the Binomial distribution, you can use the fact that if 
-\( Y \sim \text{Binom}(n,p) \) then \( E(Y) = np \) and \( V(Y) = np(1-p) \). 
-We will prove this later on.
+{% include download.html path="assets/labs/Lab_04.qmd" %}
 
 
 ## Reading annotations

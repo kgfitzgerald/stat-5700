@@ -92,6 +92,10 @@ ggplot(data = data) +
   theme_classic()
 ```
 
+## Binomial mean & variance
+
+When working with the Binomial distribution, you can use the fact that if $Y \sim binom(n,p)$ then $E(Y) = np$ and $V(Y) = np(1-p)$ We will prove this later on in the course.
+
 ## Template for Task Solution
 
 *You can use the following solution as a template for how to format your solutions on Tasks 1 & 2 below.*
