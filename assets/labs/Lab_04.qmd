@@ -15,171 +15,225 @@ editor_options:
   chunk_output_type: console
 ---
 
-## Overview
+This lab will have you work with the Binomial distribution in R. We begin with a tutorial to introduce the R commands associated with this distributions. There is also a template exercise provided as an example of how to format your answers neatly, integrating both math symbols and R code. Task 1 is an odd-numbered exercise from the textbook, so you can check your answers to help you verify `dbinom()` and `pbinom()` work as you expect.
 
-In this lab, you will conduct simulations to explore the pmf of a random variable, similar to Lab 03. You should copy, paste, and modify code from that lab.
-
-## Motivating Example
-
-We will use the following example throughout this lab:
-
-A fair 10-sided die with outcomes 1, 2, 3, 4, 5, 6, 7, 8, 9, and 10 is rolled twice. Let $X$ equal the sum of the two outcomes. Then the possible values of $X$ are 2, 3,... 19, 20. It is possible but quite tedious to work out the pmf by hand, and even then it is not immediately obvious how to write the pmf as a general function involving $x$. We can use simulations to explore the distribution of $X$.
-
-## Recap of Logic of Simulations
-
-Recall our earlier definition that probability is a mathematical framework for describing and analyzing random phenomenon (i.e. anything we cannot predict with certainty). We said probability can be interpreted as the proportion of times an event will occur *in the long run*.
-
-If we don't have a nice mathematical formula to tell us what to expect in the long run (or even if we do), one great way to help us wrap our minds around the behavior of a random variable in the long run is to *simulate* the random experiment many, many times, and *observe* what happens in the long run. One option is to *physically* simulate an experiment (e.g. roll a physical dice many, many times, spin a spinner many, many times, etc.). But in the year of our Lord, 2025, we have machines that can do these things for us MANY, MANY times, MUCH, MUCH quicker than we could do them physically by hand.
-
-Anytime we simulate a random variable $X$, it's important to ask ourselves a few questions (in order):
-
-1.  *How would I simulate one value of* $X$?
-2.  *How would I simulate many values of* $X$ (e.g. 10000+)? This usually involves repeating Step 1 many, many times. \*
-3.  *How do I aggregate all the simulated results to tell me what I want to know about the behavior of* $X$ in the long run?
-
-\*Often, R has built in functions for generating random variables, so repeating a simulation large number of times can often be done by simply changing a function argument from $n = 1$ to $n = 100,000$ (or some other large number).
-
-## Task 1
-
-Start by loading necessary packages. You will need the `tidyverse` package for this lab. In order for you to get the same results each time you knit your document, add the command `set.seed()` to the code chunk and insert your favorite number in the parentheses.
-
-```{r, warning = FALSE, message = FALSE}
-# load necessary packages
-
-
-#set seed
-
-```
-
-**How would I simulate one value of** $X$?
-
-Recall that $X$ is the sum of two rolls of a fair 10-sided die. In order to simulate one value of $X$, we need:
-
--   the result of one roll of a 10-sided die ($d_1$)
--   the result of a 2nd roll of a 10-sided die ($d_2$)
--   the sum of the two rolls $x = d_1 + d_2$
-
-Recall that rolling a fair dice can be modeled with the uniform distribution. The `purrr` package (which is part of the `tidyverse`) has a function `rdunif()` that allows us to randomly generate numbers from the discrete uniform distribution. The `rdunif` function takes in 3 arguments:
-
--   `n` to specify the number of observations to generate (in our case, this will be the number of times we want to run the experiment);
--   `a` to specify the minimum integer the random variable can take on; and
--   `b` to specify the maximum integer the random variable can take on.
-
-## Task 2
-
-Create three objects, `d1`, `d2`, and `x` that store the results of one run of our experiment.
+Let's begin by loading the necessary packages. Most of the functions in this lab are in base R, meaning they don't require any additional packages, but we'll load the `tidyverse` so we can use `%>%` and `ggplot()` when doing some additional exploration!
 
 ```{r}
-#| label: one-run
-#| eval: false
-
-d1 <- rdunif(n = , a = , b = )
-d2 <- rdunif(n = , a = , b = )
-x <- 
+#| message: false
+library(tidyverse)
 ```
 
-What value of `x` did you get? Verify that it is the sum of the `d1` and `d2` that you generated.
+# Tutorial
 
-> YOUR ANSWER HERE
+R includes many built in functions for common distributions. Commands for each follow the same basic format. The abbreviated name of the distribution is preceeded by once of four letters:
 
-## Task 3
+-   "d" for the density function (pmf for discrete random variables)
+-   "p" for the cumulative distribution function (cdf)
+-   "q" for the quantile function (gives the x value for a given cummulative probability)
+-   "r" for random (generates a random number based on the distribution)
 
-How do you simulate many values of $X$? Modify the code above to run the experiment 100,000 times. Remember: copy, paste, tweak.
+The **binomial distribution** pmf and cdf in R:
 
-*Hint: which of the arguments in `rdunif()` controls how many observations are simulated?*
+-   `dbinom(x, size, prob)` -- returns $f(x) = P(X = x),$ (pmf) values for a binomial random variable $X$,
+-   `pbinom(x, size, prob)` -- returns $F(x) = P(X \leq x),$ values for the binomial distribution (cdf)
+
+Note that both have three arguments defined as:
+
+-   `x` = the value of the random variable for which a probability is computed
+-   `size` = number of trials (this is what we usually refer to as $n$)
+-   `prob` = probability of success on a trial (what we usually refer to as $p$)
+
+Note that `x` can be a vector, meaning you can compute multiple probabilities with a single command!
+
+## Binomial Example
+
+Suppose $X \sim b(10, 0.3)$. The probability that $X = 2$ is given by
 
 ```{r}
-
+dbinom(2, 10, 0.3)
 ```
 
-Verify that `d1`, `d2`, and `x` all have 100,000 elements now before proceeding.
-
-## Task 4
-
-Combine `d1`, `d2`, and `x` into a data frame called `sims` using the function `data.frame()`. Use the function `dim()` to determine the dimensions of the data. *Hint: see Task 4 in Lab 03*
+The probability that $X \leq 2$ is given by
 
 ```{r}
-
+pbinom(2, 10, 0.3)
 ```
 
-How many rows and columns does `data` have?
-
-> YOUR ANSWER HERE
-
-## Task 5
-
-Now that you've simulated many values of $X$, you can now explore its aggregate behavior.
-
-As a sanity check, plot `d1` and `d2` (in separate plots) to see if they are uniformly distributed as expected (since they are the rolls of fair dice). Remember, because these are simulations, we only expect the results to be *approximately* correct. *Hint: copy and paste code for creating a bar plot from Lab 03*
+Recall that $P(X \leq 2) = P(X = 0) + P(X = 1) + P(X = 2)$, so we could also have gotten the same result with the following code:
 
 ```{r}
-
+dbinom(0, 10, 0.3) + dbinom(1, 10, 0.3) + dbinom(2, 10, 0.3)
 ```
 
-Do `d1` and `d2` look uniformly distributed?
-
-> YOUR ANSWER HERE
-
-## Task 6
-
-If `d1` and `d2` are both uniform, do you think `d1 + d2` will also be uniform?
-
-> YOUR GUT INTUITION HERE
-
-## Task 7
-
-Plot `x` to explore the shape of its distribution. Also summarize the distribution with a table of relative frequencies. *Hint: see Task 4 from Lab 03*
+We could compute the probability for all possible values of $X = 0, 1, \dots , 10$ by making `x` a vector.
 
 ```{r}
-
+x <- c(0:10)
+dbinom(x, 10, 0.3)
 ```
 
-Is `x` uniform? Explain your reasoning.
-
-> YOUR ANSWER HERE
-
-## Task 8
-
-Given the distribution of `x`, what do you think $E(X)$ is equal to? Note, you do not need to perform calculations here, I am interested in your interpretation of the above results.
-
-> YOUR ANSWER HERE
-
-## Task 9
-
-Use the functions `mean()` and `var()` to calculate approximate values for $E(X)$ and $V(X)$ based on your simulated data.
+We can do a sanity check to make sure that all of those densities sum to 1. That is, to verify $\sum_S f(x) = 1$.
 
 ```{r}
-
+sum(dbinom(x, 10, 0.3))
 ```
 
-## Task 10
-
-Create a new random variable $Y$ that is equal to $2X$. What do you expect $E(Y)$ and $V(Y)$ to be based on properties of expected value and variance?
-
-> YOUR ANSWER HERE (no calculations necessary)
-
-Use your simulations to estimate $E(Y)$ and $V(Y)$.
-
-> YOUR ANSWER HERE
-
-## BONUS: Comparing the simulated distribution to the theoretical distribution
-
-It turns out that the true pmf of $X$ is given by the mathematical model $$f(x) = \frac{(10 - |x-11|)}{100}.$$
-
-The following code can be used to compute the `pmf` for each value in the `support`
+We can use the vector of densities to plot the pmf
 
 ```{r}
-support <- 2:20
-pmf <- (10 - abs(support - 11))/100
-pmf
+data <- data.frame(x = x,
+                   d = dbinom(x, 10, 0.3))
+
+ggplot(data = data) +
+  geom_col(aes(x = x, y = d))
 ```
 
-Write code that uses the objects `support` and `pmf` to compute the exact values of $E(X)$ and $V(X)$. Recall that $E(X) = \sum xf(x)$ and $V(X) = E(X^2) - (E(X))^2$.
+```{r}
+# a prettier version of the plot
+ggplot(data = data) +
+  #using factor(x) tells ggplot to treat x as discrete, 
+  #so it labels the x axis at the integers 0:10
+  #fill = "skyblue" changes the color of the bars
+  geom_col(aes(x = factor(x), y = d), fill = "skyblue") +
+  #changes axis labels
+  labs(x = "x", y = "Density f(x)") +
+  theme_classic()
+```
+
+## Template for Task Solution
+
+*You can use the following solution as a template for how to format your solutions on Tasks 1 & 2 below.*
+
+A certain type of mint has a label weight of 20.4 grams. Suppose that the probability is 0.90 that a mint weighs more than 20.7 grams. Let $X$ equal the number of mints that weigh more than 20.7 grams in a sample of eight mints selected at random.
+
+a.  Find the mean and standard deviation of $X$
+b.  Find the probability that exactly 8 mints weigh more than 20.7 grams
+c.  Find the probability that no more that 6 mints weigh more than 20.7 grams
+
+## ANSWER
+
+\[OPTIONAL BUT ENCOURAGED: to help us verify that our answers are reasonable, we can first plot the distribution\]
+
+$X \sim b(8, 0.9)$
+
+```{r}
+#create vector of possible x values
+x <- c(0:8)
+#create vector of corresponding densities
+d <- dbinom(x, 8, 0.9)
+#combine into a data frame for plotting
+data <- data.frame(x, d)
+
+ggplot(data = data) +
+  geom_col(aes(x = factor(x), y = d), fill = "navyblue") +
+  labs(x = "x", y = "Density f(x)") +
+  theme_classic()
+```
+
+### Part a
+
+$$\mu = np = 8 \cdot 0.9$$ $$\sigma = \sqrt{np(1-p)} = \sqrt{8 \cdot 0.9 \cdot 0.1}$$
+
+```{r}
+mu <- 8*0.9
+sigma <- sqrt(8*0.9*0.1)
+solution <- data.frame(mu, sigma)
+solution
+```
+
+### Part b
+
+$P(X = 8)$
+
+```{r}
+dbinom(8, size = 8, prob = 0.9)
+```
+
+### Part c
+
+$P(X \leq 6)$
+
+```{r}
+pbinom(6, size = 8, prob = 0.9)
+```
+
+# Task 1
+
+*From Hogg, Tanis, and Zimmermann; Exercise 2.4-5*
+
+In a lab experiment involving inorganic syntheses of molecular precursors to organometallic ceramics, the final step of a five-step reaction involves the formation of a metal--metal bond. The probability of such a bond forming is $p = 0.20$. Let $X$ equal the number of successful reactions out of $n = 25$ such experiments.
+
+a.  Find the probability that $X$ is at most 4.
+b.  Find the probability that $X$ is at least 5.
+c.  Find the probability that $X$ is equal to 6.
+d.  Give the mean, variance, and standard deviation of $X$.
+
+## ANSWER
 
 ```{r}
 
 ```
 
-How do these values compare to your approximations in Task 9?
+### Part a
 
-> YOUR ANSWER HERE
+```{r}
+
+```
+
+### Part b
+
+```{r}
+
+```
+
+### Part c
+
+```{r}
+
+```
+
+### Part d
+
+```{r}
+
+```
+
+# Task 2
+
+It is believed that approximately 75% of American youth now have insurance due to the health care law. Suppose this is true, and let $X$ equal the number of American youth in a random sample of $n = 15$ with private health insurance.
+
+a.  Find the probability that $X$ is at least 10.
+b.  Find the probability that $X$ is at most 10.
+c.  Find the probability that $X$ is equal to 10.
+d.  Give the mean, variance, and standard deviation of $X$.
+
+## ANSWER
+
+```{r}
+
+```
+
+### Part a
+
+```{r}
+
+```
+
+### Part b
+
+```{r}
+
+```
+
+### Part c
+
+```{r}
+
+```
+
+### Part d
+
+```{r}
+
+```
