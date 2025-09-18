@@ -3,16 +3,7 @@ title: "Lab 04"
 subtitle: "STAT 5700"
 author: "Insert your name here"
 date: "Insert due date here"
-format: 
-  html:
-    self-contained: true
-    toc: true
-    toc_float: true
-    number-section: false
-    highlight: tango
-editor: visual
-editor_options: 
-  chunk_output_type: console
+format: pdf
 ---
 
 This lab will have you work with the Binomial distribution in R. We begin with a tutorial to introduce the R commands associated with this distributions. There is also a template exercise provided as an example of how to format your answers neatly, integrating both math symbols and R code. Task 1 is an odd-numbered exercise from the textbook, so you can check your answers to help you verify `dbinom()` and `pbinom()` work as you expect.
