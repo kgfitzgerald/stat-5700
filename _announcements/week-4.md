@@ -4,6 +4,13 @@ week: 4
 date: 2025-09-16
 ---
 
+## Thursday announcements
+
++ Exam 1 is next Thursday
++ Exam 1 Review & Exam 1 Practice Exam have been posted (under resources)
++ Strong consensus that keeping due dates on Thursdays is preferred
++ Plan to have solutions posted tomorrow (to homework + practice, group work, quizzes, etc)
+
 ## Tuesday announcements
 
 + Keep the feedback coming! 
