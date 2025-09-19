@@ -60,3 +60,66 @@ Equating this to $E(Y^3) - 3E(Y^2) + 2E(Y),$ it is found that $E(Y^3) = 3n(n-1)p
 
 If $Y =$ number of defective motors, then $Y \sim Binomial(n=10, p=.08)$. Then $E(Y) = .8$. The seller’s expected net gain is $1000 – 200E(Y) = 840$.  
 
+# Submitted Problems
+
+## 3.12
+
+$E(Y) = 1(.4) + 2(.3) + 3(.2) + 4(.1) = 2.0$  
+
+$E(1/Y) = 1(.4) + \tfrac{1}{2}(.3) + \tfrac{1}{3}(.2) + \tfrac{1}{4}(.1) = 0.6417$  
+
+$E(Y^2 - 1) = E(Y^2) - 1 = [1^2(.4) + 2^2(.3) + 3^2(.2) + 4^2(.1)] - 1 = 5 - 1 = 4$  
+
+$V(Y) = E(Y^2) - [E(Y)]^2 = 5 - 2^2 = 1$
+
+
+
+## 3.20
+
+With probability $0.3$ the volume is $8 \cdot 10 \cdot 30 = 2400$.  
+With probability $0.7$ the volume is $8 \cdot 10 \cdot 40 = 3200$.  
+Mean $= 0.3(2400) + 0.7(3200) = 2960$
+
+
+## 3.22
+
+$p(y) = P(Y=y) = 1/6$ for $y=1,2,\dots,6$.  
+So $E(Y) = 3.5$ and $V(Y) = 2.9167$.
+
+
+
+## 3.24
+
+Distribution of $Y =$ number of bottles with serious flaws:  
+
+| $y$ | 0   | 1   | 2   |
+|-----|-----|-----|-----|
+| $p(y)$ | 0.81 | 0.18 | 0.01 |
+
+Thus $E(Y) = 0(.81) + 1(.18) + 2(.01) = 0.20$ and  
+$V(Y) = 0^2(.81) + 1^2(.18) + 2^2(.01) - (0.20)^2 = 0.18$
+
+
+## 3.30
+
+a. Mean of $X$ is larger than mean of $Y$.  
+b. $E(X) = E(Y+1) = E(Y)+1 = \mu+1$.  
+c. Variances of $X$ and $Y$ are the same.  
+d. $V(X) = E[(X-E(X))^2] = E[(Y + 1 - \mu - 1)^2] = E[(Y-\mu)^2] = \sigma^2$
+
+
+## 3.44
+
+Let $Y =$ number of successful operations, $Y \sim \text{Binomial}(n=5,p)$  
+
+- With $p=0.8$: $P(Y=5) = 0.8^5 = 0.328$  
+- With $p=0.6$: $P(Y=4) = 5(0.6^4)(0.4) = 0.259$  
+- With $p=0.3$: $P(Y<2) = P(Y=1)+P(Y=0) = 0.528$
+
+## 3.58
+
+If $Y \sim \text{Binomial}(n=4,p=0.1)$:  
+
+$E(Y) = 0.4$, $V(Y) = 0.36$, so $E(Y^2) = 0.36 + (0.4)^2 = 0.52$  
+
+Then $E(C) = 3(0.52) + (0.36) + 2 = 3.96$
