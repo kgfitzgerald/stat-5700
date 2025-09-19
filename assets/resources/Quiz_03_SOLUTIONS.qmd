@@ -5,31 +5,46 @@ format: pdf
 
 **STAT 5700 — Quiz 3**  
 **Date:** September 18, 2025  
+\textbf{\textcolor{red}{SOLUTIONS}}
 
-**Name:** \underline{\hspace{5cm}}
-\
-\
+# Problem 1
 
-1. Suppose a small university has 2 dining halls that serve meals every day. Dining Hall A serves 60% of all student meals, and 5% of its meals are rated unsatisfactory. Dining Hall B serves 40% of the meals, and 2% of its meals are rated unsatisfactory. A meal is selected at random from the total meals served. If the meal is found to be rated unsatisfactory, what is the probability that it came from Dining Hall A?  
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
+Suppose a small university has 2 dining halls that serve meals every day. Dining Hall A serves 60% of all student meals, and 5% of its meals are rated unsatisfactory. Dining Hall B serves 40% of the meals, and 2% of its meals are rated unsatisfactory. A meal is selected at random from the total meals served. If the meal is found to be rated unsatisfactory, what is the probability that it came from Dining Hall A?  
+
+## SOLUTION 
+
+*Note, tree diagram is useful*
+
+Given: $P(U \mid A) = 0.05$, $P(A) = 0.60$, $P(U \mid B) = 0.02$, $P(B) = 0.40$. 
+
+Want to find $P(A \mid U)$. By Bayes’ Rule,  
+
+$$
+P(A \mid U) = \frac{P(U | A)P(A)}{P(U | A)P(A) + P(U | B)P(B)}.
+$$
+
+ 
+
+$$
+P(A | U) = \frac{(0.05)(0.60)}{(0.05)(0.60) + (0.02)(0.40)} 
+= 0.789.
+$$
 
 
-2. A factory tests its machines for two common malfunctions. It finds that 15% of the machines have neither malfunction, 45% have Malfunction A, and 50% have Malfunction B (some have both malfunctions). If a machine is randomly chosen from the factory, find the probability distribution for Y, the number of malfunctions found in the machine.
+# Problem 2
+
+A factory tests its machines for two common malfunctions. It finds that 15% of the machines have neither malfunction, 45% have Malfunction A, and 50% have Malfunction B (some have both malfunctions). If a machine is randomly chosen from the factory, find the probability distribution for Y, the number of malfunctions found in the machine.
+
+## SOLUTION
+
+We are given $P(A) = 0.45$, $P(B) = 0.5$. Further, we are told that 15% of machines have neither. Note that $P(A \cup B) = 1 - P(neither) = 1 - 0.15 = 0.85$. An alternative way of finding this is to note that "neither" can be written as $A' \cap B'$, so $0.15 = P(A' \cap B') = P[(A \cup B)'] = 1 - P(A \cup B),$ which again implies $P(A \cup B) = 0.15$. 
+
+We can then use the addition rule to solve $P(A \cap B) = P(A) + P(B) - P(A \cup B) = 0.45 + 0.5 - 0.85 = 0.1$. Note that Y = 0 when neither malfunction occurs $(A' \cap B')$, Y = 2 when both malfunctions occur $(A \cap B)$, and $P(Y = 1) = 1 - P(Y = 0) - P(Y = 2)$. Therefore, the probability distribution is given below
 
 
 | $Y$ | $P(Y = y)$ |
 |-----|-------------|
-| 0   |             |
-| 1   |             |
-| 2   |             |
+| 0   | 0.15        |
+| 1   | 0.75        |
+| 2   | 0.10        |
 

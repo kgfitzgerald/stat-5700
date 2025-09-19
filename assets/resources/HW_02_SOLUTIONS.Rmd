@@ -195,7 +195,7 @@ Define the events $A$: device A detects smoke, $B$: device B detects smoke.
 
 a. $P(A \cup B) = P(A) + P(B) - P(A \cap B) = 0.95 + 0.90 - 0.88 = 0.97$ 
 
-b.$ P(\text{smoke undetected}) = 1 - P(A \cup B) = 1 - 0.97 = 0.03$
+b. $P(\text{smoke undetected}) = 1 - P(A \cup B) = 1 - 0.97 = 0.03$
 
 ## 2.110
 

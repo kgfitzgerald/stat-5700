@@ -1,0 +1,79 @@
+---
+title: "HW 03 SOLUTIONS"
+format: pdf
+---
+
+# Practice Problems
+
+## 2.125
+
+Define the events: $D$: has the disease, $H$: test indicates the disease. Thus, $P(H|D) = 0.9$,  and $P(H'|D') = 0.9$, $P(D) = 0.01$, $P(D') = 0.99$. Then by Bayes’ rule, $P(D|H) = \frac{P(H|D)P(D)}{P(H|D)P(D) + P(H|D')P(D')} = \frac{0.9(0.01)}{0.9(0.01) + 0.01(0.99)} = \tfrac{1}{12}$.
+
+## 2.133
+
+Define the events: $G$: student guesses, $C$: student is correct. Then $P(G'|C) = \frac{P(C|G')P(G')}{P(C|G')P(G') + P(C|G)P(G)}= 0.9412$.
+
+## 2.137
+
+Let $A = \{\text{both balls are white}\}$ and for $i = 1,2,\dots,5$, let $A_i =$ “both balls selected from bowl $i$ are white.” Then $\bigcup A_i = A$. Also let $B_i =$ “bowl $i$ is selected.” Then $P(B_i) = 0.2$ for all $i$.  
+a. $P(A) = \sum_{i=1}^5 P(A|B_i)P(B_i) = \frac{1}{5}[0 + \frac{2}{5}\frac{1}{4} + \frac{3}{5}\frac{2}{4} + \frac{4}{5} \frac{3}{4} + 1] = 2/5$  
+b. By Bayes’ rule, $P(B_3|A) = (3/50)/(2/50) = 3/20$.
+
+## 3.1
+
+$P(Y=0) = P(\text{no impurities}) = 0.2$, $P(Y=1) = P(\text{exactly one impurity}) = 0.7$, $P(Y=2) = 0.1$.
+
+## 3.3
+
+$p(2) = P(DD) = 1/6$, $p(3) = P(DGD) + P(GDD) = 2(2/4)(2/3)(1/2) = 2/6$, $p(4) = P(GGDD) + P(DGGD) + P(GDGD) = 3(2/4)(1/3)(1) = 1/2$.
+
+## 3.5
+
+There are $3! = 6$ possible ways to assign the words to the pictures. Of these, one is a perfect match, three have one match, and two have zero matches. Thus, $p(0) = 2/6$, $p(1) = 3/6$, $p(3) = 1/6$.
+
+# Submitted Problems
+
+## 2.124
+
+Define the events: $D$: democrat, $R$: republican, $F$: favors issue. Then $P(D|F) = \frac{P(F|D)P(D)}{P(F|D)P(D) + P(F|R)P(R)} = \frac{(0.7)(0.6)}{(0.7)(0.6) + (0.3)(0.4)} = 7/9$.
+
+## 2.130
+
+Define the events: $C$: contract lung cancer, $S$: worked in a shipyard. Given $P(S|C) = 0.22$, $P(S|C') = 0.14$, and $P(C) = 0.0004$. By Bayes’ rule, $P(C|S) = \frac{P(S|C)P(C)}{P(S|C)P(C) + P(S|C')P(C')} = \frac{(0.22)(0.0004)}{(0.22)(0.0004) + (0.14)(0.9996)} \approx 0.0006$.
+
+## 2.132
+
+For $i=1,2,3$, let $F_i =$ plane is found in region $i$, $N_i =$ not found in region $i$, $R_i =$ plane is in region $i$. Then $P(F_i|R_i) = 1-\alpha_i$ and $P(R_i)=1/3$.  
+a. $P(R_1|N_1) = \frac{P(N_1|R_1)P(R_1)}{P(N_1|R_1)P(R_1) + P(N_1|R_2)P(R_2) + P(N_1|R_3)P(R_3)} = \frac{\alpha_1(1/3)}{\alpha_1(1/3) + (1/3) + (1/3)} = \frac{\alpha_1}{\alpha_1+2}$.  
+b. $P(R_2|N_1) = \frac{1/3}{\alpha_1/3 + 1/3 + 1/3} = \frac{1}{\alpha_1+2}$.  
+c. $P(R_3|N_1) = \frac{1}{\alpha_1+2}$.
+
+## 2.143
+
+Since $P(B) = P(B \cap A) + P(B \cap A')$, dividing each part by $P(B)$ gives $1 = \frac{P(B \cap A)}{P(B)} + \frac{P(B \cap A')}{P(B)} = P(A|B) + P(A'|B)$
+
+## 2.156
+
+a. i. $1 - 5686/97900 = 0.942$.
+   ii. $(97900-43354)/97900 = 0.557$.
+   iii. $10560/14113 = 0.748$. 
+   iv. $(646+375+568)/11533 = 0.138$.  
+b. If the US population in 2002 was known, this could be used to divide into the total number of deaths in 2002 to give a probability.
+
+## 2.172
+
+Only $P(A|B) + P(A'|B) = 1$ is true for any events $A$ and $B$.
+
+## 3.2
+
+We know $P(HH)=P(TT)=P(HT)=P(TH)=0.25$. So $P(Y=-1)=0.5$, $P(Y=1)=0.25$, $P(Y=2)=0.25$.
+
+## 3.6
+
+There are $10$ sample points, all equally likely: $(1,2),(1,3),(1,4),(1,5),(2,3),(2,4),(2,5),(3,4),(3,5),(4,5)$.  
+a. $p(2)=0.1$, $p(3)=0.2$, $p(4)=0.3$, $p(5)=0.4$.  
+b. $p(3)=0.1$, $p(4)=0.1$, $p(5)=0.2$, $p(6)=0.2$, $p(7)=0.2$, $p(8)=0.1$, $p(9)=0.1$.
+
+## 3.10
+
+Let $R =$ rental on a given day, $N =$ no rental. Thus the sequence of interest is $RR, RNR, RNNR, RNNNR, \dots$. Consider the position immediately following the first R: it is filled by an R with prob $0.2$, $N$ with prob $0.8$. Thus, $P(Y=0)=0.2$, $P(Y=1)=0.8(0.2)=0.16$, $P(Y=2)=0.128$, etc. In general, $P(Y=y) = 0.2(0.8)^y, \ y=0,1,2,\dots$.

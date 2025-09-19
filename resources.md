@@ -13,11 +13,14 @@ nav_order: 6
 
 + [Quiz 01](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_01_SOLUTIONS.pdf)
 + [Quiz 02](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_02_SOLUTIONS.pdf)
++ [Quiz 03](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_03_SOLUTIONS.pdf)
 
 ## Homework solutions
 
 + [HW 01](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_01_SOLUTIONS.pdf)
 + [HW 02](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_02_SOLUTIONS.pdf)
++ [HW 03](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_03_SOLUTIONS.pdf)
++ [HW 04](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_04_SOLUTIONS.pdf)
 
 ## Group Work solutions
 
