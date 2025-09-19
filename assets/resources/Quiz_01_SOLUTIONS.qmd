@@ -3,7 +3,7 @@ title-block: false
 format: pdf
 ---
 
-**STAT 7500 — Quiz 1**  
+**STAT 5700 — Quiz 1**  
 **Date:** September 4, 2025  
 \textbf{\textcolor{red}{SOLUTIONS}}
 

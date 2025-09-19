@@ -1,0 +1,35 @@
+---
+title-block: false
+format: pdf
+---
+
+**STAT 5700 — Quiz 3**  
+**Date:** September 18, 2025  
+
+**Name:** \underline{\hspace{5cm}}
+\
+\
+
+1. Suppose a small university has 2 dining halls that serve meals every day. Dining Hall A serves 60% of all student meals, and 5% of its meals are rated unsatisfactory. Dining Hall B serves 40% of the meals, and 2% of its meals are rated unsatisfactory. A meal is selected at random from the total meals served. If the meal is found to be rated unsatisfactory, what is the probability that it came from Dining Hall A?  
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+
+2. A factory tests its machines for two common malfunctions. It finds that 15% of the machines have neither malfunction, 45% have Malfunction A, and 50% have Malfunction B (some have both malfunctions). If a machine is randomly chosen from the factory, find the probability distribution for Y, the number of malfunctions found in the machine.
+
+
+| $Y$ | $P(Y = y)$ |
+|-----|-------------|
+| 0   |             |
+| 1   |             |
+| 2   |             |
+

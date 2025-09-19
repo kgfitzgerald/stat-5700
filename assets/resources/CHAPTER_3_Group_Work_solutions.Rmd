@@ -1,7 +1,10 @@
 ---
-title: "Chapter 2 Group Work"
+title: "Chapter 3 Group Work"
 subtitle: "SOLUTIONS"
-output: pdf_document
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 1
 ---
 
 ```{r setup, include=FALSE}
@@ -9,10 +12,119 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(tidyverse)
 ```
 
+\pagebreak
+
+# Simulation Activity Solutions
+
+## Part 1 - psuedocode
+
+Answers may vary.
+
+### Part A
+
+```{r, eval = FALSE}
+toss1 <- rbernoulli(1, 0.7)
+toss2 <- rbernoulli(1, 0.7)
+toss3 <- rbernoulli(1, 0.7)
+```
+
+### Part B
+
+```{r, eval = FALSE}
+X <- toss1 + toss2 + toss3 # number of heads
+Y <- toss2 # logical for whether toss2 is heads
+tails <- number of tosses - number of heads
+Z <- number of heads - number of tails
+
+#alternative way of calculating Z
+Z <- X - (3 - X)
+```
+
+
+### Part C
+
+```{r, eval = FALSE}
+#just change 1st argument (# of sims)
+toss1 <- rbernoulli(10000, 0.7)
+toss2 <- rbernoulli(10000, 0.7)
+toss3 <- rbernoulli(10000, 0.7)
+
+#X, Y, Z are then calculated in same way as above
+X <- toss1 + toss2 + toss3 # number of heads
+Y <- toss2 # logical for whether toss2 is heads
+Z <- X - (3 - X)
+```
+
+### Part D
+
+For X, count the number of times the result is 0, and divide by 10,000. This proportion will be a good estimate of P(X = 0) = p(0). The same is done for X = 1,2,3. This will define the probability distribution. Plotting the 10,000 values of X would give you a visual of the distribution. 
+
+For Y, follow the same logic to count the number of times Y = 0 and Y = 1 and divide each by 10,000. These two proportions specify the pmf.
+
+For Z, follow the same logic to count the number of times Z = -3, -1, 1, 3 and divide by 10,000. These 4 proportions specify the pmf.
+
+## Part 2 - pmfs
+
+### Distribution of X
+
+Support of X is $$\mathbb{S} = \{0,1,2,3\}$$
+
+-   1 way to have 0 heads: $ttt$, with probability $(0.25)^3$
+-   3 ways to have 1 head: $htt, tht, tth$, each with probability $(0.7)(0.3)^2$
+-   3 ways to have 2 heads: $hht, hth, thh$, each with probability $(0.7)^2(0.3)$
+-   1 way to have 3 heads: $hhh$, with probability $(0.75)^3$
+
+So the pmf of X is given by:
+
+$$
+f(x) = 
+\begin{cases}
+`r .3^3`, & x = 0 \\
+`r 3*(0.7)*(0.3)^2`, & x = 1 \\
+`r 3*(0.7)^2*(0.3)`, & x = 1 \\
+`r .7^3`, & x = 3 \\
+\end{cases}
+$$
+
+### Distribution of Y
+
+Support of Y is $$\mathbb{S} = \{0,1\}$$
+
+Y is simply the result of the second coin toss, so the pmf of $Y$ is defined simply as:
+
+$$
+f(y) = 
+\begin{cases}
+0.3, & y = 0 \\
+0.7, & y = 1 \\
+\end{cases}
+$$ 
+
+### Distribution of Z
+
+Note that since Z is the number of heads minus the number of tails, it can be written as $Z = X - (3 - X) = 2X - 3$
+
+Therefore, the support and pmf of Z can be derived easily from the support and pmf of X.
+
+Since X can be 0,1,2,3, the support of Z is $$\mathbb{S} = \{-3,-1,1,3\}$$
+
+$Z$ will take on each of these values with the same probabilities as the pmf of X.
+
+| X   | Z = 2X - 3 | f(x) = f(z) |
+|-----|------------|-------------|
+| 0   | -3         | `r .3^3`         |
+| 1   | -1         |     `r 3*(0.7)*(0.3)^2`        |
+| 2   | 1          |  `r 3*(0.7)^2*(0.3)`           |
+| 3   | 3          |    `r .7^3`         |
+
+\pagebreak
+
+
+# Back of Packet Group Work Solutions
 
 ## Problem 1
 
-[*From Hogg et. al. #2.1-3*] For each of the following, determine the constant $c$ so that $f(x)$ satisfies the conditions of being a pmf for a random variable $X$. That is, find $c$ such that $\sum_{x \in S} f(x) = 1$.
+For each of the following, determine the constant $c$ so that $f(x)$ satisfies the conditions of being a pmf for a random variable $X$. That is, find $c$ such that $\sum_{x \in S} f(x) = 1$.
 
   a. $f(x) = x/c, \ \ \ \ \ x = 1,2,3,4$<br/>
   b. $f(x) = cx, \ \ \ \ \ x = 1,2,3,\dots,10$<br/>
@@ -249,56 +361,56 @@ E(5X + 2X^2) &= E(5X) + E(2X^2) \\
 &= 147
 \end{aligned}$$
 
+<!-- ## Problem 7 -->
+
+<!-- Let $X$ be a random variable with pmf $f(x) = \frac{x}{6}, \ \ \ x = 1, 2, 3$ -->
+
+<!-- a) Find an expression for the moment generating function of $X$. That is, write $E(e^{tX})$ as a sum. -->
+<!-- b) Use the mgf to show that $E(X) = 7/3$ -->
+<!-- c) Use the mgf to show that $E(X^2) = 6$ -->
+<!-- d) Find $V(X)$ -->
+
+<!-- ### Solution part a -->
+
+<!-- $$\begin{aligned} -->
+<!-- E(e^{tX}) &= \sum e^{tx}f(x) \\ -->
+<!-- &= \sum e^{tx}\left(\frac{x}{6}\right) -->
+<!-- \end{aligned}$$ -->
+
+<!-- ### Solution part b -->
+
+<!-- Recall that $E(X)$ is the "first moment." So we need to find the first derivative of the mgf and evaluate it at $t = 0$ -->
+
+<!-- $$\begin{aligned} -->
+<!-- M_X(t) &=\sum_{x = 1}^3 e^{tx}\left(\frac{x}{6}\right) \\ -->
+<!-- M_X'(t) &= \sum_{x = 1}^3 e^{tx}(x)\left(\frac{x}{6}\right) \\ -->
+<!-- E(X) =M_X'(0) &= \sum_{x = 1}^3 e^{0x}(x)\left(\frac{x}{6}\right) \\ -->
+<!-- &= \sum_{x = 1}^3 \frac{x^2}{6} \\ -->
+<!-- &= \frac{1}{6}\sum_{x = 1}^3 x^2 \\ -->
+<!-- &= \frac{1}{6}[1^2 + 2^2 + 3^2] \\ -->
+<!-- &= \frac{14}{6} \\ -->
+<!-- &= \frac{7}{3} -->
+<!-- \end{aligned}$$ -->
+
+<!-- ### Solution part c -->
+
+<!-- Recall that $E(X^2)$ is the "second moment" so we need to take the second derivative of $M_X(t)$ and evaluate it at 0. -->
+<!-- $$\begin{aligned} -->
+<!-- M_X'(t) &= \sum_{x = 1}^3 e^{tx}\left(\frac{x^2}{6}\right) \\ -->
+<!-- M_X''(t) &= \sum_{x = 1}^3 e^{tx}(x)\left(\frac{x^2}{6}\right) \\ -->
+<!-- M_X''(0) &= \sum_{x = 1}^3 e^{0x}(x)\left(\frac{x^2}{6}\right) \\ -->
+<!-- E(X^2) = M_X''(0) &= \sum_{x = 1}^3 \frac{x^3}{6} \\ -->
+<!-- &= \frac{1^3}{6} + \frac{2^3}{6} + \frac{3^3}{6} \\ -->
+<!-- &= 6 -->
+<!-- \end{aligned}$$ -->
+
+<!-- ### Solution part d -->
+
+<!-- $$V(X) = E(X^2) - [E(X)]^2 = 6 - \left(\frac{7}{3}\right)^2 = \frac{5}{9}$$ -->
+
 ## Problem 7
 
-Let $X$ be a random variable with pmf $f(x) = \frac{x}{6}, \ \ \ x = 1, 2, 3$
-
-a) Find an expression for the moment generating function of $X$. That is, write $E(e^{tX})$ as a sum.
-b) Use the mgf to show that $E(X) = 7/3$
-c) Use the mgf to show that $E(X^2) = 6$
-d) Find $V(X)$
-
-### Solution part a
-
-$$\begin{aligned}
-E(e^{tX}) &= \sum e^{tx}f(x) \\
-&= \sum e^{tx}\left(\frac{x}{6}\right)
-\end{aligned}$$
-
-### Solution part b
-
-Recall that $E(X)$ is the "first moment." So we need to find the first derivative of the mgf and evaluate it at $t = 0$
-
-$$\begin{aligned}
-M_X(t) &=\sum_{x = 1}^3 e^{tx}\left(\frac{x}{6}\right) \\
-M_X'(t) &= \sum_{x = 1}^3 e^{tx}(x)\left(\frac{x}{6}\right) \\
-E(X) =M_X'(0) &= \sum_{x = 1}^3 e^{0x}(x)\left(\frac{x}{6}\right) \\
-&= \sum_{x = 1}^3 \frac{x^2}{6} \\
-&= \frac{1}{6}\sum_{x = 1}^3 x^2 \\
-&= \frac{1}{6}[1^2 + 2^2 + 3^2] \\
-&= \frac{14}{6} \\
-&= \frac{7}{3}
-\end{aligned}$$
-
-### Solution part c
-
-Recall that $E(X^2)$ is the "second moment" so we need to take the second derivative of $M_X(t)$ and evaluate it at 0.
-$$\begin{aligned}
-M_X'(t) &= \sum_{x = 1}^3 e^{tx}\left(\frac{x^2}{6}\right) \\
-M_X''(t) &= \sum_{x = 1}^3 e^{tx}(x)\left(\frac{x^2}{6}\right) \\
-M_X''(0) &= \sum_{x = 1}^3 e^{0x}(x)\left(\frac{x^2}{6}\right) \\
-E(X^2) = M_X''(0) &= \sum_{x = 1}^3 \frac{x^3}{6} \\
-&= \frac{1^3}{6} + \frac{2^3}{6} + \frac{3^3}{6} \\
-&= 6
-\end{aligned}$$
-
-### Solution part d
-
-$$V(X) = E(X^2) - [E(X)]^2 = 6 - \left(\frac{7}{3}\right)^2 = \frac{5}{9}$$
-
-## Problem 8
-
-[From 2.4-5 Hogg et. al.] In a lab experiment involving inorganic syntheses of molecular precursors to organometallic ceramics, the final step of a five-step reaction involves the formation of a metal-metal bond. The probability of such a bond forming is $p = 0.2$. Let $X$ equal the number of successful reactions out of $n=25$ such experiments.
+In a lab experiment involving inorganic syntheses of molecular precursors to organometallic ceramics, the final step of a five-step reaction involves the formation of a metal-metal bond. The probability of such a bond forming is $p = 0.2$. Let $X$ equal the number of successful reactions out of $n=25$ such experiments.
 
 a) What distribution is appropriate to model $X$?
 b) Write out the pmf of $X$
@@ -312,7 +424,7 @@ $$X \sim binomial(25, 0.2)$$
 
 ### Solution part b
 
-$$f(x) = {25 \choose x}(0.2)^x(0.8)^{n-x}$$
+$$p(x) = {25 \choose x}(0.2)^x(0.8)^{n-x}$$
 
 ### Solution part c
 
@@ -340,7 +452,7 @@ $$\sigma^2 = V(X) = 25(0.2)(0.8)=4$$
 
 $$\sigma = \sqrt{V(X)} = \sqrt{4} = 2$$
 
-##  Problem 9
+##  Problem 8
 
 A random variable X has a binomial distribution with mean 6 and variance 3.6. Find $P(X = 4)$.
 
@@ -354,22 +466,22 @@ $$P(X = 4) = f(4) = {15 \choose 4} (0.4)^4(0.6)^{11} = 0.1268$$
 
 ## Problem 10
 
-Return to the Brandon Ingram example (he makes 67% of his free throws, he's fouled shooting a 3-pointer). Describe in detail how you could, in principle, perform a by hand simulation involving physical objects (e.g. coins, dice, spinners, etc.) to estimate the probability that the Lakers lose. Be sure to describe (1) what one repetition of the simulation entails, and (2) how you would use the results of many repetitions. Note: you do NOT need to compute any numerical values.
+Return to the Joel Embiid example (he makes 87% of his free throws, he's fouled shooting a 3-pointer). Describe in detail how you could, in principle, perform a by hand simulation involving physical objects (e.g. coins, dice, spinners, etc.) to estimate the probability that the Lakers lose. Be sure to describe (1) what one repetition of the simulation entails, and (2) how you would use the results of many repetitions. Note: you do NOT need to compute any numerical values.
 
 ### Solution
 
 [Answers may vary]. One possible solution:
 
-(1) To simulate one repetition of the experiment, we could use a spinner where 2/3 (67%) of the area is shaded as "success" and 1/3 (33%) of the area is shaded as "failure". We spin the spinner 3 times and record the number of successes. This gives us one value of the random variable $X$
+(1) To simulate one repetition of the experiment, we could use a spinner where 87% of the area is shaded as "success" and 13% of the area is shaded as "failure". We spin the spinner 3 times and record the number of successes. This gives us one value of the random variable $X$
 
-(2) We could repeat the process in part (1) 100,000 times. This would give us 100,000 values of the random variable $X$. Note that the Lakers lose if $X = 0$ or $X = 1$, they tie if $X =2$, and they win if $X = 3$. So to find the probability that they lose, we count up the number of times $X$ equals 0 or 1 and divide by 100,000.
+(2) We could repeat the process in part (1) 100,000 times. This would give us 100,000 values of the random variable $X$. Note that the Sixers lose if $X = 0$ or $X = 1$, they tie if $X =2$, and they win if $X = 3$. So to find the probability that they lose, we count up the number of times $X$ equals 0 or 1 and divide by 100,000.
 
 ### Additional fun
 
 The `rbinom()` function in R simulates values from the binomial distribution, so we could run the above simulations (and save them into a data frame called `data`) with the following code:
 
 ```{r}
-data <- data.frame(x = rbinom(100000, 3, 0.67))
+data <- data.frame(x = rbinom(100000, 3, 0.87))
 ```
 
 A bar plot of the 100,000 simulated $x$ values shows us an approximate distribution of $X$
@@ -390,7 +502,7 @@ data %>%
 We can compare this to the theoretical probability from the pmf:
 
 ```{r}
-pbinom(1, 3, .67)
+pbinom(1, 3, .87)
 ```
 
 Here is the true pmf (navy outline) plotted on top of the simulated distribution (grey fill), and we can see they are nearly identical.
@@ -400,7 +512,7 @@ Here is the true pmf (navy outline) plotted on top of the simulated distribution
 data_summary <- data %>%
   count(x, name = "count") %>%
   mutate(rel_freq = count/100000,
-         pmf = dbinom(x, 3, .67))
+         pmf = dbinom(x, 3, .87))
 
 ggplot(data_summary) +
   geom_col(aes(x = factor(x), y = rel_freq),
@@ -411,107 +523,6 @@ ggplot(data_summary) +
   theme_classic()
 ```
 
-# 2.1 Simulation Activity Solutions
 
-## Part 1 - psuedocode
-
-Answers may vary.
-
-### Part A
-
-```{r, eval = FALSE}
-toss1 <- rbernoulli(1, 0.7)
-toss2 <- rbernoulli(1, 0.7)
-toss3 <- rbernoulli(1, 0.7)
-```
-
-### Part B
-
-```{r, eval = FALSE}
-X <- toss1 + toss2 + toss3 # number of heads
-Y <- toss2 # logical for whether toss2 is heads
-tails <- number of tosses - number of heads
-Z <- number of heads - number of tails
-
-#alternative way of calculating Z
-Z <- X - (3 - X)
-```
-
-
-### Part C
-
-```{r, eval = FALSE}
-#just change 1st argument (# of sims)
-toss1 <- rbernoulli(10000, 0.7)
-toss2 <- rbernoulli(10000, 0.7)
-toss3 <- rbernoulli(10000, 0.7)
-
-#X, Y, Z are then calculated in same way as above
-X <- toss1 + toss2 + toss3 # number of heads
-Y <- toss2 # logical for whether toss2 is heads
-Z <- X - (3 - X)
-```
-
-### Part D
-
-For X, count the number of times the result is 0, and divide by 10,000. This proportion will be a good estimate of P(X = 0) = f(0). The same is done for X = 1,2,3. This will define the pmf. Plotting the 10,000 values of X would give you a visual of the distribution. 
-
-For Y, follow the same logic to count the number of times Y = 0 and Y = 1 and divide each by 10,000. These two proportions specify the pmf.
-
-For Z, follow the same logic to count the number of times Z = -3, -1, 1, 3 and divide by 10,000. These 4 proportions specify the pmf.
-
-## Part 2 - pmfs
-
-### Distribution of X
-
-Support of X is $$\mathbb{S} = \{0,1,2,3\}$$
-
--   1 way to have 0 heads: $ttt$, with probability $(0.25)^3$
--   3 ways to have 1 head: $htt, tht, tth$, each with probability $(0.7)(0.3)^2$
--   3 ways to have 2 heads: $hht, hth, thh$, each with probability $(0.7)^2(0.3)$
--   1 way to have 3 heads: $hhh$, with probability $(0.75)^3$
-
-So the pmf of X is given by:
-
-$$
-f(x) = 
-\begin{cases}
-`r .3^3`, & x = 0 \\
-`r 3*(0.7)*(0.3)^2`, & x = 1 \\
-`r 3*(0.7)^2*(0.3)`, & x = 1 \\
-`r .7^3`, & x = 3 \\
-\end{cases}
-$$
-
-### Distribution of Y
-
-Support of Y is $$\mathbb{S} = \{0,1\}$$
-
-Y is simply the result of the second coin toss, so the pmf of $Y$ is defined simply as:
-
-$$
-f(y) = 
-\begin{cases}
-0.3, & y = 0 \\
-0.7, & y = 1 \\
-\end{cases}
-$$ 
-
-### Distribution of Z
-
-Note that since Z is the number of heads minus the number of tails, it can be written as $Z = X - (3 - X) = 2X - 3$
-
-Therefore, the support and pmf of Z can be derived easily from the support and pmf of X.
-
-Since X can be 0,1,2,3, the support of Z is $$\mathbb{S} = \{-3,-1,1,3\}$$
-
-$Z$ will take on each of these values with the same probabilities as the pmf of X.
-
-| X   | Z = 2X - 3 | f(x) = f(z) |
-|-----|------------|-------------|
-| 0   | -3         | `r .3^3`         |
-| 1   | -1         |     `r 3*(0.7)*(0.3)^2`        |
-| 2   | 1          |  `r 3*(0.7)^2*(0.3)`           |
-| 3   | 3          |    `r .7^3`         |
 
 

@@ -11,7 +11,7 @@
 
 
 
-<title>Assignments</title>
+<title>HW 02 SOLUTIONS</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -348,77 +348,201 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Assignments</h1>
+<h1 class="title toc-ignore">HW 02 SOLUTIONS</h1>
 
 </div>
 
 
-<div id="assignments" class="section level1">
-<h1>Assignments</h1>
-<p>{:.no_toc}</p>
-<div id="table-of-contents" class="section level2">
-<h2>Table of contents</h2>
-<p>{: .no_toc .text-delta }</p>
-<ol style="list-style-type: decimal">
-<li>TOC {:toc}</li>
+<div id="practice-problems" class="section level1">
+<h1>Practice Problems</h1>
+<div id="section" class="section level2">
+<h2>2.37</h2>
+<ol style="list-style-type: lower-alpha">
+<li>There are <span class="math display">\[6! = 720\]</span> possible
+itineraries.<br />
+</li>
+<li>In the 720 orderings, exactly 360 have Denver before San Francisco
+and 360 have San Francisco before Denver. So, the probability is <span class="math display">\[0.5\]</span>.</li>
 </ol>
-<hr />
-<p>Most weeks, you will have 4 things to submit by Thursdays at 11:59pm.
-See below for details and links to the assignments.</p>
 </div>
-<div id="homework" class="section level2">
-<h2>Homework</h2>
-<p>The links below provide the assigned problems for each homework. Your
-work must be hand-written, and you should submit a single pdf to the
-corresponding assignment on Blackboard.</p>
-<p><a href="https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_01.pdf">HW
-01</a></p>
-<p><a href="https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_02.pdf">HW
-02</a></p>
-<p><a href="https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_03.pdf">HW
-03</a></p>
-<p><a href="https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_04.pdf">HW
-04</a> - Note: When working with the Binomial distribution, you can use
-the fact that if <span class="math inline">\(Y \sim
-\text{Binom}(n,p)\)</span> then <span class="math inline">\(E(Y) =
-np\)</span> and <span class="math inline">\(V(Y) = np(1-p)\)</span>. We
-will prove this later on.</p>
+<div id="section-1" class="section level2">
+<h2>2.41</h2>
+<p>If the first digit cannot be zero, there are 9 possible values. For
+the remaining six digits, there are 10 possible values each. Thus, the
+total number is<br />
+<span class="math display">\[9 \cdot 10^6.\]</span></p>
 </div>
-<div id="labs" class="section level2">
-<h2>Labs</h2>
-<p>The links below take you to a template Quarto (.qmd) file for each
-lab. You should download the .qmd and place it in the STAT_5700 folder
-you created on your computer. Complete the lab by typing your code &amp;
-answers in the .qmd. You will turn in a rendered pdf file to
-Blackboard.</p>
-<p>{% include download.html path=“assets/labs/Lab_01.qmd” %}</p>
-<p>{% include download.html path=“assets/labs/Lab_02.qmd” %}</p>
-<p>{% include download.html path=“assets/labs/Lab_03.qmd” %}</p>
-<p>{% include download.html path=“assets/labs/Lab_04.qmd” %} - Note:
-When working with the Binomial distribution, you can use the fact that
-if <span class="math inline">\(Y \sim \text{Binom}(n,p)\)</span> then
-<span class="math inline">\(E(Y) = np\)</span> and <span class="math inline">\(V(Y) = np(1-p)\)</span>. We will prove this later
-on.</p>
+<div id="section-2" class="section level2">
+<h2>2.43</h2>
+<p>The number of ways to choose 3 objects from 9, 6, 5, and 1 is<br />
+<span class="math display">\[\binom{9}{3} \binom{6}{5} \binom{1}{1} =
+504 \text{ ways}.\]</span></p>
 </div>
-<div id="reading-annotations" class="section level2">
-<h2>Reading annotations</h2>
-<p>Most weeks you will be assigned an article, book chapter, and/or
-video about applications of probability &amp; statistics and/or ethical
-issues in the field. Rather than a traditional discussion board, we will
-use Perusall, a community annotation tool, where you can engage with the
-text by highlighting, commenting, asking questions, and responding to
-your peers’ comments/questions, all on a shared document. You can access
-these assignments <a href="https://elearning.villanova.edu/webapps/blackboard/content/listContent.jsp?course_id=_182880_1&amp;content_id=_5566839_1">here</a>,
-or by navigating on the Blackboard home page to Perusall - Reading
-Annotations.</p>
+<div id="section-3" class="section level2">
+<h2>2.51</h2>
+<p>There are <span class="math display">\[\binom{50}{3} =
+19,600\]</span> ways to choose 3 winners. Each of these is equally
+likely.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>There are <span class="math display">\[\binom{4}{3} = 4\]</span>
+ways for the organizers to win all of the prizes. The probability
+is<br />
+<span class="math display">\[\frac{4}{19600}.\]</span></p></li>
+<li><p>There are<br />
+<span class="math display">\[\binom{4}{2}\binom{46}{1} =
+276\]</span><br />
+ways the organizers can win two prizes and one of the other 46 people to
+win the third prize. So, the probability is<br />
+<span class="math display">\[\frac{276}{19600}.\]</span></p></li>
+<li><p>There are<br />
+<span class="math display">\[\binom{4}{1}\binom{46}{2} =
+4140\]</span><br />
+ways. The probability is<br />
+<span class="math display">\[\frac{4140}{19600}.\]</span></p></li>
+<li><p>There are<br />
+<span class="math display">\[\binom{46}{3} = 15,180\]</span><br />
+ways. The probability is<br />
+<span class="math display">\[\frac{15180}{19600}.\]</span></p></li>
+</ol>
 </div>
-<div id="weekly-check-ins" class="section level2">
-<h2>Weekly check-ins</h2>
-<p>Finally, each week you should fill out the brief weekly check-in
-surveys, which are emailed out at the end of class each Thursday and due
-at 11:59pm. It consists of a few short questions for you to reflect and
-provide feedback about the course each week; it should not take more
-than 5 minutes to complete.</p>
+<div id="section-4" class="section level2">
+<h2>2.57</h2>
+<p>There are <span class="math display">\[\binom{52}{2} = 1326\]</span>
+ways to draw two cards from the deck. The probability is<br />
+<span class="math display">\[\frac{4 \cdot 12}{1326} =
+0.0362.\]</span></p>
+</div>
+<div id="section-5" class="section level2">
+<h2>2.59</h2>
+<p>There are <span class="math display">\[\binom{52}{5} =
+2,598,960\]</span> ways to draw five cards from the deck.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math display">\[\binom{4}{1}^5 = 1024\]</span> ways.
+So, the probability is<br />
+<span class="math display">\[\frac{1024}{2,598,960} =
+0.000394.\]</span></p></li>
+<li><p>There are 9 different types of “straight” hands. So, the
+probability is<br />
+<span class="math display">\[\frac{9 \cdot 45}{2,598,960} =
+0.00355.\]</span><br />
+Note that this includes “straight flush” and “royal straight flush”
+hands.</p></li>
+</ol>
+</div>
+<div id="section-6" class="section level2">
+<h2>2.61</h2>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math display">\[n = 364 \implies \frac{364}{365}
+\cdot \frac{363}{365} \cdots\]</span></p></li>
+<li><p>With <span class="math display">\[n = 253\]</span>,<br />
+<span class="math display">\[\binom{364}{253}
+\left(\frac{1}{365}\right)^{253} \approx 0.5005.\]</span></p></li>
+</ol>
+</div>
+<div id="section-7" class="section level2">
+<h2>2.71</h2>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math display">\[P(A|B) = \frac{0.1}{0.3} =
+\frac{1}{3}.\]</span><br />
+</li>
+<li><span class="math display">\[P(B|A) = \frac{0.1}{0.5} =
+\frac{1}{5}.\]</span><br />
+</li>
+<li><span class="math display">\[P(A|A \cup B) = \frac{0.5}{0.5 + 0.3 -
+0.1} = \frac{5}{7}.\]</span><br />
+</li>
+<li><span class="math display">\[P(A|A \cap B) = 1,\]</span> since A has
+occurred.<br />
+</li>
+<li><span class="math display">\[P(A \cap B|B) = \frac{0.1}{0.5 + 0.3 -
+0.1} = \frac{1}{7}.\]</span></li>
+</ol>
+</div>
+<div id="section-8" class="section level2">
+<h2>2.75</h2>
+<ol style="list-style-type: lower-alpha">
+<li><p>Given the first two cards drawn are spades, there are 11 spades
+left in the deck. The probability is<br />
+<span class="math display">\[\frac{\binom{11}{3}}{\binom{50}{3}} =
+0.0084.\]</span></p></li>
+<li><p>Given the first three cards drawn are spades, there are 10 spades
+left. The probability is<br />
+<span class="math display">\[\frac{\binom{10}{2}}{\binom{49}{2}} =
+0.0383.\]</span></p></li>
+<li><p>Given the first four cards drawn are spades, there are 9 spades
+left. The probability is<br />
+<span class="math display">\[\frac{\binom{9}{1}}{\binom{48}{1}} =
+0.1875.\]</span></p></li>
+</ol>
+</div>
+<div id="section-9" class="section level2">
+<h2>2.79</h2>
+<p>If A and B are mutually exclusive, <span class="math display">\[P(A
+\cap B) = 0\]</span>. But, <span class="math display">\[P(A) P(B) &gt;
+0\]</span>. So they are not independent.</p>
+</div>
+<div id="section-10" class="section level2">
+<h2>2.85</h2>
+<p>A and B are independent if<br />
+<span class="math display">\[P(A \cap B) = P(A) P(B).\]</span><br />
+From the given probabilities, this condition holds. So, A and B are
+independent.</p>
+</div>
+<div id="section-11" class="section level2">
+<h2>2.91</h2>
+<p>If A and B are mutually exclusive,<br />
+<span class="math display">\[P(A \cup B) = P(A) + P(B).\]</span><br />
+This value is greater than 1 if <span class="math display">\[P(A) =
+0.4\]</span> and <span class="math display">\[P(B) = 0.7\]</span>. So
+they cannot be mutually exclusive. It is possible if <span class="math display">\[P(A) = 0.4\]</span> and <span class="math display">\[P(B) = 0.3\]</span>.</p>
+</div>
+</div>
+<div id="submitted-problems" class="section level1">
+<h1>Submitted Problems</h1>
+<div id="section-12" class="section level2">
+<h2>2.38</h2>
+</div>
+<div id="section-13" class="section level2">
+<h2>2.42</h2>
+</div>
+<div id="section-14" class="section level2">
+<h2>2.46</h2>
+</div>
+<div id="section-15" class="section level2">
+<h2>2.48</h2>
+</div>
+<div id="section-16" class="section level2">
+<h2>2.50</h2>
+</div>
+<div id="section-17" class="section level2">
+<h2>2.58</h2>
+</div>
+<div id="section-18" class="section level2">
+<h2>2.64</h2>
+</div>
+<div id="a-c" class="section level2">
+<h2>2.68a-c</h2>
+</div>
+<div id="section-19" class="section level2">
+<h2>2.72</h2>
+</div>
+<div id="section-20" class="section level2">
+<h2>2.74</h2>
+</div>
+<div id="section-21" class="section level2">
+<h2>2.80</h2>
+</div>
+<div id="section-22" class="section level2">
+<h2>2.86</h2>
+</div>
+<div id="section-23" class="section level2">
+<h2>2.90</h2>
+</div>
+<div id="section-24" class="section level2">
+<h2>2.94</h2>
+</div>
+<div id="section-25" class="section level2">
+<h2>2.110</h2>
 </div>
 </div>
 

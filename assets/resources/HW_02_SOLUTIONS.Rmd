@@ -1,0 +1,208 @@
+---
+title: "HW 02 SOLUTIONS"
+format: pdf
+---
+
+# Practice Problems
+
+## 2.37
+
+a. There are $6! = 720$ possible itineraries.  
+b. In the 720 orderings, exactly 360 have Denver before San Francisco and 360 have San Francisco before Denver. So, the probability is $0.5$.
+
+## 2.41
+
+If the first digit cannot be zero, there are 9 possible values. For the remaining six digits, there are 10 possible values each. Thus, the total number is $9 \cdot 10^6.$
+
+## 2.43
+
+The number of ways to choose 3 objects from 9, 6, 5, and 1 is  
+$\binom{9}{3} \binom{6}{5} \binom{1}{1} = 504 \text{ ways}.$
+
+## 2.51
+
+There are $\binom{50}{3} = 19,600$ ways to choose 3 winners. Each of these is equally likely.  
+
+a. There are $\binom{4}{3} = 4$ ways for the organizers to win all of the prizes. The probability is $\frac{4}{19600}.$  
+
+b. There are $\binom{4}{2}\binom{46}{1} = 276$  
+ways the organizers can win two prizes and one of the other 46 people to win the third prize. So, the probability is $\frac{276}{19600}.$  
+
+c. There are $\binom{4}{1}\binom{46}{2} = 4140$ ways. The probability is $\frac{4140}{19600}.$  
+
+d. There are $\binom{46}{3} = 15,180$ ways. The probability is $\frac{15180}{19600}.$
+
+## 2.57
+
+There are $\binom{52}{2} = 1326$ ways to draw two cards from the deck. The probability is  
+$\frac{4 \cdot 12}{1326} = 0.0362.$
+
+## 2.59
+
+There are $\binom{52}{5} = 2,598,960$ ways to draw five cards from the deck.  
+
+a. $\binom{4}{1}^5 = 1024$ ways. So, the probability is $\frac{1024}{2,598,960} = 0.000394.$  
+
+b. There are 9 different types of “straight” hands. So, the probability is $\frac{9 \cdot 45}{2,598,960} = 0.00355.$ Note that this includes “straight flush” and “royal straight flush” hands.
+
+## 2.61
+
+a. $\frac{364(364)(364)\cdots(364)}{365^n} = \frac{364^n}{365^n}$  
+
+b. With $n = 253$,  
+$1 - \left(\frac{364}{365}\right)^{253} \approx 0.5005.$
+
+## 2.71
+
+a. $P(A|B) = \frac{0.1}{0.3} = \frac{1}{3}.$  
+b. $P(B|A) = \frac{0.1}{0.5} = \frac{1}{5}.$  
+c. $P(A|A \cup B) = \frac{0.5}{0.5 + 0.3 - 0.1} = \frac{5}{7}.$  
+d. $P(A|A \cap B) = 1,$ since A has occurred.  
+e. $P(A \cap B|B) = \frac{0.1}{0.5 + 0.3 - 0.1} = \frac{1}{7}.$
+
+## 2.75
+
+a. Given the first two cards drawn are spades, there are 11 spades left in the deck. The probability is $\frac{\binom{11}{3}}{\binom{50}{3}} = 0.0084.$ Note: this is also equal to $P(S_3S_4S_5|S_1S_2)$.  
+
+b. Given the first three cards drawn are spades, there are 10 spades left. The probability is $\frac{\binom{10}{2}}{\binom{49}{2}} = 0.0383.$ Note: this is also equal to $P(S_4S_5|S_1S_2S_3)$. 
+
+c. Given the first four cards drawn are spades, there are 9 spades left. The probability is  
+$\frac{\binom{9}{1}}{\binom{48}{1}} = 0.1875.$ Note: this is also equal to $P(S_5|S_1S_2S_3S_4)$. 
+
+## 2.79
+
+If A and B are mutually exclusive, $P(A \cap B) = 0$. But, $P(A) P(B) > 0$. So they are not independent.
+
+## 2.85
+
+$P(A \mid \overline{B}) = P(A \cap \overline{B}) / P(\overline{B}) 
+= \dfrac{P(\overline{B} \mid A) P(A)}{P(\overline{B})} 
+= \dfrac{[1 - P(B \mid A)] P(A)}{P(\overline{B})} 
+= \dfrac{[1 - P(B)] P(A)}{P(\overline{B})} 
+= \dfrac{P(\overline{B}) P(A)}{P(\overline{B})} 
+= P(A).$ So, $A$ and $\overline{B}$ are independent.  
+
+$P(\overline{B} \mid \overline{A}) = P(\overline{B} \cap \overline{A}) / P(\overline{A}) 
+= \dfrac{P(\overline{A} \mid \overline{B}) P(\overline{B})}{P(\overline{A})} 
+= \dfrac{[1 - P(A \mid \overline{B})] P(\overline{B})}{P(\overline{A})}.$  From the above, $A$ and $\overline{B}$ are independent.  So $P(\overline{B} \mid \overline{A}) 
+= \dfrac{[1 - P(A)] P(\overline{B})}{P(\overline{A})} 
+= \dfrac{P(\overline{A}) P(\overline{B})}{P(\overline{A})} 
+= P(\overline{B}).$ So, $\overline{A}$ and $\overline{B}$ are independent.
+
+
+## 2.91
+
+If A and B are mutually exclusive, $P(A \cup B) = P(A) + P(B).$ This value is greater than 1 if $P(A) = 0.4$ and $P(B) = 0.7$. So they cannot be mutually exclusive. It is possible if $P(A) = 0.4$ and $P(B) = 0.3$.
+
+
+# Submitted Problems
+
+## 2.38
+
+By the $mn$ rule, $4 \cdot 3 \cdot 4 \cdot 5 = 240$.
+
+
+
+## 2.42
+
+There are three different positions to fill using ten engineers. Then, there are  
+
+$_{10}P_{3} = \frac{10!}{(10-3)!} = \frac{10!}{7!} = 720$ different ways to fill the positions.
+
+
+
+## 2.46
+
+There are $\binom{10}{2}$ ways to choose two teams for the first game, $\binom{8}{2}$ for the second, etc. So,
+
+$\binom{10}{2} \binom{8}{2} \binom{6}{2} \binom{4}{2} \binom{2}{2} 
+= \frac{10!}{(2!)^5} = 113,400$ ways to assign the ten teams to five games.
+
+## 2.48
+
+Same answer: $\binom{8}{5} = \binom{8}{3} = 56$.
+
+
+
+## 2.50
+
+Two numbers, 4 and 6, are possible for each of the three digits. So, there are $2 \cdot 2 \cdot 2 = 8$ potential winning three-digit numbers.
+
+## 2.58
+
+There are $\binom{52}{5} = 2{,}598{,}960$ ways to draw five cards from the deck.  
+
+a. To draw three Aces and two Kings: $\binom{4}{3} \binom{4}{2} = 24$ So the probability is $\tfrac{24}{2{,}598{,}960}$.  
+
+b. There are $13 \cdot 12 = 156$ types of full house hands. From part (a), each type can be made in 24 different ways.  
+So the probability is $\frac{156 \cdot 24}{2{,}598{,}960} \approx 0.00144$
+
+## 2.64
+
+$6! \left(\frac{1}{6}\right)^5 = \frac{5}{324}$
+
+## 2.68a–c
+
+a. $\binom{n}{n} = \dfrac{n!}{n!(n-n)!} = 1$. There is only one way to choose all of the items.  
+
+b. $\binom{n}{0} = \dfrac{n!}{0!(n-0)!} = 1$. There is only one way to choose none of the items.  
+
+c. $\binom{n}{r} = \dfrac{n!}{r!(n-r)!} = \frac{n!}{(n-r)!(n - (n-r)!)} =\binom{n}{n-r}$. There are the same number of ways to choose $r$ out of $n$ objects as there are to choose $n-r$ out of $n$ objects.
+
+## 2.72
+
+Note that $P(A) = 0.6$ and $P(A \mid M) = \frac{0.24}{0.4} = 0.6$. So, $A$ and $M$ are independent. Similarly, $P(A' \mid F) = \frac{0.24}{0.6} = 0.4 = P(A'),$ so $A'$ and $F$ are independent.
+
+## 2.74
+
+a. $P(A) = 0.61$, $P(D) = 0.30$, $P(A \cap D) = 0.20$. Dependent.  
+
+b. $P(B) = 0.30$, $P(D) = 0.30$, $P(B \cap D) = 0.09$. Independent.  
+
+c. $P(C) = 0.09$, $P(D) = 0.30$, $P(C \cap D) = 0.01$. Dependent.  
+
+
+
+## 2.80
+
+If $B \subset A$, then $P(A \cap B) = P(A) \neq P(A)P(B),$ unless $B = S$ (in which case $P(B) = 1$).
+
+## 2.86
+
+a. No. It follows from  $P(A \cup B) = P(A) + P(B) - P(A \cap B) \leq 1.$  
+
+b. $P(A \cap B) \geq 0.5$  
+
+c. No.  
+
+d. $P(A \cap B) \leq 0.70$  
+
+
+
+## 2.90
+
+a. $(1/50)(1/50) = 0.0004$  
+
+b. $P(\text{at least one injury}) 
+= 1 - P(\text{no injuries in 50 jumps}) 
+= 1 - \left(\frac{49}{50}\right)^{50} \approx 0.636$. Your friend is not correct.
+
+
+
+## 2.94
+
+Define the events $A$: device A detects smoke, $B$: device B detects smoke.  
+
+a. $P(A \cup B) = P(A) + P(B) - P(A \cap B) = 0.95 + 0.90 - 0.88 = 0.97$ 
+
+b.$ P(\text{smoke undetected}) = 1 - P(A \cup B) = 1 - 0.97 = 0.03$
+
+## 2.110
+
+Define the events:  
+
+- $I$: item is from line I  
+- $II$: item is from line II  
+- $N$: item is not defective  
+
+Then, $P(N) = P(N \cap (I \cup II)) = P(N \cap I) + P(N \cap II) = 0.92(0.4) + 0.90(0.6) = 0.908$

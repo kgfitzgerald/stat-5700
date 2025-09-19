@@ -202,7 +202,27 @@ P(A' \cap B) &= P(B) - P(B \cap A) \\
 $$
 
 
-7. Two processes of a company produce rolls of materials: The rolls of Process I are 3% defective and the rolls of Process II are 1% defective. Process I produces 60% of the company’s output, Process II 40%. A roll is selected at random from the total output. Given that this roll is defective, what is the conditional probability that it is from Process I?
+
+# Problem 7
+
+Two processes of a company produce rolls of materials: The rolls of Process I are 3% defective and the rolls of Process II are 1% defective. Process I produces 60% of the company’s output, Process II 40%. A roll is selected at random from the total output. Given that this roll is defective, what is the conditional probability that it is from Process I?
+
+## Solution
+
+Let  
+
+- $A_1$: Roll is from Process I  
+- $A_2$: Roll is from Process II  
+- $D$: Roll is defective  
+
+The known probabilities are:
+
+- $P(A_1) = 0.6$, $P(A_2) = 0.4$  
+- $P(D \mid A_1) = 0.03$, $P(D \mid A_2) = 0.01$
+
+We are asked to find $P(A_1 \mid D)$. Using Bayes Theorem, 
+
+$$P(A_1 \mid D) = \frac{P(D | A_1)P(A_1)}{P(D)} = \frac{P(D | A_1)P(A_1)}{P(D | A_1)P(A_1) + P(D | A_2)P(A_2)} = \frac{0.03(0.6)}{0.03(0.6) + 0.01(0.4)} = 0.978$$
 
 <!-- # Problem 4 -->
 
