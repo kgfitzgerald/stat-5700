@@ -1,7 +1,7 @@
 ---
 title: Week 5 Announcements
-week: 4
-date: 2025-09-16
+week: 5
+date: 2025-09-23
 ---
 
 ## Tuesday announcements
@@ -40,6 +40,8 @@ date: 2025-09-16
     + In no situation do I intend for an assignment to be due on the same day relevant material is covered in class - please come talk to be about specific examples if you feel like this is the case. 
     + Often, this class will be "iterative" in that we will return to the same ideas multiple times, adding to our toolbelt each time. So you may see a problem in one section that is intended to be completed "from scratch", and then we later learn a new method that makes that problem easier. Problem 3.10 (the "pair of rentals" question) is a good example of this; it is included in section 3.2 of the book (and can be solved using concepts learned through 3.2), even though the geometric distribution is not formally introduced until 3.5.
     + I expect some homework problems to feel unfamiliar / to be of greater difficulty that the examples seen in class. The "productive struggle" in intentional. But don't bang your head against a wall for too long! Come to student hours and/or post questions on Piazza for help getting started or to talk through problems/concepts. 
+    
++ PS - I know the world has been a lot lately - always happy to chat/listen anytime :)
 
 ## A few problem solving tips
 
