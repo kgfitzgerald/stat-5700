@@ -31,3 +31,4 @@ nav_order: 6
 
 + [Exam Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Exam_1_Review.pdf)
 + [Exam 1 Practice Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a.pdf)
++ [Practice Exam SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a_SOLUTIONS.pdf)
