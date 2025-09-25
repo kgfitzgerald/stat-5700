@@ -24,8 +24,8 @@ nav_order: 6
 
 ## Group Work solutions
 
-+ [Chapter 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_2_Group_Work_SOLUTIONS.pdf)
-+ [Chapter 3 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_Group_Work_SOLUTIONS.pdf)
++ [Chapter 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_2_Group_Work_solutions.pdf)
++ [Chapter 3 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_Group_Work_solutions.pdf)
 
 ## Exam Review / practice
 
