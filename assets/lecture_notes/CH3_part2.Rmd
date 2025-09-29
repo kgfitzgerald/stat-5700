@@ -24,12 +24,12 @@ library(cowplot)
 
 # 3.5 Geometric Distribution
 
-Recall: the Binomial distribution allows us to model the number of successes in $n$ independent trials. However, sometimes we are interested in how long we have to wait until the first success happens. You have seen examples of this already, but here we will formally define the probability distribution and derive it's mean and variance.
+Recall: the Binomial distribution allows us to model the number of successes in $n$ independent trials. However, sometimes we are interested in how long we have to wait until the first success happens. You have seen examples of this already, but here we will formally define the probability distribution as well as its mean and variance.
 
 ::: {.highlightbox data-latex=""}
 **Definition 3.8** A random variable $Y$ is said to have a *geometric probability distribution* if and only if
 
-$$p(y) = (1 - p)^{1 - y}p, \ \ \ \ \ y = 1, 2, ... \text{and} \ 0 \leq p \leq 1$$
+$$p(y) = (1 - p)^{y - 1}p, \ \ \ \ \ y = 1, 2, ... \text{and} \ 0 \leq p \leq 1$$
 
 :::
 
