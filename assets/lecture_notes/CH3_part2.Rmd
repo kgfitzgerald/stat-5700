@@ -24,23 +24,279 @@ library(cowplot)
 
 # 3.5 Geometric Distribution
 
+Recall: the Binomial distribution allows us to model the number of successes in $n$ independent trials. However, sometimes we are interested in how long we have to wait until the first success happens. You have seen examples of this already, but here we will formally define the probability distribution and derive it's mean and variance.
+
+::: {.highlightbox data-latex=""}
+**Definition 3.8** A random variable $Y$ is said to have a *geometric probability distribution* if and only if
+
+$$p(y) = (1 - p)^{1 - y}p, \ \ \ \ \ y = 1, 2, ... \text{and} \ 0 \leq p \leq 1$$
+
+:::
+
+Here, $Y$ is the number of the trial on which the first success occurs, and we could write $Y \sim geom(p)$. Just as with the Binomial distribution, we are assuming independent trials and that the probability of success is $p$ on any individual trial. 
+
+::: {.highlightbox data-latex=""}
+**Theorem 3.8**: If $Y \sim geom(p)$, then 
+
+$$\mu = E(Y) = \frac{1}{p}$$
+$$\sigma^2 = V(X) = \frac{1 - p}{p^2}$$
+
+:::
+
+PROOF of E(Y) (derivation of V(Y) is left as Exercise 3.85):
+
+\pagebreak
+
+::: {.activitybox data-latex=""}
+**Example**: Suppose that the probability of engine malfunction during any one-hour period is p = 0.02. Find the probability that a given engine will survive two hours. 
+
+\
+\
+\
+\
+\
+\
+\
+\
+If $Y$ is the number of one-hour intervals until the first malfunction, find the mean and standard deviation of Y.
+\
+\
+\
+\
+\
+\
+
+:::
+
 # 3.6 Negative Binomial Distribution
+
+What if we are interested in knowing the number of the trail on which the 2nd, 3rd, or 4th success occurs? 
+
+::: {.highlightbox data-latex=""}
+
+**Definition 3.9**: A random variable $Y$ is said to have a **negative binomial probability distribution** if and only if
+
+$$p(y) = \binom{y - 1}{r - 1}p^r(1-p)^{y - r}$$
+:::
+
+We would write $Y \sim negbinom(p, r)$, where $Y$ is the number of the trial on which the $rth$ success occurs, and each trial is independent with probability of success $p$. 
+
+::: {.highlightbox data-latex=""}
+**Theorem 3.9**: If $Y$ is a random variable with a negative binomial distribution, 
+
+$$\mu = E(Y) = \frac{r}{p}$$
+
+$$\sigma^2 = V(X) = \frac{r(1-p)}{p^2}$$
+
+:::
+
+::: {.activitybox data-latex=""}
+**Example:** A geological study indicates that an exploratory oil well drilled in a particular region should strike oil with probability 0.2. Find the probability that the third oil strike comes on the 5th well drilled.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+
+:::
+
+::: {.activitybox data-latex=""}
+**Example**: Suppose that a basketball coach requires players to make 10 free throws at the end of practice before they are able to leave. For a player that has a 72% free throw percentage, how many free throws will she have to shoot on average? Define an appropriate random variable, it's probability distribution, and find the mean and standard deviation. 
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+:::
 
 # 3.7 Hypergeometric Distribution
 
+Suppose there is a population of size $N$ in which exactly $r$ elements have a particular feature, which will be considered a "success." The hypergeometric distribution allows us to model the probability of $y$ successes in $n$ draws from the population. 
+
+::: {.highlightbox data-latex=""}
+A random variable $Y$ is said to have a *hypergeometric probability distribution* if and only if
+
+$$p(y) = \frac{\binom{r}{y}\binom{N - r}{n - y}}{\binom{N}{n}},$$
+
+where $y$ is an integer $0, 1, 2, \dots n$ subject to the restrictions $y \leq r$ and $n - y \leq N-r$. 
+
+:::
+
+::: {.highlightbox data-latex=""}
+**Theorem 3.10:** If $Y$ is a random variable with a hypergeometric distribution, 
+
+$$\mu = E(Y) = \frac{nr}{N}$$
+
+$$\sigma^2 = V(Y) = n\left(\frac{r}{N}\right)\left(\frac{N-r}{N}\right)\left(\frac{N-n}{N-1}\right)$$
+:::
+
+::: {.activitybox data-latex=""}
+**Example**: From a group of 20 PhD engineers, 10 are randomly selected for employment. What is the probability that the 10 selected include all the 5 best engineers in the group of 20? What is the average number of top 5 candidates that will be selected using this strategy?  
+
+\
+\
+\
+\
+\
+\
+\
+
+
+:::
+
 # 3.8 Poisson Distribution
+
+The count of the number of occurrences of an event in a continuous interval is an \textcolor{red}{\textbf{approximate Poisson process}}, with parameter $\lambda > 0$ if: 
+
+ 1.  The number of occurances in nonoverlapping intervals are independent 
+ 2.  The probability of exactly one occurance in a sufficiently short 
+     subinterval of length $h$ is approximately $\lambda h$. 
+ 3.  The probability of two or more occurances in a sufficiently short 
+     subinterval is essentially 0. 
+
+The distribution to model the process is the \textcolor{red}{\textbf{Poisson distribution}}: 
+
+::: {.highlightbox data-latex=""} 
+Let Y denote the number of occurrences in a "unit" length (the "unit" of 
+interest), then $Y \sim \text{Poisson}(\lambda)$ with probability distribution: 
+$$p(y) = \frac{\lambda^y e^{-\lambda}}{y!}, \ \ \ \ \ y = 0,1,2,\dots$$ 
+::: 
+
+In a Poisson distribution, the parameter $\lambda$ can be interpreted as 
+the expected rate of occurrences. It turns out that 
+
+$\lambda = E(Y) = V(Y)$ 
+
+::: {.activitybox data-latex=""} 
+**Example:** 
+
+An old backup system was a computer tape, and flaws occurred on these tapes. In a particular situation, flaws (bad records) on a used computer tape occurred on the average of one flaw per 1200 feet. If one assumes a 
+Poisson distribution, what is the distribution of Y, the number of flaws 
+in a 4800-foot roll? What is the probability of 0 flaws on the 4800-foot roll?
+\ 
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+::: 
+
+### Maclaurin series expansion (from Calculus) 
+
+The Maclaurin series expansion of a function $g(x)$ is given by: 
+
+ $$g(x) = \sum_{n = 0}^{\infty}\frac{g^{(n)}(0)}{n!}x^n = g(0) + g'(0)x + \frac{g''(0)}{2!}x^2+\frac{g'''(0)}{3!}x^3 +\dots$$ 
+
+Therefore, a Maclaurin series expansion of $$g(x) = e^{x} = 1 + \frac{x}{1!} + \frac{x^2}{2!}+\frac{x^3}{3!} +\dots = \sum_{n = 0}^{\infty} \frac{x^n}{n!}.$$ 
+
+::: {.activitybox data-latex=""} 
+
+**Exercise:** Use the Maclaurin series expansion to show that the probability distribution of the Poisson distribution is a valid probability distribution. 
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+::: 
+
+<!-- ::: {.activitybox data-latex=""}  -->
+
+<!-- **Exercise:**   -->
+
+<!-- A store selling newspapers orders only n = 4 of a certain newspaper because the manager does not get many calls for that publication. If the number of requests per day follows a Poisson distribution with mean 3,    -->
+
+<!--   a) What is the expected value of the number sold?     -->
+
+<!--   b) What is the minimum number that the manager should order so that the chance of having more requests than available newspapers is less than 0.05?   -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- ::: -->
+
+
+::: {.activitybox data-latex=""} 
+
+**Exercise** 
+
+Assume that a policyholder is four times more likely to file exactly two claims as to file exactly three claims. Assume also that the number $Y$ of claims of this policyholder is Poisson. Determine the expectation $E(Y^2)$. 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+ \ 
+
+::: 
+
 
 # 3.9 Moments and Moment Generating Functions
 
-# 3.11 Tcheysheff's Theorem
-
-## Special Expectations: Moments
+### Special Expectations: Moments
 
 ::: {.highlightbox data-latex=""}
-**Definition:** The $r$th \textcolor{red}{\textbf{moment}} of a random
-variable $X$ is the expected value of $X^r$ and is denoted by $E(X^r)$,
-for each integer $r$. That is,
-$$E(X^r) = \sum_{x\in \mathbb{S}}x^rp(x)$$
+**Definition:** The $k$th \textcolor{red}{\textbf{moment}} of a random
+variable $X$ is the expected value of $X^k$ and is denoted by $E(X^k)$,
+for each integer $k$. That is,
+$$E(X^k) = \sum_{x\in \mathbb{S}}x^kp(x)$$
 :::
 
 The term "moment" comes from physics: if the quantities $p(x)$ are point
@@ -48,17 +304,17 @@ masses acting perpendicularly to the $x-$axis at distances $y$ from the
 origin, $E(X^1)$ would be the $x-$coordinate of the center of gravity,
 and $E(X^2)$ would be the moment of inertia.
 
-```{r, echo = FALSE, out.width="60%", out.height = "60%", fig.align="center"}
+```{r, echo = FALSE, out.width="40%", out.height = "20%", fig.align="center"}
 knitr::include_graphics("./images/moments-garfield.png")
 ```
 
 ### First Moment = Mean
-
-Note that the first moment where $r=1$, we have
+\pagebreak
+Note that the first moment where $k=1$, we have
 
 $$\begin{aligned}
 E(Y^1) &= \sum_{y \in \mathbb{S}} y^1 p(y) \\
-&= E(Y) = \sum_{y \in \mathbb{S}}xp(y)\\
+&= E(Y) = \sum_{y \in \mathbb{S}}yp(y)\\
 &= \mu
 \end{aligned}$$
 
@@ -67,9 +323,7 @@ Therefore, we usually refer to the first moment as $\mu,$ the mean of $Y$.
 ::: {.activitybox data-latex=""}
 **Example:**
 
-Suppose $Y$ is a random variable with support $\{1,2,3\}$ and $probability distribution$ is
-given by $p(1) = 0.5$, $p(2) = 0.2$, $p(3) = 0.3$. Find the mean and
-show that the negative distances from the mean balance the positive.\
+Suppose $Y$ is a random variable with support $\{1,2,3\}$ and probability distribution is given by $p(1) = 0.5$, $p(2) = 0.2$, $p(3) = 0.3$. Find the mean and show that the negative distances from the mean balance the positive.\
 \
 \
 \
@@ -81,13 +335,13 @@ show that the negative distances from the mean balance the positive.\
 \
 :::
 
-## Special Expectations: Central Moments
+### Special Expectations: Central Moments
 
 ::: {.highlightbox data-latex=""}
-**Definition** The $r$th \textcolor{red}{\textbf{central moment}} of a
-random variable $Y$ is the expected value of $(Y - \mu)^r$ and is
-denoted by $E[(Y - \mu)^r]$, for each integer $r$. That is,
-$$E[(Y - \mu)^r] = \sum_{y\in \mathbb{S}}(y-\mu)^rp(y)$$
+**Definition** The $k$th \textcolor{red}{\textbf{central moment}} of a
+random variable $Y$ is the expected value of $(Y - \mu)^k$ and is
+denoted by $E[(Y - \mu)^k]$, for each integer $k$. That is,
+$$E[(Y - \mu)^k] = \sum_{y\in \mathbb{S}}(y-\mu)^kp(y)$$
 :::
 
 Recall that $\mu = E(Y)$ is the mean of $Y$, so the central moments are
@@ -105,51 +359,34 @@ What is $E(Y - \mu)$?\
 \
 \
 \
-\
-\
-\
-\
-\
-\
-\
-\
 :::
 
 <!-- Make point that you can center any data around 0 by subtracting the mean from all data points (show this in sims) -->
 
-## Moment-generating functions
+### Moment-generating functions
 
 ::: {.highlightbox data-latex=""}
-**Definition 2.3-1** <br/> Let $Y$ be a discrete random variable with
+**Definition 3.14** <br/> Let $Y$ be a discrete random variable with
 probability distribution $p(y)$ and support $\mathbb{S}$. If there is a positive number $h$ such that
 $$E(e^{tY}) = \sum_{y \in \mathbb{S}} e^{tx}p(y)$$ exists and is finite for
-$-h < t < h,$ then the function defined by $M_Y(t) = E(e^{tY})$ is
+$-h < t < h,$ then the function defined by $m(t) = E(e^{tY})$ is
 called the \textcolor{red}{\textbf{moment-generating function}} of $Y$.
 This function is often abbreviated as mgf.
 :::
 
-$M_Y(t) = E(e^{tY})$ is called the moment-generating function, because
-by taking derivatives of $M_Y(t)$ at $t=0$ can generate expressions for
+$m(t) = E(e^{tY})$ is called the moment-generating function, because
+by taking derivatives of $m(t)$ at $t=0$ can generate expressions for
 all the moments of a random variable $Y$!
 
 ::: {.highlightbox data-latex=""}
-**Theorem** <br/> $$\frac{d^r}{dt^r}M_Y(t)|_{t=0} = E(Y^r)$$ That
-is, the $r$th moment of $Y$ is equal to the $r$th derivative of $M_Y(t)$
+**Theorem** <br/> $$\frac{d^k}{dt^k}m(t)|_{t=0} = E(Y^k)$$ That
+is, the $k$th moment of $Y$ is equal to the $k$th derivative of $m(t)$
 evaluated at $t = 0$.
 :::
 
-<!--  -->
-
-<!-- # Using the mgf -->
-
-<!-- Use $M_Y(t) = E(e^{tY}) = \sum e^{tx}p(y)$ to find the mean and variance of $Y$.  -->
 
 ::: {.activitybox data-latex=""}
 **Example:**
-
-<!-- Let $Y$ equal an integer selected at random from the $m$ positive integers $\{1, 2, \dots, m\}$. Find the value of $m$ for which $E(Y) = V(Y)$ -->
-
-<!-- From Hogg et. al #2.3-7 -->
 
 Let $Y$ be a uniformly distributed random variable. Recall that the probability distribution
 of the uniform distribution is given by
@@ -180,7 +417,7 @@ distribution. Then use the mgf to find the mean of $Y$.\
 **Example:**
 
 If the moment-generating function of $Y$ is
-$M_Y(t) = \frac{2}{5}e^t + \frac{1}{5}e^{2t} + \frac{2}{5}e^{3t},$ find
+$m(t) = \frac{2}{5}e^t + \frac{1}{5}e^{2t} + \frac{2}{5}e^{3t},$ find
 the mean, variance, and probability distribution of $Y$.
 
 \
@@ -232,13 +469,41 @@ the mean, variance, and probability distribution of $Y$.
 \
 \
 \
-\
-\
-\
-\
-\
-\
 :::
+
+# Group Work
+
+### Problem 1
+
+Some biology students were checking eye color in a large number of fruit flies. For the individual fly, suppose that the probability of white eyes is 1/4 and the probability of red eyes is 3/4, and that we may treat these observations as independent Bernoulli trials. What is the probability that at least four flies have to be checked for eye color to observe a white-eyed fly? 
+
+### Problem 2
+
+Suppose that $Y$ is a random variable with a geometric distribution. Show that 
+
+a. $\sum_y p(y) = \sum_{y = 1}^{\infty}q^{y - 1}p = 1$
+b. $\frac{p(y)}{p(y-1)} = q,$ for $y = 2, 3, ....$. This ratio is less than 1, implying that the geometric probabilities are monotonically decreasing as a function of $y$. If $Y$ has a geometric distribution, what value of $Y$ is the most likely (has the highest probability)?
+
+### Problem 3
+
+About 7 months into Donald Trump's 2nd term as president (August 2025), a Gallup poll found that a record low of 39% of adults approved of how the Supreme Court is handling its job. 
+
+a. Find the probability distribution for $Y$, the number of calls until the first person is found who *does* express approval of the U.S. Supreme Court. 
+b. On average, how many calls are needed until the 1st approval is found?
+c. Find the probability distribution for $Z$, the number of calls until the 50th person is found who approves of the U.S. Supreme Court. 
+d. On average, how many calls are needed until the 50th approval is found? 
+
+### Problem 4
+
+The employees of a firm that manufactures insulation are being tested for indications of asbestos in their lungs. The firm is requested to send three employees who have positive indications of asbestos on to a medical center for further testing. If 40% of the employees have positive indications of asbestos in their lungs, find the probability that 10 employees must be tested in order to find three positives. 
+
+### Problem 5
+
+A jury of 6 persons was selected from a group of 20 potential jurors, of whom 8 were Black and 12 were White. The jury was supposedly randomly selected, but it contained only 1 Black member. Do you have any reason to doubt the randomness of the selection? 
+
+### Problem 6
+
+The number of typing errors made by a typist has a Poisson distribution with an average of four errors per page. If more than four errors appear on a given page, the typist must retype the whole page. What is the probability that a randomly selected page does not need to be retyped?
 
 ### Problem 7
 
@@ -248,3 +513,8 @@ Let $Y$ be a random variable with probability distribution $p(y) = \frac{y}{6}, 
   b) Use the mgf to show that $E(Y) = 7/3$
   c) Use the mgf to show that $E(Y^2) = 6$
   d) Find $V(Y)$
+  
+### Problem 8
+
+Obtain an expression for the mgf of the Poisson distribution. Use the mgf to show that $E(Y) = V(Y) = \lambda$ for a Poisson random variable.
+
