@@ -45,6 +45,8 @@ The links below take you to a template Quarto (.qmd) file for each lab. You shou
 
 {% include download.html path="assets/labs/Lab_04.qmd" %}
 
+{% include download.html path="assets/labs/Lab_05.qmd" %}
+
 
 ## Reading annotations
 
