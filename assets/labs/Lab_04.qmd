@@ -19,14 +19,14 @@ library(tidyverse)
 
 R includes many built in functions for common distributions. Commands for each follow the same basic format. The abbreviated name of the distribution is preceeded by once of four letters:
 
--   "d" for the density function (pmf for discrete random variables)
+-   "d" for the density function (probability distribution for discrete random variables)
 -   "p" for the cumulative distribution function (cdf)
--   "q" for the quantile function (gives the x value for a given cummulative probability)
+-   "q" for the quantile function (gives the x value for a given cumulative probability)
 -   "r" for random (generates a random number based on the distribution)
 
-The **binomial distribution** pmf and cdf in R:
+The **binomial distribution** probability and cdf in R:
 
--   `dbinom(x, size, prob)` -- returns $f(x) = P(X = x),$ (pmf) values for a binomial random variable $X$,
+-   `dbinom(x, size, prob)` -- returns $p(x) = P(X = x),$ (probability distribution) values for a binomial random variable $X$,
 -   `pbinom(x, size, prob)` -- returns $F(x) = P(X \leq x),$ values for the binomial distribution (cdf)
 
 Note that both have three arguments defined as:
