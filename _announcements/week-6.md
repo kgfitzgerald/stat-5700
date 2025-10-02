@@ -4,6 +4,13 @@ week: 6
 date: 2025-09-30
 ---
 
+## Thursday reminders
+
++ Lab 04, Reading Annotations 05 due tonight
++ Quiz next Tuesday
++ (Optional) Annotated test corrections due Tuesday - bring hard copy & original exam to class
++ Recorded lecture next Thursday
+
 ## Tuesday announcements
 
 + Due this week: 
