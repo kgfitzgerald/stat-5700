@@ -38,12 +38,11 @@ P(Y = odd) &= P(Y = 1, 3, 5, \ldots) = P(Y = 2k + 1 \text{ for integers } k = 1,
 \end{aligned}
 $$
 
-
 ## 3.93
 From Ex. 3.92:  
 
 (a)  
-$$P(Y = 5) = {4 \choose 2} (0.9^3)(0.1^2) = 0.04374$$
+$$P(Y = 5) = {% raw %}{{4 \choose 2}}{% endraw %} (0.9^3)(0.1^2) = 0.04374$$
 
 (b)  
 $$P(Y \leq 5) = P(Y=3) + P(Y=4) + P(Y=5) = 0.729 + 0.2187 + 0.04374 = 0.99144$$
@@ -53,18 +52,17 @@ $$P(Y \leq 5) = P(Y=3) + P(Y=4) + P(Y=5) = 0.729 + 0.2187 + 0.04374 = 0.99144$$
 $$(0.8)^2 (0.2) = 0.128$$
 
 (b) Negative binomial probability:  
-$${6 \choose 2} (0.2^3)(0.8^4) = 0.049$$
+$${% raw %}{{6 \choose 2}}{% endraw %} (0.2^3)(0.8^4) = 0.049$$
 
 (c) The trials are independent and the probability of success is the same from trial to trial.  
 
 (d)  
 $$\mu = \frac{3}{0.2} = 15, \quad \sigma^2 = \frac{3(0.8)}{0.2^2} = 60$$
 
-
 ## 3.103
 Use the hypergeometric distribution with $N=10, r=4, n=5$:  
 
-$$P(Y=0) = \frac{{6 \choose 5}}{{10 \choose 5}} = 0.0238$$
+$$P(Y=0) = \frac{% raw %}{{6 \choose 5}}{% endraw %}}{% raw %}{{10 \choose 5}}{% endraw %}} = 0.0238$$
 
 ## 3.105
 (a) $Y$ follows a hypergeometric distribution. The probability of being chosen on a trial is dependent on previous outcomes.  
@@ -74,7 +72,6 @@ $$P(Y \geq 2) = P(Y=2) + P(Y=3) = 0.5357 + 0.1786 = 0.7143$$
 
 (c)  
 $$\mu = 3 \cdot \frac{5}{8} = 1.875, \quad \sigma^2 = 3 \cdot \frac{5}{8} \cdot \frac{3}{8} \cdot \frac{5}{7} = 0.5022, \quad \sigma = 0.7087$$
-
 
 ## 3.121
 (a)  
@@ -119,8 +116,6 @@ $$p(2) = \frac{1^2 e^{-1}}{2!} = 0.1839$$
 <!-- Then   -->
 <!-- $$P(Y=4 \mid \text{B tosses first 6}) = \frac{(5/6)^3 (1/6)}{5/11} = 275/1296$$ -->
 
-<!-- --- -->
-
 <!-- ## 3.92 -->
 <!-- Let $Y =$ number of trials until the first non-defective engine is found. $Y \sim \text{Geometric}(p=0.9)$.   -->
 
@@ -145,20 +140,17 @@ $$p(2) = \frac{1^2 e^{-1}}{2!} = 0.1839$$
 <!-- Want $1 - \frac{\binom{3}{0}\binom{17}{n}}{\binom{20}{n}} \geq 0.8$ -->
 
 <!-- For $n=8$:   -->
-<!-- $$P(\text{none defective}) = \frac{{17 \choose 8}}{{20 \choose 8}} = 0.193$$ -->
+<!-- $$P(\text{none defective}) = \frac{% raw %}{{17 \choose 8}}{% endraw %}}{% raw %}{{20 \choose 8}}{% endraw %}} = 0.193$$ -->
 
 <!-- ## 3.120 -->
 <!-- There are $N$ animals. After marking $k$, we draw a second sample of 3.   -->
 
 <!-- Number of ways to find exactly one marked animal:   -->
-<!-- $$P(Y=1) = \frac{{k \choose 1}{N-k \choose 2}}{{N \choose 3}}$$   -->
+<!-- $$P(Y=1) = \frac{% raw %}{{k \choose 1}}{% endraw %} {% raw %}{{N-k \choose 2}}{% endraw %}}{% raw %}{{N \choose 3}}{% endraw %}}$$   -->
 
 <!-- For $k=4$:   -->
-<!-- $$P(Y=1) = \frac{{4 \choose 1}{N-4 \choose 2}}{{N \choose 3}}$$   -->
-
+<!-- $$P(Y=1) = \frac{% raw %}{{4 \choose 1}}{% endraw %} {% raw %}{{N-4 \choose 2}}{% endraw %}}{% raw %}{{N \choose 3}}{% endraw %}}$$ -->
 <!-- This is maximized at $N=11$ or $N=12$, where $P=0.503$. -->
-
-<!-- --- -->
 
 <!-- ## 3.128 -->
 <!-- Over one minute, $Y \sim \text{Poisson}(\lambda = 80/60 = 4/3)$.   -->
@@ -166,7 +158,6 @@ $$p(2) = \frac{1^2 e^{-1}}{2!} = 0.1839$$
 <!-- $$P(Y \geq 1) = 1 - P(Y=0) = 1 - e^{-4/3} = 0.7364$$ -->
 
 <!-- ## 3.138 -->
-
 <!-- $$ -->
 <!-- \begin{aligned} -->
 <!-- E(Y(Y-1)) &= \sum_{y = 0}^{\infty} \frac{y(y-1)\lambda^ye^{-\lambda}}{y!} \\ -->

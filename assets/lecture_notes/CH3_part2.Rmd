@@ -300,7 +300,7 @@ $$E(X^k) = \sum_{x\in \mathbb{S}}x^kp(x)$$
 :::
 
 The term "moment" comes from physics: if the quantities $p(x)$ are point
-masses acting perpendicularly to the $x-$axis at distances $y$ from the
+masses acting perpendicularly to the $x-$axis at distances $x$ from the
 origin, $E(X^1)$ would be the $x-$coordinate of the center of gravity,
 and $E(X^2)$ would be the moment of inertia.
 
@@ -368,7 +368,7 @@ What is $E(Y - \mu)$?\
 ::: {.highlightbox data-latex=""}
 **Definition 3.14** <br/> Let $Y$ be a discrete random variable with
 probability distribution $p(y)$ and support $\mathbb{S}$. If there is a positive number $h$ such that
-$$E(e^{tY}) = \sum_{y \in \mathbb{S}} e^{tx}p(y)$$ exists and is finite for
+$$E(e^{tY}) = \sum_{y \in \mathbb{S}} e^{ty}p(y)$$ exists and is finite for
 $-h < t < h,$ then the function defined by $m(t) = E(e^{tY})$ is
 called the \textcolor{red}{\textbf{moment-generating function}} of $Y$.
 This function is often abbreviated as mgf.
