@@ -21,11 +21,13 @@ nav_order: 6
 + [HW 02](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_02_SOLUTIONS.pdf)
 + [HW 03](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_03_SOLUTIONS.pdf)
 + [HW 04](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_04_SOLUTIONS.pdf)
++ [HW 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_05_SOLUTIONS.pdf)
 
 ## Group Work solutions
 
 + [Chapter 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_2_Group_Work_solutions.pdf)
 + [Chapter 3 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_Group_Work_solutions.pdf)
++ [Chapter 3 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_part2_Group_Work_solutions.pdf)
 
 ## Exam Review / practice
 
