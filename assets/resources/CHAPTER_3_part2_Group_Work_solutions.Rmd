@@ -1,0 +1,215 @@
+---
+title: "Chapter 3 Part 2 Group Work"
+subtitle: "SOLUTIONS"
+output: pdf_document
+---
+
+## Problem 1
+
+Some biology students were checking eye color in a large number of fruit flies. For the individual fly, suppose that the probability of white eyes is 1/4 and the probability of red eyes is 3/4, and that we may treat these observations as independent Bernoulli trials. What is the probability that at least four flies have to be checked for eye color to observe a white-eyed fly? 
+
+### Solution
+
+$Y \sim geom(p = 0.25)$, where $Y$ is the number of the trial where the first success occurs. 
+
+$P(Y > 3) = (1 - p)^3 = (.75)^3 = 0.421875$
+
+Alternatively, $P(Y \geq 4) = 1 - P(Y < 4) = 1 - p(1) - p(2) - p(3) = 1 - .25 - .75*.25 - .75^2*.25 = 0.421875$
+
+## Problem 2
+
+Suppose that $Y$ is a random variable with a geometric distribution. Show that 
+
+a. $\sum p(y) = \sum_{y = 1}^{\infty}q^{y - 1}p = 1$
+b. $\frac{p(y)}{p(y-1)} = q,$ for $y = 2, 3, ....$. This ratio is less than 1, implying that the geometric probabilities are monotonically decreasing as a function of $y$. If $Y$ has a geometric distribution, what value of $Y$ is the most likely (has the highest probability)?
+
+### Solution
+
+#### Part a
+
+$$
+\begin{aligned}
+\sum_{y = 1}^{\infty}pq^{y - 1} = p\sum_{y - 1 = 0}^{\infty}q^{y - 1} = p\frac{1}{1 - q} = \frac{p}{1 - (1-p)} = \frac{p}{p} = 1
+\end{aligned}
+$$
+
+#### Part b
+
+Since $p(y)$ is monotonically decreasing, and the support of $Y$ is $1, 2, 3, \dots$, then the largest probability is when $Y = 1$. 
+
+## Problem 3
+
+About 7 months into Donald Trump's 2nd term as president (August 2025), a Gallup poll found that a record low of 39% of adults approved of how the Supreme Court is handling its job. 
+
+a. Find the probability distribution for $Y$, the number of calls until the first person is found who *does* express approval of the U.S. Supreme Court. 
+b. On average, how many calls are needed until the 1st approval is found?
+c. Find the probability distribution for $Z$, the number of calls until the 50th person is found who approves of the U.S. Supreme Court. 
+d. On average, how many calls are needed until the 50th approval is found? 
+
+### Solution
+
+#### Part a
+
+$Y\sim geom(p = 0.39) \implies p(y) = (.61)^{y - 1}(.39)$
+
+#### Part b
+
+$E(Y) = \frac{1}{p} = \frac{1}{.39} = 2.56$
+
+#### Part c
+
+$Z \sim nbinom(0.39, 50) \implies p(z)= \binom{z - 1}{49}(.39)^{50}(.61)^{z - 50}$
+
+#### Part d
+
+$E(Z) = \frac{r}{p} = \frac{50}{.39} = 128.2$
+
+## Problem 4
+
+The employees of a firm that manufactures insulation are being tested for indications of asbestos in their lungs. The firm is requested to send three employees who have positive indications of asbestos on to a medical center for further testing. If 40% of the employees have positive indications of asbestos in their lungs, find the probability that 10 employees must be tested in order to find three positives. 
+
+### Solution
+
+$Y \sim nbinom(r = 3, p = 0.4)$
+
+$P(Y = 10) = \binom{9}{2}(0.4)^3(0.6)^7 = 0.06449$
+
+## Problem 5
+
+A jury of 6 persons was selected from a group of 20 potential jurors, of whom 8 were Black and 12 were White. The jury was supposedly randomly selected, but it contained only 1 Black member. Do you have any reason to doubt the randomness of the selection? 
+
+### Solution
+
+$$
+\frac{\binom{8}{1}\binom{12}{5}}{\binom{20}{6}} = \frac{8*792}{38760} = 0.163
+$$
+
+There is about a 16% chance of this happening, which is not particularly rare. There is not strong evidence to doubt the randomness of selection in this case.
+
+## Problem 6
+
+The number of typing errors made by a typist has a Poisson distribution with an average of four errors per page. If more than four errors appear on a given page, the typist must retype the whole page. What is the probability that a randomly selected page does not need to be retyped?
+
+### Solution
+
+Unit of interest = 1 page. $Y \sim Poisson(\lambda = 4)$.
+
+$P(Y \leq 4) = \sum_{y = 0}^4 \frac{4^ye^{-4}}{y!} = e^{-4}[4^0/0! + 4/1! + 4^2/2! + 4^3/3! + 4^4/4!] = 0.6288$
+
+An example of streamlining this calculation in R:
+
+```{r}
+y <- 0:4
+lambda <- 4
+p_y <- exp(-4)*4^y/factorial(y)
+p_y
+sum(p_y)
+```
+
+
+## Problem 7
+
+Let $Y$ be a random variable with probability distribution $p(y) = \frac{y}{6}, \ \ \ y = 1, 2, 3$
+
+  a) Find an expression for the moment generating function of $Y$. That is, write $E(e^{tY})$ as a sum.
+  b) Use the mgf to show that $E(Y) = 7/3$
+  c) Use the mgf to show that $E(Y^2) = 6$
+  d) Find $V(Y)$
+
+### Solution
+
+#### part a 
+
+$$\begin{aligned} 
+E(e^{tY}) &= \sum e^{ty}f(y) \\ 
+&= \sum e^{ty}\left(\frac{y}{6}\right) 
+\end{aligned}$$ 
+
+#### part b 
+
+Recall that $E(Y)$ is the "first moment." So we need to find the first derivative of the mgf and evaluate it at $t = 0$ 
+
+$$\begin{aligned} 
+m(t) &=\sum_{y = 1}^3 e^{ty}\left(\frac{y}{6}\right) \\ 
+m'(t) &= \sum_{y = 1}^3 e^{ty}(y)\left(\frac{y}{6}\right) \\ 
+E(y) =m'(0) &= \sum_{y = 1}^3 e^{0y}(y)\left(\frac{y}{6}\right) \\ 
+&= \sum_{y = 1}^3 \frac{y^2}{6} \\ 
+&= \frac{1}{6}\sum_{y = 1}^3 y^2 \\ 
+&= \frac{1}{6}[1^2 + 2^2 + 3^2] \\ 
+&= \frac{14}{6} \\ 
+&= \frac{7}{3} 
+\end{aligned}$$ 
+
+#### part c 
+
+Recall that $E(y^2)$ is the "second moment" so we need to take the second derivative of $m(t)$ and evaluate it at 0. 
+$$\begin{aligned} 
+m'(t) &= \sum_{y = 1}^3 e^{ty}\left(\frac{y^2}{6}\right) \\ 
+m''(t) &= \sum_{y = 1}^3 e^{ty}(y)\left(\frac{y^2}{6}\right) \\ 
+m''(0) &= \sum_{y = 1}^3 e^{0y}(y)\left(\frac{y^2}{6}\right) \\ 
+E(y^2) = m''(0) &= \sum_{y = 1}^3 \frac{y^3}{6} \\ 
+&= \frac{1^3}{6} + \frac{2^3}{6} + \frac{3^3}{6} \\ 
+&= 6 
+\end{aligned}$$ 
+
+#### part d 
+
+$$V(y) = E(y^2) - [E(y)]^2 = 6 - \left(\frac{7}{3}\right)^2 = \frac{5}{9}$$ 
+  
+## Problem 8
+
+Obtain an expression for the mgf of the Poisson distribution. Use the mgf to show that $E(Y) = V(Y) = \lambda$ for a Poisson random variable.
+
+### Solution
+
+Let $Y$ be Poisson with parameter $\lambda>0$. The probability distribution is
+
+$$
+p(y) = \frac{e^{-\lambda}\lambda^{y}}{y!}, \qquad y=0,1,2,\dots
+$$
+
+The moment generating function is defined as 
+
+$$
+\begin{aligned}
+m(t) &= E\big(e^{tY}\big) = \sum_{y=0}^{\infty} e^{ty}\ p(y) \\
+&= \sum_{y=0}^{\infty} e^{ty}\,\frac{e^{-\lambda}\lambda^{y}}{y!} \\[6pt]
+&= e^{-\lambda}\sum_{y=0}^{\infty}\frac{(\lambda e^{t})^{y}}{y!} \\[6pt]
+&= e^{-\lambda}\exp(\lambda e^{t}) \\[6pt]
+&= \exp\!\big(\lambda(e^{t}-1)\big).
+\end{aligned}
+$$
+
+Take the first derivative to find the mean
+
+$$
+M_Y'(t) = \lambda e^{t}\exp\!\big(\lambda(e^{t}-1)\big).
+$$
+
+Evauluate at $t=0$:
+
+$$
+E(Y) = M_Y'(0) = \lambda.
+$$
+
+Take the second derivative to find $E(Y^2$):
+
+$$
+m''(t) = \lambda e^{t}\exp\!\big(\lambda(e^{t}-1)\big)\big(1+\lambda e^{t}\big).
+$$
+
+Evaluate at $t=0$:
+
+$$
+M_Y''(0) = \lambda(1+\lambda).
+$$
+
+Thus,
+
+$$
+\operatorname{Var}(Y) = m''(0) - \big(m'(0)\big)^2
+= \lambda(1+\lambda) - \lambda^2
+= \lambda.
+$$
+
+
