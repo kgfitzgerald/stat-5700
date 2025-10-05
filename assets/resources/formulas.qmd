@@ -3,19 +3,19 @@ title: "STAT 5700 formulas"
 format: pdf
 ---
 
-$(A \cup B)' = A' \cap B'$
+<!-- $(A \cup B)' = A' \cap B'$ -->
 
-$(A \cap B)' = A' \cup B'$
+<!-- $(A \cap B)' = A' \cup B'$ -->
 
-$P(A) = 1 - P(A')$
+<!-- $P(A) = 1 - P(A')$ -->
 
-$P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+<!-- $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ -->
 
-$_nP_r =\frac{n!}{(n-r)!}$
+<!-- $_nP_r =\frac{n!}{(n-r)!}$ -->
 
-$_nC_r = \frac{_nP_r}{r!} = \frac{n!}{(n - r)!r!}$
+$\binom{n}{r} = _nC_r = \frac{_nP_r}{r!} = \frac{n!}{(n - r)!r!}$
 
-$\binom{n}{n_1 \ \ n_2 \ \cdots \ \ n_k} = \frac{n!}{n_1! n_2! \cdots n_k!}$
+<!-- $\binom{n}{n_1 \ \ n_2 \ \cdots \ \ n_k} = \frac{n!}{n_1! n_2! \cdots n_k!}$ -->
 
 $P(B | A) = \frac{P(A \cap B)}{P(A)}$
 
@@ -25,16 +25,38 @@ Bayes Rule: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
 
 $\mu = E(Y) = \sum_{y \in \mathbb{S}}yp(y)$
 
-$\sigma^2 = V(Y) = \sum_{y \in \mathbb{S}}(y - \mu)^2p(y)$
+$\sigma^2 = V(Y) = \sum_{y \in \mathbb{S}}(y - \mu)^2p(y)$\
 \
-\
-**Discrete Uniform distribution:**
 
-$$p(y) = \frac{1}{m}\ \ \ y = 1, 2, \dots, m,$$
+| **Distribution** | **Probability Function** | **Mean** | **Variance** |
+|------------------|--------------------------|-----------|---------------|
+| **Binomial** | $\binom{n}{y} p^y (1-p)^{n-y}$ | $np$ | $np(1-p)$ |
+| **Geometric** | $p(1-p)^{y-1}$ | $\dfrac{1}{p}$ | $\dfrac{1-p}{p^2}$ |
+| **Hypergeometric** | $\dfrac{\binom{r}{y}\binom{N-r}{n-y}}{\binom{N}{n}}$ | $\dfrac{nr}{N}$ | $n \left(\dfrac{r}{N}\right)\left(\dfrac{N-r}{N}\right)\left(\dfrac{N-n}{N-1}\right)$ |
+| **Poisson** | $\dfrac{\lambda^y e^{-\lambda}}{y!}$ | $\lambda$ | $\lambda$ |
+| **Negative Binomial** | $\binom{y-1}{r-1} p^r (1-p)^{y - r}$ | $\dfrac{r}{p}$ | $\dfrac{r(1-p)}{p^2}$ |
 
-$$F(y) = P(Y \leq y) = \begin{cases}
-0, & y < 1,\\
-\frac{k}{m} & k \leq y < k+1,\\
-1, & m \leq y.
-\end{cases}$$
 
+**Geometric series:** $\sum_{n=0}^{\infty} ar^n = \frac{a}{1 - r}$
+
+**For geometric random variable**, $P(Y > k) = (1 - p)^k$
+
+**Maclaurin series expansion:** $e^x = \sum_{n = 0}^{\infty} \frac{x^n}{n!}$
+
+**Binomial expansion**: $(a + b)^n = \sum_{y=0}^{n} \binom{n}{y} a^{y} b^{n -y}$
+ 
+
+
+<!-- **Discrete Uniform distribution:** -->
+
+<!-- $$p(y) = \frac{1}{m}\ \ \ y = 1, 2, \dots, m,$$ -->
+
+<!-- $$F(y) = P(Y \leq y) = \begin{cases} -->
+
+<!-- 0, & y < 1,\\ -->
+
+<!-- \frac{k}{m} & k \leq y < k+1,\\ -->
+
+<!-- 1, & m \leq y. -->
+
+<!-- \end{cases}$$ -->
