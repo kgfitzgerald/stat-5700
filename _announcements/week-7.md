@@ -9,6 +9,7 @@ date: 2025-10-07
 + Hand in annotated test corrections now if you have them
 + Quiz to start class today
 + No class (or recorded lecture!) on Thursday - we're running ahead of schedule :)
++ No office hours on Thursday
 
 + Due this Thursday: 
   + Homework 05
