@@ -1,305 +1,154 @@
 ---
-title: "Lab 06"
-subtitle: "STAT 5700"
-author: "Insert your name here"
-date: "Insert due date here"
-format: 
-  html:
-    self-contained: true
-    toc: true
-    toc_float: true
-    number-section: false
-    highlight: tango
+title: "Lab 06: Discrete Distributions in R"
+format: pdf
 editor: visual
 editor_options: 
   chunk_output_type: console
 ---
 
-*Note, the tutorial section is the same as the group work from Chapter 3 Section 2 - provided here for a refresher and for your copy-paste convenience. You may find it useful to refer to your work from the group work handout while completing this lab*
-
-Let's begin by loading the necessary packages. Most of the functions in this lab are in base R, meaning they don't require any additional packages, but we'll load a few packages to help with plotting. Note you may need to install the `ggdist` and `distributional` packages before using them.
-
-```{r}
-#| message: false
+```{r, warning = FALSE, message = FALSE}
 library(tidyverse)
-library(ggdist)
-library(distributional)
 ```
 
-# Tutorial
+# Overview
 
-Commands for continuous random variables are similar to those for discrete random variables. As noted in Lab 05, the abbreviated name of the distribution is preceded by once of four letters:
+As you'll recall from Lab 04, R includes many built in functions for common distributions. Commands for each follow the same basic format. The abbreviated name of the distribution is preceded by once of four letters:
 
--   “d” for the density function (pdf for continuous random variables)
--   “p” for the distribution function (cdf)
--   “q” for quantile function (gives the quantile for a given probability)
--   “r” for random (generates a random number based on the distribution
+-   "d" for the density function (probability distribution for discrete random variables)
+-   "p" for the cumulative distribution function (cdf)
+-   "q" for the quantile function (gives the x value for a given cumulative probability)
+-   "r" for random (generates a random number based on the distribution)
 
-## Computing probabilities for continuous distributions in R
+## Geometric distribution
 
-The cdf values $F(X) = P(X < x)$ are returned with commands using "p" at the beginning of the R distribution name:
+**NOTE: In R, the geometric distribution is parameterized as the number of FAILURES until the 1st success.** Whereas, in the book and lecture notes we consider the random variable Y to be the trial on which the first success occurs. This means generally you will need to convert Y to the number of failures, X, as X = Y - 1 before using the built-in R functions.
 
--   `punif(x, min, max)` returns $F(x)$ values for a uniform random variable $X \sim U(a, b)$ where the arguments `min` and `max` correspond to the parameters $a$ and $b$ respectively.
-
--   `pexp(x, rate)` - returns $F(x)$ values for an exponential random variable $X \sim exp(\lambda)$ with argument `rate` = $\lambda = 1/\theta$
-
-    -   Note our textbook defines exponential distributions in terms of the parameter $\theta$, which is the mean wait time, instead of the rate $\lambda$.
-
--   `pgamma(x, shape, scale = 1/rate)` - returns $F(x)$ values for a gamma random variable $X \sim(\alpha , \theta)$ with parameters `shape` = $\alpha$ and `scale` = $\theta = 1/\lambda$.
-
-    -   Because the gamma function can be parameterized in terms of scale or rate, make sure to name the argument inside the `pgamma()` function to specify which parameter you're defining.
-
--   `pchisq(x, df)` - returns $F(x)$ values for a chi-square random variable $X \sim \chi^2(r)$ where the argument `df` corresponds to the degrees of freedom parameter `r`.
-
--   `pnorm(x, mean, sd)` - returns $F(x)$ values for a normal random variable $X \sim N(\mu, \sigma^2)$ with parameter arguments `mean` = $\mu$, and `sd` = $\sigma$.
-
-    -   NOTE: the `_norm()` functions in R are defined in terms of the standard deviation $\sigma$, not the variance $\sigma^2$!
-
-There is a hidden argument in each of these functions called `lower.tail`, and the default is set to `lower.tail = TRUE`. Meaning, by default, the "p" functions return the probabilities in the *lower tail* of the density function: $F(X) = P(X <x)$. Sometimes it will be useful to override the default by adding the argument `lower.tail = FALSE`, which will return values $F(X) = P(X > x)$. You can think of these two options visually; `lower.tail = TRUE` represents the pink shaded region $P(X < 10)$, and `lower.tail = FALSE` represents the blue shaded region $P(X > 10)$ in the plot below.
+For example, if you want to find $P(Y = 3)$ (1st success happens on 3rd trial), this is equivalent to $P(X = 2)$ (2 failures before 1st success). This is calculated below, assuming a probability of success of 0.75
 
 ```{r}
-#| echo: false
-ggplot() +
-  stat_dist_halfeye(aes(y = "Chisq(5)", 
-                        dist = dist_chisq(df = 5),
-                        fill = stat(x > 10)), 
-                    show.legend = FALSE) +
-  labs(y = "", x = "x") +
-  #viridis color scale is color-blind friendly
-  #set direction = -1 so TRUE is dark instead of light
-  scale_fill_viridis_d(direction = -1) +
-  theme_minimal()
+dgeom(2, 0.75)
 ```
 
-### Uniform example
-
-Suppose $X \sim U(0,5)$. Let's compute the probability that $X < 2$ using the `punif()` function.
+We can confirm it by calculating in manually:
 
 ```{r}
-punif(2, 0, 5)
+#P(Y = 3) = p(3) = (1 - p)^(3 - 1)*(p)
+(1 - .75)^2*.75
 ```
 
-We could find the probability that $X > 3$ in two ways:
+`pgeom(x, prob)` -- returns $F(x) = P(X \leq x),$ cumulative probabilities for the geometric distribution, again where X = number of failures before 1st success.
+
+$P(Y \leq 3) = P(X \leq 2)$
 
 ```{r}
-punif(3, 0, 5, lower.tail = FALSE)
-1 - punif(3, 0, 5)
+pgeom(2, .75)
+
+#check manually
+#P(Y <= 3) = p(1) + p(2) + p(3) = sum((1 - p)^(y - 1)*(p)) for y = 1,2,3
+y <- c(1,2,3)
+p <- 0.75
+p_y <- (1 - p)^(y-1)*p
+p_y
+sum(p_y)
 ```
 
-To find $P(2 < X < 3)$ we can re-write it as $P(X < 3) - P(X < 2)$
+## Negative Binomial distribution
+
++ `dnbinom(x, size, prob)` calculates $P(Y = x + r)$ for a random variable $Y \sim negbinom(r = size, p = prob)$. 
+    + Note the first argument is `x` is the number of failures (`y - r`). 
+    + The `size` argument is what we are used to referring to as `r`, the desired number of successes
++ `pnbinom(q, size, prob)` calculates $P(Y \leq q)$, the cumulative probability up to the cutoff `q`
+
+**Example 3.14 from textbook**
+
+A geological study indicates that an exploratory oil well drilled in a particular region should strike oil with probability 0.2. Find the probability that the third oil strike comes on the fifth well drill.
 
 ```{r}
-punif(3, 0, 5) - punif(2, 0, 5)
+#P(Y = 5), where Y ~ nbinom(r = 3, p = 0.2)
+#implies x = 2 failures
+dnbinom(2, size = 3, prob = 0.2)
 ```
 
-We can create a plot of the previous example using the following code:
+## Hypergeometric distribution
+
++ `dhyper(x, m, n, k)` calculates $P(X = x)$, where $X$ is a hypergeometric random variable and:
+
+    + `x` = number of objects sampled that have the desired "success" feature ($y$ in our notation)
+    + `m` = number of objects with the success feature in the population ($r$ in our notation)
+    + `n` = number of objects WITHOUT the success feature in the population ($N - r$ in our notation)
+    + `k` = sample size ($n$ in our notation)
+
+**Example 3.16 from textbook**
+
+From a group of 20 PhD engineers, 10 are randomly selected for employment. What is the probability that the 10 selected include all the 5 best engineers in the group of 20?
 
 ```{r}
-ggplot() +
-  stat_dist_halfeye(aes(y = "U(0,5)", 
-                        dist = dist_uniform(min = 0, max = 5),
-                        fill = stat(x > 2 & x < 3))) +
-  labs(y = "", x = "x") +
-  #viridis color scale is color-blind friendly
-  #set direction = -1 so TRUE is dark instead of light
-  scale_fill_viridis_d(direction = -1) +
-  theme_minimal()
+#N = 20 population size
+#r = 5 total in population w/ success feature
+#y = 5 sampled w/ success feature (x in dhyper)
+#n = 10 sample size (k in dhyper)
+#N - r = 15 (n in dhyper)
+
+dhyper(x = 5, m = 5, n = 15, k = 10)
 ```
 
-### Gamma example
+## Poisson Distribution
 
-Suppose $X \sim \Gamma(\alpha = 3, \theta = 4)$. Let's compute the probability that $X < 2$:
++ `dpois(x, lambda)` calculates $P(X = x)$ for $X \sim Poisson(\lambda)$
++ `ppois(q, lambda)` calculates $P(X \leq q)$
+
+**Example 3.19 in textbook**
+
+Let $X \sim Poisson(\lambda = 1)$. Find $P(Y = 0)$, $P(Y = 1)$, $P(Y = 2)$, $P(Y \geq 1)$.
 
 ```{r}
-pgamma(2, shape = 3, scale = 4)
+dpois(0, lambda = 1) 
+dpois(1, lambda = 1)
+dpois(2, lambda = 1)
+1 - dpois(0, lambda = 1)
 ```
 
-We can plot this distribution with the following code:
+# Tasks
 
-```{r}
-ggplot() +
-  stat_dist_halfeye(aes(y = "Gamma(3,4)", 
-                        #note the function dist_gamma() requires the rate parameter 
-                        #instead of the scale parameter. Recall rate = 1/scale
-                        dist = dist_gamma(shape = 3, rate = 1/4),
-                        fill = stat(x < 2))) +
-  labs(y = "", x = "x") +
-  scale_fill_viridis_d(direction = -1) +
-  theme_minimal()
-```
+For this lab, you will (re-)do odd problems from HW 05, but rather than solving by hand, you will use the `dgeom()`, `dnbinom()`, `dhyper()`, and `dpois()` to obtain the answer. 
 
-If we wanted to calculate $P(X>2)$, that is the region shaded in pink, we could do that in two ways:
-
-```{r}
-1 - pgamma(2, shape = 3, scale = 4)
-pgamma(2, shape = 3, scale = 4, lower.tail = FALSE)
-```
-
-## Computing percentiles for continuous distributions in R
-
-The inverse of the cdf, or the $x$ that solves the equation $p = F(x) = P(X < x)$, are returned with commands using “q” at the beginning of the R distribution name:
-
--   `qunif(p, min, max)` – finds $x$ such that $P(X < x) = p$ for a uniform random variable $X \sim U(a, b)$ where the arguments `min` and `max` correspond to the parameters $a$ and $b$ respectively.
--   `qexp(p, rate)` - finds $x$ such that $P(X < x) = p$ for an exponential random variable $X \sim exp(\lambda)$ with argument `rate` = $\lambda = 1/\theta$
--   `qgamma(p, shape, scale = 1/rate)` - finds $x$ such that $P(X < x) = p$ for a gamma random variable $X \sim(\alpha , \theta)$ with parameters `shape` = $\alpha$ and `scale` = $\theta = 1/\lambda$.
--   `qchisq(p, df)` - finds $x$ such that $P(X < x) = p$ for a chi-square random variable $X \sim \chi^2(r)$ where the argument `df` corresponds to the degrees of freedom parameter `r`.
-
-Again, set `lower.tail = FALSE` to use upper tail probabilities and find $x$ such that $P(X > x) = p.$
-
-### Chi-squared example
-
-Suppose $X \sim \chi^2(14)$. Find the 95th percentile.
-
-```{r}
-qchisq(0.95, 14)
-```
-
-Another way to compute the same percentile using upper tail probabilities:
-
-```{r}
-qchisq(0.05, 14, lower.tail = FALSE)
-```
-
-We can plot a shaded chi-squared distribution with the following code:
-
-```{r}
-ggplot() +
-  stat_dist_halfeye(aes(y = "Chisq(14)", 
-                        dist = dist_chisq(14),
-                        fill = stat(x < qchisq(0.95, 14)))) +
-  labs(y = "", x = "x") +
-  scale_fill_viridis_d(direction = -1) +
-  theme_minimal()
-```
-
-### Exponential example
-
-Suppose $X \sim exp(\theta = 3)$. Find the median.
-
-```{r}
-qexp(0.5, rate = 1/3)
-```
-
-We can plot a shaded exponential distribution with the following code:
-
-```{r}
-median <- qexp(0.5, rate = 1/3)
-ggplot() +
-  stat_dist_halfeye(aes(y = "exp(3)", 
-                        dist = dist_exponential(rate = 1/3),
-                        fill = stat(x < median))) +
-  labs(y = "", x = "x") +
-  scale_fill_viridis_d(direction = -1) +
-  theme_minimal()
-```
-
-# Task 1
-
-Find $P(X < 18)$ if $X \sim exp(\theta = 20)$
-
-```{r}
-
-
-```
-
-# Task 2
-
-Find $P(X > 5)$ if $X \sim \Gamma(\alpha = 2, \theta = 2)$
-
-```{r}
-
-
-```
-
-# Task 3
-
-*From Hogg, Tanis, and Zimmermann; Exercise 3.2-11*
-
-If $X$ is $\chi^2(17)$, find
-
-a.  $P(X < 7.564)$
-b.  $P(X > 27.59)$
-c.  $P(6.408 < Z < 27.59)$
-d.  $\chi^2_{0.95}(17)$ (i.e. find the 95th percentile).
-e.  $\chi^2_{0.025}(17)$ (i.e. find the 2.5th percentile)
-
-### Part a
+## 3.67
 
 ```{r}
 
 ```
 
-### Part b
+## 3.73
 
 ```{r}
 
 ```
 
-### Part c
+## 3.93
 
 ```{r}
 
 ```
 
-### Part d
+## 3.97a-b
 
 ```{r}
 
 ```
 
-### Part e
+## 3.103
 
 ```{r}
 
 ```
 
-# Task 4
-
-*From Hogg, Tanis, and Zimmermann; Exercise 3.2-14*
-
-If $X$ is $\chi^2(12)$, find constants $a$ and $b$ such that $$P(a < X < b) = 0.90$$ and $$P(X < a) = 0.05.$$ Provide comments on how you solve the problem and why you choose the R commands you did.
+## 3.105b
 
 ```{r}
 
 ```
 
-> YOUR COMMENTS HERE
-
-# Task 5
-
-*From Hogg, Tanis, and Zimmermann; Exercise 3.2-16*
-
-Cars arrive at a tollbooth at a mean rate of 5 cars every 10 minutes according to a Poisson process. Find the probability that the toll collector will have to wait longer than 26.30 minutes before collecting the eighth toll. Comment on how you solve the problem including what distribution you use to model this scenario, the parameter values, and why you implemented the R commands you did.
-
-```{r}
-
-```
-
-> YOUR COMMENTS HERE
-
-# Task 6
-
-*From Hogg, Tannis, and Zimmerman: Exercise 3.3-5*
-
-If $X$ is normally distributed with a mean of 6 and a variance of 25, find
-
-a.  $P(6 \leq X \leq 12)$
-b.  $P(X > 21)$
-c.  $P(|X - 6| < 5)$
-
-### Part a
-
-```{r}
-
-```
-
-### Part b
-
-```{r}
-
-```
-
-### Part c
+## 3.121
 
 ```{r}
 
