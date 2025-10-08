@@ -1,5 +1,6 @@
 ---
 title: "Lab 06: Discrete Distributions in R"
+author: "YOUR NAME HERE"
 format: pdf
 editor: visual
 editor_options: 
@@ -54,10 +55,10 @@ sum(p_y)
 
 ## Negative Binomial distribution
 
-+ `dnbinom(x, size, prob)` calculates $P(Y = x + r)$ for a random variable $Y \sim negbinom(r = size, p = prob)$. 
-    + Note the first argument is `x` is the number of failures (`y - r`). 
-    + The `size` argument is what we are used to referring to as `r`, the desired number of successes
-+ `pnbinom(q, size, prob)` calculates $P(Y \leq q)$, the cumulative probability up to the cutoff `q`
+-   `dnbinom(x, size, prob)` calculates $P(Y = x + r)$ for a random variable $Y \sim negbinom(r = size, p = prob)$.
+    -   Note the first argument is `x` is the number of failures (`y - r`).
+    -   The `size` argument is what we are used to referring to as `r`, the desired number of successes
+-   `pnbinom(q, size, prob)` calculates $P(Y \leq q)$, the cumulative probability up to the cutoff `q`
 
 **Example 3.14 from textbook**
 
@@ -71,12 +72,12 @@ dnbinom(2, size = 3, prob = 0.2)
 
 ## Hypergeometric distribution
 
-+ `dhyper(x, m, n, k)` calculates $P(X = x)$, where $X$ is a hypergeometric random variable and:
+-   `dhyper(x, m, n, k)` calculates $P(X = x)$, where $X$ is a hypergeometric random variable and:
 
-    + `x` = number of objects sampled that have the desired "success" feature ($y$ in our notation)
-    + `m` = number of objects with the success feature in the population ($r$ in our notation)
-    + `n` = number of objects WITHOUT the success feature in the population ($N - r$ in our notation)
-    + `k` = sample size ($n$ in our notation)
+    -   `x` = number of objects sampled that have the desired "success" feature ($y$ in our notation)
+    -   `m` = number of objects with the success feature in the population ($r$ in our notation)
+    -   `n` = number of objects WITHOUT the success feature in the population ($N - r$ in our notation)
+    -   `k` = sample size ($n$ in our notation)
 
 **Example 3.16 from textbook**
 
@@ -94,8 +95,8 @@ dhyper(x = 5, m = 5, n = 15, k = 10)
 
 ## Poisson Distribution
 
-+ `dpois(x, lambda)` calculates $P(X = x)$ for $X \sim Poisson(\lambda)$
-+ `ppois(q, lambda)` calculates $P(X \leq q)$
+-   `dpois(x, lambda)` calculates $P(X = x)$ for $X \sim Poisson(\lambda)$
+-   `ppois(q, lambda)` calculates $P(X \leq q)$
 
 **Example 3.19 in textbook**
 
@@ -110,7 +111,7 @@ dpois(2, lambda = 1)
 
 # Tasks
 
-For this lab, you will (re-)do odd problems from HW 05, but rather than solving by hand, you will use the `dgeom()`, `dnbinom()`, `dhyper()`, and `dpois()` to obtain the answer. 
+For this lab, you will (re-)do odd problems from HW 05, but rather than solving by hand, you will use the `dgeom()`, `dnbinom()`, `dhyper()`, and `dpois()` to obtain the answer.
 
 ## 3.67
 

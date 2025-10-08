@@ -14,6 +14,7 @@ nav_order: 6
 + [Quiz 01](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_01_SOLUTIONS.pdf)
 + [Quiz 02](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_02_SOLUTIONS.pdf)
 + [Quiz 03](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_03_SOLUTIONS.pdf)
++ [Quiz 04](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_04_SOLUTIONS.pdf)
 
 ## Homework solutions
 
@@ -22,6 +23,7 @@ nav_order: 6
 + [HW 03](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_03_SOLUTIONS.pdf)
 + [HW 04](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_04_SOLUTIONS.pdf)
 + [HW 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_05_SOLUTIONS.pdf)
++ [HW 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_06_SOLUTIONS.pdf)
 
 ## Group Work solutions
 

@@ -1,0 +1,38 @@
+---
+title-block: false
+format: pdf
+---
+
+**STAT 5700 — Quiz 4**  
+**Date:** October 7, 2025  
+\textbf{\textcolor{red}{SOLUTIONS}}
+
+# Problem 1
+
+Suppose a football kicker misses an extra point kick with probability 0.05. Given that he made the first 10 kicks of the season, what is the probability that he will make at least 3 more before his first miss? That is, what is $P(Y > 13 | Y > 10)$?  
+
+## SOLUTION 
+
+$P(Y > 13 | Y > 10) = \frac{P((Y > 13) \cap (Y > 10))}{P(Y > 10)} = \frac{P(Y > 13)}{P(Y > 10)} = \frac{q^{13}}{q^{10}} = q^3 = .95^3 = 0.857$
+
+
+# Problem 2
+
+A researcher needs a sample size of 35 for their survey. Suppose people only respond with 30% probability. 
+
+a) On average, how many people does the researcher need to contact to ensure 35 people respond? 
+
+b) What is the probability that the researcher will need to contact at most 100 people? Write out the formula (with appropriate numbers plugged in) - you do not need to calculate the result. 
+
+## SOLUTION PART A
+
+$Y \sim nbinom(r = 35, p = 0.3) \implies E(Y) = 35/0.3 = 116.67 \implies 117$ people must be surveyed.
+
+## SOLUTION PART B
+
+$P(Y \leq 100) = \sum_{y = 35}^{100}\binom{y - 1}{34}(0.3)^{35}(.7)^{y - 35}$
+
+# TRUE/FALSE (0.5pt each)
+
+3. \textcolor{red}{FALSE} If $Y\sim Poisson(\lambda)$ and $V(Y) = 4$, then $E(Y^2) = 16$.
+4. \textcolor{red}{FALSE} The geometric distribution is a special case of the hypergeometric distribution, with $r = 1$
