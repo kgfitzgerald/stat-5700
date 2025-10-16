@@ -11,7 +11,7 @@ library(distributional)
 # Chapter 4 R Practice
 
 Commands for continuous random variables are similar to those for
-discrete random variables. As noted in Lab 05, the abbreviated name of
+discrete random variables. As noted in previous labs, the abbreviated name of
 the distribution is preceded by once of four letters:
 
 -   “d” for the density function (pdf for continuous random variables)
@@ -25,6 +25,10 @@ the distribution is preceded by once of four letters:
 The cdf values $F(Y) = P(Y < y)$ are returned with commands using "p" at
 the beginning of the R distribution name:
 
+-   `pnorm(y, mean, sd)` - returns $F(y)$ values for a **normal random
+    variable** $Y \sim N(\mu,\sigma^2)$ where the argument `mean`
+    corresponds to the parameter $\mu$ and the argument `sd` refers to
+    the standard deviation $\sqrt{\sigma^2}$.
 -   `punif(y, min, max)` returns $F(y)$ values for a **uniform random
     variable** $Y \sim U(a, b)$ where the arguments `min` and `max`
     correspond to the parameters $a$ and $b$ respectively.
@@ -43,10 +47,7 @@ the beginning of the R distribution name:
 -   `pchisq(y, df)` - returns $F(y)$ values for a **chi-square random
     variable** $Y \sim \chi^2(r)$ where the argument `df` corresponds to
     the degrees of freedom parameter `r`
--   `pnorm(y, mean, sd)` - returns $F(y)$ values for a **normal random
-    variable** $Y \sim N(\mu,\sigma^2)$ where the argument `mean`
-    corresponds to the parameter $\mu$ and the argument `sd` refers to
-    the standard deviation $\sqrt{\sigma^2}$.
+
 
 There is a hidden argument in each of these functions called
 `lower.tail`, and the default is set to `lower.tail = TRUE`. Meaning, by

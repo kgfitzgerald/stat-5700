@@ -16,6 +16,7 @@ PDFs of lecture notes will be provided in links below. These are "scaffolded" le
 + [Chapter 2 notes](assets/lecture_notes/CH2_Probability.pdf)
 + [Chapter 3 notes (part 1)](assets/lecture_notes/CH3_part1.pdf)
 + [Chapter 3 notes (part 2)](assets/lecture_notes/CH3_part2.pdf)
++ [Chapter 4 notes](assets/lecture_notes/CH4.pdf)
 
 
 
