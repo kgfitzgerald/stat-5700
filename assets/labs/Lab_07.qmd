@@ -1,5 +1,5 @@
 ---
-title: "Lab 07"
+title: "Lab 07: Normal distribution in R"
 subtitle: "STAT 5700"
 author: "Insert your name here"
 date: "Insert due date here"
@@ -15,15 +15,58 @@ editor_options:
   chunk_output_type: console
 ---
 
+Let's begin by loading the necessary packages. Most of the functions in this lab are in base R, meaning they don't require any additional packages, but we'll load a few packages to help with plotting. Note you may need to install the `ggdist` and `distributional` packages before using them.
+
+```{r}
+#| message: false
+library(tidyverse)
+library(ggdist)
+library(distributional)
+```
+
 # Tutorial
 
-This lab has you work with probabilities and percentiles from the normal distribution. Recall the following functions:
+Commands for continuous random variables are similar to those for discrete random variables. As noted in previous labs, the abbreviated name of the distribution is preceded by once of four letters:
+
+-   “d” for the density function (pdf for continuous random variables)
+-   “p” for the distribution function (cdf)
+-   “q” for quantile function (gives the quantile for a given probability)
+-   “r” for random (generates a random number based on the distribution
+
+## Computing probabilities for continuous distributions in R
+
+The cdf values $F(X) = P(X < x)$ are returned with commands using "p" at the beginning of the R distribution name:
 
 -   `pnorm(x, mean, sd)` - returns $F(x) = P(X \leq x)$ values for a normal random variable $X \sim N(\mu, \sigma^2)$ with parameter arguments `mean` = $\mu$, and `sd` = $\sigma$.
 
+The inverse of the cdf, or the $x$ that solves the equation $p = F(x) = P(X < x)$, are returned with commands using “q” at the beginning of the R distribution name:
+
 -   `qnorm(p, mean, sd)` - finds $x$ such that $P(X < x) = p$ for a normal random variable $X \sim N(\mu, \sigma^2)$ with parameter arguments `mean` = $\mu$, and `sd` = $\sigma$.
 
-REMEMBER: the `_norm()` functions in R are defined in terms of the standard deviation $\sigma$, not the variance $\sigma^2$!
+NOTE: the `_norm()` functions in R are defined in terms of the standard deviation $\sigma$, not the variance $\sigma^2$!
+
+There is a hidden argument in each of these functions called `lower.tail`, and the default is set to `lower.tail = TRUE`. Meaning, by default, the "p" functions return the probabilities in the *lower tail* of the density function: $F(X) = P(X <x)$. Sometimes it will be useful to override the default by adding the argument `lower.tail = FALSE`, which will return values $F(X) = P(X > x)$. You can think of these two options visually; `lower.tail = TRUE` represents the yellow (light) shaded region $P(X < 1800)$, and `lower.tail = FALSE` represents the purple (dark) shaded region $P(X > 1800)$ in the plot below.
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+ggplot() +
+  stat_dist_halfeye(aes(y = "Normal(1800,sd = 300)", 
+                        dist = dist_normal(mean = 1500, sd = 300),
+                        fill = stat(x > 1800)), 
+                    show.legend = FALSE) +
+  labs(y = "", x = "x") +
+  #viridis color scale is color-blind friendly
+  #set direction = -1 so TRUE is dark instead of light
+  scale_fill_viridis_d(direction = -1) +
+  theme_minimal()
+```
+
+
+
+
 
 The following code finds $P(X < 1800)$ when $X$ is normally distributed with mean 1500 and variance 90000.
 
@@ -39,11 +82,9 @@ qnorm(0.8413447, 1500, sqrt(90000))
 
 # Tasks
 
-Note that both tasks are odd exercises from the HTZ textbook, so you can check your answers in the back of the book.
-
 ## Task 1
 
-*\[Problem 3.3-1\]* If $Z$ is $N(0,1)$, find:
+If $Z$ is $N(0,1)$, find:
 
 a.  $P(0.47 < Z < 2.13)$
 
@@ -99,7 +140,7 @@ i.  What rule do parts f - h demonstrate?
 
 ## Task 2
 
-\[*Problem 3.3-3*\] If $Z$ is $N(0,1)$, find values of $c$ such that:
+If $Z$ is $N(0,1)$, find values of $c$ such that:
 
 a.  $P(Z \geq c) = 0.025$
 
@@ -128,3 +169,5 @@ d.  $P(|Z| \leq c) = 0.90$
 e.  Comment on how your answers in parts a - d relate to your answers in Task 1.
 
 > YOUR ANSWER HERE
+
+

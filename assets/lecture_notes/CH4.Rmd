@@ -298,14 +298,7 @@ example. What is the probability that the elevator arrives in less than
 \
 \
 \
-\
-\
-\
-\
-\
-\
-\
-\
+
 
 :::
 
@@ -338,13 +331,7 @@ uniform distribution").
     \
     \
     \
-    \
-    \
-    \
-    \
-    \
-    \
-    \
+
 :::
 
 \pagebreak
@@ -492,7 +479,6 @@ This is the distribution depicted in the figure above.
 \
 :::
 
-\pagebreak
 
 # 4.5 The Normal Distribution
 
@@ -551,7 +537,7 @@ $E(Y) = \frac{1}{2}(\theta_1 + \theta_2) \neq \theta_1$ and
 $V(Y) = \frac{1}{12}(\theta_2 - \theta_1)^2 \neq \theta_2$
 :::
 
-## Properties of the Normal Distribution
+### Properties of the Normal Distribution
 
 ![](images/normal_dist.png){width="274"}
 
@@ -583,7 +569,7 @@ the SAT.
 on the SAT
 :::
 
-## Standard Normal Distribution (Z)
+### Standard Normal Distribution (Z)
 
 ::: {.highlightbox data-latex=""}
 The normal distribution with $\mu = 0$ and $\sigma^2 = 1$ is known as
@@ -638,6 +624,8 @@ $Z = (Y - \mu)/\sigma$ is $N(0,1)$
 \textcolor{red}{\textbf{Z-scores}} are a way of understanding data as
 distances from the mean in "standard deviation units"
 
+\pagebreak
+
 ### Properties of Z-scores
 
 -   Z-scores follow a standard normal distribution $Z \sim N(0,1)$
@@ -666,10 +654,6 @@ distances from the mean in "standard deviation units"
 <!-- + Explore the relationship between Z\* and the upper and lower bounds by moving the Z\* slider. Does this relationship change if you change the mean and standard deviation? Try to find the Z* values that cause approximately 68.5%, 95%, and 99.7% of the SAT scores to be within the range.  -->
 
 <!-- <! comment on REMARK pg. 110 here > -->
-
-
-
-\pagebreak 
 
 # 4.6 The Exponential, Gamma, and Chi-square Distributions
 
@@ -712,7 +696,7 @@ Use the above result to produce the pdf of $W$\
 \
 :::
 
-## Exponential Distribution
+### Exponential Distribution
 
 We just derived the pdf for what's known as the **exponential
 distribution**, which is used to model the waiting time for a first
@@ -819,7 +803,7 @@ the first arrival.\
 
 \pagebreak
 
-## Gamma Distribution
+### Gamma Distribution
 
 ::: {.highlightbox data-latex=""}
 The \textcolor{red}{\textbf{Gamma distribution}} is used to model the
@@ -871,7 +855,7 @@ mean and variance of the random variable?\
 \
 :::
 
-## The Chi-square distribution
+### The Chi-square distribution
 
 ::: {.highlightbox data-latex=""}
 A special case of the **Gamma** distribution with $\alpha = \nu/2$ and
@@ -945,7 +929,7 @@ $$V(Y) = \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}$$
 
 
 
-## Continuous Random Variables in R
+### Continuous Random Variables in R
 
 \pagebreak
 
