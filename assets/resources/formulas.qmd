@@ -30,6 +30,7 @@ $\sigma^2 = V(Y) = \sum_{y \in \mathbb{S}}(y - \mu)^2p(y)$\
 
 | **Distribution** | **Probability Function** | **Mean** | **Variance** |
 |------------------|--------------------------|-----------|---------------|
+| **Bernoulli** | $p^y (1-p)^{1-y}$ | $p$ | $p(1-p)$ |
 | **Binomial** | $\binom{n}{y} p^y (1-p)^{n-y}$ | $np$ | $np(1-p)$ |
 | **Geometric** | $p(1-p)^{y-1}$ | $\dfrac{1}{p}$ | $\dfrac{1-p}{p^2}$ |
 | **Hypergeometric** | $\dfrac{\binom{r}{y}\binom{N-r}{n-y}}{\binom{N}{n}}$ | $\dfrac{nr}{N}$ | $n \left(\dfrac{r}{N}\right)\left(\dfrac{N-r}{N}\right)\left(\dfrac{N-n}{N-1}\right)$ |
@@ -45,7 +46,7 @@ $\sigma^2 = V(Y) = \sum_{y \in \mathbb{S}}(y - \mu)^2p(y)$\
 
 **Binomial expansion**: $(a + b)^n = \sum_{y=0}^{n} \binom{n}{y} a^{y} b^{n -y}$
  
-
+**Moment-generating function**: $m(t) = E(e^{ty})$
 
 <!-- **Discrete Uniform distribution:** -->
 

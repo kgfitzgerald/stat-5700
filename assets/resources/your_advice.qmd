@@ -1,0 +1,25 @@
+---
+title: "Your Advice"
+subtitle: "(student responses on take-home exam)"
+format: html
+---
+
+*What advice would you give to yourself (or a friend) at the start of the semester about how to succeed in this course? What strategies have been helpful or not so helpful?*
+
++ Don’t rely only on the lecture notes for the quizzes – mastery comes through the homework problems
++ Do all the practice problems before the quiz on Thursdays
++ Utilize/read the textbook, especially when stuck on a homework problem 
++ Manage time well / start early to give yourself enough time to do all the practice problems, and to give the concepts enough time to sink in. Allows you to focus more on understanding rather than simple completion.
++ Use resources like Wikipedia & ChatGPT to help explain things you don’t understand – less focused on just plugging in and getting the right answers, and focusing more on the “why”. 
++ Give yourself enough time to let the problems sink in, learn the fundamentals, because on tests/quizzes you’ll encounter problems you haven’t seen before, but you’ll be able to rely on the fundamentals to construct a solution
++ When studying, re-do even the problems you feel comfortable with and try to see if you can find multiple ways to arrive at the answer. 
++ Focus on understanding the concepts/formulas rather than just regurgitating them 
++ Work with other people, because they might have other ideas you wouldn’t have thought of for solving the problem a different way
++ Instead of looking up answers online, it was more beneficial for me to figure it out myself. The struggle can be part of the process of helping you understand more deeply!
++ Try to explain definitions / theorems in different words – understand what they mean
++ Use the group work as a way to study – ask why, don’t just try to get it done
++ Deeper understanding will allow you to move more efficiently through the quizzes 
++ Read over notes before class – helps refresh content and anticipate where it will be going next (leads to deeper understanding, ability to ask good questions) 
++ Just because you’ve seen the concepts in a previous class, don’t assume you know everything – you’ll need a deeper understanding here
++ Review posted solutions, even if you got everything right. Can help you see a potentially more direct or different way of solving the problem.
+
