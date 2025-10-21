@@ -13,7 +13,7 @@ date: 2025-10-21
   
 + Quiz Thursday: moments & mgfs (3.9/HW 06)
 
-+ Your [advice to yourselves]((https://kgfitzgerald.github.io/stat-5700/assets/resources/your_advice.html)), as we enter into 2nd half of semester.
++ Your [advice to yourselves](https://kgfitzgerald.github.io/stat-5700/assets/resources/your_advice.html), as we enter into 2nd half of semester.
 
 + Mid-semester feedback:
     + Group work is particularly helpful
