@@ -15,209 +15,284 @@ editor_options:
   chunk_output_type: console
 ---
 
-Begin by loading necessary packages. You may need to run `install.packages("cowplot")` in your console to install the `cowplot` package (i.e. if you get a "could not find" error).
-
-```{r, message = FALSE, warning = FALSE}
+```{r}
+#| message: false
 library(tidyverse)
-library(cowplot) 
+library(ggdist)
+library(distributional)
 ```
 
 # Tutorial
 
-In this lab, you will explore properties of covariance, correlation, and slope of a least squares regression line.
+This lab has you work with probabilities and percentiles from the continuous distributions you've learned in class. Recall the following functions:
 
-We will work with some real data in this lab, from the `mtcars` dataset, which comes pre-loaded in R. Running the following code will let you view the first 6 rows of the data.
+-   `pnorm(x, mean = mu, sd = sigma)` - returns $F(x)$ values for a **normal random
+    variable** $X \sim N(\mu,\sigma^2)$
+-   `punif(x, min = theta1, max = theta2)` returns $F(x)$ values for a **uniform random
+    variable** $X \sim U(\theta_1, \theta_2)$
+-   `pexp(y, rate = lambda = 1/beta)` - returns $F(x)$ values for an **exponential random
+    variable** $X \sim exp(\beta)$
+    -   Note our textbook defines exponential distributions in terms of
+        the parameter $\beta$, which is the mean wait time, instead of
+        the rate $\lambda$.
+-   `pgamma(y, shape = alpha, scale = beta)` - returns $F(x)$ values for a
+    **gamma random variable** $X \sim(\alpha , \beta)$ with parameters
+    `shape` = $\alpha$ and `scale` = $\beta = 1/\lambda$.
+    -   Because the gamma function can be parameterized in terms of
+        shape or rate, make sure to name the argument inside the
+        `pgamma()` function to specify which parameter you're defining.
+-   `pchisq(x, df)` - returns $F(x)$ values for a **chi-square random
+    variable** $X \sim \chi^2(\nu)$ where the argument `df` corresponds to the degrees of freedom parameter `\nu`
+- `pbeta(x, shape1 = alpha, shape2 = beta)` - returns $F(x)$ values for a **beta random variable** $X \sim Beta(\alpha, \beta)$
 
-```{r}
-head(mtcars)
-```
-
-If you run `?mtcars` in your console, a Help window with data documentation will appear. Running `View(mtcars)` in your console will allow you to view the full dataset in a new tab.
-
-In this lab, we will be working with the `mpg` variable, which measures the miles per gallon for each car, and the `wt` variable which provides the weight of each car in 1000s of pounds.
-
-In order to access an individual variable from a dataset, we use the dollar sign \$, with the general syntax `dataset$variable`. The code below extracts the variable `mpg`.
-
-```{r}
-mtcars$mpg
-```
-
-We can then use functions such as `mean()` and `sd()` to compute the mean and standard deviation of a variable.
-
-```{r}
-#average the cars' mpg
-mean(mtcars$mpg)
-
-#standard deviation of the cars' mpg
-sd(mtcars$mpg)
-```
-
-The function `cov()` will compute the covariance between two variables.
+There is a hidden argument in each of these functions called `lower.tail`, and the default is set to `lower.tail = TRUE`. Meaning, by default, the "p" functions return the probabilities in the *lower tail* of the density function: $F(X) = P(X <x)$. Sometimes it will be useful to override the default by adding the argument `lower.tail = FALSE`, which will return values $F(X) = P(X > x)$. You can think of these two options visually; `lower.tail = TRUE` represents the pink shaded region $P(X < 10)$, and `lower.tail = FALSE` represents the blue shaded region $P(X > 10)$ in the plot below.
 
 ```{r}
-cov(mtcars$mpg, mtcars$wt)
+#| echo: false
+ggplot() +
+  stat_dist_halfeye(aes(y = "Chisq(5)", 
+                        dist = dist_chisq(df = 5),
+                        fill = stat(x > 10)), 
+                    show.legend = FALSE) +
+  labs(y = "", x = "x") +
+  #viridis color scale is color-blind friendly
+  #set direction = -1 so TRUE is dark instead of light
+  scale_fill_viridis_d(direction = -1) +
+  theme_minimal()
 ```
 
-The code below creates a simple plot of the two variables.
+### Uniform example
+
+Suppose $X \sim U(0,5)$. Let's compute the probability that $X < 2$ using the `punif()` function.
 
 ```{r}
-plot(mtcars$mpg, mtcars$wt)
+punif(2, 0, 5)
 ```
 
-We can make the graph look a little more professional and add the line of best fit using `ggplot2` functions from the `tidyverse` package.
+We could find the probability that $X > 3$ in two ways:
 
 ```{r}
-ggplot(mtcars, aes(x = mpg, y = wt)) + 
-  geom_point() +
-  geom_smooth(method = "lm") +
-  theme_minimal() +
-  labs(x = "Miles per gallon",
-       y = "Weight (in 1000lbs)",
-       title = "Data from 32 cars",
-       subtitle = "Source: 1974 Motor Trend US Magazine")
+punif(3, 0, 5, lower.tail = FALSE)
+1 - punif(3, 0, 5)
 ```
 
-## Tasks
-
-### Task 1
-
-Create three objects called `cov_xy`, `sd_x`, and `sd_y` that contain the covariance and standard deviations of `mpg` (x) and `wt` (y). Print out the values of all three.
+To find $P(2 < X < 3)$ we can re-write it as $P(X < 3) - P(X < 2)$
 
 ```{r}
-
+punif(3, 0, 5) - punif(2, 0, 5)
 ```
 
-Based on those calculations, would you say `mpg` and `wt` are positively or negatively correlated with one another?
-
-> YOUR ANSWER HERE
-
-### Task 2
-
-Explain how the values in Task 1 are enough to determine whether the slope of the least squares line will be positive or negative.
-
-> YOUR ANSWER HERE
-
-### Task 3
-
-Use the three objects from Task 1 to compute the correlation of `mpg` and `wt`, using formulas from 4.2.
+We can create a plot of the previous example using the following code:
 
 ```{r}
-
+ggplot() +
+  stat_dist_halfeye(aes(y = "U(0,5)", 
+                        dist = dist_uniform(min = 0, max = 5),
+                        fill = stat(x > 2 & x < 3))) +
+  labs(y = "", x = "x") +
+  #viridis color scale is color-blind friendly
+  #set direction = -1 so TRUE is dark instead of light
+  scale_fill_viridis_d(direction = -1) +
+  theme_minimal()
 ```
 
-Use the function `cor()` to compute the correlation and confirm your answer above.
+### Gamma example
+
+Suppose $X \sim \Gamma(\alpha = 3, \beta = 4)$. Let's compute the probability that $X < 2$:
 
 ```{r}
-
+pgamma(2, shape = 3, scale = 4)
 ```
 
-### Task 4
-
-Compute the slope of the least squares regression line for this data using the formulas derived in section 4.2.
+We can plot this distribution with the following code:
 
 ```{r}
-
+ggplot() +
+  stat_dist_halfeye(aes(y = "Gamma(3,4)", 
+                        #note the function dist_gamma() requires the rate parameter 
+                        #instead of the scale parameter. Recall rate = 1/scale
+                        dist = dist_gamma(shape = 3, rate = 1/4),
+                        fill = stat(x < 2))) +
+  labs(y = "", x = "x") +
+  scale_fill_viridis_d(direction = -1) +
+  theme_minimal()
 ```
 
-R has a built-in function called `lm()` that will compute the least squares regression line. Use this to confirm your calculation above.
+If we wanted to calculate $P(X>2)$, that is the region shaded in pink, we could do that in two ways:
 
 ```{r}
-lm(wt ~ mpg, data = mtcars)
+1 - pgamma(2, shape = 3, scale = 4)
+pgamma(2, shape = 3, scale = 4, lower.tail = FALSE)
 ```
 
-### Task 5
+## Computing percentiles for continuous distributions in R
 
-In reality, weight probably helps explain/predict `mpg`, and not the other way around. Therefore, `mpg` is more appropriate as our outcome variable, `y`. Compute the covariance, correlation, and the slope when `y = mpg` and `x = wt`.
+The inverse of the cdf, or the $x$ that solves the equation $p = F(x) = P(X < x)$, are returned with commands using “q” at the beginning of the R distribution name:
+
+-   `qunif(p, min = theta1, max = theta2)` – finds $x$ such that $P(X < x) = p$ for a
+    uniform random variable $X \sim U(\theta_1, \theta_2)$
+-   `qexp(p, rate = lambda = 1/beta)` - finds $x$ such that $P(X < x) = p$ for an
+    exponential random variable $Y \sim exp(\lambda = 1/\beta)$
+-   `qgamma(p, shape = alpha, scale = beta = 1/lambda)` - finds $x$ such that
+    $P(X < x) = p$ for a gamma random variable $X \sim(\alpha , \beta)$
+    with parameters `shape` = $\alpha$ and `scale` =
+    $\beta = 1/\lambda$
+-   `qchisq(p, df)` - finds $x$ such that $P(X< x) = p$ for a
+    chi-square random variable $Y \sim \chi^2(\nu)$ where the argument
+    `df` corresponds to the degrees of freedom parameter `\nu`.
+-   `qnorm(x, mean = mu, sd = sigma)` - finds $x$ such that $P(X< x) = p$ for a **normal random
+    variable** $X \sim N(\mu,\sigma^2)$
+-  `pbeta(x, shape1 = alpha, shape2 = beta)` - finds $x$ such that $P(X< x) = p$ for a **beta random variable** $X \sim Beta(\alpha, \beta)$
+
+Again, set `lower.tail = FALSE` to use upper tail probabilities and find $x$ such that $P(X > x) = p.$
+
+### Chi-squared example
+
+Suppose $X \sim \chi^2(14)$. Find the 95th percentile.
 
 ```{r}
-
+qchisq(0.95, 14)
 ```
 
-Explain why the values stayed the same and/or changed, referencing what you know about the underlying formulas for each.
-
-> YOUR NAME HERE
-
-### Task 6
-
-Copy, paste, tweak the `ggplot` code in the Tutorial section to reflect the change to `y = mpg` and `x = wt`. Make sure to update the axis labels as well.
+Another way to compute the same percentile using upper tail probabilities:
 
 ```{r}
-
+qchisq(0.05, 14, lower.tail = FALSE)
 ```
 
-### Task 7
-
-The variable `wt` is currently measured in 1000s of pounds. Suppose we instead wanted it measured in 1000s of kilograms. The code below creates a new variable with the converted weight, using the conversion factor that 1lb = 0.453592kg.
+We can plot a shaded chi-squared distribution with the following code:
 
 ```{r}
-mtcars$wt_kg <- mtcars$wt*0.453592
+ggplot() +
+  stat_dist_halfeye(aes(y = "Chisq(14)", 
+                        dist = dist_chisq(14),
+                        fill = stat(x < qchisq(0.95, 14)))) +
+  labs(y = "", x = "x") +
+  scale_fill_viridis_d(direction = -1) +
+  theme_minimal()
 ```
 
-Based on your results from the HW 08 Additional Problem, do you expect this change in units to change the correlation between mpg and weight?
+### Exponential example
 
-> YOUR ANSWER HERE
-
-Compute the correlation between `mpg` and `wt_kg` to confirm your answer.
+Suppose $X \sim exp(\theta = 3)$. Find the median.
 
 ```{r}
-
+qexp(0.5, rate = 1/3)
 ```
 
-### Task 8
-
-Compute the covariance between `mpg` and `wt_kg`.
+We can plot a shaded exponential distribution with the following code:
 
 ```{r}
-
+median <- qexp(0.5, rate = 1/3)
+ggplot() +
+  stat_dist_halfeye(aes(y = "exp(3)", 
+                        dist = dist_exponential(rate = 1/3),
+                        fill = stat(x < median))) +
+  labs(y = "", x = "x") +
+  scale_fill_viridis_d(direction = -1) +
+  theme_minimal()
 ```
 
-Does covariance have the same "unitless" property of correlation?
+# Task 1
 
-> YOUR ANSWER HERE
-
-### Task 9
-
-Compute the slope of the least squares regression line for `y = mpg` and `x = wt_kg`.
-
-```{r}
-
-```
-
-Comment on why the slope changes, despite the correlation staying the same.
-
-> YOUR ANSWER HERE
-
-### Task 10
-
-The following code produces histograms of the two weight variables. Comment on how the graphs illustrate the reason for the change in slope discussed in Task 9.
-
-```{r, warning = FALSE}
-p1 <- ggplot(mtcars, aes(x = wt_kg)) +
-  geom_histogram(color = "white",
-                 binwidth = 0.5) +
-  theme_minimal() +
-  xlim(0,6)
-
-
-p2 <- ggplot(mtcars, aes(x = wt)) +
-  geom_histogram(color = "white",
-                 binwidth = 0.5) +
-  theme_minimal() +
-  xlim(0,6)
-
-plot_grid(p1, p2, nrow = 2)
-```
-
-> YOUR ANSWER HERE
-
-### BONUS
-
-Determine the exact factor that the slope changed by when the units were changed. That is, find $c$ such that $c*b_{wt} = b_{wt\_kg}$, where $b$ is the slope for each respective line.
+Find $P(X < 18)$ if $X \sim exp(\beta = 20)$
 
 ```{r}
 
+
 ```
 
-Explain/show mathematically where this factor came from. Consider the formula for slope and properties of variance.
+# Task 2
 
-> YOUR ANSWER HERE
+Find $P(X > 5)$ if $X \sim \Gamma(\alpha = 2, \beta = 2)$
+
+```{r}
+
+
+```
+
+# Task 3
+
+If $X$ is $\chi^2(17)$, find
+
+a.  $P(X < 7.564)$
+b.  $P(X > 27.59)$
+c.  $P(6.408 < Z < 27.59)$
+d.  $\chi^2_{0.95}(17)$ (i.e. find the 95th percentile).
+e.  $\chi^2_{0.025}(17)$ (i.e. find the 2.5th percentile)
+
+### Part a
+
+```{r}
+
+```
+
+### Part b
+
+```{r}
+
+```
+
+### Part c
+
+```{r}
+
+```
+
+### Part d
+
+```{r}
+
+```
+
+### Part e
+
+```{r}
+
+```
+
+# Task 4
+
+If $X$ is $\chi^2(12)$, find constants $a$ and $b$ such that $$P(a < X < b) = 0.90$$ and $$P(X < a) = 0.05.$$ Provide comments on how you solve the problem and why you choose the R commands you did.
+
+```{r}
+
+```
+
+> YOUR COMMENTS HERE
+
+# Task 5
+
+Cars arrive at a tollbooth at a mean rate of 5 cars every 10 minutes according to a Poisson process. Find the probability that the toll collector will have to wait longer than 26.30 minutes before collecting the eighth toll. Comment on how you solve the problem including what distribution you use to model this scenario, the parameter values, and why you implemented the R commands you did.
+
+```{r}
+
+```
+
+> YOUR COMMENTS HERE
+
+# Task 6
+
+If $X$ is normally distributed with a mean of 6 and a variance of 25, find
+
+a.  $P(6 \leq X \leq 12)$
+b.  $P(X > 21)$
+c.  $P(|X - 6| < 5)$
+
+### Part a
+
+```{r}
+
+```
+
+### Part b
+
+```{r}
+
+```
+
+### Part c
+
+```{r}
+
+```
