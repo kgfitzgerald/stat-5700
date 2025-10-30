@@ -38,6 +38,8 @@ The links below provide the assigned problems for each homework. Your work must 
 
 [HW 07](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_07.pdf)
 
+[HW 08](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_08.pdf)
+
 ## Labs
 
 The links below take you to a template Quarto (.qmd) file for each lab. You should download the .qmd and place it in the STAT_5700 folder you created on your computer. Complete the lab by typing your code & answers in the .qmd. You will turn in a rendered pdf file to Blackboard. 
@@ -56,6 +58,8 @@ The links below take you to a template Quarto (.qmd) file for each lab. You shou
 {% include download.html path="assets/labs/Lab_06.qmd" %}
 
 {% include download.html path="assets/labs/Lab_07.qmd" %}
+
+{% include download.html path="assets/labs/Lab_08.qmd" %}
 
 
 ## Reading annotations

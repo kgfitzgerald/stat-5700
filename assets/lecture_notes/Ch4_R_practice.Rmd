@@ -258,7 +258,7 @@ $x$ such that $P(X> x) = p.$
 
 ### Gamma example
 
-Suppose $X \sim \Gamma^2(\alpha = 3, \beta = 7)$. Below is a visual of
+Suppose $X \sim \Gamma(\alpha = 3, \beta = 7)$. Below is a visual of
 the distribution shaded at the median.
 
 ```{r, echo = FALSE, out.width="50%"}
@@ -280,7 +280,7 @@ ggplot() +
 \
 \
 \
-24. Write out the code you need to find the 95th in R. Execute the
+24. Write out the code you need to find the 95th percentile in R. Execute the
     code and report the value. Does the value seem reasonable based on
     the plot above?
 

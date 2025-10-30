@@ -24,14 +24,18 @@ library(distributional)
 
 # Tutorial
 
-This lab has you work with probabilities and percentiles from the continuous distributions you've learned in class. Recall the following functions:
+This lab will have you compute probabilities and quantiles from continuous distributions in R. This tutorial recaps what you learned in group work and is included for your copy-paste convenience. 
+
+## Computing probabilities for continuous distributions in R
+
+The cdf values $F(X) = P(X < x)$ are returned with commands using "p" at the beginning of the R distribution name:
 
 -   `pnorm(x, mean = mu, sd = sigma)` - returns $F(x)$ values for a **normal random
     variable** $X \sim N(\mu,\sigma^2)$
 -   `punif(x, min = theta1, max = theta2)` returns $F(x)$ values for a **uniform random
     variable** $X \sim U(\theta_1, \theta_2)$
--   `pexp(y, rate = lambda = 1/beta)` - returns $F(x)$ values for an **exponential random
-    variable** $X \sim exp(\beta)$
+-   `pexp(y, rate = lambda)` - returns $F(x)$ values for an **exponential random
+    variable** $X \sim exp(\beta = 1/\lambda)$
     -   Note our textbook defines exponential distributions in terms of
         the parameter $\beta$, which is the mean wait time, instead of
         the rate $\lambda$.
@@ -40,24 +44,30 @@ This lab has you work with probabilities and percentiles from the continuous dis
     `shape` = $\alpha$ and `scale` = $\beta = 1/\lambda$.
     -   Because the gamma function can be parameterized in terms of
         shape or rate, make sure to name the argument inside the
-        `pgamma()` function to specify which parameter you're defining.
+        `pgamma()` function to specify which parameter you're defining. If you don't specify the name, by default it actually expects `rate` to be the 3rd argument, not `scale`.
 -   `pchisq(x, df)` - returns $F(x)$ values for a **chi-square random
     variable** $X \sim \chi^2(\nu)$ where the argument `df` corresponds to the degrees of freedom parameter `\nu`
 - `pbeta(x, shape1 = alpha, shape2 = beta)` - returns $F(x)$ values for a **beta random variable** $X \sim Beta(\alpha, \beta)$
 
-There is a hidden argument in each of these functions called `lower.tail`, and the default is set to `lower.tail = TRUE`. Meaning, by default, the "p" functions return the probabilities in the *lower tail* of the density function: $F(X) = P(X <x)$. Sometimes it will be useful to override the default by adding the argument `lower.tail = FALSE`, which will return values $F(X) = P(X > x)$. You can think of these two options visually; `lower.tail = TRUE` represents the pink shaded region $P(X < 10)$, and `lower.tail = FALSE` represents the blue shaded region $P(X > 10)$ in the plot below.
 
-```{r}
-#| echo: false
+There is a hidden argument in each of these functions called
+`lower.tail`, and the default is set to `lower.tail = TRUE`. Meaning, by
+default, the "p" functions return the probabilities in the *lower tail*
+of the density function: $F(X) = P(X <x)$. Sometimes it will be useful
+to override the default by adding the argument `lower.tail = FALSE`,
+which will return values $P(X > x)$. You can think of these two options
+visually; `lower.tail = TRUE` represents the dark shaded region
+$P(X < 10)$, and `lower.tail = FALSE` represents the light shaded region
+$P(X > 10)$ in the plot below.
+
+```{r, echo = FALSE, out.width="50%"}
 ggplot() +
-  stat_dist_halfeye(aes(y = "Chisq(5)", 
+  stat_dist_slab(aes(y = "Chisq(5)", 
                         dist = dist_chisq(df = 5),
-                        fill = stat(x > 10)), 
-                    show.legend = FALSE) +
-  labs(y = "", x = "x") +
-  #viridis color scale is color-blind friendly
-  #set direction = -1 so TRUE is dark instead of light
-  scale_fill_viridis_d(direction = -1) +
+                        fill = after_stat(x > 10)), 
+                 show.legend = FALSE) +
+  scale_fill_viridis_d() +
+  labs(y = "") +
   theme_minimal()
 ```
 
@@ -125,9 +135,9 @@ If we wanted to calculate $P(X>2)$, that is the region shaded in pink, we could 
 pgamma(2, shape = 3, scale = 4, lower.tail = FALSE)
 ```
 
-## Computing percentiles for continuous distributions in R
-
-The inverse of the cdf, or the $x$ that solves the equation $p = F(x) = P(X < x)$, are returned with commands using “q” at the beginning of the R distribution name:
+The inverse of the cdf, or the $x$ that solves the equation
+$p = F(x) = P(X < x)$, are returned with commands using “q” at the
+beginning of the R distribution name:
 
 -   `qunif(p, min = theta1, max = theta2)` – finds $x$ such that $P(X < x) = p$ for a
     uniform random variable $X \sim U(\theta_1, \theta_2)$
@@ -144,7 +154,24 @@ The inverse of the cdf, or the $x$ that solves the equation $p = F(x) = P(X < x)
     variable** $X \sim N(\mu,\sigma^2)$
 -  `pbeta(x, shape1 = alpha, shape2 = beta)` - finds $x$ such that $P(X< x) = p$ for a **beta random variable** $X \sim Beta(\alpha, \beta)$
 
-Again, set `lower.tail = FALSE` to use upper tail probabilities and find $x$ such that $P(X > x) = p.$
+Again, set `lower.tail = FALSE` to use upper tail probabilities and find
+$x$ such that $P(X> x) = p.$
+
+### Gamma example
+
+Suppose $X \sim \Gamma(\alpha = 3, \beta = 7)$. Below is a visual of
+the distribution shaded at the median.
+
+```{r, echo = FALSE, out.width="50%"}
+median <- qgamma(0.5, shape = 3, scale = 7)
+ggplot() +
+  stat_dist_slab(aes(y = "gamma(3, 7)", 
+                        dist = dist_gamma(shape = 3, rate = 1/7),
+                        fill = after_stat(x > median))) +
+  scale_fill_viridis_d() +
+  labs(y = "") +
+  theme_minimal()
+```
 
 ### Chi-squared example
 

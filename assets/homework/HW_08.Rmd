@@ -1,0 +1,33 @@
+---
+title: "Homework 08"
+subtitle: "Sections 4.6 - 4.7"
+author: "STAT 5700 - Probability"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Instructions
+
+- Homework problems come from the 7th edition of the text *Mathematical Statistics with Applications* by Wackerly, Mendenhall, and Scheaffer, as well as (potential) additional problems provided by the instructor.
+- You are responsible for understanding the concepts covered in all problems listed in a homework assignment, but only even-numbered problems should be turned in. 
+- Be NEAT and show work to support your answers. Points will be deducted if your answer is not adequately supported or the work cannot be readily followed. 
+- You are encouraged to work together on homework assignments, but each person must write up and turn in their own work and solutions. 
+- You will turn in this assignment by scanning your work and uploading a single pdf to Blackboard. 
+- Note there is a corresponding R Lab (Lab 08) that will be due at the same time as this assignment (HW 08). 
+
+## Problems to do (responsible for content, but not collected/graded)
+
++ Section 4.6: 89, 93, 109
+
++ Section 4.7: 123a, 127, 165
+
+## Problems to submit
+
++ Section 4.6: 96abc, 104, 110
+
++ Section 4.7: 126, 130
+
+
