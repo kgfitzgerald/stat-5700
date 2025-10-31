@@ -11,6 +11,9 @@ nav_order: 6
 + [Seeing Theory website](https://seeing-theory.brown.edu/index.html)
 + [Univariate Distribution Relationships](https://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
 + [Why is pi in the normal distribution?](https://www.youtube.com/watch?v=cy8r7WSuT1I)
++ [Distributions cheat sheet from textbook cover](https://kgfitzgerald.github.io/stat-5700/assets/resources/dist_cheat_sheet.pdf)
++ [Dr. Fitz's Chapter 4 Notes](https://kgfitzgerald.github.io/stat-5700/assets/resources/CH4_fitz.pdf)
+
 
 ## Quiz solutions
 
@@ -19,6 +22,7 @@ nav_order: 6
 + [Quiz 03](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_03_SOLUTIONS.pdf)
 + [Quiz 04](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_04_SOLUTIONS.pdf)
 + [Quiz 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_05_SOLUTIONS.pdf)
++ [Quiz 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_06_SOLUTIONS.pdf)
 
 ## Homework solutions
 
@@ -28,12 +32,15 @@ nav_order: 6
 + [HW 04](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_04_SOLUTIONS.pdf)
 + [HW 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_05_SOLUTIONS.pdf)
 + [HW 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_06_SOLUTIONS.pdf)
++ [HW 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_07_SOLUTIONS.pdf)
++ [HW 08](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_08_SOLUTIONS.pdf)
 
 ## Group Work solutions
 
 + [Chapter 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_2_Group_Work_solutions.pdf)
 + [Chapter 3 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_Group_Work_solutions.pdf)
 + [Chapter 3 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_part2_Group_Work_solutions.pdf)
++ [Chapter 4 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_4_Group_Work_solutions.pdf)
 
 ## Exam Review / practice
 

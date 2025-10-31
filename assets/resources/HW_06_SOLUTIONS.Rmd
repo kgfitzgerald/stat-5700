@@ -30,3 +30,33 @@ b. $V(Y) = E(Y^2) - [E(Y)]^2 = 6 - \left(\frac{7}{3}\right)^2 = \frac{5}{9}$
 
 c. Since $m(t) = E(e^{tY})$, and $Y$ can only take on values $1$, $2$, and $3$ with probabilities $\frac{1}{6}$, $\frac{2}{6}$, and $\frac{3}{6}$ respectively.
 
+# Submitted Problems
+
+## 3.146
+
+$m'(t) = n p e^{t}(p e^{t} + q)^{n-1}$  
+At $t=0$: $E(Y) = n p$
+
+$m''(t) = n(n-1)(pe^t + q)^{n-1}(pe^t)^2 + n(pe^t + q)^{n-1}pe^t$  
+At $t=0$: $E(Y^2) = n(n-1)p^2 + np$
+
+$V(Y) = E(Y^2) - [E(Y)]^2 = n(n-1)p^2 +np - (np)^2 = n p(1 - p)$
+
+## 3.148
+
+$m'(t) = \dfrac{pe^{t}}{(1 - q e^{t})^2}$  
+At $t=0$: $E(Y) = \dfrac{1}{p}$
+
+$m''(t) = \frac{(1 - qe^t)^2pe^t-2pe^t(1 - qe^t)(-qe^t)}{(1 - qe^t)^4}$.  
+At $t=0$: $E(Y^2) = \dfrac{1 + q}{p^2}$
+
+$V(Y) = E(Y^2) - [E(Y)]^2 = \dfrac{1 + q}{p^2} - \dfrac{1}{p^2} = \dfrac{q}{p^2}$
+
+## 3.150
+
+This is the mgf of a geometric distribution with $p = 0.3$.
+
+## 3.158
+
+If $m_Y(t)$ is the mgf of $Y$, then  
+$m_W(t) = E(e^{tW}) = E(e^{t(aY+b)}) = E(e^{bt}e^{(at)Y}) = e^{b t} m_Y(a t)$.

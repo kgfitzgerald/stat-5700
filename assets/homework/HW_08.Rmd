@@ -22,7 +22,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 + Section 4.6: 89, 93, 109
 
-+ Section 4.7: 123a, 127, 165
++ Section 4.7: 123a, 127
+
++ Supplementary exercises: 165
 
 ## Problems to submit
 

@@ -1,5 +1,5 @@
 ---
-title: "Chapter 3 Group Work"
+title: "Chapter 4 Group Work"
 subtitle: "SOLUTIONS"
 output: pdf_document
 ---
@@ -11,65 +11,20 @@ library(tidyverse)
 
 ## Problem 1
 
-Find the mean, variance, and mgf for a continuous uniform distribution.
-
-### Solution
-
-$X \sim U(a, b)$ has pmf $f(x) = \frac{1}{b - a}, \ \ a \leq x \leq b$
-
-$$
-\begin{aligned}
-E(X) &= \int_a^bx\frac{1}{b - a}dx \\
-&= \frac{x^2}{2(b - a)}\Big|_a^b \\
-&= \frac{b^2 - a^2}{2(b-a)} = \frac{(b-a)(b+a)}{2(b-a)} \\
-&= \frac{b + a}{2}
-\end{aligned}
-$$
-
-
-$$
-\begin{aligned}
-E(X^2) &= \int_a^bx^2\frac{1}{b - a}dx \\
-&= \frac{x^3}{3(b - a)}\Big|_a^b \\
-&= \frac{b^3 - a^3}{3(b-a)} = \frac{(b-a)(b^2 +ab + a^2)}{3(b-a)} \\
-&= \frac{(b^2 +ab + a^2)}{3}
-\end{aligned}
-$$
-
-
-$$
-\begin{aligned}
-V(X) &= \frac{(b^2 +ab + a^2)}{3} - \left[\frac{b + a}{2}\right]^2 \\
-&= \frac{4b^2 + 4ab + 4a^2 - 3b^2 - 6ab - 3a^2}{12} \\
-&= \frac{b^2 - 2ab + a^2}{12}\\
-&= \frac{(b - a)^2}{12}
-\end{aligned}
-$$
-
-$$
-\begin{aligned}
-E(e^{tx}) &= \int_a^b e^{tx}\frac{1}{b - a}dx \\
-&= \frac{1}{(b - a)}\frac{1}{t}e^{tx}\Big|_a^b \\
-&= \frac{e^{bt} - e^{at}}{t(b-a)}
-\end{aligned}
-$$
-    
-## Problem 2
-
-Let $X$ be a continuous random variable with pdf $f(x) = c(x - x^2), \ \ \ 0 < x < 1$
+Let $Y$ be a continuous random variable with pdf $f(y) = c(y - y^2), \ \ \ 0 < y < 1$
 
   a. Find c
-  b. Find $P(0.3 < X < 0.6)$
-  c. Find the median of $X$
+  b. Find $P(0.3 < Y < 0.6)$
+  c. Find the median of $Y$
     
 ### Solution part a
 
-For $f(x)$ to be a valid pmf, we need 
+For $f(y)$ to be a valid pmf, we need 
 
-$$\int_0^1 c(x - x^2) dx = 1$$
+$$\int_0^1 c(y - y^2) dy = 1$$
 
 $$\begin{aligned}
-\int_0^1 c(x - x^2) dx &= c(\frac{x^2}{2} - \frac{x^3}{3})|_0^1 \\ 
+\int_0^1 c(y - y^2) dy &= c(\frac{y^2}{2} - \frac{y^3}{3})|_0^1 \\ 
 &=c(\frac{1}{2} - \frac{1}{3}) \\&=c(\frac{1}{6})\\
 &= 1 \\
 &\implies c = 6
@@ -78,7 +33,7 @@ $$\begin{aligned}
 ### Solution part b
 
 $$\begin{aligned}
-P(0.3 < X < 0.6) &= \int_{0.3}^{0.6} 6(x - x^2) dx \\ &= 6(\frac{x^2}{2} - \frac{x^3}{3})|_{0.3}^{0.6} \\ 
+P(0.3 < Y < 0.6) &= \int_{0.3}^{0.6} 6(y - y^2) dy \\ &= 6(\frac{y^2}{2} - \frac{y^3}{3})|_{0.3}^{0.6} \\ 
 &=6\left[(\frac{0.6^2}{2} - \frac{0.6^3}{3}) - (\frac{0.3^2}{2} - \frac{0.3^3}{3})\right] \\
 &= 0.432
 \end{aligned}
@@ -87,20 +42,19 @@ $$
 
 ### Solution part c
 
-The median is the value $x$ such that $F(x) = 0.5$. To first find $F(X)$, we take
+The median is the value $y$ such that $F(y) = 0.5$. To first find $F(Y)$, we take
 
 $$\begin{aligned}
-F(x) &= \int_0^x f(t)dt \\
-&= \int_0^x 6(t - t^2)dt \\
-&= 6(\frac{t^2}{2} - \frac{t^3}{3})|_{0}^{x} \\
-&= 6(\frac{x^2}{2} - \frac{x^3}{3}) \\
-&= 3x^2 - 2x^3
+F(y) &= \int_0^y f(t)dt \\
+&= \int_0^y 6(t - t^2)dt \\
+&= 6(\frac{t^2}{2} - \frac{t^3}{3})|_{0}^{y} \\
+&= 6(\frac{y^2}{2} - \frac{y^3}{3}) \\
+&= 3y^2 - 2y^3
 \end{aligned}$$
 
-Setting equal to 0.5, we get $0.5 = 3x^2 - 2x^3$. The three roots of this equation are $x = 1/2$, $x = 1/2(1 - \sqrt{3})$, and $x = 1/2(1 + \sqrt{3})$. The only one of these in the support $0 < x < 1$ is $x = 1/2$, so that is our median.
+Setting equal to 0.5, we get $0.5 = 3y^2 - 2y^3$. The three roots of this equation are $y = 1/2$, $y = 1/2(1 - \sqrt{3})$, and $y = 1/2(1 + \sqrt{3})$. The only one of these in the support $0 < y < 1$ is $y = 1/2$, so that is our median.
 
-
-## Problem 3
+## Problem 2
 
 The pdf of $Y$ is given by
     $f(y) = \frac{2}{y^3}, \ \ \ \ \ 1 < y < \infty$. Find $E(Y)$ and $V(Y)$.
@@ -111,31 +65,30 @@ $$E(Y) = \int_1^{\infty}y\frac{2}{y^3}dy = \int_1^{\infty}2y^{-2}dy = \frac{2}{y
 
 $$E(Y^2) = \int_1^{\infty}y^2\frac{2}{y^3}dy = \int_1^{\infty}\frac{2}{y}dy = 2ln(y)\Big|_1^{\infty} = \infty \implies V(Y) \ \ DNE$$
 
+## Problem 3
 
-## Problem 4
+For the function $f(y) = 4y^c, \ \ 0<y<1,$
 
-For the function $f(x) = 4x^c, \ \ 0<x<1,$
-
-  a.  Find the constant $c$ such that $f(x)$ is a valid pdf <br/>
+  a.  Find the constant $c$ such that $f(y)$ is a valid pdf <br/>
   b.  Find the cdf <br/>
   c.  Find $\mu$ and $\sigma$ <br/>
-  d.  Find $P(0.25 < X < 0.75)$ using the cdf <br/>
+  d.  Find $P(0.25 < Y < 0.75)$ using the cdf <br/>
 
 ### Solution 
 
 #### Part a
 
-$$\int_0^14x^cdx = \frac{4}{c+1}x^{c+1}\Big|_0^1 = \frac{4}{c + 1} = 1 \implies c = 3$$
+$$\int_0^14y^cdx = \frac{4}{c+1}y^{c+1}\Big|_0^1 = \frac{4}{c + 1} = 1 \implies c = 3$$
 
 #### Part b
 
-$$F(x) = \int_0^x 4t^3dt = \frac{4}{4}t^{4}\Big|_0^x = x^4 \ \ 0 < x < 1$$
+$$F(y) = \int_0^y 4t^3dt = \frac{4}{4}t^{4}\Big|_0^y = y^4 \ \ 0 < y < 1$$
 
 #### Part c
 
-$$E(X) = \int_0^1 x 4x^3 dx =\int_0^1 4x^4 dx = \frac{4}{5}x^{5}\Big|_0^1 = \frac{4}{5} = \mu$$
+$$E(Y) = \int_0^1 y 4y^3 dy =\int_0^1 4y^4 dy = \frac{4}{5}y^{5}\Big|_0^1 = \frac{4}{5} = \mu$$
 
-$$E(X^2) = \int_0^1 x^2 4x^3dx =\int_0^1 4x^5 dx =\frac{4}{6} x^{6} \Big|_0^1 = \frac{4}{6} = \frac{2}{3}$$
+$$E(Y^2) = \int_0^1 y^2 4y^3dx =\int_0^1 4y^5 dy =\frac{4}{6} y^{6} \Big|_0^1 = \frac{4}{6} = \frac{2}{3}$$
 
 $$\sigma^2 = \frac{2}{3} - \left(\frac{4}{5}\right)^2 = \frac{2}{75}$$
 
@@ -144,14 +97,100 @@ $$\sigma = \sqrt{\frac{2}{75}}$$
 #### Part d
 
 $$\begin{aligned}
-P(0.25 < X < 0.75) &= F(0.75) - F(0.25) = \\
+P(0.25 < Y < 0.75) &= F(0.75) - F(0.25) = \\
 &= \left(\frac{3}{4}\right)^4 - \left(\frac{1}{4}\right)^4 \\
 &= \frac{80}{256} \\
 &= \frac{5}{16}
 \end{aligned}$$
-    
+
+## Problem 4
+
+Find the mean, variance, and mgf for a continuous uniform distribution.
+
+### Solution
+
+$Y \sim U(\theta_1, \theta_2)$ has pmf $f(y) = \frac{1}{\theta_2 - \theta_1}, \ \ \theta_1 \leq y \leq \theta_2$
+
+$$
+\begin{aligned}
+E(Y) &= \int_{\theta_1}^{\theta_2}y\frac{1}{\theta_2 - \theta_1}dy \\
+&= \frac{y^2}{2(\theta_2 - \theta_1)}\Big|_{\theta_1}^{\theta_2} \\
+&= \frac{\theta_2^2 - \theta_1^2}{2(\theta_2-\theta_1)} = \frac{(\theta_2-\theta_1)(\theta_2+\theta_1)}{2(\theta_2-\theta_1)} \\
+&= \frac{\theta_2 + \theta_1}{2}
+\end{aligned}
+$$
+
+
+$$
+\begin{aligned}
+E(Y^2) &= \int_{\theta_1}^{\theta_2}y^2\frac{1}{\theta_2 - \theta_1}dy \\
+&= \frac{y^3}{3(\theta_2 - \theta_1)}\Big|_{\theta_1}^{\theta_2} \\
+&= \frac{\theta_2^3 - \theta_1^3}{3(\theta_2-\theta_1)} = \frac{(\theta_2-\theta_1)(\theta_2^2 +\theta_1\theta_2 + \theta_1^2)}{3(\theta_2-\theta_1)} \\
+&= \frac{(\theta_2^2 +\theta_1\theta_2 + \theta_1^2)}{3}
+\end{aligned}
+$$
+
+
+$$
+\begin{aligned}
+V(Y) &= \frac{(\theta_2^2 +\theta_1\theta_2 + \theta_1^2)}{3} - \left[\frac{\theta_2 + \theta_1}{2}\right]^2 \\
+&= \frac{4\theta_2^2 + 4\theta_1\theta_2 + 4\theta_1^2 - 3\theta_2^2 - 6\theta_1\theta_2 - 3\theta_1^2}{12} \\
+&= \frac{\theta_2^2 - 2\theta_1\theta_2 + \theta_1^2}{12}\\
+&= \frac{(\theta_2 - \theta_1)^2}{12}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+E(e^{tx}) &= \int_{\theta_1}^{\theta_2} e^{ty}\frac{1}{\theta_2 - \theta_1}dy \\
+&= \frac{1}{(\theta_2 - \theta_1)}\frac{1}{t}e^{ty}\Big|_{\theta_1}^{\theta_2} \\
+&= \frac{e^{\theta_2t} - e^{\theta_1t}}{t(\theta_2-\theta_1)}
+\end{aligned}
+$$
 
 ## Problem 5
+
+The failure of a circuit board interrupts work that utilizes a computing system until a new board is delivered. The delivery time, $Y$, is uniformly distributed on the interval one to five days. The cost of a board failure and interruption includes a fixed cost $c_0$ of a new board and a cost that increases proportionally to $Y^2$. If $C$ is the cost incurred, $C = c_0 + c_1Y^2$. 
+      
+a. Find the probability that the delivery time exceeds two days/
+b. In terms of $c_0$ and $c_1$, find the expected cost associated with a single failed circuit board. 
+      
+### Solution
+
+$Y \sim \text{Uniform}(1,5)$, $C = c_0 + c_1Y^2$
+
+(a)  
+$P(Y>2) = \dfrac{5-2}{5-1} = \dfrac{3}{4}$
+
+(b)  
+$E[C] = c_0 + c_1E[Y^2]$  
+$$E[Y^2] = \int_{1}^{5} y^2 \cdot \frac{1}{5-1}\,dy  
+= \frac{1}{4} \int_{1}^{5} y^2\,dy  
+= \frac{1}{4} \left[\frac{y^3}{3}\right]_{1}^{5}  
+= \frac{1}{4} \left(\frac{5^3 - 1^3}{3}\right)  
+= \frac{1}{12}(125 - 1)  
+= \frac{124}{12}  
+= \frac{31}{3}$$
+$\boxed{E[C] = c_0 + \dfrac{31}{3}c_1}$
+
+## Problem 6
+
+The magnitude of earthquakes recorded in a region of North America can be modeled as having an exponential distribution with mean 2.4, as measured on the Richter scale. Find the probability that an earthquake striking this region will
+
+a. exceed 3.0 on the Richter scale
+b. fall between 2.0 and 3.0 on the Richter scale
+
+### Solution
+
+$Y \sim \text{Exp}(\lambda = 1/2.4 = 5/12)$  
+
+(a)  
+$P(Y>3) = e^{-\lambda \cdot 3} = e^{-1.25} \approx 0.2865$
+
+(b)  
+$P(2<Y<3) = e^{-\lambda \cdot 2} - e^{-\lambda \cdot 3} = e^{-0.8333} - e^{-1.25} \approx 0.1481$
+
+## Problem 7
 
 Cars arrive at a tollbooth at a mean rate of five cars every ten minutes according to a Poisson process. Find the probability that the toll collector will have to wait longer than 26.30 minutes before collecting the 8th toll. 
 
@@ -159,9 +198,9 @@ Cars arrive at a tollbooth at a mean rate of five cars every ten minutes accordi
 
 Note that $\lambda = 5/10 = 1/2$ is the mean number of arrivals per minute. Therefore, $\theta = 2$. So, the waiting time before the 8th toll can be modeled as a gamma random variable with $\alpha = 8$ and $\theta = 2$. The pdf is therefore given by
 
-$$f(x) = \frac{1}{\Gamma(8)2^8}x^{8 - 1}e^{-x/2}$$
+$$f(y) = \frac{1}{\Gamma(8)2^8}y^{8 - 1}e^{-y/2}$$
 
-We can find $P(X > 26.3)$ by the following R code:
+We can find $P(Y > 26.3)$ by the following R code:
 
 ```{r}
 pgamma(26.3, shape = 8, scale = 2, lower.tail = FALSE)
@@ -169,9 +208,20 @@ pgamma(26.3, shape = 8, scale = 2, lower.tail = FALSE)
 
 Note since $\theta = 2$, this situation can also be represented by a chi-squared distribution with 16 degrees of freedom:
 
-$$f(x) = \frac{1}{\Gamma(\frac{16}{2})2^{16/2}}x^{16/2 - 1}e^{-x/2}$$
+$$f(y) = \frac{1}{\Gamma(\frac{16}{2})2^{16/2}}y^{16/2 - 1}e^{-y/2}$$
 
 ```{r}
 pchisq(26.3, df = 16, lower.tail = FALSE)
 ```
 
+## Problem 8
+
+The weekly repair cost $Y$ for a machine has a probability density function given by $f(y) = 3(1 - y)^2, 0 < y < 1$ with measurements in hundreds of dollars. How much money should be budgeted each week for repair costs so that the actual cost will exceed the budgeted amount only 10% of the time? 
+
+### Solution
+
+$f(y)=3(1-y)^2,\ 0<y<1$  
+$F(y)=1-(1-y)^3$  
+$P(Y>b)=0.10 \Rightarrow F(b)=0.90$  
+$1-(1-b)^3=0.9 \Rightarrow (1-b)^3=0.1 \Rightarrow b=1-0.1^{1/3}\approx 0.5358$  
+$\boxed{b \approx \$53.58}$
