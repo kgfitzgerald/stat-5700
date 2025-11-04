@@ -238,7 +238,7 @@ c. Find $P(0.1 \leq X \leq 0.3, 0 \leq Y \leq 0.5)$
 :::
 
 ::: {.activitybox data-latex=""}
-**Example** Gasoline is stocked in a bulk tank once at the beginning of each week and then sold to invidual customers. Let $X$ denote the proportion of the capacity of the bulk tank that is available after the tank is stocked at the beginning of the week. Becaues of the limited supplies, $X$ varies from week to week. Let $Y$ denote the prportion of the capacity of the bulk tank that is sold during the week. Both are proportions, so are restricted between 0 and 1, and further, the amount sold $y$ cannot exceed the amount available $x$. Suppose that the joint density function for $X$ and $Y$ is given by:
+**Example** Gasoline is stocked in a bulk tank once at the beginning of each week and then sold to invidual customers. Let $X$ denote the proportion of the capacity of the bulk tank that is available after the tank is stocked at the beginning of the week. Becaues of the limited supplies, $X$ varies from week to week. Let $Y$ denote the proportion of the capacity of the bulk tank that is sold during the week. Both are proportions, so are restricted between 0 and 1, and further, the amount sold $y$ cannot exceed the amount available $x$. Suppose that the joint density function for $X$ and $Y$ is given by:
 
 $$
 f(x,y) = 
@@ -443,34 +443,34 @@ $$f_x\left(x\right)=\frac{2x+3}{21},\ \ \ \ x=1,2,3,\ \ \ \ \text{and}\ \ \ f_y\
 \
 :::
 
-::: {.activitybox data-latex=""}
-**Example:** Let $X$ and $Y$ have a uniform distribution on the set of points with integer coordinates in
-$S = \{(x, y) : 0 \leq x \leq 7, \ \ \ x \leq y \leq x+2\}$. That is,
-$f(x,y) = 1/24, \ \ \ (x,y) \in S$, and both $x$ and $y$ are integers. Find:
+<!-- ::: {.activitybox data-latex=""} -->
+<!-- **Example:** Let $X$ and $Y$ have a uniform distribution on the set of points with integer coordinates in -->
+<!-- $S = \{(x, y) : 0 \leq x \leq 7, \ \ \ x \leq y \leq x+2\}$. That is, -->
+<!-- $p(x,y) = 1/24, \ \ \ (x,y) \in S$, and both $x$ and $y$ are integers. Find: -->
 
-1.  $f_X(x)$ and $f_Y(y)$
-2.  $p(y|x)$
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-:::
+<!-- 1.  $p_X(x)$ and $p_Y(y)$ -->
+<!-- 2.  $p(y|x)$ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- ::: -->
 
 ::: {.highlightbox data-latex=""}
 **Definition 5.6**: If $X$ and $Y$ are jointly continuous random variables, the
@@ -486,7 +486,7 @@ $$f(y|x) = \frac{f(x,y)}{f_X(x)}$$
 :::
 
 ::: {.activitybox data-latex=""}
-**Example**: A soft drink machine has a rnaomd amount $Y$ in supply at the beginning of a given day and dispenses a random amount $X$ during the day (with measurements in gallons). It is not resupplied during the day, and hence $X \leq Y$. It has been observed that $X$ and $Y$ have a joint pdf given by:
+**Example**: A soft drink machine has a random amount $Y$ in supply at the beginning of a given day and dispenses a random amount $X$ during the day (with measurements in gallons). It is not resupplied during the day, and hence $X \leq Y$. It has been observed that $X$ and $Y$ have a joint pdf given by:
 $$
 f(x,y) = 
 \begin{cases}
