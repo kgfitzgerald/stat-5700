@@ -16,7 +16,6 @@ knitr::opts_chunk$set(echo = TRUE)
 - Be NEAT and show work to support your answers. Points will be deducted if your answer is not adequately supported or the work cannot be readily followed. 
 - You are encouraged to work together on homework assignments, but each person must write up and turn in their own work and solutions. 
 - You will turn in this assignment by scanning your work and uploading a single pdf to Blackboard. 
-- Note there is a corresponding R Lab (Lab 09) that will be due at the same time as this assignment (HW 09). 
 
 ## Problems to do (responsible for content, but not collected/graded)
 

@@ -6,7 +6,9 @@ date: 2025-11-04
 
 ## Thursday announcements
 
++ Quiz to start class today (4.5 - 4.7)
 + Due tonight: HW 08, Lab 08, Annotations 09 (last one!)
++ No lab next week, HW 09 posted
 + Exam 2 two weeks from today. Will cover 3.8 - 5.3:
     + End of Ch 3: Poisson & MGFs
     + All of Ch 4 (that we covered: 4.1 - 4.7)
