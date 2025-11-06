@@ -10,9 +10,9 @@ date: 2025-11-04
 + Due tonight: HW 08, Lab 08, Annotations 09 (last one!)
 + No lab next week, HW 09 posted
 + Exam 2 two weeks from today. Will cover 3.8 - 5.3:
-    + End of Ch 3: Poisson & MGFs
-    + All of Ch 4 (that we covered: 4.1 - 4.7)
-    + Beginning of Ch 5: Joint, marginal, and conditional distributions
+    + Poisson & MGFs (3.8 - 3.9)
+    + Continuous distributions (4.1 - 4.7)
+    + Joint, marginal, and conditional distributions (5.1 - 5.3)
     + Relevant homework: 3.8 problems in HW 05 + all of HW 06, 07, 08, 09
     + Relevant quizzes: Quiz 5, 6, 7, 8
 
