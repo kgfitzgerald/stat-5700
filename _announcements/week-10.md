@@ -4,6 +4,16 @@ week: 10
 date: 2025-11-04
 ---
 
+## Thursday announcements
+
++ Due tonight: HW 08, Lab 08, Annotations 09 (last one!)
++ Exam 2 two weeks from today. Will cover 3.8 - 5.3:
+    + End of Ch 3: Poisson & MGFs
+    + All of Ch 4 (that we covered: 4.1 - 4.7)
+    + Beginning of Ch 5: Joint, marginal, and conditional distributions
+    + Relevant homework: 3.8 problems in HW 05 + all of HW 06, 07, 08, 09
+    + Relevant quizzes: Quiz 5, 6, 7, 8
+
 ## Tuesday announcements
 
 + Due Thursday:
