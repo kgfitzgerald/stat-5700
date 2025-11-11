@@ -16,6 +16,11 @@ date: 2025-11-11
     + Dr. Adeline Guthrie will be proctoring the exam next Thursday
     + Reminder: no in-person class Tuesday of Thanksgiving - recorded lecture, watch asynchronously anytime before class on Dec 2
 
+## Weekly check-in debrief
+
++ Uptick in difficulty ratings
++ Help distinguishing between discrete & continuous random variables
+
 ## What to put on your attendance notecard
 
 -   Name
