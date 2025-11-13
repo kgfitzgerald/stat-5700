@@ -12,8 +12,6 @@ nav_order: 6
 + [Univariate Distribution Relationships](https://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
 + [Why is pi in the normal distribution?](https://www.youtube.com/watch?v=cy8r7WSuT1I)
 + [Distributions cheat sheet from textbook cover](https://kgfitzgerald.github.io/stat-5700/assets/resources/dist_cheat_sheet.pdf)
-+ [Dr. Fitz's Chapter 4 Notes](https://kgfitzgerald.github.io/stat-5700/assets/resources/CH4_fitz.pdf)
-
 
 ## Quiz solutions
 
@@ -23,6 +21,7 @@ nav_order: 6
 + [Quiz 04](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_04_SOLUTIONS.pdf)
 + [Quiz 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_05_SOLUTIONS.pdf)
 + [Quiz 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_06_SOLUTIONS.pdf)
++ [Quiz 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_07_SOLUTIONS.pdf)
 
 ## Homework solutions
 
@@ -34,6 +33,7 @@ nav_order: 6
 + [HW 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_06_SOLUTIONS.pdf)
 + [HW 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_07_SOLUTIONS.pdf)
 + [HW 08](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_08_SOLUTIONS.pdf)
++ [HW 09](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_09_SOLUTIONS.pdf)
 
 ## Group Work solutions
 
@@ -42,8 +42,21 @@ nav_order: 6
 + [Chapter 3 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_part2_Group_Work_solutions.pdf)
 + [Chapter 4 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_4_Group_Work_solutions.pdf)
 
-## Exam Review / practice
+## Exam 1 Review / practice
 
-+ [Exam Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Exam_1_Review.pdf)
++ [Exam 1 Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Exam_1_Review.pdf)
 + [Exam 1 Practice Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a.pdf)
-+ [Practice Exam SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a_SOLUTIONS.pdf)
++ [Practice Exam 1 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a_SOLUTIONS.pdf)
+
+## Exam 2 Review / practice
+
++ [Exam 2 Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Exam2_review.pdf)
+
+
+## Dr. Fitz's completed notes
+
++ [Chapter 2](https://kgfitzgerald.github.io/stat-5700/assets/resources/CH2_Fitz.pdf)
++ [Chapter 3 part 1](https://kgfitzgerald.github.io/stat-5700/assets/resources/CH3_part1_Fitz.pdf)
++ [Chapter 3 part 2](https://kgfitzgerald.github.io/stat-5700/assets/resources/CH3_part2_Fitz.pdf)
++ [Chapter 4](https://kgfitzgerald.github.io/stat-5700/assets/resources/CH4_Fitz.pdf)
++ [Chapter 5 part 1](https://kgfitzgerald.github.io/stat-5700/assets/resources/CH5_part1_Fitz.pdf)

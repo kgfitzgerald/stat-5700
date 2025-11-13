@@ -1,0 +1,393 @@
+---
+title: "Exam 2 Review"
+output: pdf_document
+---
+
+Exam 2 will cover the following sections:
+
++ 3.8 Poisson
++ 3.9 Moments & MGFs
++ 4.2 Continuous random variables
++ 4.3 Expected value of continuous random variables
++ 4.4 Uniform (continuous)
++ 4.5 Normal 
++ 4.6 Exponential, Gamma, Chi-square
++ 4.7 Beta
++ 5.2 Bivariate & Multivariate distributions
++ 5.3 Marginal & Conditional distributions
+
+The relevant homeworks are: 3.8 problems in HW 05 + all of HW 06, 07, 08, 09.
+
+The relevant quizzes are: Quiz 5, 6, 7, 8.
+
+The following packet reviews all the key concepts/definitions and is a good **starting place for creating your cheat sheet**. However, **to fully prepare for the exam you should do LOTS of practice problems** (See HW, group work, quizzes, extra textbook problems, etc. You can even ask ChatGPT to generate more problems for you!). 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. Know the following for the Poisson distribution:
+
+    a. Probability distribution, including the support
+    b. What situations the Poisson distribution is good for modeling
+    c. How to interpret the parameter $\lambda$
+    d. Formula for mean and variance (and note how they are related)
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+1. How can $e^x$ (or $e^{\lambda}$ be written as an infinite series? Remind yourself how this is relevant to the Poisson distribution.
+\
+\
+\
+\
+
+
+1. How do you find an expression for the mean of a continuous random variable? A discrete random variable?
+\
+\
+\
+
+1. How do you find an expression for the variance of a continuous random variable? A discrete random variable?
+\
+\
+\
+1. What is the shortcut formula for the variance?
+\
+\
+\
+1. How do you find an expression for the moment-generating function of a continuous random variable? A discrete random variable?
+\
+\
+\
+
+1. How do you find an expression for the $r^{th}$ moment of a continuous random variable? A discrete random variable?
+\
+\
+\
+1. How do you use the mgf to find the mean of a random variable? That is, write $E(Y)$ in terms of $m(t)$
+\
+\
+\
+1. How do you use the mgf to find the variance of a random variable? That is, write $V(Y)$ in terms of $m(t)$
+\
+\
+\
+1. What condition do you check to verify that a function $f(y)$ is a valid pdf?
+\
+\
+\
+\pagebreak
+1. For each of the following distributions, list the pdf, support, mean, and variance. Note what scenarios each distribution is good for modeling and/or what connections it has to the other distributions. 
+    a. Uniform (continuous)
+    \
+\
+\
+\
+\
+\
+\
+    a. Exponential
+    \
+\
+\
+\
+\
+\
+\
+    a. Gamma
+    \
+\
+\
+\
+\
+\
+\
+    a. Normal
+    \
+\
+\
+\
+\
+\
+\
+    a. Chi-square
+    \
+\
+\
+\
+\
+\
+\
+    a. Beta
+    \
+\
+\
+\
+\
+\
+\
+
+\pagebreak
+
+12. What's the relationship between the pdf and the cdf? That is, if you're given the pdf, how do you find the cdf? If you're given the cdf, how do you find the pdf? 
+\
+\
+\
+\
+\
+\
+1. Write $P(a < Y < b)$ as an integral. How do you find this value using the cdf? 
+\
+\
+\
+\
+1. Write $P(Y \leq y)$ as an integral. What do we call this function? 
+\
+\
+\
+
+1. How do you find the standard deviation of a random variable if given its pdf? 
+\
+\
+\
+\
+\
+1. When $X ~ N(\mu, \sigma^2)$ and $Z = \frac{X - \mu}{\sigma}$:
+    a. what is $E(Z)$ and $V(Z)$? 
+    \
+\
+\
+\
+    a. How is $Z$ distributed?
+    \
+\
+\
+\
+    a. How is $Z^2$ distributed?
+    \
+\
+\
+\
+1. What condition do you have to check to verify $p(x,y)$ is a valid joint pmf for 2 discrete random variables? 
+\
+\
+\
+\
+1. What condition do you have to check to verify $f(x,y)$ is a valid pdf for 2 continuous random variables? 
+\
+\
+\
+\
+1. If given the joint pmf/pdf, how do you find the marginal distribution of $X$? Of $Y$?
+\
+\
+\
+\
+\
+\
+
+<!-- 1. Write $F(y_1, y_2)$ as a probability, then as a double sum (or double integral) -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- 1.  -->
+<!-- 1. What condition do you check to determine whether $X$ and $Y$ are independent? -->
+<!-- \pagebreak -->
+<!-- 1. What's an expression for $E(g(X,Y))$ when $X$ and $Y$ are continuous random variables? When they are discrete? -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+<!-- 1. What is the relationship between correlation and covariance? -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- 1. What is the definition for covariance, written in terms of expected value? -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- 1. What is the shortcut formula for covariance? -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- 1. How would you find $E(XY)$ if given the means, variances, and correlation of $X$ and $Y$? -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+<!-- \ -->
+
+20. What is an expression for $p(x|y)$, for discrete random variables?  What intermediate step do you have to do to find $p(x|y)$ if you are given $p(x,y)$? Make sure you know the analogous steps for continuous distribution $f(x|y)$.
+\
+\
+\
+\
+1. What is an expression for $p(y|x)$, for discrete random variables? What intermediate step do you have to do to find $p(y|x)$ if you are given $p(x,y)$? Make sure you know the analogous steps for continuous distribution $f(y|x)$.
+\
+\
+\
+\
+
+
+<!-- 1. Write an expression for $E(Y|X)$ -->
+<!-- \ -->
+<!-- \ -->
+<!-- 1. Write an expression for $V(Y|X)$ using the shortcut formula -->
+<!-- \ -->
+<!-- \ -->
+
+<!-- 1. When $X$ and $Y$ are independent, what implications does that have on: -->
+<!--     a. $E(XY)$ -->
+<!--     b. $f(x,y)$ -->
+<!--     c. $Cov(X,Y)$ -->
+<!--     d. $\rho_{XY}$ -->
+<!--     e. $V(X + Y)$ -->
+
+<!-- 1. What is an expression for $V(X + Y)$ when $X$ and $Y$ are not independent? -->
+
+
+22. In R, how do you find the probability of $P(a < X < b)$
+    a. for the normal distribution? What parameters do you have to specify?
+    \
+\
+\
+\
+    a. for the chi-square distribution? What parameters do you have to specify?
+    \
+\
+\
+\
+    a. for the gamma distribution? What parameters do you have to specify?
+    \
+\
+\
+\
+    a. for the uniform distribution? What parameters do you have to specify?
+    \
+\
+\
+\
+    a. for the exponential distribution? What parameters do you have to specify?
+    \
+\
+\
+\
+    a. for the beta distribution? What parameters do you have to specify?
+    \
+\
+\
+\
+
+1. In R, how do you find the value of $x$ such that $P(X \leq x) = p$
+    a. for the normal distribution?
+    \
+\
+\
+\
+    a. for the chi-square distribution?
+    \
+\
+\
+\
+    a. for the gamma distribution?
+    \
+\
+\
+\
+    a. for the uniform distribution?
+    \
+\
+\
+\
+    a. for the exponential distribution?
+    \
+\
+\
+\
+    a. for the beta distribution?
+    \
+\
+\
+\
+1. In R, how do you find the probability of $P(X > a)$ for the normal distribution?
+\
+\
+\
+\
+1. In R, how do you find the value of $x$ such that $P(X \geq x) = p$ for the normal distribution?
+
+\pagebreak
+
+Know what each of the following symbols/expressions represent
+
++ $\mu$
+\
++ $\sigma^2$
+\
++ $\sigma$
+\
++ $\Gamma(\alpha)$
+\
++ $Beta(\alpha, \beta)$
+\
++ $F(y)$
+\
++ $f(y)$
+\
++ $E(Y)$
+\
++ $V(Y)$
+\
++ $m(t)$
+\
++ $Z$
+\
++ $p(x,y)$
+\
++ $f(x,y)$
+\
++ $F(x,y)$
+\
++ $p_X(x)$
+\
++ $p_Y(y)$
+\
++ $f_X(x)$
+\
++ $f_Y(y)$
+\
++ $p(x|y)$
+\
++ $f(x|y)$
+\
++ $p(y|x)$
+\
++ $f(y|x)$
+\
++ $Y \sim U(\theta_1,\theta_2)$
+\
++ $Y \sim exp(\beta)$
+\
++ $Y \sim \Gamma(\alpha, \beta)$
+\
++ $Y \sim \chi ^2(\nu)$
+\
++ $Y \sim N(\mu, \sigma^2)$
+\
++ $Y \sim Beta(\alpha, \beta)$
+\
+<!-- + $X \sim t(r)$ -->
