@@ -556,8 +556,8 @@ $V(Y) = \frac{1}{12}(\theta_2 - \theta_1)^2 \neq \theta_2$
 ::: {.activitybox data-latex=""}
 **Exercise**:
 
-SAT scores are distributed nearly normally with mean 1500 and standard
-deviation 300.
+SAT scores are distributed nearly normally with mean 1000 and standard
+deviation 200.
 
 \~68% of students score between \_\_\_\_\_\_\_\_ and \_\_\_\_\_\_\_\_ on
 the SAT.
