@@ -4,6 +4,16 @@ week: 10
 date: 2025-11-11
 ---
 
+## Thursday announcements
+
++ Quiz to start class today
++ HW 09 due tonight (request extension if needed)
++ Don't forget about the [Resources tab](https://kgfitzgerald.github.io/stat-5700/resources/) of the course website
++ Office hours next week
+    + Monday 1:30 - 2:30 (extra)
+    + Tuesday 10 - 11 (regular)
+    + Tuesday 1 - 2 (extra)
+
 ## Tuesday announcements
 
 + Quiz on Thursday (5.1-5.3)
