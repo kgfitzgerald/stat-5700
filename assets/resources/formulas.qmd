@@ -79,6 +79,16 @@ Bayes Rule: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
 | **Chi-square** | $\dfrac{1}{2^{\nu/2} \Gamma(\nu/2)} y^{\nu/2-1} e^{-y/2}, \quad y \ge 0$ | $\nu$ | $2\nu$ |
 | **Beta** | $\dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} y^{\alpha-1} (1-y)^{\beta-1}, \quad 0 \le y \le 1$ | $\dfrac{\alpha}{\alpha+\beta}$ | $\dfrac{\alpha \beta}{(\alpha+\beta)^2 (\alpha+\beta+1)}$ |
 
+$f_X(x) = \int_y f(x,y)dy$
+
+$f_Y(y) = \int_x f(x,y)dx$
+
+$p_X(x) = \sum_y p(x,y)$
+
+$p_Y(y) = \sum_x p(x,y)$
+
+
+
 \pagebreak
 
 **Geometric series:** $\sum_{n=0}^{\infty} ar^n = \frac{a}{1 - r}$
