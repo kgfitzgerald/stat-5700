@@ -51,6 +51,7 @@ nav_order: 6
 ## Exam 2 Review / practice
 
 + [Exam 2 Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Exam2_review.pdf)
++ [Exam 2 Practice Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_2a.pdf)
 
 
 ## Dr. Fitz's completed notes
