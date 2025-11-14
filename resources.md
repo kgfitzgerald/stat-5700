@@ -22,6 +22,7 @@ nav_order: 6
 + [Quiz 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_05_SOLUTIONS.pdf)
 + [Quiz 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_06_SOLUTIONS.pdf)
 + [Quiz 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_07_SOLUTIONS.pdf)
++ [Quiz 08](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_08_SOLUTIONS.pdf)
 
 ## Homework solutions
 
@@ -41,6 +42,7 @@ nav_order: 6
 + [Chapter 3 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_Group_Work_solutions.pdf)
 + [Chapter 3 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_part2_Group_Work_solutions.pdf)
 + [Chapter 4 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_4_Group_Work_solutions.pdf)
++ [Chapter 5 part 1 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_5_Group_Work_solutions.pdf)
 
 ## Exam 1 Review / practice
 
