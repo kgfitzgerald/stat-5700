@@ -11,7 +11,7 @@ date: 2025-11-11
 + Don't forget about the [Resources tab](https://kgfitzgerald.github.io/stat-5700/resources/) of the course website
 + Office hours next week
     + Monday 1:30 - 2:30 (extra)
-    + Tuesday 10 - 11 (regular)
+    + Tuesday 11 - 12 (regular)
     + Tuesday 1 - 2 (extra)
 
 ## Tuesday announcements
