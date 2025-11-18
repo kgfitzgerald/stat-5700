@@ -18,6 +18,7 @@ PDFs of lecture notes will be provided in links below. These are "scaffolded" le
 + [Chapter 3 notes (part 2)](assets/lecture_notes/CH3_part2.pdf)
 + [Chapter 4 notes](assets/lecture_notes/CH4.pdf)
 + [Chapter 5 notes (part 1)](assets/lecture_notes/CH5_part1.pdf)
++ [Chapter 5 notes (part 2)](assets/lecture_notes/CH5_part2.pdf)
 
 
 
