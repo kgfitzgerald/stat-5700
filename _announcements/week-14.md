@@ -1,7 +1,7 @@
 ---
-title: Week 12 Announcements
+title: Week 14 Announcements
 week: 10
-date: 2025-11-18
+date: 2025-12-02
 ---
 
 ## Tuesday announcements
