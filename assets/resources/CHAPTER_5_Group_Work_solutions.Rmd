@@ -239,112 +239,112 @@ $$f_y(y) = \int_0^1(x + y)dx = y + \frac{1}{2}, \ \ 0 \leq y \leq 1$$
 $$f_x(x)f_y(y) = (x + \frac{1}{2})(y + \frac{1}{2}) \neq x + y$$
 
 
-<!-- # Problem 9 -->
+# Problem 9
 
-<!-- Show that $Cov(X,Y) = E(XY) - \mu_X\mu_Y$. -->
+Show that $Cov(X,Y) = E(XY) - \mu_X\mu_Y$.
 
-<!-- > *Hint: start with the definition* $Cov(X,Y) = E[(X - \mu_X)(Y-\mu_Y)]$ -->
+> *Hint: start with the definition* $Cov(X,Y) = E[(X - \mu_X)(Y-\mu_Y)]$
 
-<!-- ## Solution -->
+## Solution
 
-<!-- $$ -->
-<!-- \begin{aligned} -->
-<!-- Cov(X,Y) &= E((X - \mu_X)(Y - \mu_Y)) \\ -->
-<!-- &= E(XY - X\mu_Y - Y\mu_X + \mu_X\mu_Y)\\ -->
-<!-- &= E(XY) - \mu_YE(X) - \mu_XE(Y) + \mu_X\mu_Y \\ -->
-<!-- &= E(XY) - \mu_Y\mu_X - \mu_X\mu_Y+ \mu_X\mu_Y \\ -->
-<!-- &= E(XY) - \mu_X\mu_Y -->
-<!-- \end{aligned} -->
-<!-- $$ -->
+$$
+\begin{aligned}
+Cov(X,Y) &= E((X - \mu_X)(Y - \mu_Y)) \\
+&= E(XY - X\mu_Y - Y\mu_X + \mu_X\mu_Y)\\
+&= E(XY) - \mu_YE(X) - \mu_XE(Y) + \mu_X\mu_Y \\
+&= E(XY) - \mu_Y\mu_X - \mu_X\mu_Y+ \mu_X\mu_Y \\
+&= E(XY) - \mu_X\mu_Y
+\end{aligned}
+$$
 
-<!-- # Problem 10 -->
+# Problem 10
 
-<!-- Show that $E(XY) = \mu_X\mu_Y + \rho_{XY}\sigma_X\sigma_Y$ -->
+Show that $E(XY) = \mu_X\mu_Y + \rho_{XY}\sigma_X\sigma_Y$
 
-<!-- ## Solution -->
+## Solution
 
-<!-- By re-arranging the identity proven in Problem 1, we have -->
+By re-arranging the identity proven in Problem 1, we have
 
-<!-- $$E(XY) = Cov(X,Y) + E(X)E(Y)$$ -->
+$$E(XY) = Cov(X,Y) + E(X)E(Y)$$
 
-<!-- Since the correlation is defined as $\rho_{XY} = \frac{Cov(X,Y)}{\sigma_X\sigma_y}$, we have $Cov(X,Y) = \rho_{XY}\sigma_X\sigma_y$. Plugging in gives -->
+Since the correlation is defined as $\rho_{XY} = \frac{Cov(X,Y)}{\sigma_X\sigma_y}$, we have $Cov(X,Y) = \rho_{XY}\sigma_X\sigma_y$. Plugging in gives
 
-<!-- $$E(XY) = \rho_{XY}\sigma_X\sigma_y + E(X)E(Y)$$ -->
+$$E(XY) = \rho_{XY}\sigma_X\sigma_y + E(X)E(Y)$$
 
-<!-- # Problem 11 -->
+# Problem 11
 
-<!-- Show that if two random variables $X$ and $Y$ are independent, then their covariance is 0. -->
+Show that if two random variables $X$ and $Y$ are independent, then their covariance is 0.
 
-<!-- > *Hint: start with the shortcut formula* $Cov(X,Y) = E(XY) - \mu_X\mu_Y$ and re-write $E(XY)$ as a double sum. -->
+> *Hint: start with the shortcut formula* $Cov(X,Y) = E(XY) - \mu_X\mu_Y$ and re-write $E(XY)$ as a double sum.
 
-<!-- ## Solution -->
+## Solution
 
-<!-- Let $X,Y$ be independent. We will therefore use the fact that $f(x,y) = f_x(x)f_y(y)$ -->
+Let $X,Y$ be independent. We will therefore use the fact that $f(x,y) = f_x(x)f_y(y)$
 
-<!-- $$ -->
-<!-- \begin{aligned} -->
-<!-- Cov(X,Y) &= E((X - \mu_X)(Y - \mu_Y)) \\ -->
-<!-- &=\sum_x\sum_yxyf(x,y) - \mu_X\mu_Y \\ -->
-<!-- &=\sum_x\sum_yxyf_x(x)f_y(y) - \mu_X\mu_Y \\ -->
-<!-- &=\sum_xxf_x(x)\sum_yyf_y(y)- \mu_X\mu_Y \\ -->
-<!-- &=E(X)E(Y)- \mu_X\mu_Y\\ -->
-<!-- &=0 -->
-<!-- \end{aligned} -->
-<!-- $$ -->
+$$
+\begin{aligned}
+Cov(X,Y) &= E((X - \mu_X)(Y - \mu_Y)) \\
+&=\sum_x\sum_yxyf(x,y) - \mu_X\mu_Y \\
+&=\sum_x\sum_yxyf_x(x)f_y(y) - \mu_X\mu_Y \\
+&=\sum_xxf_x(x)\sum_yyf_y(y)- \mu_X\mu_Y \\
+&=E(X)E(Y)- \mu_X\mu_Y\\
+&=0
+\end{aligned}
+$$
 
 
-<!-- # Problem 12 -->
+# Problem 12
 
-<!-- Return to the scenario in Problem 1. -->
+Return to the scenario in Problem 1.
 
-<!-- a.  Are $M$ and $S$ independent? -->
-<!-- b.  Find $E(M)$ and $V(M)$ -->
-<!-- c.  Find $E(S)$ and $V(S)$ -->
-<!-- d.  Find $Cov(M,S)$ -->
-<!-- e.  Suppose that instead of just one student, you sample 12 students. Let $S_1, \dots S_{12}$ represent the number of siblings reported by each student (you can assume that these random variables are independent). Let $\overline{S} = \sum_{i = 1}^{12} \frac{S_i}{12}$ be the average number of siblings in the sample. Find $E(\overline{S})$ and $V(\overline{S})$ -->
+a.  Are $M$ and $S$ independent?
+b.  Find $E(M)$ and $V(M)$
+c.  Find $E(S)$ and $V(S)$
+d.  Find $Cov(M,S)$
+e.  Suppose that instead of just one student, you sample 12 students. Let $S_1, \dots S_{12}$ represent the number of siblings reported by each student (you can assume that these random variables are independent). Let $\overline{S} = \sum_{i = 1}^{12} \frac{S_i}{12}$ be the average number of siblings in the sample. Find $E(\overline{S})$ and $V(\overline{S})$
 
-<!-- ### Part a -->
+### Part a
 
-<!-- Independent if and only if $P(S=s)P(M=m) = P(S=s,M=m)$ for all $s,m$. For the coordinate (0,1), we have $P(S = 0)P(M = 0) = 0.22*0.51 = 0.1122 \neq P(S = 0, M = 0) = .10$, therefore $S$ and $M$ are NOT independent. -->
+Independent if and only if $P(S=s)P(M=m) = P(S=s,M=m)$ for all $s,m$. For the coordinate (0,1), we have $P(S = 0)P(M = 0) = 0.22*0.51 = 0.1122 \neq P(S = 0, M = 0) = .10$, therefore $S$ and $M$ are NOT independent.
 
-<!-- $$\sigma^2_y = \frac{11}{144}$$ -->
+$$\sigma^2_y = \frac{11}{144}$$
 
-<!-- ### Part b -->
+### Part b
 
-<!-- Using the marginal distribution found above, we have -->
+Using the marginal distribution found above, we have
 
-<!-- $$E(M) = 0(.51) + 1(.49) = 0.49$$ $$E(M^2) = 0^2(.51) + 1^2(.49) = 0.49$$ $$V(M) = 0.49 - (0.49)^2 = 0.2499$$ -->
+$$E(M) = 0(.51) + 1(.49) = 0.49$$ $$E(M^2) = 0^2(.51) + 1^2(.49) = 0.49$$ $$V(M) = 0.49 - (0.49)^2 = 0.2499$$
 
-<!-- ### Part c -->
+### Part c
 
-<!-- Using the marginal distribution found above, we have -->
+Using the marginal distribution found above, we have
 
-<!-- $$E(S) = 0(.22) + 1(.36) + 2(.26) + 3(.10) + 4(.06) = 1.42$$ -->
+$$E(S) = 0(.22) + 1(.36) + 2(.26) + 3(.10) + 4(.06) = 1.42$$
 
-<!-- $$E(S^2) = 0^2(.22) + 1^2(.36) + 2^2(.26) + 3^2(.10) + 4^2(.06) = 3.26$$ -->
+$$E(S^2) = 0^2(.22) + 1^2(.36) + 2^2(.26) + 3^2(.10) + 4^2(.06) = 3.26$$
 
-<!-- $$V(S) = 3.26 - (1.42)^2 = 1.2436$$ -->
+$$V(S) = 3.26 - (1.42)^2 = 1.2436$$
 
-<!-- ### Part d -->
+### Part d
 
-<!-- $$\begin{aligned} -->
-<!-- Cov(M,S) &= \sum_m\sum_s msf(m,s) \\ -->
-<!-- &= (1)(1)(.18) + (1)(2)(.14) + (1)(3)(.03) + (1)(4)(.02) \\ -->
-<!-- &= 0.63 -->
-<!-- \end{aligned}$$ -->
+$$\begin{aligned}
+Cov(M,S) &= \sum_m\sum_s msf(m,s) \\
+&= (1)(1)(.18) + (1)(2)(.14) + (1)(3)(.03) + (1)(4)(.02) \\
+&= 0.63
+\end{aligned}$$
 
-<!-- *Note that the other 6 (m,s) coordinate pairs have at least one 0, so the term cancels out of double sum* -->
+*Note that the other 6 (m,s) coordinate pairs have at least one 0, so the term cancels out of double sum*
 
-<!-- ### Part e -->
+### Part e
 
-<!-- $$ -->
-<!-- \begin{aligned} -->
-<!-- E(\overline{S}) &= E(\sum_{i = 1}^{12}\frac{S_i}{12}) \\ -->
-<!-- &= \sum_{i = 1}^{12}E(\frac{S_i}{12}) \ \ \ \  \text{b/c E() is a linear operator} \\ -->
-<!-- &= \sum_{i = 1}^{12} \frac{1}{12}E(S_i) \\ -->
-<!-- &= \sum_{i = 1}^{12} \frac{1}{12}(1.42) \\ -->
-<!-- &= \frac{1}{12}(1.42)\sum_{i = 1}^{12} 1 \\ -->
-<!-- &= \frac{1}{12}(1.42)(12)\\ -->
-<!-- &=1.42 = E(S_i) -->
-<!-- \end{aligned} -->
-<!-- $$ -->
+$$
+\begin{aligned}
+E(\overline{S}) &= E(\sum_{i = 1}^{12}\frac{S_i}{12}) \\
+&= \sum_{i = 1}^{12}E(\frac{S_i}{12}) \ \ \ \  \text{b/c E() is a linear operator} \\
+&= \sum_{i = 1}^{12} \frac{1}{12}E(S_i) \\
+&= \sum_{i = 1}^{12} \frac{1}{12}(1.42) \\
+&= \frac{1}{12}(1.42)\sum_{i = 1}^{12} 1 \\
+&= \frac{1}{12}(1.42)(12)\\
+&=1.42 = E(S_i)
+\end{aligned}
+$$

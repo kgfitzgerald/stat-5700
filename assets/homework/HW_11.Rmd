@@ -1,6 +1,6 @@
 ---
 title: "Homework 11"
-subtitle: "Sections 5.8, 5.11, 6.1 - 6.4"
+subtitle: "Sections 5.8, 5.11"
 author: "STAT 5700 - Probability"
 output: pdf_document
 ---
@@ -25,9 +25,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 + Section 5.11: 133, 139, 141
 
-+ Section 6.3: 1, 15
-
-+ Section 6.4: 23
 
 ## Problems to submit
 
@@ -38,7 +35,3 @@ knitr::opts_chunk$set(echo = TRUE)
 + Section 5.11: 138, 142
 
 + Additional problem: The weight of an egg has mean 90 grams and standard deviation 10 grams. Suppose that you purchase a dozen eggs. Assuming that the weights are independent, find the mean and standard deviation for (a) the total weight for the 12 eggs and (b) the average weight for the 12 eggs.
-
-+ Section 6.3: 2, 4, 16
-
-+ Section 6.4: 24
