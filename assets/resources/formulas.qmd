@@ -45,15 +45,6 @@ Bayes Rule: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
 <!-- \end{cases}$$ -->
 \pagebreak
 
-| **Distribution** | **Probability Function** | **Mean** | **Variance** |
-|------------------|--------------------------|-----------|---------------|
-| **Bernoulli** | $p^y (1-p)^{1-y}$ | $p$ | $p(1-p)$ |
-| **Binomial** | $\binom{n}{y} p^y (1-p)^{n-y}$ | $np$ | $np(1-p)$ |
-| **Geometric** | $p(1-p)^{y-1}$ | $\dfrac{1}{p}$ | $\dfrac{1-p}{p^2}$ |
-| **Hypergeometric** | $\dfrac{\binom{r}{y}\binom{N-r}{n-y}}{\binom{N}{n}}$ | $\dfrac{nr}{N}$ | $n \left(\dfrac{r}{N}\right)\left(\dfrac{N-r}{N}\right)\left(\dfrac{N-n}{N-1}\right)$ |
-| **Poisson** | $\dfrac{\lambda^y e^{-\lambda}}{y!}$ | $\lambda$ | $\lambda$ |
-| **Negative Binomial** | $\binom{y-1}{r-1} p^r (1-p)^{y - r}$ | $\dfrac{r}{p}$ | $\dfrac{r(1-p)}{p^2}$ |
-
 | **Definition** | **Discrete** | **Continuous** |
 |----------------------|-------------------------|-------------------------|
 | $\mu = E(Y)$ | $\sum_{y \in S}yp(y)$ | $\int_S yf(y)dy$ |
@@ -67,6 +58,29 @@ Bayes Rule: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
 | $E(g(Y))$ | $\sum_{y \in S}g(y)p(y)$ | $\int_S g(y)f(y)dy$ |
 |  |  |  |
 
+$f_X(x) = \int_y f(x,y)dy$
+
+$f_Y(y) = \int_x f(x,y)dx$
+
+$p_X(x) = \sum_y p(x,y)$
+
+$p_Y(y) = \sum_x p(x,y)$
+
+$f(x|y) = \frac{f(x,y)}{f_Y(y)}$
+
+$\sigma_{XY} = Cov(X,Y) = E((X - \mu_X)(Y-\mu_Y))$
+
+$\rho_{XY} = Corr(X,Y) = \frac{Cov(X,Y)}{\sigma_X\sigma_Y}$
+
+| **Distribution** | **Probability Function** | **Mean** | **Variance** |
+|------------------|--------------------------|-----------|---------------|
+| **Bernoulli** | $p^y (1-p)^{1-y}$ | $p$ | $p(1-p)$ |
+| **Binomial** | $\binom{n}{y} p^y (1-p)^{n-y}$ | $np$ | $np(1-p)$ |
+| **Geometric** | $p(1-p)^{y-1}$ | $\dfrac{1}{p}$ | $\dfrac{1-p}{p^2}$ |
+| **Hypergeometric** | $\dfrac{\binom{r}{y}\binom{N-r}{n-y}}{\binom{N}{n}}$ | $\dfrac{nr}{N}$ | $n \left(\dfrac{r}{N}\right)\left(\dfrac{N-r}{N}\right)\left(\dfrac{N-n}{N-1}\right)$ |
+| **Poisson** | $\dfrac{\lambda^y e^{-\lambda}}{y!}$ | $\lambda$ | $\lambda$ |
+| **Negative Binomial** | $\binom{y-1}{r-1} p^r (1-p)^{y - r}$ | $\dfrac{r}{p}$ | $\dfrac{r(1-p)}{p^2}$ |
+
 
 
 
@@ -79,13 +93,7 @@ Bayes Rule: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
 | **Chi-square** | $\dfrac{1}{2^{\nu/2} \Gamma(\nu/2)} y^{\nu/2-1} e^{-y/2}, \quad y \ge 0$ | $\nu$ | $2\nu$ |
 | **Beta** | $\dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} y^{\alpha-1} (1-y)^{\beta-1}, \quad 0 \le y \le 1$ | $\dfrac{\alpha}{\alpha+\beta}$ | $\dfrac{\alpha \beta}{(\alpha+\beta)^2 (\alpha+\beta+1)}$ |
 
-$f_X(x) = \int_y f(x,y)dy$
 
-$f_Y(y) = \int_x f(x,y)dx$
-
-$p_X(x) = \sum_y p(x,y)$
-
-$p_Y(y) = \sum_x p(x,y)$
 
 
 

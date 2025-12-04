@@ -57,6 +57,10 @@ nav_order: 6
 + [Practice Exam 2 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_2_SOLUTIONS.pdf)
 
 
+## Final Exam Review / practice
+
++ [Final Exam Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Final_Exam_Review.pdf)
+
 ## Dr. Fitz's completed notes
 
 + [Chapter 2](https://kgfitzgerald.github.io/stat-5700/assets/resources/CH2_Fitz.pdf)
