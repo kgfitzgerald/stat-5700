@@ -4,6 +4,17 @@ week: 10
 date: 2025-12-02
 ---
 
+## Thursday announcements
+
++ Quiz to start class today
++ [Final Exam Review packet posted](https://kgfitzgerald.github.io/stat-5700/assets/resources/Final_Exam_Review.pdf)
++ Will have practice exam posted at least one week before the exam (i.e. by next Tuesday)
++ Reminders:
+    + NO CLASS on Tuesday
+    + Last quiz + Exam review next Thursday
+    + HW 10, Lab 10 due tonight
+    + HW 11, End of course reflection due next Thursday
+
 ## Tuesday announcements
 
 + Exam 2 results
