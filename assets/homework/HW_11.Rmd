@@ -1,6 +1,6 @@
 ---
 title: "Homework 11"
-subtitle: "Sections 5.8, 5.11"
+subtitle: "Sections 5.8, 5.9, 5.11"
 author: "STAT 5700 - Probability"
 output: pdf_document
 ---
@@ -19,9 +19,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Problems to do (responsible for content, but not collected/graded)
 
-+ Section 5.8: 103, 119
++ Section 5.8: 103
 
-+ Section 5.9: 123, 125
++ Section 5.9: 119, 123, 125
 
 + Section 5.11: 133, 139, 141
 
