@@ -60,6 +60,7 @@ nav_order: 6
 ## Final Exam Review / practice
 
 + [Final Exam Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Final_Exam_Review.pdf)
++ [Practice Final Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Final_Practice_Exam.pdf)
 
 ## Dr. Fitz's completed notes
 
