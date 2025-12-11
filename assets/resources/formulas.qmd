@@ -68,9 +68,13 @@ $p_Y(y) = \sum_x p(x,y)$
 
 $f(x|y) = \frac{f(x,y)}{f_Y(y)}$
 
+$E(X | Y) = \int x f(x|y) dx$
+
 $\sigma_{XY} = Cov(X,Y) = E((X - \mu_X)(Y-\mu_Y))$
 
 $\rho_{XY} = Corr(X,Y) = \frac{Cov(X,Y)}{\sigma_X\sigma_Y}$
+
+$V(\sum_{i = 1}^na_iX_i) = \sum_{i = 1}^na_i^2V(X_i) + 2(a_i)(a_j)\sum\sum_{i < j}Cov(X_i, X_j)$
 
 | **Distribution** | **Probability Function** | **Mean** | **Variance** |
 |------------------|--------------------------|-----------|---------------|
