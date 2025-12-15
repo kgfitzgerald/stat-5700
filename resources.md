@@ -38,6 +38,7 @@ nav_order: 6
 + [HW 08](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_08_SOLUTIONS.pdf)
 + [HW 09](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_09_SOLUTIONS.pdf)
 + [HW 10](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_10_SOLUTIONS.pdf)
++ [HW 11](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_11_SOLUTIONS.pdf)
 
 ## Group Work solutions
 
