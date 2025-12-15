@@ -1,0 +1,154 @@
+---
+title: "Chapter 5 Part 2 Group Work"
+subtitle: "SOLUTIONS"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Problem 1
+
+Show that for any constants $a$ and $b$, $Cov(a + X, b + Y) = Cov(X,Y)$. That is, shifting by a constant does not change the covariance. *Note: this fact will be useful on HW 5.110*
+
+## SOLUTION 
+
+By definition,
+$$
+Cov(a+X,\; b+Y)=E[(a+X)(b+Y)]-E[a+X]E[b+Y].
+$$
+
+Compute:
+$$
+E[(a+X)(b+Y)] = ab + aE[Y] + bE[X] + E[XY],
+$$
+and
+$$
+E[a+X]E[b+Y] = ab + aE[Y] + bE[X] + E[X]E[Y].
+$$
+
+Thus,
+$$
+Cov(a+X,\; b+Y)
+= E[XY] - E[X]E[Y]
+= Cov(X,Y).
+$$
+
+# Problem 2
+
+To estimate a proportion of units that meet a given criteria, we often use the estimator $\hat{p} = \frac{Y}{n},$ where $Y \sim binomial(n, p)$. Find the expected value and variance of $\hat{p}$, assuming n is fixed.
+
+## SOLUTION 
+
+Let
+$$
+\hat p = \frac{Y}{n}, \quad Y \sim \text{Binomial}(n,p),
+$$
+with $n$ fixed.
+
+Since $E[Y]=np$,
+$$
+E[\hat p] = E\!\left[\frac{Y}{n}\right] = \frac{1}{n}E[Y] = \frac{np}{n} = p.
+$$
+
+Since $V(Y)=np(1-p)$,
+$$
+V(\hat p) = V\!\left(\frac{Y}{n}\right)
+= \frac{1}{n^2}V(Y)
+= \frac{np(1-p)}{n^2}
+= \frac{p(1-p)}{n}.
+$$
+
+
+# Problem 3
+
+A learning experiment requires a rat to run a maze (a network of pathways) until it locates one of three possible exits. Exit 1 presents a reward of food, but exits 2 and 3 do not. (If the rat eventually selects exit 1 almost every time, learning may have taken place). Let $Y_i$ denote the number of times exit $i$ is chosen in successive runnings. For the following, assume that the rate chooses an exit at random on each run. 
+
+a. Find the probability that $n = 6$ runs result in $Y_1 = 3$, $Y_2 = 1$ and $Y_3 = 2$.
+b. For general $n$, find $E(Y_1)$ and $V(Y_1)$.
+c. For general $n$, find $Cov(Y_2, Y_3)$
+d. To check for the fat's preference between exits 2 and 3, we may look at $Y_2 - Y_3$. Find $E(Y_2 - Y_3)$ and $V(Y_2 - Y_3)$ for general $n$.
+
+## SOLUTION 
+
+**a.** Using the multinomial distribution with $p_1=p_2=p_3=\tfrac13$,
+$$
+P(Y_1=3,\,Y_2=1,\,Y_3=2)
+= \frac{6!}{3!\,1!\,2!}\left(\frac13\right)^6
+= 0.0823.
+$$
+
+**b.**
+$$
+E(Y_1)=\frac{n}{3}, \qquad
+V(Y_1)=n\left(\frac13\right)\left(\frac23\right)=\frac{2n}{9}.
+$$
+
+**c.**
+$$
+Cov(Y_2,Y_3)=-n\left(\frac13\right)\left(\frac13\right)=-\frac{n}{9}.
+$$
+
+**d.**
+$$
+E(Y_2-Y_3)=\frac{n}{3}-\frac{n}{3}=0,
+$$
+$$
+V(Y_2-Y_3)=V(Y_2)+V(Y_3)-2Cov(Y_2,Y_3)=\frac{2n}{3}.
+$$
+
+# Problem 4
+
+The number of defects per yard in a certain fabric, $Y$, is known to have a Poisson distribution with parameter $\lambda$. The parameter $\lambda$ is assumed to be a random variable with a pdf given by $$f(\lambda) = e^{-\lambda}, \ \ \ \lambda \geq 0$$
+
+a. Find the expected number of defects per yard by first finding the conditional expectation of $Y$ for given $\lambda$.
+b. Find the variance of $Y$.
+
+## SOLUTION
+
+Let
+$$
+Y \mid \lambda \sim \text{Poisson}(\lambda), \qquad f(\lambda)=e^{-\lambda}, \ \lambda\ge 0.
+$$
+
+**a. Expected value**
+
+The conditional expectation is $E(Y \mid \lambda)=\lambda.$ by properties of Poisson distribution.
+Thus,
+$$
+E(Y)=E\!\left[E(Y\mid \lambda)\right]=E(\lambda).
+$$
+Since $\lambda \sim \text{Exponential}(1)$,
+$$
+E(\lambda)=\int_0^\infty \lambda e^{-\lambda}\,d\lambda = 1.
+$$
+Therefore,
+$$
+E(Y)=1.
+$$
+
+**b. Variance**
+
+Using the law of total variance,
+$$
+V(Y)=E\!\left[V(Y\mid \lambda)\right]+V\!\left(E(Y\mid \lambda)\right).
+$$
+For a Poisson random variable,
+$$
+V(Y\mid \lambda)=\lambda, \qquad E(Y\mid \lambda)=\lambda.
+$$
+Hence,
+$$
+V(Y)=E(\lambda)+V(\lambda).
+$$
+For $\lambda \sim \text{Exponential}(1)$,
+$$
+E(\lambda)=1, \qquad V(\lambda)=1.
+$$
+Therefore,
+$$
+V(Y)=1+1=2.
+$$
+
+
