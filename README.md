@@ -11,7 +11,7 @@ seo:
 
 # STAT 5700: Probability
 
-## Fall 2025, Villanova University
+## Spring 2026, Villanova University
 
 ### Instructor
 
@@ -36,9 +36,9 @@ Piazza will be our preferred platform for questions about homework, code, and ge
 
 ## Important Links
 
-[Syllabus](/stat-5700/assets/STAT 5700 Fitzgerald F25.pdf)
+[Syllabus](/stat-5700/assets/STAT 5700 Fitzgerald S26.pdf)
 
-[Blackboard - home page](https://elearning.villanova.edu/ultra/courses/_182880_1/cl/outline)
+[Blackboard - home page](https://elearning.villanova.edu/ultra/courses/_187524_1/cl/outline)
 
 Piazza - access through Blackboard home page
 
@@ -56,7 +56,7 @@ Piazza - access through Blackboard home page
 
 + Fill out the Intro Survey (emailed to you by Dr. Fitz, the week before the semester)
 + Bookmark this course website in your browser [https://kgfitzgerald.github.io/stat-5700/](https://kgfitzgerald.github.io/stat-5700/)
-+ Read the [syllabus](/stat-5700/assets/STAT 5700 Fitzgerald F25.pdf)
++ Read the [syllabus](/stat-5700/assets/STAT 5700 Fitzgerald S26.pdf)
 + Get the textbook
 + [Install R & RStudio](/stat-5700/rstudio/)
 + Turn on notifications for our course Piazza page (access via Blackboard home page)

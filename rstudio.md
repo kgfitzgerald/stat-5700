@@ -24,7 +24,7 @@ The instructions below will walk you through each step. **You should do these BE
 Navigate to [https://cran.r-project.org](https://cran.r-project.org) and then:
 
 + If you are a Windows user: Click on "Download R for Windows", then click on "base", then click on the Download link.
-+ If you are macOS user: Click on "Download R for (Mac) OS X", then under "Latest release:" click on R-X.X.X.pkg, where R-X.X.X is the version number. For example, the latest version of R as of August 2025 was R-4.5.1. Note there are different links for Silicon vs Intel Macs (check your "About This Mac" to know which one you have).
++ If you are macOS user: Click on "Download R for (Mac) OS X", then under "Latest release:" click on R-X.X.X.pkg, where R-X.X.X is the version number. For example, the latest version of R as of December 2025 was R-4.5.2. Note there are different links for Silicon vs Intel Macs (check your "About This Mac" to know which one you have).
 
 Open the downloaded file and follow your computer's instructions for installing the software. 
 

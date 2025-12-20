@@ -1,0 +1,325 @@
+---
+title: "Lab 08"
+subtitle: "STAT 5700"
+author: "Insert your name here"
+date: "Insert due date here"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_float: true
+    number-section: false
+    highlight: tango
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+library(ggdist)
+library(distributional)
+```
+
+# Tutorial
+
+This lab will have you compute probabilities and quantiles from continuous distributions in R. This tutorial recaps what you learned in group work and is included for your copy-paste convenience. 
+
+## Computing probabilities for continuous distributions in R
+
+The cdf values $F(X) = P(X < x)$ are returned with commands using "p" at the beginning of the R distribution name:
+
+-   `pnorm(x, mean = mu, sd = sigma)` - returns $F(x)$ values for a **normal random
+    variable** $X \sim N(\mu,\sigma^2)$
+-   `punif(x, min = theta1, max = theta2)` returns $F(x)$ values for a **uniform random
+    variable** $X \sim U(\theta_1, \theta_2)$
+-   `pexp(y, rate = lambda)` - returns $F(x)$ values for an **exponential random
+    variable** $X \sim exp(\beta = 1/\lambda)$
+    -   Note our textbook defines exponential distributions in terms of
+        the parameter $\beta$, which is the mean wait time, instead of
+        the rate $\lambda$.
+-   `pgamma(y, shape = alpha, scale = beta)` - returns $F(x)$ values for a
+    **gamma random variable** $X \sim(\alpha , \beta)$ with parameters
+    `shape` = $\alpha$ and `scale` = $\beta = 1/\lambda$.
+    -   Because the gamma function can be parameterized in terms of
+        shape or rate, make sure to name the argument inside the
+        `pgamma()` function to specify which parameter you're defining. If you don't specify the name, by default it actually expects `rate` to be the 3rd argument, not `scale`.
+-   `pchisq(x, df)` - returns $F(x)$ values for a **chi-square random
+    variable** $X \sim \chi^2(\nu)$ where the argument `df` corresponds to the degrees of freedom parameter `\nu`
+- `pbeta(x, shape1 = alpha, shape2 = beta)` - returns $F(x)$ values for a **beta random variable** $X \sim Beta(\alpha, \beta)$
+
+
+There is a hidden argument in each of these functions called
+`lower.tail`, and the default is set to `lower.tail = TRUE`. Meaning, by
+default, the "p" functions return the probabilities in the *lower tail*
+of the density function: $F(X) = P(X <x)$. Sometimes it will be useful
+to override the default by adding the argument `lower.tail = FALSE`,
+which will return values $P(X > x)$. You can think of these two options
+visually; `lower.tail = TRUE` represents the dark shaded region
+$P(X < 10)$, and `lower.tail = FALSE` represents the light shaded region
+$P(X > 10)$ in the plot below.
+
+```{r, echo = FALSE, out.width="50%"}
+ggplot() +
+  stat_dist_slab(aes(y = "Chisq(5)", 
+                        dist = dist_chisq(df = 5),
+                        fill = after_stat(x > 10)), 
+                 show.legend = FALSE) +
+  scale_fill_viridis_d() +
+  labs(y = "") +
+  theme_minimal()
+```
+
+### Uniform example
+
+Suppose $X \sim U(0,5)$. Let's compute the probability that $X < 2$ using the `punif()` function.
+
+```{r}
+punif(2, 0, 5)
+```
+
+We could find the probability that $X > 3$ in two ways:
+
+```{r}
+punif(3, 0, 5, lower.tail = FALSE)
+1 - punif(3, 0, 5)
+```
+
+To find $P(2 < X < 3)$ we can re-write it as $P(X < 3) - P(X < 2)$
+
+```{r}
+punif(3, 0, 5) - punif(2, 0, 5)
+```
+
+We can create a plot of the previous example using the following code:
+
+```{r}
+ggplot() +
+  stat_dist_halfeye(aes(y = "U(0,5)", 
+                        dist = dist_uniform(min = 0, max = 5),
+                        fill = stat(x > 2 & x < 3))) +
+  labs(y = "", x = "x") +
+  #viridis color scale is color-blind friendly
+  #set direction = -1 so TRUE is dark instead of light
+  scale_fill_viridis_d(direction = -1) +
+  theme_minimal()
+```
+
+### Gamma example
+
+Suppose $X \sim \Gamma(\alpha = 3, \beta = 4)$. Let's compute the probability that $X < 2$:
+
+```{r}
+pgamma(2, shape = 3, scale = 4)
+```
+
+We can plot this distribution with the following code:
+
+```{r}
+ggplot() +
+  stat_dist_halfeye(aes(y = "Gamma(3,4)", 
+                        #note the function dist_gamma() requires the rate parameter 
+                        #instead of the scale parameter. Recall rate = 1/scale
+                        dist = dist_gamma(shape = 3, rate = 1/4),
+                        fill = stat(x < 2))) +
+  labs(y = "", x = "x") +
+  scale_fill_viridis_d(direction = -1) +
+  theme_minimal()
+```
+
+If we wanted to calculate $P(X>2)$, that is the region shaded in pink, we could do that in two ways:
+
+```{r}
+1 - pgamma(2, shape = 3, scale = 4)
+pgamma(2, shape = 3, scale = 4, lower.tail = FALSE)
+```
+
+The inverse of the cdf, or the $x$ that solves the equation
+$p = F(x) = P(X < x)$, are returned with commands using “q” at the
+beginning of the R distribution name:
+
+-   `qunif(p, min = theta1, max = theta2)` – finds $x$ such that $P(X < x) = p$ for a
+    uniform random variable $X \sim U(\theta_1, \theta_2)$
+-   `qexp(p, rate = lambda = 1/beta)` - finds $x$ such that $P(X < x) = p$ for an
+    exponential random variable $Y \sim exp(\lambda = 1/\beta)$
+-   `qgamma(p, shape = alpha, scale = beta = 1/lambda)` - finds $x$ such that
+    $P(X < x) = p$ for a gamma random variable $X \sim(\alpha , \beta)$
+    with parameters `shape` = $\alpha$ and `scale` =
+    $\beta = 1/\lambda$
+-   `qchisq(p, df)` - finds $x$ such that $P(X< x) = p$ for a
+    chi-square random variable $Y \sim \chi^2(\nu)$ where the argument
+    `df` corresponds to the degrees of freedom parameter `\nu`.
+-   `qnorm(x, mean = mu, sd = sigma)` - finds $x$ such that $P(X< x) = p$ for a **normal random
+    variable** $X \sim N(\mu,\sigma^2)$
+-  `pbeta(x, shape1 = alpha, shape2 = beta)` - finds $x$ such that $P(X< x) = p$ for a **beta random variable** $X \sim Beta(\alpha, \beta)$
+
+Again, set `lower.tail = FALSE` to use upper tail probabilities and find
+$x$ such that $P(X> x) = p.$
+
+### Gamma example
+
+Suppose $X \sim \Gamma(\alpha = 3, \beta = 7)$. Below is a visual of
+the distribution shaded at the median.
+
+```{r, echo = FALSE, out.width="50%"}
+median <- qgamma(0.5, shape = 3, scale = 7)
+ggplot() +
+  stat_dist_slab(aes(y = "gamma(3, 7)", 
+                        dist = dist_gamma(shape = 3, rate = 1/7),
+                        fill = after_stat(x > median))) +
+  scale_fill_viridis_d() +
+  labs(y = "") +
+  theme_minimal()
+```
+
+### Chi-squared example
+
+Suppose $X \sim \chi^2(14)$. Find the 95th percentile.
+
+```{r}
+qchisq(0.95, 14)
+```
+
+Another way to compute the same percentile using upper tail probabilities:
+
+```{r}
+qchisq(0.05, 14, lower.tail = FALSE)
+```
+
+We can plot a shaded chi-squared distribution with the following code:
+
+```{r}
+ggplot() +
+  stat_dist_halfeye(aes(y = "Chisq(14)", 
+                        dist = dist_chisq(14),
+                        fill = stat(x < qchisq(0.95, 14)))) +
+  labs(y = "", x = "x") +
+  scale_fill_viridis_d(direction = -1) +
+  theme_minimal()
+```
+
+### Exponential example
+
+Suppose $X \sim exp(\theta = 3)$. Find the median.
+
+```{r}
+qexp(0.5, rate = 1/3)
+```
+
+We can plot a shaded exponential distribution with the following code:
+
+```{r}
+median <- qexp(0.5, rate = 1/3)
+ggplot() +
+  stat_dist_halfeye(aes(y = "exp(3)", 
+                        dist = dist_exponential(rate = 1/3),
+                        fill = stat(x < median))) +
+  labs(y = "", x = "x") +
+  scale_fill_viridis_d(direction = -1) +
+  theme_minimal()
+```
+
+# Task 1
+
+Find $P(X < 18)$ if $X \sim exp(\beta = 20)$
+
+```{r}
+
+
+```
+
+# Task 2
+
+Find $P(X > 5)$ if $X \sim \Gamma(\alpha = 2, \beta = 2)$
+
+```{r}
+
+
+```
+
+# Task 3
+
+If $X$ is $\chi^2(17)$, find
+
+a.  $P(X < 7.564)$
+b.  $P(X > 27.59)$
+c.  $P(6.408 < Z < 27.59)$
+d.  $\chi^2_{0.95}(17)$ (i.e. find the 95th percentile).
+e.  $\chi^2_{0.025}(17)$ (i.e. find the 2.5th percentile)
+
+### Part a
+
+```{r}
+
+```
+
+### Part b
+
+```{r}
+
+```
+
+### Part c
+
+```{r}
+
+```
+
+### Part d
+
+```{r}
+
+```
+
+### Part e
+
+```{r}
+
+```
+
+# Task 4
+
+If $X$ is $\chi^2(12)$, find constants $a$ and $b$ such that $$P(a < X < b) = 0.90$$ and $$P(X < a) = 0.05.$$ Provide comments on how you solve the problem and why you choose the R commands you did.
+
+```{r}
+
+```
+
+> YOUR COMMENTS HERE
+
+# Task 5
+
+Cars arrive at a tollbooth at a mean rate of 5 cars every 10 minutes according to a Poisson process. Find the probability that the toll collector will have to wait longer than 26.30 minutes before collecting the eighth toll. Comment on how you solve the problem including what distribution you use to model this scenario, the parameter values, and why you implemented the R commands you did.
+
+```{r}
+
+```
+
+> YOUR COMMENTS HERE
+
+# Task 6
+
+If $X$ is normally distributed with a mean of 6 and a variance of 25, find
+
+a.  $P(6 \leq X \leq 12)$
+b.  $P(X > 21)$
+c.  $P(|X - 6| < 5)$
+
+### Part a
+
+```{r}
+
+```
+
+### Part b
+
+```{r}
+
+```
+
+### Part c
+
+```{r}
+
+```

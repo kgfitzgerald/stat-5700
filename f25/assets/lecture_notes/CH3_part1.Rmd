@@ -1,0 +1,1371 @@
+---
+title: "Chapter 3: Discrete Distributions (Part 1)"
+subtitle: "STAT 5700: Probability"
+author: "Prof. Katie Fitzgerald, PhD"
+institute: "Villanova University Department of Mathematics & Statistics"
+date: "Fall 2025"
+output: 
+  pdf_document:
+    includes:
+      in_header: preamble.tex
+    toc: true
+editor_options: 
+  markdown: 
+    wrap: 72
+  chunk_output_type: console
+---
+
+```{r, echo = FALSE, message=FALSE, warning = FALSE}
+library(tidyverse)
+library(gridExtra)
+library(cowplot)
+```
+
+\pagebreak
+
+<!-- FOR SPRING 2025 REPLACE SOME OF THE TOY PROBLEMS (DICE/COIN FLIPS) WITH AGQ BATCH TESTING: -->
+
+<!-- https://askgoodquestions.blog/2020/03/30/39-batch-testing/ -->
+
+<!-- https://askgoodquestions.blog/2020/11/02/70-batch-testing-part-2/ -->
+
+
+# Discrete Random Variables & Their Probability Distributions (2.11, 3.1 - 3.2)
+
+Remember our random babies example...
+
+Probability = mathematical framework to describe and analyze random
+phenomenon
+
+Random phenomenon = anything we cannot predict with certainty
+
+E.g. randomly delivering 4 babies to 4 mothers
+
+```{r, echo = FALSE, fig.align="center", out.width="70%", out.height="10%"}
+knitr::include_graphics("./images/random_babies_S.png")
+```
+
+Let Y = \# of matches
+
+Y is a **random variable**
+
+::: {.highlightbox data-latex=""}
+A **random variable** is a **function** that maps each outcome in a
+sample space $S$ (of a random experiment) to a real number.
+
+$$Y: S \rightarrow \mathbb{R}$$
+
+The **support** of $Y$ is the set of real values that $Y$ can take on.
+
+$$\mathbb{S} = \{y: Y=y\}$$
+:::
+
+We usually think of functions as deterministic, but in this case, the
+*input* to the function is random, so the resulting output is random as
+well.
+
+In the random babies example, $S$ was the set of 24 possible orderings
+of the 4 babies (e.g. 1234, 1243).
+
+We defined $Y$ to be the \# of matches
+
+$Y$ is actually a **function**: e.g. $Y(1234) = 4$ and $Y(1243) = 2$
+
+The **support** of Y is $\mathbb{S} = \{0, 1, 2, 4\}$.
+
+::: {.highlightbox data-latex=""}
+We can think of a random variable as a numerical "summary" of some
+aspect of a random experiment
+:::
+
+Why study random variables and the theory of probability? The probability of an observed event is often used to make inferences about a population. And events of interest are often numerical events that correspond to values of discrete random variables. For example:
+
++ number of bacteria per unit area in the study of drug control on bacterial growth
++ number of defective television sets in a shipment of 100 sets
++ number of patients out of 10 that survive a disease
++ amount of sales in USD
++ When you collect data on a random sample of people from a population, each piece of information you collect (e.g., age, income, opinion on XYZ, transportation habits, etc) is considered a random variable. The way you randomly select people into your sample affects the probability of observing that sample, which in turn plays a major role in the inferences you are able to make about the whole population. See Section 2.12 for a primer, but there is a whole branch of statistics called Survey Sampling that handles this in depth. 
+
+::: {.activitybox data-latex=""}
+**Example:**
+
+A coin is tossed three times, and the sample space is defined as
+
+\
+
+$$S = \{hhh, hht, hth, htt, thh, tht, tth, ttt\}$$ 
+
+\
+
+Examples of random variables that are defined on $S$:
+
+-   $X$ = the total number of heads
+-   $Y$ = whether or not there is a heads on the 2nd flip
+-   $Z$ = the number of heads minus the number of tails
+
+Define the **support** for each of the above random variables.
+:::
+
+::: {.activitybox data-latex=""}
+**Example:**\
+A rat is selected randomly from a cage and its sex is determined.\
+
+The sample space is therefore $S = \{\text{female, male}\} = \{F,M\}$.\
+
+Let $Y$ be a function defined on S such that $Y(F) = 0$ and $Y(M) = 1$.\
+
+<!-- Y is therefore a real-valued function that has the outcome space S as its domain and the set of real numbers {y: y = 0,1} as its range.  -->
+
+$Y$ is a random variable, and its support is the set of numbers
+$\{y: y = 0,1\}$
+:::
+
+
+
+## Distributions & random variables
+
+We're often interested in the *behavior* of a random variable, how often
+it will take on the different values in its support. We describe this
+behavior using a **distribution**. Below is the distribution of the
+random variables $Y, Y, Z$ defined above, based on 100,000 simulations
+of the random experiment of tossing 3 coins.
+
+```{r, echo = FALSE, out.height="30%"}
+set.seed(437)
+data <- data.frame(toss1 = rbinom(100000, 1, 0.5),
+                   toss2 = rbinom(100000, 1, 0.5),
+                   toss3 = rbinom(100000, 1, 0.5)) %>% 
+  mutate(X = toss1 + toss2 + toss3,
+         Y = if_else(toss2 == 1, 1, 0),
+         num_tails = abs((toss1 - 1) + (toss2 - 1) + (toss3 - 1)),
+         Z = X - num_tails)
+
+p1 <- data %>% 
+  count(X) %>% 
+  mutate(prop = n/sum(n)) %>% 
+  ggplot(aes(x = X, y = prop)) +
+  geom_col(width = 0.75) +
+  theme_minimal() +
+  labs(x = "x",
+       y = "p(x)",
+       title = "Distribution of X",
+       subtitle = "total number of heads")
+
+p2 <- data %>% 
+  count(Y) %>% 
+  mutate(prop = n/sum(n)) %>% 
+  ggplot(aes(x = Y, y = prop)) +
+  geom_col(width = 0.75) +
+  scale_x_continuous(breaks = c(0,1), labels = c(0, 1),
+                     minor_breaks = NULL) +
+  scale_y_continuous(minor_breaks = NULL) +
+  theme_minimal() +
+  labs(x = "y",
+       y = "p(y)",
+       title = "Distribution of Y",
+       subtitle = "whether or not 2nd flip = h")
+
+p3 <- data %>% 
+  count(Z) %>% 
+  mutate(prop = n/sum(n)) %>% 
+  ggplot(aes(x = Z, y = prop)) +
+  geom_col(width = 0.75) +
+  theme_minimal() +
+  scale_x_continuous(breaks = seq(-3,3,1), labels = seq(-3, 3, 1),
+                     minor_breaks = NULL) +
+  labs(x = "z",
+       y = "p(z)",
+       title = "Distribution of Z",
+       subtitle = "# of heads - # of tails")
+
+plot_grid(p1, p2, p3, nrow = 1)
+```
+
+A key task in probability & statistics (and therefore in most of this
+class) is defining and working with mathematical models that describe
+the behavior of random variables. That is, we will be learning methods
+for defining and understanding the behavior of functions such as
+$p(y), p(y), p(z)$ above.
+
+Because certain types of random variables occur so frequently in practice, it is useful to have at hand the probability for each value of a random variable (that is, to know its probability distribution). We will find that
+many experiments exhibit similar characteristics and generate random variables with the same type of probability distribution. Consequently, knowledge of the probability distributions for random variables associated with common types of experiments will eliminate the need for solving the same probability problems over and over again.
+
+Common distributions we will study:
+
+-   **Bernoulli** - used to model success/failure events
+    -   Will a student graduate?
+    -   Will a basketball player make their free throw?
+    -   Is an email spam or not?
+    -   Does a sensor in a smart phone device detect motion or not?
+-   **Binomial** - used to model \# of "successes" in a series of trials
+    -   Number of free throws made out of 10
+    -   Number of broken items in a shipment
+    -   Number of successful API requests out of 100 sent to a server.
+    -   Number of images correctly classified by a machine learning model out of 500 test cases
+-   **Geometric** - used to model \# of "failures" until the first
+    "success"
+    -   Number of people you poll until you find an independent voter
+    -   Number of items on a production line until the first defection
+        item
+    -   How many joints are loaded (in welding) before the first beam
+        fracture occurs
+    -   Number of retries needed to establish a reliable connection to a satellite.
+
+### Probability & Discrete random variables
+
+::: {.activitybox data-latex=""}
+**Exercise:**\
+
+A supervisor in a manufacturing plant has three men and three women working for him. He wants to choose two workers for a special job. Not wishing to show any biases in his selection, he decides to select the two workers at random. Let Y denote the number of women in his selection. Find the probability distribution for Y.
+\
+\
+\
+\
+\
+\
+\
+\
+<!-- Consider the random experiment in which we roll a fair six-sided die. -->
+<!-- The sample space $S = \{1, 2, 3, 4, 5, 6\}.$ Let $Y(s) = s$ (identity -->
+<!-- function). $Y$ is a random variable with support $\{1,2,3,4,5,6\}$ -->
+
+<!-- Associating a probability of 1/6 with each outcome (it's a fair die), -->
+<!-- find -->
+
+<!-- a.  $P(Y = 5)$\ -->
+<!--     \ -->
+<!-- b.  $P(2 \leq Y \leq 5)$\ -->
+<!--     \ -->
+<!-- c.  $P(Y \leq 2)$\ -->
+<!--     \ -->
+<!--     \ -->
+:::
+
+A random variable $Y$ is \textcolor{red}{\textbf{discrete}} if it can
+take on at most a countable number of values.
+
+For a discrete r.v. $Y$, the probability $P(Y = y)$ is often denoted by
+$p(y)$ and is called the
+\textcolor{red}{\textbf{probability distribution of Y}}.
+
+In the above example, $P(Y=2) = p(2)$
+
+::: {.highlightbox data-latex=""}
+**Theorem 3.1**
+
+For any discrete probability distribution, the following must be true:
+
+(a) $0 \leq p(y) \leq 1, \ \ \ \text{for all } y \in \mathbb{S}$<br/>
+(b) $\sum_{y \in \mathbb{S}} p(y) = 1$<br/>
+<!-- (c) $P(Y \in A) = \sum_{y \in A}p(y), \ \ \ \text{where } A \subset \mathbb{S}$ -->
+:::
+
+::: {.activitybox data-latex=""}
+**Exercise:** For the previous example, define $p(y)$ for each value of
+$Y$ and verify it is a valid probability distribution
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+We usually assume $p(y) = 0$ when $y\notin \mathbb{S}$. Recall
+$\mathbb{S}$ is the \textcolor{red}{\textbf{support}} of $Y$ since it is
+the set of all unique values $Y$ can take on (with positive
+probability).
+
+::: {.activitybox data-latex=""}
+**Exercise:**
+
+Define the probability distribution for a 6-sided die. 
+\
+\
+\
+\
+What would the probability distribution be for the result of a four-sided die? A 20-sided die? Can you come up with a general formula for the probability distribution of the result of an $m$-sided die?
+
+\
+\
+\
+\
+\
+\
+:::
+
+## Uniform Distribution
+
+In the previous example, we constructed the probability distribution for what's known as the **(discrete) uniform distribution**. In general, when a probability distribution is constant on the support of Y, we say that $Y$ "follows a **uniform distribution**" (or sometimes "is **uniformly distributed**")
+
+Draw a picture of the uniform probability distribution:
+
+\
+\
+\
+\
+\
+\
+
+::: {.activitybox data-latex=""}
+**Example:**
+
+Let's return to our example where $Y$ is the result of a single roll of
+a normal 6-sided die. What is $P(Y \leq y)$ for each value $y$ in the
+support? Draw a graph with $P(Y \leq y)$ on the y-axis. *Hint: it will
+be a step function*
+
+\
+\
+\
+\
+\
+\
+\
+
+Write $P(Y \leq y)$ as a piece-wise function: (*let k be an integer*)\
+$$P(Y \leq y) = \begin{cases}
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ , & y < 1,\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ , & k \leq y < k+1,\\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ , & y \geq 6.
+\end{cases}$$
+:::
+
+## Cumulative Distribution Function (cdf)
+
+In the previous example we found cumulative probabilities $P(Y \leq y)$.
+Cumulative probabilities are often of interest, so we have a special
+name and notation for this function:
+
+::: {.highlightbox data-latex=""}
+**Definition**:
+
+$$F(y) = P(Y \leq y), \ \ \ -\infty<y<\infty$$
+
+is called the
+\textcolor{red}{\textbf{cumulative distribution function (cdf)}} of a
+random variable $Y$.
+:::
+
+### CDF of Uniform Distribution
+
+::: {.highlightbox data-latex=""}
+Let $Y$ have a discrete uniform distribution over the first $m$ positive
+integers. Then its probability distribution is
+$$p(y) = \frac{1}{m}\ \ \ y = 1, 2, \dots, m,$$ and its cdf is
+$$F(y) = P(Y \leq y) = \begin{cases}
+0, & y < 1,\\
+\frac{k}{m} & k \leq y < k+1,\\
+1, & m \leq y.
+\end{cases}$$ Note that the cdf $F(y)$ is a step function with a jump
+size of $1/m$ for $y = 1, 2, \dots m$.
+:::
+
+### Non-uniform example
+
+The uniform distribution is very useful, but there are many scenarios
+when random variables do NOT follow a uniform distribution. In other
+words, often $P(Y = y)$ will not be equal to a constant but will be
+different for different values of $y$ in the support. In these cases,
+the probability distribution will be a function of $y$.
+
+::: {.activitybox data-latex=""}
+**Example**:
+
+Roll a fair four-sided die twice, and let $Y$ be the maximum of the two
+outcomes. The outcome space for this experiment is
+$S = \{(d_1, d_2): d_1 = 1, 2, 3, 4; d_2 = 1, 2, 3, 4\}$, where we
+assume each of these points $(d_1, d_2)$ has equal probability. What is
+the probability distribution of $Y$? *Hint: start by listing the possible outcomes*
+$(d_1, d_2)$ and the corresponding values of $Y$
+
+\
+\
+\
+\
+\
+\
+
+
+Draw a bar graph of the distribution of $Y$.
+
+\
+\
+\
+\
+
+:::
+
+
+
+<!-- # Exercise -->
+
+<!-- From Hogg et. al. #2.1-3 -->
+
+<!-- For each of the following, determine the constant $c$ so that $p(y)$ satisfies the conditions of being a probability distribution for a random variable $Y$, and then depict each probability distribution as a line graph: -->
+
+<!-- <br/> -->
+
+<!-- (a) $p(y) = x/c, \ \ \ \ \ x = 1,2,3,4$<br/> -->
+
+<!-- (b) $p(y) = cx, \ \ \ \ \ x = 1,2,3,\dots,10$<br/> -->
+
+<!-- (c) $p(y) = c(1/4)^x, \ \ \ \ \ x = 1,2,3,\dots$<br/> -->
+
+<!-- (d) $p(y) = c(x + 1)^2, \ \ \ \ \ x = 0,1,2,3$<br/> -->
+
+<!-- # Exercise -->
+
+<!-- From Hogg et. al. #2.1-7 -->
+
+<!-- Let a random experiment be the casting of a pair of fair six-sided dice and the $Y$ equal the minimum of the two outcomes.  -->
+
+<!-- (a) With reasonable assumptions, find the probability distribution of $Y$<br/> -->
+
+<!-- (b) Draw a probability histogram of the probability distribution of $Y$<br/> -->
+
+<!-- (c) Let $Y$ equal the range of the two outcomes (i.e., the absolute value of the difference between the two outcomes). Determine the probability distribution $g(y)$ of $Y$ for $y = 0,1,2,3,4,5$. <br/> -->
+
+<!-- (d) Draw a probability histogram for $g(y)$ -->
+
+<!--  -->
+
+
+# 3.3 Expected Value
+
+::: {.activitybox data-latex=""}
+**Exercise: A Game of Chance**
+
+Suppose you devise a game of chance that you're hoping you can convince
+your friends to play. The rules you come up with are that the
+participant rolls a fair 6-sided die; if they roll a 1,2, or 3 they win
+1 dollar; if they roll a 4 or 5 they win 2 dollars, and if they roll a 6
+they win 3 dollars. If the random variable $Y$ represents the amount the
+participant is paid, the probability distribution of $Y$ is given by:
+
+$$p(y) = \frac{4-y}{6}, \ \ \ \ \ y = 1, 2, 3$$
+
+How much should you charge your friends to play so that, on average, you
+break even? *Hint: think about the following three probabilities, and determine the average amount they will win per turn in the long run*
+
+-   $P(\text{they win \$1})$
+\
+\
+
+-   $P(\text{they win \$2})$
+\
+\
+
+-   $P(\text{they win \$3})$\
+    \
+    \
+:::
+
+<!-- # A Game of Chance (cont'd) -->
+
+<!-- You decide to tweak the rules of your game and try a different payout scheme. This time, if they roll a 1,2, or 3 they will still win 1 dollar, but if they roll a 4 or 5 they now win 4 dollars, and if they roll a 6 they win 9 dollars.  -->
+
+<!-- Note that the payout for this new scheme can be represented by the random variable $Y = Y^2$, where $Y$ is the same random variable as before. $Y$ has the probability distribution $$g(y) = \frac{4 - \sqrt{y}}{6}, \ \ \ \ \ y = 1, 4, 9.$$ -->
+
+<!-- What is the average payout in this case?  -->
+
+<!--  -->
+
+## Expected Value
+
+::: {.highlightbox data-latex=""}
+**Definition:** If $Y$ is a discrete random variable and $p(y)$ is its
+probability distribution, then the \textcolor{red}{\textbf{expected value}} of $Y$ is defined
+as
+
+$$E(Y) = \sum_{y \in \mathbb{S}}yp(y),$$ provided the summation exists.
+<br/><br/>
+:::
+
+::: {.activitybox data-latex=""}
+In the previous example, $\mathbb{S} = {1,2,3}$.  Find $E(Y)$
+\
+\
+\
+\
+\
+
+:::
+
+$E(Y)$ is often denoted by the Greek letter $\mu$ (pronounced "mu"),
+which is called the mean of $Y$ or the mean of its distribution.
+
+We can think of the expected value as the weighted mean, where the
+weights are the probabilities $p(y) = P(Y = y), \ y\in \mathbb{S}$.
+
+::: {.highlightbox data-latex=""}
+**Theorem 3.2:** <br/> If $Y$ is a discrete random variable with probability distribution $p(y)$
+and support $\mathbb{S}$, then the expected value of a function $g(y)$ is given
+by $$E[g(Y)] = \sum_{y \in \mathbb{S}}g(y)p(y),$$ provided the summation exists.
+:::
+
+::: {.activitybox data-latex=""}
+**Example:**
+
+Suppose $Y$ has the probability distribution $p(y) = 1/3$ for $S = \{-1, 0, 1\}$. Let
+$X = g(Y) = Y^2$. Find the expected value of $X$ in two different ways:
+
+1.  First defining the probability distribution of $X$ and then computing $E(X)$
+2.  Using the above theorem
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+## Properties of Expected Value
+
+$E(\cdot)$ is called a **linear operator**. For any random variable $Y$
+and constants $a$ and $b$,
+
+$$\begin{aligned}
+E(aY + b) &= aE(Y) + b
+\end{aligned}$$
+
+*PROOF:*
+
+<!-- \sum_{y \in S}(aY +b)p(y) \\\\ -->
+
+<!-- &= \sum_{y \in S}aYp(y) + \sum_{y \in S} bp(y) \\\\ -->
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+::: {.highlightbox data-latex=""}
+**Theorems 3.3 - 3.5** <br/> When it exists, the expectation
+$E(\cdot)$ satisfies the following properties:
+
+1.  If $c$ is a constant, then $E(c) = c$.
+2.  If $c$ is a constant, and $g$ is a function, then
+    $$E[cg(Y)] = cE[g(Y)].$$
+3.  If $c_1$ and $c_2$ are constants and $g_1$ and $g_2$ are functions,
+    then $$E[c_1g_1(Y) + c_2g_2(Y)] = c_1E[g_1(Y)] + c_2E[g_2(Y)].$$
+:::
+
+<!-- ::: {.activitybox data-latex=""} -->
+
+<!-- **Example:** -->
+
+<!-- Let $Y$ have the probability distribution $p(y) = \frac{y}{10}$ for $y = 1,2,3,4$.  -->
+
+<!-- <br/>  -->
+
+<!-- Find $E[Y(5 - Y)]$. -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- \ -->
+
+<!-- ::: -->
+
+::: {.activitybox data-latex=""}
+**Example:**
+
+<!-- Suppose $E[(Y - b)^2]$ exists for $b$ not a function of $Y$. Find the -->
+<!-- value of $b$ that minimizes this expression. -->
+
+Let $Y$ be a random variable with $E(Y) = 20$ and $E(Y^2) = 416$. Find
+
+a. $E(4Y - 3)$
+b. $E(2Y^2 - 6Y)$
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+
+### Mean isn't the only thing that matters...
+
+```{r, echo = FALSE, warning = FALSE, message=FALSE, out.width="40%", out.height = "25%"}
+library(tidyverse)
+data <- data.frame(`Game A` = rnorm(10000, 100, 10),
+                   `Game B` = rnorm(10000, 100, 50)) %>% 
+   pivot_longer(1:2, names_to = "group", values_to = "x")
+ggplot(data = data) +
+   facet_grid(~group) +
+   geom_histogram(aes(x = x, y = ..density..), bins = 20, color = "white", fill = "blue", alpha = 0.8) +
+   geom_vline(xintercept = 100) +
+   theme_light() +
+   theme(axis.title.y = element_blank(),
+         axis.text.y = element_blank()) +
+   labs(x = "Winnings ($)")
+
+# library(tidyverse)
+# data <- data.frame(`Group A` = rnorm(10000, 100, 5),
+#                    `Group B` = rnorm(10000, 100, 35)) %>% 
+#    pivot_longer(1:2, names_to = "group", values_to = "x")
+# ggplot(data = data) +
+#    facet_grid(~group) +
+#    geom_histogram(aes(x = x, y = ..density..), bins = 20, color = "white", fill = "blue", alpha = 0.8) +
+#    geom_vline(xintercept = 100) +
+#    theme_light() +
+#    theme(axis.title.y = element_blank(),
+#          axis.text.y = element_blank()) +
+#    labs(x = "Gallons of Water")
+# ggsave("/Volumes/GoogleDrive/My Drive/MATH_130_KF/variance_matters.png")
+```
+
+```{r, eval = FALSE, echo = FALSE, warning = FALSE, message=FALSE, fig.align='center'}
+library(brms)
+data <- data.frame(`Vaccine A` = rskew_normal(10000, mu = .8, sigma = .05, alpha = -5),
+                   `Vaccine B` = rskew_normal(10000, mu = .8, sigma = .1, alpha = -5)) %>% 
+   pivot_longer(1:2, names_to = "group", values_to = "x")
+ggplot(data = data) +
+   facet_grid(~group) +
+   geom_histogram(aes(x = x, y = ..density..), bins = 20, color = "white", fill = "blue", alpha = 0.8) +
+   geom_vline(xintercept = 0.8, color = "red") +
+   theme_light() +
+   theme(axis.title.y = element_blank(),
+         axis.text.y = element_blank()) +
+   labs(x = "Effectiveness")
+```
+
+## Special Expectations: Variance
+
+::: {.highlightbox data-latex=""}
+**Definition:**
+
+If $Y$ is a random variable with $E(Y) = \mu$, then the
+\textcolor{red}{\textbf{variance}} of a random variable $Y$ is defined to be the expected value of $(Y - \mu)^2$. That is,
+$$E[(Y - \mu)^2] = \sum_{y \in \mathbb{S}}(y - \mu)^2p(y)$$ is called the
+variance of $Y$ and is often denoted by $V(Y)$, $Var(Y)$, or $\sigma^2$
+(pronounced "sigma squared").
+:::
+
+Variance is a *measure of spread*: $(y - \mu)$ measures how far each
+value of $y$ falls from the mean. We can think of variance as a *weighted sum* of squared distances from the mean. This is an example of a "sum of squares," which occur often and are very useful in statistics (e.g. regression, ANOVA).
+
+::: {.highlightbox data-latex=""}
+**Definition:**
+
+The positive square root of the variance is called the
+\textcolor{red}{\textbf{standard deviation}} and is denoted by the Greek
+letter $\sigma$.
+
+::: 
+
+It will often be convenient to use a shortcut formula when finding the variance.
+
+::: {.highlightbox data-latex=""}
+
+**Theorem 3.6** Let $Y$ be a discrete random variable with probability density $p(y)$ and mean $E(Y) = \mu$. Then, $$V(Y) = E(Y^2) - \mu^2$$
+:::
+
+PROOF:
+
+\
+\
+\
+\
+\
+\
+
+### Statistical motivation for why we care about variance
+
+```{r, echo = FALSE, out.width="50%", out.height = "25%"}
+knitr::include_graphics("./images/bias-precision.png")
+```
+
+::: {.activitybox data-latex=""}
+**Example:**
+
+Let $Y$ have probability distribution $p(y) = 1/3$ for $y = -1, 0, 1$
+
+1.  Find the variance and standard deviation of $Y$\
+    \
+    \
+    \
+    \
+    \
+    \
+    \
+    \
+    
+
+2.  Suppose the probability distribution is unchanged, but the support is instead
+    $y = -2, 0, 2$. Note that this is a new random variable $X = 2Y$.
+    How do the mean, variance, and standard deviation change? What do
+    the variance and standard deviation measure?
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+<!--  -->
+
+<!-- # Example -->
+
+<!-- Let $Y$ equal the number of spots on the side facing upwards after a fair six-sided die is rolled. A reasonable probability model for $Y$ is given by the probability distribution $$p(y) = P(Y = y) = \frac{1}{6}, \ \ \ \ \ y = 1,2,3,4,5,6$$ -->
+
+<!-- Find the mean of $Y$, the second moment of $Y$, and the variance of $Y$. -->
+
+### Properties of Variance
+
+::: {.activitybox data-latex=""}
+What happens to the variance of $Y$ if a constant is added to all $y$
+values?\
+\
+\
+\
+\
+\
+\
+\
+
+What happens to the variance if all $y$ values are multiplied by a
+constant?\
+\
+\
+\
+\
+\
+\
+:::
+
+::: {.highlightbox data-latex=""}
+**Theorem** <br/> If $Y$ is a random variable with finite variance, then
+for any constants $a$ and $b$, $$V(aY + b) = a^2V(Y)$$
+:::
+
+PROOF:
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+::: {.activitybox data-latex=""}
+**Exercise:**
+
+Given $E(Y + 4) = 10$ and $E[(Y + 4)^2] = 116,$ determine:
+
+1.  $\mu = E(Y)$
+2.  $V(Y + 4)$ *Hint: define $X = Y + 4$ and make use of the fact that $V(X) = E(X^2) - (E(X))^2$*
+3.  $\sigma^2 = V(Y)$
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+::: {.activitybox data-latex=""}
+**Exercise - group activity**
+<!-- USE ABCD cards and/or scanned cards [Q from AGQ about quiz scores] -->
+
+<!-- https://askgoodquestions.blog/2020/10/26/69-more-probability-questions/ -->
+
+Suppose that Zane has a 20% chance of earning a score of 0 and an 80%
+chance of earning a score of 5 when he takes a quiz. Suppose also that
+Zane must choose between two options for calculating an overall quiz
+score: Option A is to take one quiz and multiply the score by 10, Option
+B is to take ten (independent) quizzes and add their scores.
+
+1.  Which option would you encourage Zane to take? Why? [No calculations
+    yet!]
+2.  Which option do you suspect has a larger expected value, or do you
+    suspect that the expected values will be the same? [Still no calculations! Just interested in your intuition]
+3. Find the expected value and variance of his score on a single quiz, say $Y_1$. 
+4.  Use properties of expected value to determine the expected value of his overall score with each option (A & B).
+5.  Which option do you suspect has a larger standard deviation, or do you suspect that the standard deviations will be the same? [Intuition only, no calculations]
+6.  Use properties of variance to determine the standard deviation of his overall score with each option. *Note: you can make use of the (new) fact that the variance of a sum of independent random variables is the sum of their individual variances. That is, $V(Y_1 + Y_2 + \dots + Y_{10}) = V(Y_1) + V(Y_1) + \dots + V(Y_{10})$*
+.  If Zane's goal is to maximize his probability of obtaining an
+    overall score of 50 points, which option should he select? Explain.
+7.  Calculate the probability, for each option, that Zane scores 50
+    points. Comment on how they compare.
+8.  The following graphs display the probability distributions of Zane's
+    overall quiz score with these two options. Which graph goes with
+    which option? Explain.
+
+```{r, eval = FALSE, echo = FALSE, message=FALSE, warning=FALSE}
+scores <- data.frame()
+for(i in 1:10000){
+   x <- 5*rbinom(1, 1, .8)
+   y <- 5*rbinom(10, 1, .8)
+   scoreA <- x*10
+   scoreB <- sum(y)
+   new <- data.frame(scoreA, scoreB)
+   scores <- rbind(scores, new)
+}
+
+pA <- ggplot(data = scores) +
+   #geom_bar(aes(x = scoreA, y = ..prop.., group = 1), stat = "count") +
+  geom_histogram(aes(x = scoreA)) +
+  ylim(0, 8000) +
+  labs(x = "Score", y = "Count") +
+   theme_minimal()
+   
+
+pB <- ggplot(data = scores) +
+   #geom_bar(aes(x = scoreB, y = ..prop.., group = 1), stat = "count") +
+  geom_histogram(aes(x = scoreB)) + 
+  ylim(0, 8000) +
+  labs(x = "Score", y = "Count") +
+   theme_minimal()
+
+p <- arrangeGrob(pB, pA, nrow = 1)
+ggsave(plot = p, filename = "/Volumes/GoogleDrive/My Drive/MATH_361_KF/MATH_361/IN-CLASS/NOTES/images/quiz_score_dists.png", width = 7, height = 5)
+```
+
+```{r, echo = FALSE, out.width="50%", out.height = "25%"}
+knitr::include_graphics("./images/quiz_score_dists.png")
+```
+:::
+
+\pagebreak
+
+# 3.4 Binomial Distribution
+
+### Bernoulli Experiments
+
+A \textcolor{red}{\textbf{Bernoulli experiment}} is a random experiment
+that has two mutually exclusive and exhaustive outcomes, often referred
+to as "success" and "failure."
+
+Lots of real world occurrences fit this binary structure (e.g.
+heads/tails, life/death, disease/no disease, graduate/not graduate).
+Note, sometimes choosing which of the two outcomes to call a "success"
+is arbitrary.
+
+A sequence of \textcolor{red}{\textbf{Bernoulli trials}} occurs when a
+Bernoulli experiment is performed several *independent* times, and the
+probability of success, $p$, remains the same from trial to trial.
+
+::: {.activitybox data-latex=""}
+**Example 1:** flipping a fair coin 5 times corresponds to 5 Bernoulli
+trials with probability of success $p = 0.5$.
+
+**Example 2:** Suppose the probability that a seed will germinate is
+0.8, and we consider germination to be a "success." If we plant 10 seeds
+and can assume the germination of one seed is independent of the
+germination of another seed, this corresponds to 10 Bernoulli trials
+with $p = 0.8$.
+:::
+
+### Bernoulli Distribution
+
+::: {.highlightbox data-latex=""}
+Let the random variable $Y$ be the outcome of a Bernoulli experiment,
+where $Y = 1$ denotes a "success" and $Y = 0$ denotes a "failure." The
+probability distribution of $Y$ is given by
+
+$$p(y) = p^y(1-p)^{1-y}, \ \ \ \ y = 0,1,$$ and we say that $Y$ follows
+the \textcolor{red}{\textbf{Bernoulli distribution}}, or that $Y$ is a
+**Bernoulli** random variable.
+:::
+
+Sometimes we will denote the probability of failure as $q = (1 - p).$
+
+::: {.activitybox data-latex=""}
+**Exercise:** Find the mean and variance for the Bernoulli distribution.
+That is, find $E(Y)$ and $V(Y)$ when $Y$ is a Bernoulli random
+variable.\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+::: {.activitybox data-latex=""}
+**Exercise**:
+
+Joel Embiid, star player drafted as the #3 overall pick by the Philadelphia 76ers, made 86% of his free throws in his rookie season.
+Suppose Embiid is fouled while attempting a 3 point shot with 1 second
+left in the game and the Sixers down by 2 points. What is the
+probability the Sixers win the game? Tie? Lose? Develop a random
+variable (and probability distribution) to answer these questions.\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+:::
+
+### Binomial distribution
+
+In a sequence of Bernoulli trials, we are often interested in the total
+number of successes but not the actual order of their occurrences.
+
+If we let the random variable $Y$ equal the number of observed successes
+in $n$ Bernoulli trials, then the possible values of $Y$ are
+$0,1,2,...,n$.
+
+If $y$ successes occur, where $y = 0,1,2,...,n,$ then $n - y$ failures
+occur. The number of ways of selecting $y$ positions for the $y$
+successes in the $n$ trials is $${n\choose y} = \frac{n!}{y!(n-y)!} $$
+Since the trials are independent and since the probabilities of success
+and failure on each trial are, respectively, $p$ and $q = 1 - p$, the
+probability of each of these ways is $p^y(1 - p)^{n-y}$.
+
+Thus, $p(y)$, the probability distribution of $Y$, is the sum of the probabilities of the
+${n\choose y}$ mutually exclusive events; that is,
+$$p(y) = {n\choose y}p^y(1-p)^{n-y}$$
+
+::: {.highlightbox data-latex=""}
+If $Y$ has probability distribution $p(y) = {n\choose y}p^y(1-p)^{n-y},$ we say $Y$ follows
+the **binomial distribution** and the probabilities $p(y)$ are called
+the **binomial probabilities**.
+
+A binomial experiment satisfies the following properties:
+
+1.  A Bernoulli (success--failure) experiment is performed $n$ times,
+    where $n$ is a (non-random) constant.
+2.  The trials are independent.
+3.  The probability of success on each trial is a constant $p$; the
+    probability of failure is $q = 1 - p$.
+4.  The random variable $Y$ equals the number of successes in the $n$
+    trials.
+:::
+
+```{r, echo = FALSE,  fig.align="center", out.width="50%", out.height="25%"}
+knitr::include_graphics("./images/binom_dists.png")
+```
+
+Sometimes we write $Y\sim b(n,p)$, which is read as "Y is distributed as
+a binomial random variable with parameters $n$ and $p$". That is, if we
+say $Y \sim b(23, 0.14)$, we mean $Y$ is the number of successes in
+$n = 23$ Bernoulli trials that each have probability of success
+$p = 0.14$.
+
+::: {.activitybox data-latex=""}
+**Exercise:**
+
+A manufacturing process has historically produced defective items every
+1 out of 20. Five objects are selected independently from the production
+line.
+
+a.  What is the probability none of the selected items are defective?\
+    \
+    \
+    \
+
+b.  What is the probability of 1 or fewer defective?\
+    \
+    \
+    \
+    \
+
+c.  What is the probability more than 2 are defective?\
+    \
+    \
+    \
+    \
+:::
+
+### Binomial cdf
+
+Like in the previous example, cumulative probabilities are often of
+interest when working with the Binomial distribution. Recall that
+cumulative probabilities are given by the cumulative distribution
+function $$F(y) = P(Y \leq y), \ \ \ \ \ -\infty < y < \infty.$$
+
+The cdf of the Binomial distribution is given by
+$$F(Y) = P(Y \leq y) = \sum_{y = 0}^y {n \choose y} p^y(1-p)^{n - y}$$
+
+### Binomial expansion
+
+The binomial expansion is given by
+$$(a + b)^n = \sum_{y = 0}^n {n\choose y}a^yb^{n-y}$$
+
+::: {.activitybox data-latex=""}
+**Exercise:**
+
+Use the binomial expansion to show that the probability distribution of the Binomial
+distribution is a valid probability distribution.\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+
+
+\pagebreak
+
+# Chapter 3 Group Work
+
+### Problem 1
+
+For each of the following, determine the constant $c$ so that $p(y)$ satisfies the conditions of being a probability distribution for a random variable $Y$. That is, find $c$ such that $\sum_{y \in S} p(y) = 1$.
+
+  a. $p(y) = y/c, \ \ \ \ \ y = 1,2,3,4$<br/>
+  b. $p(y) = cy, \ \ \ \ \ y = 1,2,3,\dots,10$<br/>
+  c. $p(y) = c(1/4)^y, \ \ \ \ \ y = 1,2,3,\dots \ \ \ \ $ <br/> *Hint: use the infinite series identity from calculus that tells us* $\sum_{n = 1}^{\infty}a_1(r)^{n-1} = \frac{a_1}{1-r}$<br/>
+
+### Problem 2
+
+Recall the non-uniform example where we rolled a fair four-sided die twice and let $Y$ be the maximum of the two outcomes. We determined that the probability distribution of $Y$ was given by $$p(y) = \frac{2y - 1}{16}, \ \ \ y = 1,2,3,4.$$ Define the cdf of $Y$. That is define $F(y) = P(Y \leq y)$ for each value of $y$ in the support.
+
+### Problem 3
+
+*(Should be done AFTER Simulation Activity)* 
+Return to our 70% shooter 3-free throw example. We found the probability distributions of the random variables $X$ (total number of makes), $Y$ (whether or not 2nd shot was a make), and $Z$ (number of makes - number of misses), listed below. Use the probability distributions to find the expected value of each random variable.
+
+$$
+p(x) = \begin{cases}
+0.027, & x=0 \\
+0.189, & x=1\\
+0.441, & x=2\\
+0.343, & x=3
+\end{cases}
+$$
+
+$$
+p(y) = \begin{cases}
+0.3, & y=0 \\
+0.7, & y=1\\
+\end{cases}
+$$
+
+$$
+p(z) = \begin{cases}
+0.027, & z=-3 \\
+0.189, & z=-1\\
+0.441, & z=1\\
+0.343, & z=3
+\end{cases}
+$$
+
+
+### Problem 4
+
+Let $E(Y) = 4$. Find
+  
+  a. $E(Y)$ when $Y = 2Y + 3$
+  b. $E(Z)$ when $Z = 7 - 5Y$
+  c. $E(32)$
+
+### Problem 5    
+
+Let $p(y) = \frac{y}{10}, \ \ \ y = 1,2,3,4$. Find:
+  
+  a. $E(Y)$
+  b. $E(Y^2)$
+  c. $E(Y(5-Y))$
+  
+### Problem 6
+
+Let $E(Y) = 5$ and $V(Y) = 36$. Find: 
+
+  a) $V(3Y + 7)$
+  b) $V(2 - Y)$
+  c) $E(Y^2)$
+  d) $E(5Y + 2Y^2)$
+
+
+
+### Problem 7
+
+In a lab experiment involving inorganic syntheses of molecular precursors to organometallic ceramics, the final step of a five-step reaction involves the formation of a metal-metal bond. The probability of such a bond forming is $p = 0.2$. Let $Y$ equal the number of successful reactions out of $n=25$ such experiments. 
+    
+  a) What distribution is appropriate to model $Y$? 
+  b) Write out the probability distribution of $Y$
+  c) Find the probability that $Y = 1$
+  d) Find the probability that $Y$ is at least 1
+  e) Find the mean, variance, and standard deviation of $Y$
+
+### Problem 8
+
+A random variable Y has a binomial distribution with mean 6 and variance 3.6. Find $P(Y = 4)$.
+
+### Problem 9
+
+Return to the Joel Embiid example (he makes 87% of his free throws, he's fouled shooting a 3-pointer). Describe in detail how you could, in principle, perform a by hand simulation involving physical objects (e.g. coins, dice, spinners, etc.) to estimate the probability that the 76ers lose. Be sure to describe (1) what one repetition of the simulation entails, and (2) how you would use the results of many repetitions. Note: you do NOT need to compute any numerical values.
+
+\pagebreak
+
+# SIMULATION ACTIVITY
+
+Let's return to our example of tossing three coins. Recall the sample space is:
+
+$$S = \{hhh, hht, hth, htt, thh, tht, tth, ttt\}$$ 
+
+We defined the following random variables:
+
+-   $X$ = the total number of heads
+-   $Y$ = whether or not there is a heads on the 2nd flip
+-   $Z$ = the number of heads minus the number of tails
+
+In this activity, we are going to consider this to be a **weighted coin with a 70% probability of landing on heads**. We could think of this like a basketball player with a 70% free throw percentage shooting three free throws.
+
+Your job is to develop two things:
+
+1) psuedocode for how to simulate this experiment and investigate the distributions of $X$, $Y$, and $Z$
+2) the probability mass function (probability distribution) for $X$, $Y$, and $Z$ (using mathematics & rules of probability)
+
+Some tips are provided below to get you started.
+
+## Part 1 - psuedocode
+
+Anytime we simulate a random experiment, it’s important to ask ourselves a few questions (in order):
+
++ How would I simulate one run of the random experiment?
++ How would I calculate my random variable(s) of interest from one run of the experiment?
++ How could I adapt my code to do this *many* times (e.g. 10,000+), and end up with *many* observed values of my random variable(s) of interest?
++ How could I aggregate my *many* observations to summarize the distribution of my random variable(s) of interest? 
+
+### Part 1A
+
+Write psuedocode for the experiment described above for tossing three coins. 
+*Hint: you need to create `toss1`, `toss2`, and `toss3`. The following code would generate one toss of a FAIR coin and save it into an object called `toss1` The first argument controls the number of runs of the experiment, and the second controls the probability of a "success". It will return the value `TRUE` for a "success" and the value `FALSE` for a "failure".*
+
+```{r, warning = FALSE}
+toss1 <- rbernoulli(1, 0.5)
+toss1
+```
+
+### Part 1B 
+
+Write psuedocode for creating the three random variables X, Y, and Z, based on your three tosses created in Part 1A. 
+
+*Hint: R assigns the value 1 to `TRUE` and 0 to `FALSE`, and you can add and subtract these logical results. For example,:*
+
+```{r}
+TRUE + TRUE
+TRUE + FALSE
+```
+
+\
+\
+\
+\
+\
+\
+\
+
+### Part 1C
+
+How can you adapt your code from Parts A & B to do the experiment *many* times (e.g. 10,000 times)? You want to end up with three vectors X, Y, and Z, each with 10,000 random observations. 
+
+```{r, echo = FALSE, eval = FALSE}
+toss1 <- rbernoulli(10000, .7)
+toss2 <- rbernoulli(10000, .7)
+toss3 <- rbernoulli(10000, .7)
+
+Y <- toss1 + toss2 + toss3
+Y <- toss2
+tails <- 3 - Y
+Z <- Y - tails
+
+data <- data.frame(Y, Y, tails, Z)
+
+table(data$Y)
+
+ggplot(data, aes(Z)) +
+  geom_bar()
+```
+
+Note that arithmetic operators on vectors are computed element-wise in R. 
+
+```{r}
+a <- c(1, 2, 3, 4, 5)
+b <- c(6, 7, 8, 9, 10)
+a + b
+```
+
+$$
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+a_3 \\
+a_4 \\
+a_5 \\
+\end{bmatrix} +
+\begin{bmatrix}
+b_1 \\
+b_2 \\
+b_3 \\
+b_4 \\
+b_5 \\
+\end{bmatrix} = 
+\begin{bmatrix}
+a_1 + b_1\\
+a_2 + b_2\\
+a_3 + b_3\\
+a_4 + b_4\\
+a_5 + b_5\\
+\end{bmatrix}
+$$
+\
+\
+\
+\
+\
+\
+\
+
+\pagebreak
+
+### Part 1D
+
+Describe in words how you could use a vector of 10,000 random observations to summarize the distribution of that random variable? For example, how might you estimate the following:
+
+| x | P(X = x) = p(x) = 
+|----|--------------------------------------------|
+|0 | P(X = 0) = p(0) =  
+|1 | P(X = 1) = p(1) =  
+|2 | P(X = 2) = p(2) =  
+|3 | P(X = 3) = p(3) =
+
+
+
+
+## Part 2: probability distributions
+
+For each random variable, ask
+
++ What is the support? (We did this in class)
++ What are all the different ways its possible to end up with each value in the support? 
++ What is the probability of ending up with each value in the support? That is, for a random variable $W$, what is $P(W = w)$ for each value $w$ in the support?
+
+For example, there is only one way for $X = 0$: when the outcome is $ttt$. The probability of this happening is $(0.3)(0.3)(0.3) = 0.027$.
+
+Use the above steps (three times) to produce a probability distribution for each random variable: X, Y, and Z. 
+
+<!-- # Example -->
+
+<!-- Suppose that 2000 points are selected independently and at random from the unit square $\{(x, y) : 0 ≤ x < 1, 0 ≤ y < 1\}$.  Let $W$ equal the number of points that fall into $A = \{(x,y) : x^2 + y^2 < 1\}$. -->
+
+<!-- 1. How is $W$ distributed?  -->
+
+<!-- 1. Give the mean, variance, and standard deviation of $W$. -->
+
+<!-- 1. What is the expected value of $W/500$? -->
+
+<!--  -->
+
+<!-- # Exercise  -->
+
+<!-- A hospital obtains 40% of its flu vaccine from Company A, 50% from Company B, and 10% from Company C. From past experience, it is known that 3% of the vials from A are ineffective, 2% from B are ineffective, and 5% from C are ineffective. The hospital tests five vials from each shipment. If at least one of the five is ineffective, find the conditional probability of that shipment having come from C. -->
+
+<!--  -->
+
+<!-- \pagebreak -->
+
+

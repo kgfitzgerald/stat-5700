@@ -1,0 +1,40 @@
+---
+title: "Homework 05"
+subtitle: "Sections 3.5 - 3.8"
+author: "STAT 5700 - Probability"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Instructions
+
+- Homework problems come from the 7th edition of the text *Mathematical Statistics with Applications* by Wackerly, Mendenhall, and Scheaffer, as well as (potential) additional problems provided by the instructor.
+- You are responsible for understanding the concepts covered in all problems listed in a homework assignment, but only even-numbered problems should be turned in. 
+- Be NEAT and show work to support your answers. Points will be deducted if your answer is not adequately supported or the work cannot be readily followed. 
+- You are encouraged to work together on homework assignments, but each person must write up and turn in their own work and solutions. 
+- You will turn in this assignment by scanning your work and uploading a single pdf to Blackboard. 
+- Note there is a corresponding R Lab (Lab 05) that will be due at the same time as this assignment (HW 05). 
+
+## Problems to do (responsible for content, but not collected/graded)
+
++ Section 3.5: 67, 71, 73, 77 
+
++ Section 3.6: 93, 97
+
++ Section 3.7: 103, 105
+
++ Section 3.8: 121, 123
+
+## Problems to submit
+
++ Section 3.5: 70, 80 
+
++ Section 3.6: 92, 94
+
++ Section 3.7: 106, 108, 120
+
++ Section 3.8: 128, 138
+

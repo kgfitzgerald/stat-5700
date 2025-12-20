@@ -1,0 +1,289 @@
+---
+output: pdf_document
+---
+
+```{r, message = FALSE, echo = FALSE}
+library(tidyverse)
+library(ggdist)
+library(distributional)
+```
+
+# Chapter 4 R Practice
+
+## Computing probabilities for continuous distributions in R
+
+The cdf values $F(X) = P(X < x)$ are returned with commands using "p" at the beginning of the R distribution name:
+
+-   `pnorm(x, mean = mu, sd = sigma)` - returns $F(x)$ values for a **normal random
+    variable** $X \sim N(\mu,\sigma^2)$
+-   `punif(x, min = theta1, max = theta2)` returns $F(x)$ values for a **uniform random
+    variable** $X \sim U(\theta_1, \theta_2)$
+-   `pexp(y, rate = lambda)` - returns $F(x)$ values for an **exponential random
+    variable** $X \sim exp(\beta = 1/\lambda)$
+    -   Note our textbook defines exponential distributions in terms of
+        the parameter $\beta$, which is the mean wait time, instead of
+        the rate $\lambda$.
+-   `pgamma(y, shape = alpha, scale = beta)` - returns $F(x)$ values for a
+    **gamma random variable** $X \sim(\alpha , \beta)$ with parameters
+    `shape` = $\alpha$ and `scale` = $\beta = 1/\lambda$.
+    -   Because the gamma function can be parameterized in terms of
+        shape or rate, make sure to name the argument inside the
+        `pgamma()` function to specify which parameter you're defining. If you don't specify the name, by default it actually expects `rate` to be the 3rd argument, not `scale`.
+-   `pchisq(x, df)` - returns $F(x)$ values for a **chi-square random
+    variable** $X \sim \chi^2(\nu)$ where the argument `df` corresponds to the degrees of freedom parameter `\nu`
+- `pbeta(x, shape1 = alpha, shape2 = beta)` - returns $F(x)$ values for a **beta random variable** $X \sim Beta(\alpha, \beta)$
+
+
+There is a hidden argument in each of these functions called
+`lower.tail`, and the default is set to `lower.tail = TRUE`. Meaning, by
+default, the "p" functions return the probabilities in the *lower tail*
+of the density function: $F(X) = P(X <x)$. Sometimes it will be useful
+to override the default by adding the argument `lower.tail = FALSE`,
+which will return values $P(X > x)$. You can think of these two options
+visually; `lower.tail = TRUE` represents the dark shaded region
+$P(X < 10)$, and `lower.tail = FALSE` represents the light shaded region
+$P(X > 10)$ in the plot below.
+
+```{r, echo = FALSE, out.width="50%"}
+ggplot() +
+  stat_dist_slab(aes(y = "Chisq(5)", 
+                        dist = dist_chisq(df = 5),
+                        fill = after_stat(x > 10)), 
+                 show.legend = FALSE) +
+  scale_fill_viridis_d() +
+  labs(y = "") +
+  theme_minimal()
+```
+
+\pagebreak
+
+### Uniform example
+
+Suppose $X \sim U(0,5)$.
+
+1.  Sketch the pdf and shade the region $X < 2$
+
+\
+\
+\
+
+
+2.  Write out the integral and the R code required to calculate $P(X < 2)$. Calculate it using your preferred method.
+    \
+    \
+    \
+\
+\
+\
+
+4.  Write out two different lines of code you could use to find
+    $P(X > 2)$ in R. *Hint: one should make use of the `lower.tail`
+    argument.* Execute both lines of code in R to verify that they give
+    the value you expect.\
+    \
+    \
+    \
+    \
+    \
+
+5.  Suppose we want to find $P(2 < X < 3)$. Sketch a graph with this
+    region shaded.
+
+\
+\
+\
+\
+\
+
+
+6.  Using your visual as a guide, what would you need to subtract from
+    $P(X < 3)$ in order to obtain $P(2 < X < 3)$?
+
+\
+\
+\
+
+7.  Using your answer to part 6 as a guide, write out R code for
+    computing $P(2 < X < 3)$. Execute your code in R and report the
+    answer.
+
+\pagebreak
+
+### Gamma example
+
+Suppose $X \sim \Gamma(\alpha = 3, \beta = 4)$.
+
+We can plot this distribution with the following code:
+
+```{r, out.width="50%"}
+ggplot() +
+  stat_dist_slab(aes(y = "Gamma(3,4)", 
+                        #note the function dist_gamma() requires the rate parameter
+                        #instead of the scale parameter. Recall rate = 1/scale
+                        dist = dist_gamma(shape = 3, rate = 1/4))) +
+  labs(y = "") +
+  theme_minimal()
+```
+
+8.  What's the mean of this distribution? Does this seem reasonable
+    based on the graph above?
+
+\
+\
+\
+\
+
+9.  Shade the region $X < 5$ on the graph above
+
+10. Write out the code you need to calculate $P(X < 5)$. *Hint: use the
+    `pgamma()` function.* 
+    \
+    \
+
+11. Use your code above to compute $P(X < 5)$ and report the answer.
+    Does the value seem reasonable based on the plot above?\
+    \
+    \
+
+12. Write out two different lines of code you could use to find
+    $P(X > 5)$ in R. *Hint: one should make use of the `lower.tail`
+    argument.* Execute both lines of code in R to verify they give the
+    value you expect.
+
+\pagebreak
+
+### Chi-squared example
+
+Suppose $X \sim \chi^2(14)$.
+
+We can plot this distribution with the following code:
+
+```{r, out.width="50%"}
+ggplot() +
+  stat_dist_slab(aes(y = "Chisq(14)", 
+                        dist = dist_chisq(14))) +
+  labs(y = "", y = "y") +
+  theme_minimal()
+```
+
+13. What's the mean of this distribution? Does this seem reasonable
+    based on the graph above?
+
+\
+\
+
+14. Shade the region $X < 10$ on the graph above
+
+15. Write out the code you need to calculate $P(X < 10)$. *Hint: use the `pchisq()` function.* 
+\
+    \
+    \
+
+16. Use your code above to compute $P(X < 10)$ and report the answer.
+    Does the value seem reasonable based on the plot above?\
+    \
+
+17. Write out two different lines of code you could use to find
+    $P(X > 10)$ in R. *Hint: one should make use of the `lower.tail`
+    argument.* Execute both lines of code in R to verify they give the
+    value you expect.
+
+\pagebreak
+
+### Exponential example
+
+Suppose $X \sim exp(7)$.
+
+We can plot this distribution with the following code:
+
+```{r, out.width="50%"}
+ggplot() +
+  stat_dist_slab(aes(y = "exp(7)", 
+                        #note the function dist_exponential() requires the rate parameter
+                        #instead of the scale parameter. Recall rate = 1/scale
+                        dist = dist_exponential(1/7))) +
+  labs(y = "", y = "y") +
+  theme_minimal()
+```
+
+18. What's the mean of this distribution? Does this seem reasonable
+    based on the graph above?
+
+\
+\
+
+19. Write out the code you need to calculate $P(X > 20)$. *Hint: use the
+    `pexp()` function.* How many/what arguments do you need to specify?
+
+\
+\
+\
+\
+
+20. Use your code above to compute $P(X > 20)$ and report the answer.
+    Does the value seem reasonable based on the plot above?\
+    \
+
+21. Shade $P(10 < X < 20)$ on the plot above.
+
+22. Write out the code you need to find $P(10 < X < 20)$. Execute the
+    code and report the answer. Does it seem reasonable based on the
+    plot above?
+
+\pagebreak
+
+## Computing percentiles for continuous distributions in R
+
+The inverse of the cdf, or the $x$ that solves the equation
+$p = F(x) = P(X < x)$, are returned with commands using “q” at the
+beginning of the R distribution name:
+
+-   `qunif(p, min = theta1, max = theta2)` – finds $x$ such that $P(X < x) = p$ for a
+    uniform random variable $X \sim U(\theta_1, \theta_2)$
+-   `qexp(p, rate = lambda = 1/beta)` - finds $x$ such that $P(X < x) = p$ for an
+    exponential random variable $Y \sim exp(\lambda = 1/\beta)$
+-   `qgamma(p, shape = alpha, scale = beta = 1/lambda)` - finds $x$ such that
+    $P(X < x) = p$ for a gamma random variable $X \sim(\alpha , \beta)$
+    with parameters `shape` = $\alpha$ and `scale` =
+    $\beta = 1/\lambda$
+-   `qchisq(p, df)` - finds $x$ such that $P(X< x) = p$ for a
+    chi-square random variable $Y \sim \chi^2(\nu)$ where the argument
+    `df` corresponds to the degrees of freedom parameter `\nu`.
+-   `qnorm(x, mean = mu, sd = sigma)` - finds $x$ such that $P(X< x) = p$ for a **normal random
+    variable** $X \sim N(\mu,\sigma^2)$
+-  `pbeta(x, shape1 = alpha, shape2 = beta)` - finds $x$ such that $P(X< x) = p$ for a **beta random variable** $X \sim Beta(\alpha, \beta)$
+
+Again, set `lower.tail = FALSE` to use upper tail probabilities and find
+$x$ such that $P(X> x) = p.$
+
+### Gamma example
+
+Suppose $X \sim \Gamma(\alpha = 3, \beta = 7)$. Below is a visual of
+the distribution shaded at the median.
+
+```{r, echo = FALSE, out.width="50%"}
+median <- qgamma(0.5, shape = 3, scale = 7)
+ggplot() +
+  stat_dist_slab(aes(y = "gamma(3, 7)", 
+                        dist = dist_gamma(shape = 3, rate = 1/7),
+                        fill = after_stat(x > median))) +
+  scale_fill_viridis_d() +
+  labs(y = "") +
+  theme_minimal()
+```
+
+23. Write out the code you need to find the median in R. Execute the
+    code and report the value. Does the value seem reasonable based on
+    the plot above?
+    
+\
+\
+\
+\
+24. Write out the code you need to find the 95th percentile in R. Execute the
+    code and report the value. Does the value seem reasonable based on
+    the plot above?
+
+
+
+

@@ -43,70 +43,70 @@ Bayes Rule: $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
 <!-- 1, & m \leq y. -->
 
 <!-- \end{cases}$$ -->
-\pagebreak
+<!-- \pagebreak -->
 
-| **Definition** | **Discrete** | **Continuous** |
-|----------------------|-------------------------|-------------------------|
-| $\mu = E(Y)$ | $\sum_{y \in S}yp(y)$ | $\int_S yf(y)dy$ |
-|  |  |  |
-| $\sigma^2 = V(Y) = E[(Y - \mu)^2]$ | $\sum_{y \in S}(y - \mu)^2p(y)$ | $\int_S (y - \mu)^2f(y)dy$ |
-|  |  |  |
-| $k^{th} \text{ moment =}E(Y^k)$ | $\sum_{y \in S}y^kp(y)$ | $\int_S y^kf(y)dy$ |
-|  |  |  |
-| $m(t) = E(e^{tY})$ | $\sum_{y \in S}e^{ty}p(y)$ | $\int_S e^{ty}f(y)dy$ |
-|  |  |  |
-| $E(g(Y))$ | $\sum_{y \in S}g(y)p(y)$ | $\int_S g(y)f(y)dy$ |
-|  |  |  |
+<!-- | **Definition** | **Discrete** | **Continuous** | -->
+<!-- |----------------------|-------------------------|-------------------------| -->
+<!-- | $\mu = E(Y)$ | $\sum_{y \in S}yp(y)$ | $\int_S yf(y)dy$ | -->
+<!-- |  |  |  | -->
+<!-- | $\sigma^2 = V(Y) = E[(Y - \mu)^2]$ | $\sum_{y \in S}(y - \mu)^2p(y)$ | $\int_S (y - \mu)^2f(y)dy$ | -->
+<!-- |  |  |  | -->
+<!-- | $k^{th} \text{ moment =}E(Y^k)$ | $\sum_{y \in S}y^kp(y)$ | $\int_S y^kf(y)dy$ | -->
+<!-- |  |  |  | -->
+<!-- | $m(t) = E(e^{tY})$ | $\sum_{y \in S}e^{ty}p(y)$ | $\int_S e^{ty}f(y)dy$ | -->
+<!-- |  |  |  | -->
+<!-- | $E(g(Y))$ | $\sum_{y \in S}g(y)p(y)$ | $\int_S g(y)f(y)dy$ | -->
+<!-- |  |  |  | -->
 
-$f_X(x) = \int_y f(x,y)dy$
+<!-- $f_X(x) = \int_y f(x,y)dy$ -->
 
-$f_Y(y) = \int_x f(x,y)dx$
+<!-- $f_Y(y) = \int_x f(x,y)dx$ -->
 
-$p_X(x) = \sum_y p(x,y)$
+<!-- $p_X(x) = \sum_y p(x,y)$ -->
 
-$p_Y(y) = \sum_x p(x,y)$
+<!-- $p_Y(y) = \sum_x p(x,y)$ -->
 
-$f(x|y) = \frac{f(x,y)}{f_Y(y)}$
+<!-- $f(x|y) = \frac{f(x,y)}{f_Y(y)}$ -->
 
-$E(X | Y) = \int x f(x|y) dx$
+<!-- $E(X | Y) = \int x f(x|y) dx$ -->
 
-$\sigma_{XY} = Cov(X,Y) = E((X - \mu_X)(Y-\mu_Y))$
+<!-- $\sigma_{XY} = Cov(X,Y) = E((X - \mu_X)(Y-\mu_Y))$ -->
 
-$\rho_{XY} = Corr(X,Y) = \frac{Cov(X,Y)}{\sigma_X\sigma_Y}$
+<!-- $\rho_{XY} = Corr(X,Y) = \frac{Cov(X,Y)}{\sigma_X\sigma_Y}$ -->
 
-$V(\sum_{i = 1}^na_iX_i) = \sum_{i = 1}^na_i^2V(X_i) + 2(a_i)(a_j)\sum\sum_{i < j}Cov(X_i, X_j)$
+<!-- $V(\sum_{i = 1}^na_iX_i) = \sum_{i = 1}^na_i^2V(X_i) + 2(a_i)(a_j)\sum\sum_{i < j}Cov(X_i, X_j)$ -->
 
-| **Distribution** | **Probability Function** | **Mean** | **Variance** |
-|------------------|--------------------------|-----------|---------------|
-| **Bernoulli** | $p^y (1-p)^{1-y}$ | $p$ | $p(1-p)$ |
-| **Binomial** | $\binom{n}{y} p^y (1-p)^{n-y}$ | $np$ | $np(1-p)$ |
-| **Geometric** | $p(1-p)^{y-1}$ | $\dfrac{1}{p}$ | $\dfrac{1-p}{p^2}$ |
-| **Hypergeometric** | $\dfrac{\binom{r}{y}\binom{N-r}{n-y}}{\binom{N}{n}}$ | $\dfrac{nr}{N}$ | $n \left(\dfrac{r}{N}\right)\left(\dfrac{N-r}{N}\right)\left(\dfrac{N-n}{N-1}\right)$ |
-| **Poisson** | $\dfrac{\lambda^y e^{-\lambda}}{y!}$ | $\lambda$ | $\lambda$ |
-| **Negative Binomial** | $\binom{y-1}{r-1} p^r (1-p)^{y - r}$ | $\dfrac{r}{p}$ | $\dfrac{r(1-p)}{p^2}$ |
-
-
-
-
-| **Distribution** | **Probability Density Function (pdf)** | **Mean** | **Variance** |
-|-----------------|----------------------------------------|-----------|---------------|
-| **Uniform** | $\dfrac{1}{\theta_2 - \theta_1}, \quad \theta_1 \le y \le \theta_2$ | $\dfrac{\theta_1 + \theta_2}{2}$ | $\dfrac{(\theta_2 - \theta_1)^2}{12}$ |
-| **Normal**| $\dfrac{1}{\sigma \sqrt{2\pi}} \, e^{-(y-\mu)^2/(2\sigma^2)}$ | $\mu$ | $\sigma^2$ |
-| **Eyponential** | $\dfrac{1}{\beta} e^{-y/\beta}, \quad y \ge 0$ | $\beta$ | $\beta^2$ |
-| **Gamma** | $\dfrac{1}{\beta^\alpha \Gamma(\alpha)} y^{\alpha-1} e^{-y/\beta}, \quad y \ge 0$ | $\alpha \beta$ | $\alpha \beta^2$ |
-| **Chi-square** | $\dfrac{1}{2^{\nu/2} \Gamma(\nu/2)} y^{\nu/2-1} e^{-y/2}, \quad y \ge 0$ | $\nu$ | $2\nu$ |
-| **Beta** | $\dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} y^{\alpha-1} (1-y)^{\beta-1}, \quad 0 \le y \le 1$ | $\dfrac{\alpha}{\alpha+\beta}$ | $\dfrac{\alpha \beta}{(\alpha+\beta)^2 (\alpha+\beta+1)}$ |
+<!-- | **Distribution** | **Probability Function** | **Mean** | **Variance** | -->
+<!-- |------------------|--------------------------|-----------|---------------| -->
+<!-- | **Bernoulli** | $p^y (1-p)^{1-y}$ | $p$ | $p(1-p)$ | -->
+<!-- | **Binomial** | $\binom{n}{y} p^y (1-p)^{n-y}$ | $np$ | $np(1-p)$ | -->
+<!-- | **Geometric** | $p(1-p)^{y-1}$ | $\dfrac{1}{p}$ | $\dfrac{1-p}{p^2}$ | -->
+<!-- | **Hypergeometric** | $\dfrac{\binom{r}{y}\binom{N-r}{n-y}}{\binom{N}{n}}$ | $\dfrac{nr}{N}$ | $n \left(\dfrac{r}{N}\right)\left(\dfrac{N-r}{N}\right)\left(\dfrac{N-n}{N-1}\right)$ | -->
+<!-- | **Poisson** | $\dfrac{\lambda^y e^{-\lambda}}{y!}$ | $\lambda$ | $\lambda$ | -->
+<!-- | **Negative Binomial** | $\binom{y-1}{r-1} p^r (1-p)^{y - r}$ | $\dfrac{r}{p}$ | $\dfrac{r(1-p)}{p^2}$ | -->
 
 
 
 
+<!-- | **Distribution** | **Probability Density Function (pdf)** | **Mean** | **Variance** | -->
+<!-- |-----------------|----------------------------------------|-----------|---------------| -->
+<!-- | **Uniform** | $\dfrac{1}{\theta_2 - \theta_1}, \quad \theta_1 \le y \le \theta_2$ | $\dfrac{\theta_1 + \theta_2}{2}$ | $\dfrac{(\theta_2 - \theta_1)^2}{12}$ | -->
+<!-- | **Normal**| $\dfrac{1}{\sigma \sqrt{2\pi}} \, e^{-(y-\mu)^2/(2\sigma^2)}$ | $\mu$ | $\sigma^2$ | -->
+<!-- | **Eyponential** | $\dfrac{1}{\beta} e^{-y/\beta}, \quad y \ge 0$ | $\beta$ | $\beta^2$ | -->
+<!-- | **Gamma** | $\dfrac{1}{\beta^\alpha \Gamma(\alpha)} y^{\alpha-1} e^{-y/\beta}, \quad y \ge 0$ | $\alpha \beta$ | $\alpha \beta^2$ | -->
+<!-- | **Chi-square** | $\dfrac{1}{2^{\nu/2} \Gamma(\nu/2)} y^{\nu/2-1} e^{-y/2}, \quad y \ge 0$ | $\nu$ | $2\nu$ | -->
+<!-- | **Beta** | $\dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} y^{\alpha-1} (1-y)^{\beta-1}, \quad 0 \le y \le 1$ | $\dfrac{\alpha}{\alpha+\beta}$ | $\dfrac{\alpha \beta}{(\alpha+\beta)^2 (\alpha+\beta+1)}$ | -->
 
-\pagebreak
 
-**Geometric series:** $\sum_{n=0}^{\infty} ar^n = \frac{a}{1 - r}$
 
-**For geometric random variable**, $P(Y > k) = (1 - p)^k$
 
-**Maclaurin series expansion:** $e^x = \sum_{n = 0}^{\infty} \frac{x^n}{n!}$
 
-**Binomial expansion**: $(a + b)^n = \sum_{y=0}^{n} \binom{n}{y} a^{y} b^{n -y}$
+<!-- \pagebreak -->
+
+<!-- **Geometric series:** $\sum_{n=0}^{\infty} ar^n = \frac{a}{1 - r}$ -->
+
+<!-- **For geometric random variable**, $P(Y > k) = (1 - p)^k$ -->
+
+<!-- **Maclaurin series expansion:** $e^x = \sum_{n = 0}^{\infty} \frac{x^n}{n!}$ -->
+
+<!-- **Binomial expansion**: $(a + b)^n = \sum_{y=0}^{n} \binom{n}{y} a^{y} b^{n -y}$ -->

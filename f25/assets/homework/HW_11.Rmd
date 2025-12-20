@@ -1,0 +1,37 @@
+---
+title: "Homework 11"
+subtitle: "Sections 5.8, 5.9, 5.11"
+author: "STAT 5700 - Probability"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Instructions
+
+- Homework problems come from the 7th edition of the text *Mathematical Statistics with Applications* by Wackerly, Mendenhall, and Scheaffer, as well as (potential) additional problems provided by the instructor.
+- You are responsible for understanding the concepts covered in all problems listed in a homework assignment, but only even-numbered problems should be turned in. 
+- Be NEAT and show work to support your answers. Points will be deducted if your answer is not adequately supported or the work cannot be readily followed. 
+- You are encouraged to work together on homework assignments, but each person must write up and turn in their own work and solutions. 
+- You will turn in this assignment by scanning your work and uploading a single pdf to Blackboard.
+
+## Problems to do (responsible for content, but not collected/graded)
+
++ Section 5.8: 103
+
++ Section 5.9: 119, 123, 125
+
++ Section 5.11: 133, 139, 141
+
+
+## Problems to submit
+
++ Section 5.8: 102, 110
+
++ Section 5.9: 120, 126
+
++ Section 5.11: 138, 142
+
++ Additional problem: The weight of an egg has mean 90 grams and standard deviation 10 grams. Suppose that you purchase a dozen eggs. Assuming that the weights are independent, find the mean and standard deviation for (a) the total weight for the 12 eggs and (b) the average weight for the 12 eggs.
