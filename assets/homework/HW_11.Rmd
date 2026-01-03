@@ -1,6 +1,6 @@
 ---
 title: "Homework 11"
-subtitle: "Sections 5.8, 5.9, 5.11"
+subtitle: "Sections 5.4 - 5.7"
 author: "STAT 5700 - Probability"
 output: pdf_document
 ---
@@ -19,19 +19,33 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Problems to do (responsible for content, but not collected/graded)
 
-+ Section 5.8: 103
++ Section 5.4: 45, 49, 53, 63
 
-+ Section 5.9: 119, 123, 125
++ Section 5.6: 77, 81, 87
 
-+ Section 5.11: 133, 139, 141
++ Section 5.7: 89, 93, 95
 
 
 ## Problems to submit
 
-+ Section 5.8: 102, 110
++ Section 5.4: 48, 52, 60, 64
 
-+ Section 5.9: 120, 126
++ Section 5.6: 76, 80
 
-+ Section 5.11: 138, 142
++ Section 5.7: 92, 94
 
-+ Additional problem: The weight of an egg has mean 90 grams and standard deviation 10 grams. Suppose that you purchase a dozen eggs. Assuming that the weights are independent, find the mean and standard deviation for (a) the total weight for the 12 eggs and (b) the average weight for the 12 eggs.
++ Additional Problems below:
+
+1. Let X and Y be independent random variables with $\mu_X = 1$, $\sigma_X = 10$, $\mu_Y = 2$, and $\sigma_Y = 4$. Compute the mean and the standard deviation for:
+  
+    a. $X + Y$
+    b. $X - Y$
+    c. $X +4Y$
+    d. $2X - 5Y$
+
+2. Let X and Y be random variables such that $V (X) = 5$, $V (Y ) = 4$, and $Cov(X, Y ) = -2$. Find
+    a. $Cov(X + Y, X-Y )$
+    b. $Cov(X-Y, -2X + 5Y )$
+    c. $Corr(X-Y, -2X + 5Y )$
+    
+3. The correlation between $X$ and $Y$ is given by $\rho_{XY}$. Assume that $\rho_{XY} \neq 0$. A linear transformation is performed on X, and this linearly transformed variable is called $W$, where $W = bX$ and $b$ is a positive constant. Show that $\rho_{WY} = \rho_{XY}$.

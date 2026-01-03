@@ -1,6 +1,6 @@
 ---
 title: "Homework 02"
-subtitle: "Sections 2.6 - 2.10"
+subtitle: "Sections 2.5, 2.6"
 author: "STAT 5700 - Probability"
 output: pdf_document
 ---
@@ -16,27 +16,23 @@ knitr::opts_chunk$set(echo = TRUE)
 - Be NEAT and show work to support your answers. Points will be deducted if your answer is not adequately supported or the work cannot be readily followed. 
 - You are encouraged to work together on homework assignments, but each person must write up and turn in their own work and solutions. 
 - You will turn in this assignment by scanning your work and uploading a single pdf to Blackboard. 
-- Note there is a corresponding R Lab (Lab 02) that will be due at the same time as this assignment (HW 02). 
+
 
 ## Problems to do (responsible for content, but not collected/graded)
 
++ Section 2.5: 25, 31
+
 + Section 2.6: 37, 41, 43, 51, 57, 59, 61
-
-+ Section 2.7: 71, 75, 79
-
-+ Section 2.8: 85, 91
 
 <!-- + Section 2.10: 125, 133, 137 -->
 
 ## Problems to submit
 
++ Section 2.5: 26, 28, 30
+
 + Section 2.6: 38, 42, 46, 48, 50, 58, 64, 68a-c
 
-+ Section 2.7: 72, 74, 80 
 
-+ Section 2.8: 86, 90, 94
-
-+ Section 2.9: 110
 
 <!-- + Section 2.10: 124 -->
 

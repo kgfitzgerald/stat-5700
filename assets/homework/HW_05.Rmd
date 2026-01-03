@@ -1,6 +1,6 @@
 ---
 title: "Homework 05"
-subtitle: "Sections 3.5 - 3.8"
+subtitle: "Sections 3.4"
 author: "STAT 5700 - Probability"
 output: pdf_document
 ---
@@ -16,25 +16,14 @@ knitr::opts_chunk$set(echo = TRUE)
 - Be NEAT and show work to support your answers. Points will be deducted if your answer is not adequately supported or the work cannot be readily followed. 
 - You are encouraged to work together on homework assignments, but each person must write up and turn in their own work and solutions. 
 - You will turn in this assignment by scanning your work and uploading a single pdf to Blackboard. 
-- Note there is a corresponding R Lab (Lab 05) that will be due at the same time as this assignment (HW 05). 
+
+**Feel free to use R for calculations involving the binomial distribution, but you should still show your work by writing out the formulas (e.g., $p(x)$) used to produce the probabilities**
 
 ## Problems to do (responsible for content, but not collected/graded)
 
-+ Section 3.5: 67, 71, 73, 77 
-
-+ Section 3.6: 93, 97
-
-+ Section 3.7: 103, 105
-
-+ Section 3.8: 121, 123
++ Section 3.4: 37, 39, 51, 55, 59
 
 ## Problems to submit
 
-+ Section 3.5: 70, 80 
-
-+ Section 3.6: 92, 94
-
-+ Section 3.7: 106, 108, 120
-
-+ Section 3.8: 128, 138
++ Section 3.4: 38, 40, 44, 48, 50, 56, 58
 

@@ -1,6 +1,6 @@
 ---
 title: "Homework 07"
-subtitle: "Sections 4.2 - 4.5"
+subtitle: "Sections 3.9, 4.1 - 4.3"
 author: "STAT 5700 - Probability"
 output: pdf_document
 ---
@@ -16,25 +16,24 @@ knitr::opts_chunk$set(echo = TRUE)
 - Be NEAT and show work to support your answers. Points will be deducted if your answer is not adequately supported or the work cannot be readily followed. 
 - You are encouraged to work together on homework assignments, but each person must write up and turn in their own work and solutions. 
 - You will turn in this assignment by scanning your work and uploading a single pdf to Blackboard. 
-- Note there is a corresponding R Lab (Lab 07) that will be due at the same time as this assignment (HW 07). 
 
 ## Problems to do (responsible for content, but not collected/graded)
+
++ Section 3.9: 145, 147, 149, 155
 
 + Section 4.2: 5, 9, 11, 17, 19
 
 + Section 4.3: 21, 33
 
-+ Section 4.4: 39, 43, 53
-
-+ Section 4.5: 59, 73 (can use R for these)
-
 ## Problems to submit
+
++ Section 3.9: 146, 148, 150, 158
 
 + Section 4.2: 2, 8, 18
 
 + Section 4.3: 22, 30
 
-+ Section 4.4: 40, 42, 48 
 
-+ Section 4.5: 62 (can use R), 80
+
+
 
