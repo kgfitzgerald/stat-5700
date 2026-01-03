@@ -24,7 +24,7 @@ defaults:
       path: "assets/labs"
     values:
       raw: true
-exclude: ["Gemfile", "Gemfile.lock", "LICENSE"]
+exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "f25"]
 include:
   - files
 
