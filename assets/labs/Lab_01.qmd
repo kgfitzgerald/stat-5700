@@ -181,11 +181,23 @@ Use the function `min()` to compute the minimum value in `L1`. Compare this to t
 
 ```
 
-## Task 7
+## Task 7 - submit!
 
-Once you have completed Tasks 1 - 6, render the document one last time. Look over the .html document to make sure that everything is visible and formatted as you intended. To submit this lab assignment, you will upload your Lab_01.html file to Blackboard under the Lab 01 assignment. This file exists in the STAT_5700 folder you created on your computer.
+Once you have completed Tasks 1 - 6, render the document one last time. Look over the .html document to make sure that everything is visible and formatted as you intended. If so, you're ready to submit!
 
-To submit on Blackboard, follow these steps:
+**Unfortunately Blackboard does not accept html file submissions, so you will first need to convert your html file to a zip file.** To convert to a zip file, follow these steps:
+
+-   Outside of RStudio, locate the .html file (e.g., Lab_01.html) on your computer. It should be in the STAT_5700 folder you created.
+
+-   Right click on the file name, then
+
+    -   On Windows, select “Send to –\> Compressed (zipped) folder”
+
+    -   On Mac, select “Compress”
+
+-   A .zip file will be created in the same folder
+
+To submit your zip file on Blackboard, follow these steps:
 
 -   In the STAT 5700 Blackboard site, navigate to Lab 01 under Assignments
 
@@ -195,7 +207,7 @@ To submit on Blackboard, follow these steps:
 
 -   Click "Choose File"
 
--   In the pop-up window, navigate to your STAT_5700 folder and select your html file
+-   In the pop-up window, navigate to your STAT_5700 folder and select your .zip file
 
 -   Click "Submit Assignment"
 
