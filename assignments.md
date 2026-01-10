@@ -20,13 +20,13 @@ nav_order: 4
 
 Most weeks, you will have 3 assignments to submit. See below for details and links to the assignments. 
 
-## Homework (due Wednesdays, 11:59pm)
+## Homework (due Thursdays, 2:30pm)
 
 The links below provide the assigned problems for each homework. Your work must be hand-written, and you should submit a single pdf to the corresponding assignment on Blackboard.
 
-<!-- [HW 01](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_01.pdf)
+[HW 01](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_01.pdf)
 
-[HW 02](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_02.pdf)
+<!-- [HW 02](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_02.pdf)
 
 [HW 03](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_03.pdf)
 
@@ -48,9 +48,9 @@ The links below provide the assigned problems for each homework. Your work must 
 
 [End of Course Reflection](https://kgfitzgerald.github.io/stat-5700/assets/homework/End of Course Reflection.pdf) -->
 
-## Labs (due Fridays, 11:59pm)
+## Labs (due Saturdays, 11:59pm)
 
-The links below take you to a template Quarto (.qmd) file for each lab. You should download the .qmd and place it in the STAT_5700 folder you created on your computer. Complete the lab by typing your code & answers in the .qmd. You will turn in a rendered pdf file to Blackboard. 
+The links below take you to a template Quarto (.qmd) file for each lab. You should download the .qmd and place it in the STAT_5700 folder you created on your computer. Complete the lab by typing your code & answers in the .qmd. You will turn in a rendered html file (converted to a .zip) to Blackboard. 
 
 
 <!-- {% include download.html path="assets/labs/Lab_01.qmd" %}
@@ -72,8 +72,8 @@ The links below take you to a template Quarto (.qmd) file for each lab. You shou
 {% include download.html path="assets/labs/Lab_10.qmd" %} -->
 
 
-## Reading annotations (due Fridays, 11:59pm)
+## Reading annotations (due Saturdays, 11:59pm)
 
-Most weeks you will be assigned an article, book chapter, and/or video about applications of probability & statistics and/or ethical issues in the field. Rather than a traditional discussion board, we will use Perusall, a community annotation tool, where you can engage with the text by highlighting, commenting, asking questions, and responding to your peers' comments/questions, all on a shared document. You can access these assignments [here](https://elearning.villanova.edu/webapps/blackboard/content/listContent.jsp?course_id=_182880_1&content_id=_5566839_1), or by navigating on the Blackboard home page to Perusall - Reading Annotations. 
+Most weeks you will be assigned an article, book chapter, and/or video about applications of probability & statistics and/or ethical issues in the field. Rather than a traditional discussion board, we will use Perusall, a community annotation tool, where you can engage with the text by highlighting, commenting, asking questions, and responding to your peers' comments/questions, all on a shared document. You can access these assignments by navigating on the Blackboard home page to Perusall - Reading Annotations. 
 
 

@@ -186,7 +186,7 @@ Set theory is a first set of tools that will help us in constructing probabilist
 
 # 2.3 A Review of Set Notation
 
-We use capital letters, $A, B, C$, etc to denote sets of points. E.g., if $a_1, a_2, a_3$ are elements in the set $A$, we write $$A = \{a_1, a_2, a_3\}$$
+<!-- We use capital letters, $A, B, C$, etc to denote sets of points. E.g., if $a_1, a_2, a_3$ are elements in the set $A$, we write $$A = \{a_1, a_2, a_3\}$$ -->
 
 ### Set Theory / Activity
 
@@ -480,7 +480,32 @@ f) $P(B \cap D)$
 \
 :::
 
-The sample-point method is direct and powerful, but is a bit of a bulldozer approach. It can be cumbersome to list all the events, and it can be susceptible to human error. Orderliness, computers, and the mathematical theory of counting (combinatorics) can help reduce effort and human error in carrying out the sample-point method for calculating probabilities. 
+The sample-point method is direct and powerful, but is a bit of a bulldozer approach. It can be cumbersome to list all the events, and it can be susceptible to human error. Orderliness, computers, and the mathematical theory of counting (combinatorics) can help reduce effort and human error in carrying out the sample-point method for calculating probabilities. (2.6) 
+
+\pagebreak
+
+# 2.9 Calculating the Probability of an Event: The Event-Composition Method
+
+We've seen that sets (events) can often be expressed as unions, intersections, or complements of other events. The event-composition method for calculating the probability of an event $A$, expresses $A$ as a composition involving unions and/or intersections of other events. The laws of probability are then applied to find $P(A)$. 
+
+::: {.activitybox data-latex=""}
+
+**Example**: Of a group of patients having injuries, 28% visit both a physical therapist and a chiropractor and 8% visit neither. Say that the probability of visiting a physical therapist exceeds the probability of visiting a chiropractor by 16%. What is the probability of a randomly selected person from this group visiting a physical therapist?
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+:::
+
+\pagebreak
 
 # 2.6 Tools for Counting Sample Points
 
@@ -491,7 +516,6 @@ Combinatorics can help you calculate the total number of sample points in a samp
 If a sample space $S$ contains $N$ equiprobable sample points and an event $A$ contains exactly $n_A$ sample points, then $$P(A) = \frac{n_A}{N}$$
 
 :::
-
 
 ### Multiplication Rule or "$mn$" Rule
 
@@ -513,11 +537,7 @@ knitr::include_graphics("./images/1.2_tree_diagram.png")
 \
 \
 \
-\
-\
-\
-\
-\
+
 :::
 
 **General Rule**
@@ -679,7 +699,13 @@ $$N = \binom{n}{n_1 \ \ n_2 \ \cdots \ \ n_k} = \frac{n!}{n_1! n_2! \cdots n_k!}
 \
 \
 \
+\
+\
+\
+\
 :::
+
+\pagebreak
 
 ### Combinations
 
@@ -749,27 +775,7 @@ knitr::include_graphics("./images/PascalTriangleAnimated.gif")
 
 **Seeing Theory website:** [https://seeing-theory.brown.edu/compound-probability/index.html#section2](https://seeing-theory.brown.edu/compound-probability/index.html#section2)
 
-
-# 2.9 Calculating the Probability of an Event: The Event-Composition Method
-
-We've seen that sets (events) can often be expressed as unions, intersections, or complements of other events. The event-composition method for calculating the probability of an event $A$, expresses $A$ as a composition involving unions and/or intersections of other events. The laws of probability are then applied to find $P(A)$. 
-
-::: {.activitybox data-latex=""}
-
-**Example**: Of a group of patients having injuries, 28% visit both a physical therapist and a chiropractor and 8% visit neither. Say that the probability of visiting a physical therapist exceeds the probability of visiting a chiropractor by 16%. What is the probability of a randomly selected person from this group visiting a physical therapist?
-
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-
-:::
+\pagebreak
 
 # 2.7 Conditional Probability and the Independence of Events
 
@@ -1031,48 +1037,6 @@ e) Explain why the assumption of independence is probably not reasonable in this
 
 \pagebreak
 
-::: {.activitybox data-latex=""}
-
-Suppose that every day you play a lottery game in which a three-digit number is randomly selected.  Your probability of winning for each day is 1/1000.
-
-a) Is it reasonable to assume that whether you win or lose is independent from day to day?  Explain.
-b) Determine the probability that you win at least once in a 7-day week.  Report your answer with five decimal places.  Also explain why this probability is not exactly equal to 7/1000.
-c) Determine the probability that you win at least once in a 365-day year.
-d) Suppose that your friend says that because there are only 1000 three-digit numbers, you’re guaranteed to win once if you play for 1000 days.  How would you respond?
-e) Express the probability of winning at least once as a function of the number of days that you play.  Also produce a graph of this function, from 1 to 3652 days (about 10 years).  Describe the function’s behavior.
-f) For how many days would you have to play in order to have at least a 90% chance of winning at least once?  How many years is this?
-g) Suppose that the lottery game costs $1 to play and pays $500 when you win.  If you were to play for that many days (your answer to the previous part), is it likely that you would end up with more or less money than you started with?
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-
-:::
-
-
 # 2.10 Law of Total Probability & Bayes Rule
 
 <!-- RE-DO THIS WITH EXAMPLES FROM AGQ: https://askgoodquestions.blog/2020/10/19/68-knowing-or-guessing/ -->
@@ -1202,6 +1166,8 @@ Total | 0.43 | 0.57 | 1.00
 > d. What percentage of students have neither of these accounts?
 > e. What percentage of students have one of these accounts but not both?
 
+\pagebreak
+
 5. Let $A_1$ and $A_2$ be the events that a person is left- eye dominant or right-eye dominant, respectively. When a person folds their hands, let $B_1$ and $B_2$ be the events that the left thumb and right thumb, respectively, are on top. A survey in one statistics class yielded the following table:
 
 | | $B_1$ | $B_2$ | Totals |
@@ -1218,6 +1184,16 @@ Total | 0.43 | 0.57 | 1.00
 > (e) If the students had their hands folded and you hoped to select a right-eye-dominant student, would you select a “right thumb on top” or a “left thumb on top” student? Why?
 
 6. Let $A$ and $B$ be independent events. Prove that $A'$ and $B$ are also independent. 
+
+7. Suppose that every day you play a lottery game in which a three-digit number is randomly selected.  Your probability of winning for each day is 1/1000.
+
+    a) Is it reasonable to assume that whether you win or lose is independent from day to day? 
+    b) Determine the probability that you win at least once in a 7-day week.  Report your answer with five decimal places.  Why is this probability is not exactly equal to 7/1000?
+    c) Determine the probability that you win at least once in a 365-day year.
+    d) Suppose that your friend says that because there are only 1000 three-digit numbers, you’re guaranteed to win once if you play for 1000 days.  How would you respond?
+    e) Express the probability of winning at least once as a function of the number of days that you play.  Also produce a graph of this function, from 1 to 3652 days (about 10 years). How would you describe the function’s behavior?
+    f) For how many days would you have to play in order to have at least a 90% chance of winning at least once?  How many years is this?
+    g) Suppose that the lottery game costs $1 to play and pays $500 when you win.  If you were to play for that many days (your answer to the previous part), is it likely that you would end up with more or less money than you started with?
 
 7. Two processes of a company produce rolls of materials: The rolls of Process I are 3% defective and the rolls of Process II are 1% defective. Process I produces 60% of the company’s output, Process II 40%. A roll is selected at random from the total output. Given that this roll is defective, what is the conditional probability that it is from Process I?
 
