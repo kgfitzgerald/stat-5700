@@ -3,7 +3,7 @@ title: "Chapter 2: Probability"
 subtitle: "STAT 5700: Probability"
 author: "Prof. Katie Fitzgerald, PhD"
 institute: "Villanova University Department of Mathematics & Statistics"
-date: "Fall 2025"
+date: "Spring 2026"
 output: 
   pdf_document:
     includes:
