@@ -1,7 +1,7 @@
 ---
 title: Week 2 Announcements
 week: 0
-date: 2026-20-01
+date: 2026-01-20
 ---
 
 <!--## Thursday announcements
