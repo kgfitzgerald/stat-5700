@@ -29,7 +29,7 @@ Note that R typically prints out lots of messages when we load packages, but we 
 
 # Tutorial
 
-### Methods of Enumeration (Book Section 1.2) in R
+### Counting/Combinatorics Tools in R
 
 *\[Note: In order to view the mathematical formulas in this section, it will be easiest to read this section in the rendered .html OR by reading the .qmd in "Visual" mode; you can toggle between "Source" and "Visual" mode using the toolbar in the top left of RStudio . If you're curious, comparing the syntax inside the dollar signs in the "Source" mode to the formatted formulas in the html document will give you insight into how to type pretty math text using LaTeX!\].*
 

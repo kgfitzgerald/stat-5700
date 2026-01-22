@@ -26,9 +26,9 @@ The links below provide the assigned problems for each homework. Your work must 
 
 [HW 01](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_01.pdf)
 
-<!-- [HW 02](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_02.pdf)
+[HW 02](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_02.pdf)
 
-[HW 03](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_03.pdf)
+<!-- [HW 03](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_03.pdf)
 
 [HW 04](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_04.pdf)
 
@@ -55,9 +55,9 @@ The links below take you to a template Quarto (.qmd) file for each lab. You shou
 
 {% include download.html path="assets/labs/Lab_01.qmd" %}
 
-<!-- {% include download.html path="assets/labs/Lab_02.qmd" %}
+{% include download.html path="assets/labs/Lab_02.qmd" %}
 
-{% include download.html path="assets/labs/Lab_03.qmd" %}
+<!-- {% include download.html path="assets/labs/Lab_03.qmd" %}
 
 {% include download.html path="assets/labs/Lab_04.qmd" %}
 
