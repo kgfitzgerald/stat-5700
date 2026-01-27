@@ -1,7 +1,7 @@
 ---
 title: Week 3 Announcements
 week: 3
-date: 2025-01-27
+date: 2026-01-27
 ---
 
 ## Tuesday announcements
