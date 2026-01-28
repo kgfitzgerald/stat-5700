@@ -4,6 +4,13 @@ week: 3
 date: 2026-01-27
 ---
 
+## Thursday announcements
+
++ Quiz to start class today (10 minutes)
++ Lab 02 & Annotations due Saturday
++ HW 03 posted, but Lab 03 will be delayed (tied to activity bumped to next Tuesday)
+
+
 ## Tuesday announcements
 
 + First quiz will be at beginning of class on Thursday (2.1 - 2.6)

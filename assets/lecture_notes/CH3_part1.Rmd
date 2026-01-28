@@ -3,7 +3,7 @@ title: "Chapter 3: Discrete Distributions (Part 1)"
 subtitle: "STAT 5700: Probability"
 author: "Prof. Katie Fitzgerald, PhD"
 institute: "Villanova University Department of Mathematics & Statistics"
-date: "Fall 2025"
+date: "Spring 2026"
 output: 
   pdf_document:
     includes:
@@ -246,7 +246,7 @@ take on at most a countable number of values.
 
 For a discrete r.v. $Y$, the probability $P(Y = y)$ is often denoted by
 $p(y)$ and is called the
-\textcolor{red}{\textbf{probability distribution of Y}}.
+\textcolor{red}{\textbf{probability distribution of Y}}, or sometimes the \textcolor{red}{\textbf{probability mass function (pmf) of Y}}.
 
 In the above example, $P(Y=2) = p(2)$
 
@@ -908,203 +908,6 @@ knitr::include_graphics("./images/quiz_score_dists.png")
 
 \pagebreak
 
-# 3.4 Binomial Distribution
-
-### Bernoulli Experiments
-
-A \textcolor{red}{\textbf{Bernoulli experiment}} is a random experiment
-that has two mutually exclusive and exhaustive outcomes, often referred
-to as "success" and "failure."
-
-Lots of real world occurrences fit this binary structure (e.g.
-heads/tails, life/death, disease/no disease, graduate/not graduate).
-Note, sometimes choosing which of the two outcomes to call a "success"
-is arbitrary.
-
-A sequence of \textcolor{red}{\textbf{Bernoulli trials}} occurs when a
-Bernoulli experiment is performed several *independent* times, and the
-probability of success, $p$, remains the same from trial to trial.
-
-::: {.activitybox data-latex=""}
-**Example 1:** flipping a fair coin 5 times corresponds to 5 Bernoulli
-trials with probability of success $p = 0.5$.
-
-**Example 2:** Suppose the probability that a seed will germinate is
-0.8, and we consider germination to be a "success." If we plant 10 seeds
-and can assume the germination of one seed is independent of the
-germination of another seed, this corresponds to 10 Bernoulli trials
-with $p = 0.8$.
-:::
-
-### Bernoulli Distribution
-
-::: {.highlightbox data-latex=""}
-Let the random variable $Y$ be the outcome of a Bernoulli experiment,
-where $Y = 1$ denotes a "success" and $Y = 0$ denotes a "failure." The
-probability distribution of $Y$ is given by
-
-$$p(y) = p^y(1-p)^{1-y}, \ \ \ \ y = 0,1,$$ and we say that $Y$ follows
-the \textcolor{red}{\textbf{Bernoulli distribution}}, or that $Y$ is a
-**Bernoulli** random variable.
-:::
-
-Sometimes we will denote the probability of failure as $q = (1 - p).$
-
-::: {.activitybox data-latex=""}
-**Exercise:** Find the mean and variance for the Bernoulli distribution.
-That is, find $E(Y)$ and $V(Y)$ when $Y$ is a Bernoulli random
-variable.\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-:::
-
-::: {.activitybox data-latex=""}
-**Exercise**:
-
-Joel Embiid, star player drafted as the #3 overall pick by the Philadelphia 76ers, made 86% of his free throws in his rookie season.
-Suppose Embiid is fouled while attempting a 3 point shot with 1 second
-left in the game and the Sixers down by 2 points. What is the
-probability the Sixers win the game? Tie? Lose? Develop a random
-variable (and probability distribution) to answer these questions.\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-
-:::
-
-### Binomial distribution
-
-In a sequence of Bernoulli trials, we are often interested in the total
-number of successes but not the actual order of their occurrences.
-
-If we let the random variable $Y$ equal the number of observed successes
-in $n$ Bernoulli trials, then the possible values of $Y$ are
-$0,1,2,...,n$.
-
-If $y$ successes occur, where $y = 0,1,2,...,n,$ then $n - y$ failures
-occur. The number of ways of selecting $y$ positions for the $y$
-successes in the $n$ trials is $${n\choose y} = \frac{n!}{y!(n-y)!} $$
-Since the trials are independent and since the probabilities of success
-and failure on each trial are, respectively, $p$ and $q = 1 - p$, the
-probability of each of these ways is $p^y(1 - p)^{n-y}$.
-
-Thus, $p(y)$, the probability distribution of $Y$, is the sum of the probabilities of the
-${n\choose y}$ mutually exclusive events; that is,
-$$p(y) = {n\choose y}p^y(1-p)^{n-y}$$
-
-::: {.highlightbox data-latex=""}
-If $Y$ has probability distribution $p(y) = {n\choose y}p^y(1-p)^{n-y},$ we say $Y$ follows
-the **binomial distribution** and the probabilities $p(y)$ are called
-the **binomial probabilities**.
-
-A binomial experiment satisfies the following properties:
-
-1.  A Bernoulli (success--failure) experiment is performed $n$ times,
-    where $n$ is a (non-random) constant.
-2.  The trials are independent.
-3.  The probability of success on each trial is a constant $p$; the
-    probability of failure is $q = 1 - p$.
-4.  The random variable $Y$ equals the number of successes in the $n$
-    trials.
-:::
-
-```{r, echo = FALSE,  fig.align="center", out.width="50%", out.height="25%"}
-knitr::include_graphics("./images/binom_dists.png")
-```
-
-Sometimes we write $Y\sim b(n,p)$, which is read as "Y is distributed as
-a binomial random variable with parameters $n$ and $p$". That is, if we
-say $Y \sim b(23, 0.14)$, we mean $Y$ is the number of successes in
-$n = 23$ Bernoulli trials that each have probability of success
-$p = 0.14$.
-
-::: {.activitybox data-latex=""}
-**Exercise:**
-
-A manufacturing process has historically produced defective items every
-1 out of 20. Five objects are selected independently from the production
-line.
-
-a.  What is the probability none of the selected items are defective?\
-    \
-    \
-    \
-
-b.  What is the probability of 1 or fewer defective?\
-    \
-    \
-    \
-    \
-
-c.  What is the probability more than 2 are defective?\
-    \
-    \
-    \
-    \
-:::
-
-### Binomial cdf
-
-Like in the previous example, cumulative probabilities are often of
-interest when working with the Binomial distribution. Recall that
-cumulative probabilities are given by the cumulative distribution
-function $$F(y) = P(Y \leq y), \ \ \ \ \ -\infty < y < \infty.$$
-
-The cdf of the Binomial distribution is given by
-$$F(Y) = P(Y \leq y) = \sum_{y = 0}^y {n \choose y} p^y(1-p)^{n - y}$$
-
-### Binomial expansion
-
-The binomial expansion is given by
-$$(a + b)^n = \sum_{y = 0}^n {n\choose y}a^yb^{n-y}$$
-
-::: {.activitybox data-latex=""}
-**Exercise:**
-
-Use the binomial expansion to show that the probability distribution of the Binomial
-distribution is a valid probability distribution.\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-:::
-
-
 
 \pagebreak
 
@@ -1180,23 +983,9 @@ Let $E(Y) = 5$ and $V(Y) = 36$. Find:
 
 
 
-### Problem 7
 
-In a lab experiment involving inorganic syntheses of molecular precursors to organometallic ceramics, the final step of a five-step reaction involves the formation of a metal-metal bond. The probability of such a bond forming is $p = 0.2$. Let $Y$ equal the number of successful reactions out of $n=25$ such experiments. 
-    
-  a) What distribution is appropriate to model $Y$? 
-  b) Write out the probability distribution of $Y$
-  c) Find the probability that $Y = 1$
-  d) Find the probability that $Y$ is at least 1
-  e) Find the mean, variance, and standard deviation of $Y$
 
-### Problem 8
 
-A random variable Y has a binomial distribution with mean 6 and variance 3.6. Find $P(Y = 4)$.
-
-### Problem 9
-
-Return to the Joel Embiid example (he makes 87% of his free throws, he's fouled shooting a 3-pointer). Describe in detail how you could, in principle, perform a by hand simulation involving physical objects (e.g. coins, dice, spinners, etc.) to estimate the probability that the 76ers lose. Be sure to describe (1) what one repetition of the simulation entails, and (2) how you would use the results of many repetitions. Note: you do NOT need to compute any numerical values.
 
 \pagebreak
 

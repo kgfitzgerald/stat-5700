@@ -28,9 +28,9 @@ The links below provide the assigned problems for each homework. Your work must 
 
 [HW 02](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_02.pdf)
 
-<!-- [HW 03](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_03.pdf)
+[HW 03](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_03.pdf)
 
-[HW 04](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_04.pdf)
+<!-- [HW 04](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_04.pdf)
 
 [HW 05](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_05.pdf)
 
