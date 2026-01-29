@@ -7,9 +7,9 @@ nav_exclude: true
 nav_order: 6
 ---
 
-<!--+ [Formula sheet](https://kgfitzgerald.github.io/stat-5700/assets/resources/formulas.pdf)
++ [Formula sheet](https://kgfitzgerald.github.io/stat-5700/assets/resources/formulas.pdf)
 + [Seeing Theory website](https://seeing-theory.brown.edu/index.html)
-+ [Univariate Distribution Relationships](https://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
+<!--+ [Univariate Distribution Relationships](https://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
 + [Why is pi in the normal distribution?](https://www.youtube.com/watch?v=cy8r7WSuT1I)
 + [Distributions cheat sheet from textbook cover](https://kgfitzgerald.github.io/stat-5700/assets/resources/dist_cheat_sheet.pdf)
 
