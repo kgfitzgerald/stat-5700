@@ -960,7 +960,7 @@ $$
 
 Let $E(Y) = 4$. Find
   
-  a. $E(Y)$ when $Y = 2Y + 3$
+  a. $E(X)$ when $X = 2Y + 3$
   b. $E(Z)$ when $Z = 7 - 5Y$
   c. $E(32)$
 

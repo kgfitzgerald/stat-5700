@@ -1,0 +1,413 @@
+---
+title: "Chapter 2 Group Work Solutions"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo = FALSE}
+library(kableExtra)
+```
+
+# Problem 1
+
+How many four-letter code words are possible using the letters in IOWA if:
+
+  a. The letters may not be repeated?
+  b. The letters may be repeated? 
+    
+### SOLUTIONS
+
+> (a) $4 \cdot 3 \cdot 2 \cdot 1 = 24$
+
+> (b) $4 \cdot 4 \cdot 4 \cdot 4 = 256$
+
+# Problem 2
+
+1. Three students (S) and six faculty members (F) are on a panel discussing a new college policy.
+
+    a. In how many different ways can the nine participants be lined up at a table in front of the auditorium?
+    a. How many lineups are possible if you only care about where the students are placed in relation to faculty? In other words, how many ways are there to choose 3 seats to place the students in (or alternatively, choose 6 seats to place the faculty in)?
+    a. For each of the nine participants, you are to decide whether the participant did a good job or a poor job stating their opinion of the new policy; that is, give each of the nine participants a grade of G or P. How many different "scorecards" are possible?
+
+### Solution Part a:
+
+Think in terms of "slots." We have 9 people we are placing in 9 slots - we have 9 people to choose from for the first slot, 8 people to choose from for the second slot, etc. 
+
+$$9! = 9\cdot 8 \cdot 7 \cdots 2 \cdot 1 = 362,880$$
+
+### Solution Part b:
+
+Another way to think of this is "how many ways are there to place 3 Ss in 9 slots?" (the rest get filled in with Fs). Or stated more explicitly, "how many ways are there to choose 3 seats (out of 9 seats) for the students to sit in?"
+
+$$\binom{9}{3} = \frac{9!}{3!6!}=\frac{9\cdot8\cdot7}{6} = 84$$
+
+### Solution Part c:
+
+For each person there are 2 possibilities
+
+$$2\cdot2\cdot2\cdot2\cdot2\cdot2\cdot2\cdot2\cdot2 = 2^9 = 512$$
+
+
+
+# Problem 3
+
+The NBA Finals continues until either the Western Conference team or the Eastern Conference team wins four games. How many different orders are possible (e.g. WEEWWW means the Western Conferences team wins in six games) if the series lasts....
+    
+a. four games? 
+a. five games? 
+a. six games? 
+a. seven games? 
+
+### Solution Part a:
+
+2 orders (WWWW or EEEE)
+
+### Solution Part b:
+
+Say that the West wins the series; this means the fifth game must be won by the West, and the East must win one of the first four games. There are $\binom{4}{1} = \frac{4!}{3!1!} = 4$ ways for the East to win 1 of 4 games. Therefore there are 4 ways for the West to win in 5 games. Similarly, there are 4 ways for the East to win in 5 games, by the same logic. Therefore there are $2\cdot\binom{4}{1} = 8$ ways for the series to end in 5 games.
+
+An equivalent way of approaching it is thinking about needing to place 4 Ws in 5 slots, but since there has to be a W in the 5th slot, this reduces to placing 3 Ws in 4 slots (i.e. the West has to win exactly 3 of the first 4 games). And $\binom{4}{3} = \frac{4!}{1!3!} = 4$.
+
+### Solution Part c:
+
+Say that the West wins the series; this means that the 6th game must be won by the West, and the East must win 2 of the first 5 games. By the same logic as above, there are $2\cdot\binom{5}{2} = 2*\frac{5!}{3!2!} = 20$ ways for the series to end in 6 games.
+
+### Solution Part d:
+
+By the same logic, $2\cdot\binom{6}{3} = 2\cdot\frac{6!}{3!3!} = 40$ ways for the series to end in 7 games.
+
+
+# Problem 4
+
+Suppose that 78% of the students at a particular college have a TikTok account and 43% have a Facebook account. Using only this information, 
+
+a. what is the largest possible value for the percentage who have both a TikTok account and a Facebook account?  Describe the (unrealistic) situation in which this occurs.
+a. what is the smallest possible value for the percentage who have both a TikTok account and a Facebook account?  Describe the (unrealistic) situation in which this occurs.
+    
+| | Facebook | No Facebook | Total|
+|----|-----|-----|------|
+TikTok | | | 0.78
+No TikTok | | | 0.22
+Total | 0.43 | 0.57 | 1.00
+    
+ > Now assume you know that 36% of students have both a TikTok and a Facebook account.
+    
+> c. What percentage of students have at least one of these accounts?
+> d. What percentage of students have neither of these accounts?
+> e. What percentage of students have one of these accounts but not both?
+    
+    
+### Solution Part a:
+
+Let A = the event that a student as a TikTok and B = the event that a student has a Facebook. The intersection $P(A \cap B)$ cannot be larger than $P(A)$ or $P(B)$, so the largest it can be is 0.43, which happens in the unlikely scenario that every person who has a TikTok also has a Facebook.
+    
+### Solution Part b:
+
+We want to find a lower bound on $P(A \cap B)$. First note that 
+
+$$P(A \cup B) = P(A) + P(B) - P(A\cap B) \leq 1,$$
+by definition of union and the fact that all probabilities must be less than or equal to 1. By rearranging, we then have: 
+
+$$
+\begin{aligned}
+P(A) + P(B) - 1 &\leq P(A \cap B) \\
+0.78 + 0.43 - 1&\leq P(A \cap B) \\
+0.21 &\leq P(A \cap B)
+\end{aligned}
+$$
+
+The percentage of students who have both a TikTok and a Facebook has to be at least 21%, which happens in the unlikely scenario that everyone has either a TikTok or a Facebook (i.e. no students have neither).
+
+### Solution Part c:
+
+We can fill in the rest of the table
+ 
+| | Facebook | No Facebook | Total|
+|----|-----|-----|------|
+TikTok | 0.36 | 0.42 | 0.78
+No TikTok | 0.07 | 0.15 | 0.22
+Total | 0.43 | 0.57 | 1.00
+
+$$\begin{aligned}
+P(A \cup B) &= P(A) + P(B) - P(A\cap B) \\
+&= 0.78 + 0.43 - 0.36 \\
+&= 0.85
+\end{aligned}$$
+
+### Solution part d:
+
+$$P[(A \cup B)'] = 1 - P(A \cup B) = 1 - 0.85 = 0.15$$
+
+### Solution Part e:
+
+$$\begin{aligned}
+P(A \cap B') &+ P(B \cap A') \\
+P(\text{TikTok but not Facebook}) &+ P(\text{Facebook but not TikTok}) \\
+0.42 &+ 0.07 \\
+= 0.49
+\end{aligned}$$
+
+# Problem 5
+
+Let $A_1$ and $A_2$ be the events that a person is left- eye dominant or right-eye dominant, respectively. When a person folds their hands, let $B_1$ and $B_2$ be the events that the left thumb and right thumb, respectively, are on top. A survey in one statistics class yielded the following table:
+
+| | $B_1$ | $B_2$ | Totals |
+|-----|---|---|-----|
+|$A_1$ | 5 | 7 | 12 |
+| $A_2$ | 14 | 9 | 23 |
+| Totals | 19 | 16 | 35 |
+
+If a student is selected randomly, find the following probabilities:
+
+### Solution:
+
+> (a)	$P(A_1 \cap B_1) = 5/35 = 1/7$,
+
+> (b) $P(A_1 \cup B_1) = (12+19-5)/35 = 26/35$,
+
+> (c) $P(A_1|B_1) = 5/19$,
+
+> (d) $P(B_2 | A_2) = 9/23$.
+
+> (e) If the students had their hands folded and you hoped to select a right-eye-dominant student, would you select a “right thumb on top” or a “left thumb on top” student? Why? $P(A_2 | B_1) = 14/19 > P(A_2 | B_2) = 9/16$ so we should choose a left-thumb person.
+
+```{r, echo = FALSE, eval = FALSE}
+data.frame(c("$A_1$", "$A_2$", "Totals"), 
+           b1 = c(5, 15, 19), 
+           b2 = c(7, 9, 16), 
+           Totals = c(12,23,35),
+           row.names = 1) %>% 
+  kable(col.names = c("$B_1$", "$B_2$", "Totals"))
+```
+
+# Problem 6
+
+Let $A$ and $B$ be independent events. Prove that $A'$ and $B$ are also independent. 
+
+### Solution
+
+We want to show that $P(A' \cap B) = P(A')P(B)$ to prove they are independent.
+
+The proof is provided below. To see the first line, draw a Venn Diagram. The 2nd line relies on the fact that A and B are independent, and the 3rd line applies the rule of complements.
+
+$$\begin{aligned}
+P(A' \cap B) &= P(B) - P(B \cap A) \\
+&= P(B) - P(B)P(A)\\
+&= P(B)[1 - P(A)] \\
+&= P(B)P(A')
+\end{aligned}
+$$
+
+# Problem 7
+
+Suppose that every day you play a lottery game in which a three-digit number is randomly selected.  Your probability of winning for each day is 1/1000.
+
+    a) Is it reasonable to assume that whether you win or lose is independent from day to day? 
+    b) Determine the probability that you win at least once in a 7-day week.  Report your answer with five decimal places.  Why is this probability is not exactly equal to 7/1000?
+    c) Determine the probability that you win at least once in a 365-day year.
+    d) Suppose that your friend says that because there are only 1000 three-digit numbers, you’re guaranteed to win once if you play for 1000 days.  How would you respond?
+    e) Express the probability of winning at least once as a function of the number of days that you play.  Also produce a graph of this function, from 1 to 3652 days (about 10 years). How would you describe the function’s behavior?
+    f) For how many days would you have to play in order to have at least a 90% chance of winning at least once?  How many years is this?
+    g) Suppose that the lottery game costs $1 to play and pays $500 when you win.  If you were to play for that many days (your answer to the previous part), is it likely that you would end up with more or less money than you started with?
+
+## Solution
+
+### Part a 
+
+Yes, the three-digit number is selected randomly each day. So whether or not you win on one day doesn't have any effect on the probability of winning on any other day. 
+
+### Part b
+
+P(win at least once) = 1 - P(lose every day) = $1 - (999/1000)^7 = 0.00698$
+
+### Part c
+
+P(win at least once) = 1 - P(lose every day) = $1 - (999/1000)^{365} = 0.306$
+
+### Part d
+
+No, it's certainly possible you could lose on all 1000 days. In fact, that prospect is not terribly unlikely:
+
+$1 - (999/1000)^{1000} = 0.632$. It's more than 1/2, but closer to 1/2 than to 1!
+
+### Part e
+
+$$P(\text{win at least once in n days}) = 1 - (999/1000)^n$$
+
+```{r, message = FALSE}
+library(tidyverse)
+data <- data.frame(x = 1:3652) |> 
+  mutate(y = 1 - (999/1000)^x)
+
+ggplot(data, aes(x = x, y = y)) +
+  geom_line() +
+  geom_hline(yintercept = 0.9, linetype = 21) +
+  labs(x = "Number of days (n)",
+       y = "P(win at least once)")
+
+```
+
+### Part f
+
+$$
+\begin{aligned}
+1 - \left(\frac{999}{1000}\right)^n &\geq 0.9 \\
+0.1 &\geq\left(\frac{999}{1000}\right)^n \\
+ln(0.1) &\geq n*ln\left(\frac{999}{1000}\right) \\
+\frac{ln(0.1)}{ln\left(\frac{999}{1000}\right)} &\geq n \\
+2301.434 \text{ days} &\geq n
+\end{aligned}
+$$
+
+### Part g
+
+For any given day, expected winnings is 
+
+$$-1(0.999) + 500(0.001) = -0.499$$
+
+So, after $n$ days, the expected winnings is -0.499*n
+
+```{r, echo = FALSE, message = FALSE}
+library(ggplot2)
+library(scales)
+
+# Create data approximating the plot
+df <- data.frame(
+  days = 0:3652,
+  ev = seq(0, -1900, length.out = 3653)
+)
+
+ggplot(df, aes(x = days, y = ev)) +
+  geom_line(color = "#4F81BD", linewidth = 1) +
+  scale_y_continuous(
+    labels = dollar_format(prefix = "$"),
+    limits = c(-2000, 0)
+  ) +
+  scale_x_continuous(
+    limits = c(0, 3652),
+    breaks = seq(0, 3500, by = 500)
+  ) +
+  labs(
+    x = "number of days",
+    y = "expected value of net winnings"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid.minor = element_blank()
+  )
+
+```
+
+
+# Problem 8
+
+Two processes of a company produce rolls of materials: The rolls of Process I are 3% defective and the rolls of Process II are 1% defective. Process I produces 60% of the company’s output, Process II 40%. A roll is selected at random from the total output. Given that this roll is defective, what is the conditional probability that it is from Process I?
+
+## Solution
+
+Let  
+
+- $A_1$: Roll is from Process I  
+- $A_2$: Roll is from Process II  
+- $D$: Roll is defective  
+
+The known probabilities are:
+
+- $P(A_1) = 0.6$, $P(A_2) = 0.4$  
+- $P(D \mid A_1) = 0.03$, $P(D \mid A_2) = 0.01$
+
+We are asked to find $P(A_1 \mid D)$. Using Bayes Theorem, 
+
+$$P(A_1 \mid D) = \frac{P(D | A_1)P(A_1)}{P(D)} = \frac{P(D | A_1)P(A_1)}{P(D | A_1)P(A_1) + P(D | A_2)P(A_2)} = \frac{0.03(0.6)}{0.03(0.6) + 0.01(0.4)} = 0.978$$
+
+<!-- # Problem 4 -->
+
+<!-- Show that $P(A_1 \cap A_2) \leq P(A_1) \leq P(A_1 \cap A_2) + P(A_2^C)$ <!-- from QB 1.1 #2 --> 
+
+
+<!-- ### Solution: -->
+
+<!-- Let's start with the first inequality. That is, we want to show $P(A_1 \cap A_2) \leq P(A_1)$. We will use the fact that $P(A_1) = P(A_1 \cap A_2) + P(A_1 \cap A_2^C)$ and $P(A_1 \cap A_2') \geq 0$.  -->
+
+<!-- $$\begin{aligned} -->
+<!-- 0 &\leq P(A_1 \cap A_2') \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \text{(b/c all probabilities must be non-negative)} \\ -->
+<!-- P(A_1 \cap A_2) &\leq P(A_1 \cap A_2') + P(A_1 \cap A_2) \ \ \ \text{(by adding } P(A_1 \cap A_2) \ \text{to both sides)} \\ -->
+<!-- P( A_1 \cap A_2) &\leq P(A_1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{(by the equaltity given above for } A_1) -->
+<!-- \end{aligned}$$ -->
+
+
+<!-- For the second inequality, we use a similar logic and the fact that $P(A_1 \cap A_2') \leq P(A_2')$ since an intersection can never be larger than either of its component parts.  -->
+
+<!-- $$\begin{aligned} -->
+<!-- P(A_1 \cap A_2') &\leq P(A_2') \\ -->
+<!-- P(A_1 \cap A_2') + P(A_1 \cap A_2) &\leq P(A_2') + P(A_1 \cap A_2) \ \ \ \text{(by adding } P(A_1 \cap A_2) \ \text{to both sides)} \\ -->
+<!-- P(A_1) &\leq P(A_2') + P(A_1 \cap A_2)\ \ \ \ \ \ \ \ \text{(by the equaltity given above for } A_1) -->
+<!-- \end{aligned}$$ -->
+ 
+
+<!-- # Problem 6 -->
+
+<!-- 23 brain tumor patients went through a radiotherapy.  Time to recurrence of brain metastasis after the treatment was recorded.  The proportion of subjects metastasis-free for four weeks was 0.783.  The proportion metastasis-free for eight weeks was 0.566.  What is the chance that a patient surviving 4 weeks would be metastasis-free for another 4 weeks? -->
+
+<!-- ### Solution: -->
+
+<!-- Let A = a patient is metastasis free after 4 weeks, and B = a patient is still metastatis free after 8 weeks. We want to find -->
+
+<!-- $$P(B|A) = \frac{P(A \cap B)}{P(A)}$$ -->
+
+<!-- Note that $B \subset A$ (that is, in order to last 8 weeks metastasis free, you have to have lasted 4 weeks metastasis free. Therefore, $P(A \cap B) = P(B) = 0.566$, so  $P(B|A)= \frac{P(B)}{P(A)}=\frac{0.566}{0.783} = 0.723$ -->
+
+<!-- # Problem 7 -->
+
+<!-- An electronic device has two components, C1 and C2, but it will operate if at least one of the components is working properly. Each component has its own switch, and both switches must be turned on, one after the other, for the device to begin operating. Thus, the device can begin to operate by either switching C1 on first and then C2, or vice versa. If C1 is switched on first, it fails immediately with probability 0.01, whereas if C2 is switched on first, it fails immediately with probability 0.02. Furthermore, if C1 is switched on first and fails, the probability that C2 fails immediately when it is switched on is 0.025, due to added strain. Similarly, if C2 is switched on first and fails, the probability that C1 fails immediately when it is switched on is 0.015.   Which is the best order to turn on the switches? -->
+
+<!-- ### Solution: -->
+
+<!-- Let $F_1$ be the event that $C1$ fails, and $F_2$ be the event that $C2$ fails. The whole device will fail under the event $F_1 \cap F_2$. Note by the definition of conditional probability, we can re-write $P(F_1 \cap F_2)$ as $P(F_2|F_1)P(F_1)$ or as $P(F_1|F_2)P(F_2)$. If $C1$ is chosen first, the probability of overall device failure $P(F_1 \cap F_2) = P(F_2|F_1)P(F_1) = 0.025 \times 0.01 = 0.00025$. If $C2$ is chosen first, the probability of overall device failure $P(F_1 \cap F_2) = P(F_1|F_2)P(F_2) = 0.015 \times 0.02 = 0.0003$. Therefore, we should switch on $C1$ first.  -->
+  
+<!-- # Problem 5 -->
+
+<!-- The Birthday Problem: We have 25 people in our class. What is the probability that at least two of us have the same birthday? Solve this problem for classes of size 2, 3, ... What is the formula for our class? -->
+
+<!-- ### Solution:  -->
+
+<!-- Let $X=$ # of matches. We want to find $P(X \geq 1) = 1 - P(X = 0)$. That is, let's find the probability that there are *no matches*, and then subtract it from 1.  -->
+
+<!-- For a class with 2 people, there are $365 \times 364$ ways for there to be no matches, out of a total of $365 \times 365$ birthday combinations. Note that this is because if there are no matches, this means we have 365 choices for the first "slot" but only 364 choices for the second slot. So there are 365*364 ways to have no matches out of $365^2$ possible pairs. -->
+
+<!-- Therefore, -->
+
+<!-- $$\begin{aligned} -->
+<!-- P(\text{at least 1 match}) &= 1 - P(\text{0 matches}) \\ -->
+<!-- &= 1 - \frac{365 \cdot 364}{365 \cdot 365} -->
+<!-- \end{aligned}$$ -->
+
+<!-- We continue using a similar logic, for a class of 3 people, -->
+
+<!-- $$\begin{aligned} -->
+<!-- P(\text{at least 1 match}) &= 1 - P(\text{0 matches}) \\ -->
+<!-- &= 1 - \frac{365 \cdot 364 \cdot 363}{365 \cdot 365 \cdot 365} -->
+<!-- \end{aligned}$$ -->
+<!-- Another way to write this would be $$1 - \frac{365!}{362! \ \ 365^2}$$ -->
+<!-- A more generic way to write this would be $$1 - \frac{n!}{(n-k)!n^k} = 1 - \binom{n}{k}\frac{k!}{n^k},$$ where in this case $n = 365$ and $k = 3$ -->
+
+<!-- For our class of 25 people, we have  -->
+
+<!-- $$\begin{aligned} -->
+<!-- P(\text{at least 1 match}) &= 1 - P(\text{0 matches}) \\ -->
+<!-- &= 1 - \frac{365 \cdot 364 \cdot 363 \cdot \dots 342 \cdot 341}{365^{25}} \\ -->
+<!-- &= 1 - \frac{365!}{340!365^{25}} \\ -->
+<!-- &= 1 - \binom{365}{25}\frac{25!}{365^{25}} \\ -->
+<!-- &= 1 - 0.4313 \\ -->
+<!-- &= 0.5687 -->
+<!-- \end{aligned}$$ -->
+
+<!-- There is a 57% chance that at least 2 people have the same birthday in our class.  -->
+
+<!-- Fun fact: there only needs to be 23 people in a room for there to be >50% chance that there is a birthday match!  -->
+
+<!-- This is not an easy/intuitive problem! Google "the birthday problem" -->
+<!--  to read more about it an its applications.  -->

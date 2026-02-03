@@ -1,0 +1,63 @@
+---
+title-block: false
+format: pdf
+---
+
+**STAT 5700 — Quiz 1**  
+**Date:** September 4, 2025  
+\textbf{\textcolor{red}{SOLUTIONS}}
+
+\
+\
+
+## **Problem 1**
+
+How many ways are there to choose 8 applicants from a pool of 73 applicants? Write out the formula, but you do not need to calculate the result.
+
+$$
+\textcolor{red}{\binom{73}{8} = \frac{73!}{65!\,8!}}
+$$
+
+
+## **Problem 2**
+
+Suppose $P(A) = 0.45$, $P(B) = 0.30$, and $P(A \cup B) = 0.6$.
+
+### a. Find $P(A \cap B)$
+
+$$
+\textcolor{red}{P(A \cap B) = P(A) + P(B) - P(A \cup B) = 0.45 + 0.30 - 0.60 = 0.15}
+$$
+
+### b. Find $P(A' \cap B')$
+
+$$
+\textcolor{red}{P(A' \cap B') = P[(A \cup B)']=1 - P(A \cup B) = 1 - 0.60 = 0.40}
+$$
+
+
+
+## **Problem 3**
+
+Suppose you draw one card at random from a standard 52-card deck.
+
+Events:
+- $A$: The card is red  
+- $B$: The card is black  
+- $C$: The card is a heart  
+
+For each pair of events, indicate whether they are mutually exclusive, mutually exhaustive, both, or neither.
+
+### a. $A$ and $B$
+
+\textcolor{red}{Mutually exclusive and mutually exhaustive}
+
+### b. $A$ and $C$
+
+\textcolor{red}{Neither}
+
+### c. $B$ and $C$
+
+\textcolor{red}{Mutually exclusive}
+
+
