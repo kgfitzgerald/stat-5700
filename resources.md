@@ -3,7 +3,7 @@ layout: page
 title: Resources
 description: >-
     Course policies and information.
-nav_exclude: true
+nav_exclude: false
 nav_order: 6
 ---
 
