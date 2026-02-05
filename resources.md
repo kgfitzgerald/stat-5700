@@ -60,8 +60,9 @@ nav_order: 6
 
 + [Exam 1 Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Exam_1_Review.pdf)
 
-<!--+ [Exam 1 Practice Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a.pdf)
-+ [Practice Exam 1 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a_SOLUTIONS.pdf)
++ [Exam 1 Practice Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a.pdf)
+
+<!--+ [Practice Exam 1 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a_SOLUTIONS.pdf)
 
 
 ## Exam 2 Review / practice

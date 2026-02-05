@@ -12,6 +12,15 @@ date: 2026-02-03
 + Plan to have solutions posted tomorrow (to homework + practice, group work, quizzes, etc)
 -->
 
+## Thursday announcements
+
++ Quiz 2 to start class today
++ HW 04 & Lab 04 posted - prioritize the HW (Lab not due until after exam)
++ Practice Exam posted
++ Will spend most of Tuesday reviewing
+    + also encouraged to come to student hours next week, 
+    + and/or post questions on Piazza as they arise
+
 ## Tuesday announcements
 
 + Solutions posted for HW, quiz, group work
