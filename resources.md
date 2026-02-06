@@ -35,10 +35,11 @@ nav_order: 6
 
 + [HW 01](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_01_SOLUTIONS.pdf)
 + [HW 02](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_02_SOLUTIONS.pdf)
++ [HW 03](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_03_SOLUTIONS.pdf)
 
-<!--+ [HW 03](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_03_SOLUTIONS.pdf)
 + [HW 04](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_04_SOLUTIONS.pdf)
-+ [HW 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_05_SOLUTIONS.pdf)
+
+<!-- [HW 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_05_SOLUTIONS.pdf)
 + [HW 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_06_SOLUTIONS.pdf)
 + [HW 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_07_SOLUTIONS.pdf)
 + [HW 08](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_08_SOLUTIONS.pdf)

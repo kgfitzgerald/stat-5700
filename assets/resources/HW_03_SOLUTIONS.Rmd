@@ -5,6 +5,43 @@ format: pdf
 
 # Practice Problems
 
+## 2.71
+
+a. $P(A|B) = \frac{0.1}{0.3} = \frac{1}{3}.$
+b. $P(B|A) = \frac{0.1}{0.5} = \frac{1}{5}.$
+c. $P(A|A \cup B) = \frac{0.5}{0.5 + 0.3 - 0.1} = \frac{5}{7}.$
+d. $P(A|A \cap B) = 1,$ since A has occurred.
+e. $P(A \cap B|B) = \frac{0.1}{0.5 + 0.3 - 0.1} = \frac{1}{7}.$
+
+## 2.75
+
+a. Given the first two cards drawn are spades, there are 11 spades left in the deck. The probability is $\frac{\binom{11}{3}}{\binom{50}{3}} = 0.0084.$ Note: this is also equal to $P(S_3S_4S_5|S_1S_2)$.
+
+b. Given the first three cards drawn are spades, there are 10 spades left. The probability is $\frac{\binom{10}{2}}{\binom{49}{2}} = 0.0383.$ Note: this is also equal to $P(S_4S_5|S_1S_2S_3)$.
+
+c. Given the first four cards drawn are spades, there are 9 spades left. The probability is
+$\frac{\binom{9}{1}}{\binom{48}{1}} = 0.1875.$ Note: this is also equal to $P(S_5|S_1S_2S_3S_4)$.
+
+## 2.79
+
+If A and B are mutually exclusive, $P(A \cap B) = 0$. But, $P(A) P(B) > 0$. So they are not independent.
+
+## 2.85
+
+$P(A \mid \overline{B}) = P(A \cap \overline{B}) / P(\overline{B})
+= \dfrac{P(\overline{B} \mid A) P(A)}{P(\overline{B})}
+= \dfrac{[1 - P(B \mid A)] P(A)}{P(\overline{B})}
+= \dfrac{[1 - P(B)] P(A)}{P(\overline{B})}
+= \dfrac{P(\overline{B}) P(A)}{P(\overline{B})}
+= P(A).$ So, $A$ and $\overline{B}$ are independent.
+
+$P(\overline{B} \mid \overline{A}) = P(\overline{B} \cap \overline{A}) / P(\overline{A})
+= \dfrac{P(\overline{A} \mid \overline{B}) P(\overline{B})}{P(\overline{A})}
+= \dfrac{[1 - P(A \mid \overline{B})] P(\overline{B})}{P(\overline{A})}.$  From the above, $A$ and $\overline{B}$ are independent.  So $P(\overline{B} \mid \overline{A})
+= \dfrac{[1 - P(A)] P(\overline{B})}{P(\overline{A})}
+= \dfrac{P(\overline{A}) P(\overline{B})}{P(\overline{A})}
+= P(\overline{B}).$ So, $\overline{A}$ and $\overline{B}$ are independent.
+
 ## 2.125
 
 Define the events: $D$: has the disease, $H$: test indicates the disease. Thus, $P(H|D) = 0.9$,  and $P(H'|D') = 0.9$, $P(D) = 0.01$, $P(D') = 0.99$. Then by Bayes’ rule, $P(D|H) = \frac{P(H|D)P(D)}{P(H|D)P(D) + P(H|D')P(D')} = \frac{0.9(0.01)}{0.9(0.01) + 0.01(0.99)} = \tfrac{1}{12}$.
@@ -19,19 +56,57 @@ Let $A = \{\text{both balls are white}\}$ and for $i = 1,2,\dots,5$, let $A_i =$
 a. $P(A) = \sum_{i=1}^5 P(A|B_i)P(B_i) = \frac{1}{5}[0 + \frac{2}{5}\frac{1}{4} + \frac{3}{5}\frac{2}{4} + \frac{4}{5} \frac{3}{4} + 1] = 2/5$  
 b. By Bayes’ rule, $P(B_3|A) = (3/50)/(2/50) = 3/20$.
 
-## 3.1
-
-$P(Y=0) = P(\text{no impurities}) = 0.2$, $P(Y=1) = P(\text{exactly one impurity}) = 0.7$, $P(Y=2) = 0.1$.
-
-## 3.3
-
-$p(2) = P(DD) = 1/6$, $p(3) = P(DGD) + P(GDD) = 2(2/4)(2/3)(1/2) = 2/6$, $p(4) = P(GGDD) + P(DGGD) + P(GDGD) = 3(2/4)(1/3)(1) = 1/2$.
-
-## 3.5
-
-There are $3! = 6$ possible ways to assign the words to the pictures. Of these, one is a perfect match, three have one match, and two have zero matches. Thus, $p(0) = 2/6$, $p(1) = 3/6$, $p(3) = 1/6$.
 
 # Submitted Problems
+
+## 2.72
+
+Note that $P(A) = 0.6$ and $P(A \mid M) = \frac{0.24}{0.4} = 0.6$. So, $A$ and $M$ are independent. Similarly, $P(A' \mid F) = \frac{0.24}{0.6} = 0.4 = P(A'),$ so $A'$ and $F$ are independent.
+
+## 2.74
+
+a. $P(A) = 0.61$, $P(D) = 0.30$, $P(A \cap D) = 0.20$. Dependent.
+
+b. $P(B) = 0.30$, $P(D) = 0.30$, $P(B \cap D) = 0.09$. Independent.
+
+c. $P(C) = 0.09$, $P(D) = 0.30$, $P(C \cap D) = 0.01$. Dependent.
+
+
+
+## 2.80
+
+If $B \subset A$, then $P(A \cap B) = P(A) \neq P(A)P(B),$ unless $B = S$ (in which case $P(B) = 1$).
+
+
+
+## 2.90
+
+a. $(1/50)(1/50) = 0.0004$
+
+b. $P(\text{at least one injury})
+= 1 - P(\text{no injuries in 50 jumps})
+= 1 - \left(\frac{49}{50}\right)^{50} \approx 0.636$. Your friend is not correct.
+
+
+
+## 2.94
+
+Define the events $A$: device A detects smoke, $B$: device B detects smoke.
+
+a. $P(A \cup B) = P(A) + P(B) - P(A \cap B) = 0.95 + 0.90 - 0.88 = 0.97$
+
+b. $P(\text{smoke undetected}) = 1 - P(A \cup B) = 1 - 0.97 = 0.03$
+
+## 2.110
+
+Define the events:
+
+- $I$: item is from line I
+- $II$: item is from line II
+- $N$: item is not defective
+
+Then, $P(N) = P(N \cap (I \cup II)) = P(N \cap I) + P(N \cap II) = 0.92(0.4) + 0.90(0.6) = 0.908$
+
 
 ## 2.124
 
@@ -64,16 +139,3 @@ b. If the US population in 2002 was known, this could be used to divide into the
 
 Only $P(A|B) + P(A'|B) = 1$ is true for any events $A$ and $B$.
 
-## 3.2
-
-We know $P(HH)=P(TT)=P(HT)=P(TH)=0.25$. So $P(Y=-1)=0.5$, $P(Y=1)=0.25$, $P(Y=2)=0.25$.
-
-## 3.6
-
-There are $10$ sample points, all equally likely: $(1,2),(1,3),(1,4),(1,5),(2,3),(2,4),(2,5),(3,4),(3,5),(4,5)$.  
-a. $p(2)=0.1$, $p(3)=0.2$, $p(4)=0.3$, $p(5)=0.4$.  
-b. $p(3)=0.1$, $p(4)=0.1$, $p(5)=0.2$, $p(6)=0.2$, $p(7)=0.2$, $p(8)=0.1$, $p(9)=0.1$.
-
-## 3.10
-
-Let $R =$ rental on a given day, $N =$ no rental. Thus the sequence of interest is $RR, RNR, RNNR, RNNNR, \dots$. Consider the position immediately following the first R: it is filled by an R with prob $0.2$, $N$ with prob $0.8$. Thus, $P(Y=0)=0.2$, $P(Y=1)=0.8(0.2)=0.16$, $P(Y=2)=0.128$, etc. In general, $P(Y=y) = 0.2(0.8)^y, \ y=0,1,2,\dots$.
