@@ -1,0 +1,80 @@
+---
+title-block: false
+format: pdf
+---
+
+**STAT 5700 — Quiz 2**  
+**Date:** February 5, 2026  
+\textbf{\textcolor{red}{SOLUTIONS}}
+
+\
+\
+
+## **Problem 1**
+
+Let $A$ and $B$ be two events such that $P(A) = 0.4$, $P(B) = 0.3$, and $P(A \cap B) = 0.2$.
+
+### a. Are $A$ and $B$ independent?
+
+$$
+\textcolor{red}{
+P(A)P(B) = (0.4)(0.3) = 0.12 \neq P(A \cap B) = 0.2
+}
+$$
+
+$$
+\textcolor{red}{
+\text{Therefore, } A \text{ and } B \text{ are not independent.}
+}
+$$
+
+### b. Find $P(A \mid A \cup B)$
+
+$$
+\textcolor{red}{
+P(A \mid A \cup B) = \frac{P(A \cap (A \cup B))}{P(A \cup B)}
+}
+$$
+
+$$
+\textcolor{red}{
+P(A \cap (A \cup B)) = P(A) = 0.4
+}
+$$
+
+$$
+\textcolor{red}{
+P(A \cup B) = P(A) + P(B) - P(A \cap B) = 0.4 + 0.3 - 0.2 = 0.5
+}
+$$
+
+$$
+\textcolor{red}{
+P(A \mid A \cup B) = \frac{0.4}{0.5}
+}
+$$
+
+
+## **Problem 2**
+
+An email system uses a spam filter.
+
+- $P(\text{Spam}) = 0.30$
+- $P(\text{Flagged} \mid \text{Spam}) = 0.95$
+- $P(\text{Flagged} \mid \text{Not Spam}) = 0.03$
+
+Find $P(\text{Spam} \mid \text{Flagged})$.
+
+$$
+\textcolor{red}{
+P(\text{Spam} \mid \text{Flagged}) =
+\frac{P(\text{Flagged} \mid \text{Spam})P(\text{Spam})}
+{P(\text{Flagged} \mid \text{Spam})P(\text{Spam}) + P(\text{Flagged} \mid \text{Not Spam})P(\text{Not Spam})}
+}
+$$
+
+$$
+\textcolor{red}{
+= \frac{(0.95)(0.30)}{(0.95)(0.30) + (0.03)(0.70)}
+}
+$$
