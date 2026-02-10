@@ -51,9 +51,9 @@ nav_order: 6
 ## Group Work solutions
 
 + [Chapter 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_2_Group_Work_solutions.pdf)
++ [Chapter 3 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_Group_Work_solutions.pdf)
 
-<!--+ [Chapter 3 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_Group_Work_solutions.pdf)
-+ [Chapter 3 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_part2_Group_Work_solutions.pdf)
+<!--+ [Chapter 3 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_part2_Group_Work_solutions.pdf)
 + [Chapter 4 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_4_Group_Work_solutions.pdf)
 + [Chapter 5 part 1 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_5_Group_Work_solutions.pdf)
 + [Chapter 5 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_5_part2_Group_Work_solutions.pdf) --> 
@@ -64,9 +64,9 @@ nav_order: 6
 
 + [Exam 1 Practice Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a.pdf)
 
-<!--+ [Practice Exam 1 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a_SOLUTIONS.pdf)
++ [Practice Exam 1 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a_SOLUTIONS.pdf)
 
-
+<!--
 ## Exam 2 Review / practice
 
 + [Exam 2 Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Exam2_review.pdf)
