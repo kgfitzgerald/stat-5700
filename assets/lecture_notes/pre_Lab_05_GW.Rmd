@@ -34,6 +34,7 @@ Write psuedocode for how you could simulate both strategies. Some tips for getti
   + You can make use of the `rbernoulli()` function
   + Make sure to define what TRUE and FALSE will represent
   + You want to end up with three vectors: one for the true values, one for the A guesses, and one for the B guesses. All should have the same (large) number of elements (e.g. 10,000)
+  + How will you use the three vectors to determine which strategy is best? 
 
 ```{r, eval = FALSE, echo = FALSE}
 set.seed(437)

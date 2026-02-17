@@ -1,0 +1,164 @@
+---
+format: pdf
+fontsize: 11pt
+geometry: margin=0.5in
+---
+## 1. R Functions for the Binomial Distribution
+
+R uses a consistent naming scheme for distributions:
+
+- d: density / pmf → `dbinom()`
+- p: cumulative probabilities / cdf → `pbinom()`
+- q: quantiles → `qbinom()`
+- r: random generation → `rbinom()`
+
+For Binomial:
+
+- `dbinom(x, size, prob)` gives $P(X = x)$
+- `pbinom(q, size, prob)` gives $P(X ≤ q)$
+
+Arguments:
+
+- `x,q` = value(s) of the random variable, number of successes
+- `size` = number of trials n
+- `prob` = success probability p
+
+Note: `x` or `q` may be a single value or a vector to compute multiple probabilities at once.
+
+## 2. Quick Examples (with X ~ Binomial(5, 0.05))
+
+No defective items ($P(X = 0)$)
+```{r}
+dbinom(x = 0, size = 5, prob = .05)
+```
+
+
+1 or fewer defective items ($P(X \leq 1)$)
+```{r}
+pbinom(q = 1, size = 5, prob = .05)
+```
+
+
+```{r}
+x <- 0:5
+dbinom(x, 5, 0.05) #All pmf values for x = 0–5
+```
+
+
+```{r}
+sum(dbinom(x, 5, 0.05)) #Check pmf sums to 1
+```
+
+
+
+```{r}
+dbinom(2, 5, 0.05) #Exactly 2 successes
+```
+
+
+```{r}
+pbinom(2, 5, 0.05) #At most 2 successes
+```
+
+
+```{r}
+1 - pbinom(2, 5, 0.05) #More than 2 successes
+pbinom(2, 5, .05, lower.tail = FALSE) #Alternative way to find more than 2 successes:
+```
+
+```{r}
+library(ggplot2)
+
+data <- data.frame(x = x, d = dbinom(x, 5, 0.05))
+
+ggplot(data) +
+  geom_col(aes(x = factor(x), y = d), fill = "skyblue") +
+  labs(x = "x", y = "Density f(x)") +
+  theme_classic()
+```
+
+<!-- --- -->
+
+<!-- ## 3. Binomial Mean & Variance -->
+
+<!-- If X ~ Binomial(n, p): -->
+
+<!-- - Mean: μ = np -->
+<!-- - Variance: σ² = np(1−p) -->
+<!-- - Standard deviation: σ = sqrt(np(1−p)) -->
+
+<!-- --- -->
+
+<!-- ## 4. Example (Use as a Template) -->
+
+<!-- A mint weighs more than 20.7g with probability 0.90. Let X = number of heavy mints in a sample of 8. Then X ~ Binomial(8, 0.9). -->
+
+<!-- a. Mean & SD -->
+<!-- μ = 8(0.9) -->
+<!-- σ = sqrt(8(0.9)(0.1)) -->
+
+<!-- ```{r} -->
+<!-- mu <- 8*0.9 -->
+<!-- sigma <- sqrt(8*0.9*0.1) -->
+<!-- mu; sigma -->
+<!-- ``` -->
+
+<!-- b. P(X = 8) -->
+<!-- ```{r} -->
+<!-- dbinom(8, 8, 0.9) -->
+<!-- ``` -->
+
+<!-- c. P(X ≤ 6) -->
+<!-- ```{r} -->
+<!-- pbinom(6, 8, 0.9) -->
+<!-- ``` -->
+
+<!-- --- -->
+
+<!-- ## 5. Practice Problems -->
+
+<!-- ### Task 1 -->
+<!-- X ~ Binomial(25, 0.20) -->
+
+<!-- Compute: -->
+<!-- - P(X ≤ 4) -->
+<!-- - P(X ≥ 5) -->
+<!-- - P(X = 6) -->
+<!-- - Mean, variance, standard deviation -->
+
+<!-- ```{r} -->
+<!-- p_at_most_4 <- pbinom(4, 25, 0.20) -->
+<!-- p_at_least_5 <- 1 - pbinom(4, 25, 0.20) -->
+<!-- p_eq_6 <- dbinom(6, 25, 0.20) -->
+
+<!-- mu_1  <- 25*0.20 -->
+<!-- var_1 <- 25*0.20*0.80 -->
+<!-- sd_1  <- sqrt(var_1) -->
+
+<!-- p_at_most_4; p_at_least_5; p_eq_6 -->
+<!-- mu_1; var_1; sd_1 -->
+<!-- ``` -->
+
+<!-- --- -->
+
+<!-- ### Task 2 -->
+<!-- X ~ Binomial(15, 0.75) -->
+
+<!-- Compute: -->
+<!-- - P(X ≥ 10) -->
+<!-- - P(X ≤ 10) -->
+<!-- - P(X = 10) -->
+<!-- - Mean, variance, standard deviation -->
+
+<!-- ```{r} -->
+<!-- p_at_least_10 <- 1 - pbinom(9, 15, 0.75) -->
+<!-- p_at_most_10  <- pbinom(10, 15, 0.75) -->
+<!-- p_eq_10       <- dbinom(10, 15, 0.75) -->
+
+<!-- mu_2  <- 15*0.75 -->
+<!-- var_2 <- 15*0.75*0.25 -->
+<!-- sd_2  <- sqrt(var_2) -->
+
+<!-- p_at_least_10; p_at_most_10; p_eq_10 -->
+<!-- mu_2; var_2; sd_2 -->
+<!-- ``` -->

@@ -3,7 +3,7 @@ title: "Chapter 3 Part 2"
 subtitle: "STAT 5700: Probability"
 author: "Prof. Katie Fitzgerald, PhD"
 institute: "Villanova University Department of Mathematics & Statistics"
-date: "Fall 2025"
+date: "Spring 2026"
 output: 
   pdf_document:
     includes:
@@ -89,7 +89,7 @@ Joel Embiid, star player drafted as the #3 overall pick by the Philadelphia 76er
 Suppose Embiid is fouled while attempting a 3 point shot with 1 second
 left in the game and the Sixers down by 2 points. What is the
 probability the Sixers win the game? Tie? Lose? Develop a random
-variable (and probability distribution) to answer these questions.\
+variable (and probability distribution) to answer these questions. You can assume that each free throw attempt is independent of the others. \
 \
 \
 \

@@ -3,6 +3,8 @@ title: "Homework 05"
 subtitle: "Sections 3.4"
 author: "STAT 5700 - Probability"
 output: pdf_document
+header-includes:
+  - \usepackage{soul}
 ---
 
 ```{r setup, include=FALSE}
@@ -17,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 - You are encouraged to work together on homework assignments, but each person must write up and turn in their own work and solutions. 
 - You will turn in this assignment by scanning your work and uploading a single pdf to Blackboard. 
 
-**Feel free to use R for calculations involving the binomial distribution, but you should still show your work by writing out the formulas (e.g., $p(x)$) used to produce the probabilities**
+\hl{Feel free to use R for calculations involving the binomial distribution, but you should still show your work by writing out the formulas (e.g., $p(x)$) used to produce the probabilities. You may also use the fact that for a Binomial random variable, $E(Y) = np$ and $V(p) = np(1-p)$. We will prove this later on.}
 
 ## Problems to do (responsible for content, but not collected/graded)
 

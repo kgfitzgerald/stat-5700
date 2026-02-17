@@ -1,5 +1,5 @@
 ---
-title: "Lab 04"
+title: "Lab 04 - old Binomial lab"
 subtitle: "STAT 5700"
 author: "Insert your name here"
 date: "Insert due date here"
