@@ -13,7 +13,7 @@ library(tidyverse)
 
 # Overview
 
-As you'll recall from Lab 04, R includes many built in functions for common distributions. Commands for each follow the same basic format. The abbreviated name of the distribution is preceded by once of four letters:
+As you'll recall from the Binomial distribution handout, R includes many built in functions for common distributions. Commands for each follow the same basic format. The abbreviated name of the distribution is preceded by once of four letters:
 
 -   "d" for the density function (probability distribution for discrete random variables)
 -   "p" for the cumulative distribution function (cdf)
