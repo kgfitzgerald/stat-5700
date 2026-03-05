@@ -136,18 +136,4 @@ c. Variances of $X$ and $Y$ are the same.
 d. $V(X) = E[(X-E(X))^2] = E[(Y + 1 - \mu - 1)^2] = E[(Y-\mu)^2] = \sigma^2$
 
 
-<!-- ## 3.44 -->
 
-<!-- Let $Y =$ number of successful operations, $Y \sim \text{Binomial}(n=5,p)$ -->
-
-<!-- - With $p=0.8$: $P(Y=5) = 0.8^5 = 0.328$ -->
-<!-- - With $p=0.6$: $P(Y=4) = 5(0.6^4)(0.4) = 0.259$ -->
-<!-- - With $p=0.3$: $P(Y<2) = P(Y=1)+P(Y=0) = 0.528$ -->
-
-<!-- ## 3.58 -->
-
-<!-- If $Y \sim \text{Binomial}(n=4,p=0.1)$: -->
-
-<!-- $E(Y) = 0.4$, $V(Y) = 0.36$, so $E(Y^2) = 0.36 + (0.4)^2 = 0.52$ -->
-
-<!-- Then $E(C) = 3(0.52) + (0.36) + 2 = 3.96$ -->

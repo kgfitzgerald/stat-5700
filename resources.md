@@ -39,9 +39,10 @@ nav_order: 6
 
 + [HW 04](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_04_SOLUTIONS.pdf)
 
-<!-- [HW 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_05_SOLUTIONS.pdf)
++ [HW 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_05_SOLUTIONS.pdf)
 + [HW 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_06_SOLUTIONS.pdf)
-+ [HW 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_07_SOLUTIONS.pdf)
+
+<!-- + [HW 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_07_SOLUTIONS.pdf)
 + [HW 08](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_08_SOLUTIONS.pdf)
 + [HW 09](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_09_SOLUTIONS.pdf)
 + [HW 10](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_10_SOLUTIONS.pdf)
@@ -52,9 +53,10 @@ nav_order: 6
 
 + [Chapter 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_2_Group_Work_solutions.pdf)
 + [Chapter 3 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_Group_Work_solutions.pdf)
++ [Chapter 3 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_part2_Group_Work_solutions.pdf)
 
-<!--+ [Chapter 3 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_part2_Group_Work_solutions.pdf)
-+ [Chapter 4 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_4_Group_Work_solutions.pdf)
+
+<!-- + [Chapter 4 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_4_Group_Work_solutions.pdf)
 + [Chapter 5 part 1 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_5_Group_Work_solutions.pdf)
 + [Chapter 5 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_5_part2_Group_Work_solutions.pdf) --> 
 

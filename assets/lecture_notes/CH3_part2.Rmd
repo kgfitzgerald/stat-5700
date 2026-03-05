@@ -674,51 +674,6 @@ the mean, variance, and probability distribution of $Y$.
 
 ### Problem 1
 
-Some biology students were checking eye color in a large number of fruit flies. For the individual fly, suppose that the probability of white eyes is 1/4 and the probability of red eyes is 3/4, and that we may treat these observations as independent Bernoulli trials. What is the probability that at least four flies have to be checked for eye color to observe a white-eyed fly? 
-
-### Problem 2
-
-Suppose that $Y$ is a random variable with a geometric distribution. Show that 
-
-a. $\sum_y p(y) = \sum_{y = 1}^{\infty}q^{y - 1}p = 1$
-b. $\frac{p(y)}{p(y-1)} = q,$ for $y = 2, 3, ....$. This ratio is less than 1, implying that the geometric probabilities are monotonically decreasing as a function of $y$. If $Y$ has a geometric distribution, what value of $Y$ is the most likely (has the highest probability)?
-
-### Problem 3
-
-About 7 months into Donald Trump's 2nd term as president (August 2025), a Gallup poll found that a record low of 39% of adults approved of how the Supreme Court is handling its job. 
-
-a. Find the probability distribution for $Y$, the number of calls until the first person is found who *does* express approval of the U.S. Supreme Court. 
-b. On average, how many calls are needed until the 1st approval is found?
-c. Find the probability distribution for $Z$, the number of calls until the 50th person is found who approves of the U.S. Supreme Court. 
-d. On average, how many calls are needed until the 50th approval is found? 
-
-### Problem 4
-
-The employees of a firm that manufactures insulation are being tested for indications of asbestos in their lungs. The firm is requested to send three employees who have positive indications of asbestos on to a medical center for further testing. If 40% of the employees have positive indications of asbestos in their lungs, find the probability that 10 employees must be tested in order to find three positives. 
-
-### Problem 5
-
-A jury of 6 persons was selected from a group of 20 potential jurors, of whom 8 were Black and 12 were White. The jury was supposedly randomly selected, but it contained only 1 Black member. Do you have any reason to doubt the randomness of the selection? 
-
-### Problem 6
-
-The number of typing errors made by a typist has a Poisson distribution with an average of four errors per page. If more than four errors appear on a given page, the typist must retype the whole page. What is the probability that a randomly selected page does not need to be retyped?
-
-### Problem 7
-
-Let $Y$ be a random variable with probability distribution $p(y) = \frac{y}{6}, \ \ \ y = 1, 2, 3$
-
-  a) Find an expression for the moment generating function of $Y$. That is, write $E(e^{tY})$ as a sum.
-  b) Use the mgf to show that $E(Y) = 7/3$
-  c) Use the mgf to show that $E(Y^2) = 6$
-  d) Find $V(Y)$
-  
-### Problem 8
-
-Obtain an expression for the mgf of the Poisson distribution. Use the mgf to show that $E(Y) = V(Y) = \lambda$ for a Poisson random variable.
-
-### Problem 7
-
 In a lab experiment involving inorganic syntheses of molecular precursors to organometallic ceramics, the final step of a five-step reaction involves the formation of a metal-metal bond. The probability of such a bond forming is $p = 0.2$. Let $Y$ equal the number of successful reactions out of $n=25$ such experiments. 
     
   a) What distribution is appropriate to model $Y$? 
@@ -727,11 +682,58 @@ In a lab experiment involving inorganic syntheses of molecular precursors to org
   d) Find the probability that $Y$ is at least 1
   e) Find the mean, variance, and standard deviation of $Y$
 
-### Problem 8
+### Problem 2
 
 A random variable Y has a binomial distribution with mean 6 and variance 3.6. Find $P(Y = 4)$.
 
-### Problem 9
+### Problem 3
 
 Return to the Joel Embiid example (he makes 87% of his free throws, he's fouled shooting a 3-pointer). Describe in detail how you could, in principle, perform a by hand simulation involving physical objects (e.g. coins, dice, spinners, etc.) to estimate the probability that the 76ers lose. Be sure to describe (1) what one repetition of the simulation entails, and (2) how you would use the results of many repetitions. Note: you do NOT need to compute any numerical values.
+
+### Problem 4
+
+Some biology students were checking eye color in a large number of fruit flies. For the individual fly, suppose that the probability of white eyes is 1/4 and the probability of red eyes is 3/4, and that we may treat these observations as independent Bernoulli trials. What is the probability that at least four flies have to be checked for eye color to observe a white-eyed fly? 
+
+### Problem 5
+
+Suppose that $Y$ is a random variable with a geometric distribution. Show that 
+
+a. $\sum_y p(y) = \sum_{y = 1}^{\infty}q^{y - 1}p = 1$
+b. $\frac{p(y)}{p(y-1)} = q,$ for $y = 2, 3, ....$. This ratio is less than 1, implying that the geometric probabilities are monotonically decreasing as a function of $y$. If $Y$ has a geometric distribution, what value of $Y$ is the most likely (has the highest probability)?
+
+### Problem 6
+
+About 7 months into Donald Trump's 2nd term as president (August 2025), a Gallup poll found that a record low of 39% of adults approved of how the Supreme Court is handling its job. 
+
+a. Find the probability distribution for $Y$, the number of calls until the first person is found who *does* express approval of the U.S. Supreme Court. 
+b. On average, how many calls are needed until the 1st approval is found?
+c. Find the probability distribution for $Z$, the number of calls until the 50th person is found who approves of the U.S. Supreme Court. 
+d. On average, how many calls are needed until the 50th approval is found? 
+
+### Problem 7
+
+The employees of a firm that manufactures insulation are being tested for indications of asbestos in their lungs. The firm is requested to send three employees who have positive indications of asbestos on to a medical center for further testing. If 40% of the employees have positive indications of asbestos in their lungs, find the probability that 10 employees must be tested in order to find three positives. 
+
+### Problem 8
+
+A jury of 6 persons was selected from a group of 20 potential jurors, of whom 8 were Black and 12 were White. The jury was supposedly randomly selected, but it contained only 1 Black member. Do you have any reason to doubt the randomness of the selection? 
+
+### Problem 9
+
+The number of typing errors made by a typist has a Poisson distribution with an average of four errors per page. If more than four errors appear on a given page, the typist must retype the whole page. What is the probability that a randomly selected page does not need to be retyped?
+
+### Problem 10
+
+Let $Y$ be a random variable with probability distribution $p(y) = \frac{y}{6}, \ \ \ y = 1, 2, 3$
+
+  a) Find an expression for the moment generating function of $Y$. That is, write $E(e^{tY})$ as a sum.
+  b) Use the mgf to show that $E(Y) = 7/3$
+  c) Use the mgf to show that $E(Y^2) = 6$
+  d) Find $V(Y)$
+  
+### Problem 11
+
+Obtain an expression for the mgf of the Poisson distribution. Use the mgf to show that $E(Y) = V(Y) = \lambda$ for a Poisson random variable.
+
+
 
