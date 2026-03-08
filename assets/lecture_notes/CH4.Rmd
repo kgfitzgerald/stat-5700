@@ -3,7 +3,7 @@ title: "Chapter 4"
 subtitle: "STAT 5700: Probability"
 author: "Prof. Katie Fitzgerald, PhD"
 institute: "Villanova University Department of Mathematics & Statistics"
-date: "Fall 2025"
+date: "Spring 2026"
 output: 
   pdf_document:
     includes:
@@ -47,8 +47,8 @@ possible outcomes:
 -   Negative Binomial (\# of trials until rth success):
     $\{r, r + 1, r + 2, \dots\}$
 -   Hypergeometric (\# of successes when sampling w/o replacement
-    from finite population): {0, 1, 2, ... r}
--   Poisson (\# of occurances in unit interval) $\{1, 2, \dots\}$
+    from finite pop): {0, 1, 2, ... r}
+-   Poisson (\# of occurrences in unit interval) $\{1, 2, \dots\}$
 
 **Continuous** random variables, on the other hand, have an *interval*
 of possible outcomes, and decimal values are possible:
@@ -580,7 +580,7 @@ variable: $Z \sim N(0,1)$.
 The cdf of the standard normal distribution is also given special
 notation:
 
-$$\Phi(z) = F(z) = P(Z \leq z) = \int_{-\infty}^z\frac{1}{\sqrt{2\phi}}e^{-w^2/2}dw$$
+$$\Phi(z) = F(z) = P(Z \leq z) = \int_{-\infty}^z\frac{1}{\sqrt{2\pi}}e^{-w^2/2}dw$$
 :::
 
 ```{r, echo = FALSE, fig.align="center", out.width="60%", out.height="30%"}
