@@ -17,7 +17,7 @@ e. Not binomial, since the sample was not selected among all female HS grads.
 
 Let Y = # of components failing in less than 1000 hours. Then, Y is binomial with n = 4 and p = .2.
 
-a. $P(Y = 2) = {{4}\choose{2}}0.2^2).8^2 = 0.1536$
+a. $P(Y = 2) = \binom{4}{2}(0.2)^2(0.8)^2 = 0.1536$
 b. The system will operate if 0, 1, or 2 components fail in less than 1000 hours. $P(system operates) = .4096 + .4096 + .1536 = .9728.$
 
 ## 3.51
