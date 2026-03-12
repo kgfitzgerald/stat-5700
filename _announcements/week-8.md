@@ -8,6 +8,7 @@ date: 2026-03-11
 
 + Quiz to start class today
 + HW 06 due today, Lab 06 & Annotations 06 due Saturday
+    + On Lab 06, it refers to textbook problems from HW5, but it should actually say HW6
 + HW 07 is a little longer than some (12 problems), but no lab due next week
 
 
