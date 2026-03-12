@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Problems to do (responsible for content, but not collected/graded)
 
-+ Section 4.4: 39, 43, 53
+
 
 + Section 4.5: 59, 73 (can use R for these)
 
@@ -29,7 +29,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Problems to submit
 
-+ Section 4.4: 40, 42, 48 
+
 
 + Section 4.5: 62 (can use R), 80
 
