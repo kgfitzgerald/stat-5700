@@ -1,5 +1,5 @@
 ---
-title: "Lab 07: Normal distribution in R"
+title: "Lab 07: Continuous distributions in R"
 subtitle: "STAT 5700"
 author: "Insert your name here"
 date: "Insert due date here"
@@ -24,144 +24,155 @@ library(ggdist)
 library(distributional)
 ```
 
-# Tutorial
+# Tutorial (in-class)
 
-Commands for continuous random variables are similar to those for discrete random variables. As noted in previous labs, the abbreviated name of the distribution is preceded by once of four letters:
+## Example 1: Heinz
 
--   “d” for the density function (pdf for continuous random variables)
--   “p” for the distribution function (cdf)
--   “q” for quantile function (gives the quantile for a given probability)
--   “r” for random (generates a random number based on the distribution
+At Heinz ketchup factory the amounts which go into bottles of ketchup are supposed to be normally distributed with mean 36 oz. and standard deviation 0.11 oz. Once every 30 minutes a bottle is selected from the production line, and its contents are noted precisely. If the amount of ketchup in the bottle is below 35.8 oz. or above 36.2 oz., then the bottle fails the quality control inspection.
 
-## Computing probabilities for continuous distributions in R
-
-The cdf values $F(X) = P(X < x)$ are returned with commands using "p" at the beginning of the R distribution name:
-
--   `pnorm(x, mean, sd)` - returns $F(x) = P(X \leq x)$ values for a normal random variable $X \sim N(\mu, \sigma^2)$ with parameter arguments `mean` = $\mu$, and `sd` = $\sigma$.
-
-The inverse of the cdf, or the $x$ that solves the equation $p = F(x) = P(X < x)$, are returned with commands using “q” at the beginning of the R distribution name:
-
--   `qnorm(p, mean, sd)` - finds $x$ such that $P(X < x) = p$ for a normal random variable $X \sim N(\mu, \sigma^2)$ with parameter arguments `mean` = $\mu$, and `sd` = $\sigma$.
-
-NOTE: the `_norm()` functions in R are defined in terms of the standard deviation $\sigma$, not the variance $\sigma^2$!
-
-There is a hidden argument in each of these functions called `lower.tail`, and the default is set to `lower.tail = TRUE`. Meaning, by default, the "p" functions return the probabilities in the *lower tail* of the density function: $F(X) = P(X <x)$. Sometimes it will be useful to override the default by adding the argument `lower.tail = FALSE`, which will return values $F(X) = P(X > x)$. You can think of these two options visually; `lower.tail = TRUE` represents the yellow (light) shaded region $P(X < 1800)$, and `lower.tail = FALSE` represents the purple (dark) shaded region $P(X > 1800)$ in the plot below.
+*What percent of bottles have less than 35.8 ounces of ketchup?*
 
 ```{r}
-#| echo: false
-#| warning: false
-#| message: false
+#find once using mean, sd
 
-ggplot() +
-  stat_dist_halfeye(aes(y = "Normal(1800,sd = 300)", 
-                        dist = dist_normal(mean = 1500, sd = 300),
-                        fill = stat(x > 1800)), 
-                    show.legend = FALSE) +
-  labs(y = "", x = "x") +
-  #viridis color scale is color-blind friendly
-  #set direction = -1 so TRUE is dark instead of light
-  scale_fill_viridis_d(direction = -1) +
-  theme_minimal()
+#find a 2nd time using z-scores
+
 ```
 
-The following code finds $P(X < 1800)$ when $X$ is normally distributed with mean 1500 and variance 90000.
+*What percent of bottles have MORE than 36.2 ounces of ketchup?*
 
 ```{r}
-pnorm(1800, 1500, sqrt(90000))
+#with mean, sd
+
+#with z-score
+
+
 ```
 
-Note that `pnorm` and `qnorm` are inverse functions. The following code finds the percentile cutoff, $x$, such that $P(X \leq x)$ is 0.8413447. Based on our answer above, we should expect the following output to give us the score 1800.
+*What percentage of bottles pass the quality control inspection?*
 
 ```{r}
-qnorm(0.8413447, 1500, sqrt(90000))
+
+```
+
+## Example 2: body temperatures
+
+Body temperatures of healthy humans are distributed nearly normally with mean 98.2 (degrees Fahrenheit) and standard deviation 0.73.
+
+*What is the cutoff for the lowest 3% of human body temperatures?*
+
+```{r}
+
+```
+
+*What is the cutoff for the highest 10% of human body temperatures?*
+
+```{r}
+
 ```
 
 # Tasks
 
 ## Task 1
 
-If $Z$ is $N(0,1)$, find:
-
-a.  $P(0.47 < Z < 2.13)$
+Find $P(X < 18)$ if $X \sim exp(\beta = 20)$
 
 ```{r}
 
-```
-
-b.  $P(-0.97 \leq Z < 1.27)$
-
-```{r}
 
 ```
-
-c.  $P(Z < -1.64)$
-
-```{r}
-
-```
-
-d.  $P(Z > 2.576)$
-
-```{r}
-
-```
-
-e.  $P(|Z| < 1.96)$
-
-```{r}
-
-```
-
-f.  $P(|Z| < 1)$
-
-```{r}
-
-```
-
-g.  $P(|Z| < 2)$
-
-```{r}
-
-```
-
-h.  $P(|Z| < 3)$
-
-```{r}
-
-```
-
-i.  What rule do parts f - h demonstrate?
-
-> YOUR ANSWER HERE
 
 ## Task 2
 
-If $Z$ is $N(0,1)$, find values of $c$ such that:
+Find $P(X > 5)$ if $X \sim \Gamma(\alpha = 2, \beta = 2)$
 
-a.  $P(Z \geq c) = 0.025$
+```{r}
+
+
+```
+
+## Task 3
+
+If $X$ is $\chi^2(17)$, find
+
+a.  $P(X < 7.564)$
+b.  $P(X > 27.59)$
+c.  $P(6.408 < Z < 27.59)$
+d.  $\chi^2_{0.95}(17)$ (i.e. find the 95th percentile).
+e.  $\chi^2_{0.025}(17)$ (i.e. find the 2.5th percentile)
+
+### Part a
 
 ```{r}
 
 ```
 
-b.  $P(|Z| \leq c) = 0.95$
+### Part b
 
 ```{r}
 
 ```
 
-c.  $P(Z > c) = 0.05$
+### Part c
 
 ```{r}
 
 ```
 
-d.  $P(|Z| \leq c) = 0.90$
+### Part d
 
 ```{r}
 
 ```
 
-e.  Comment on how your answers in parts a - d relate to your answers in Task 1.
+### Part e
 
-> YOUR ANSWER HERE
+```{r}
+
+```
+
+## Task 4
+
+If $X$ is $\chi^2(12)$, find constants $a$ and $b$ such that $$P(a < X < b) = 0.90$$ and $$P(X < a) = 0.05.$$ Provide comments on how you solve the problem and why you choose the R commands you did.
+
+```{r}
+
+```
+
+> YOUR COMMENTS HERE
+
+## Task 5
+
+Cars arrive at a tollbooth at a mean rate of 5 cars every 10 minutes according to a Poisson process. Find the probability that the toll collector will have to wait longer than 26.30 minutes before collecting the eighth toll. Comment on how you solve the problem including what distribution you use to model this scenario, the parameter values, and why you implemented the R commands you did.
+
+```{r}
+
+```
+
+> YOUR COMMENTS HERE
+
+## Task 6
+
+If $X$ is normally distributed with a mean of 6 and a variance of 25, find
+
+a.  $P(6 \leq X \leq 12)$
+b.  $P(X > 21)$
+c.  $P(|X - 6| < 5)$
+
+### Part a
+
+```{r}
+
+```
+
+### Part b
+
+```{r}
+
+```
+
+### Part c
+
+```{r}
+
+```
