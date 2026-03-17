@@ -65,9 +65,9 @@ The links below take you to a template Quarto (.qmd) file for each lab. You shou
 
 {% include download.html path="assets/labs/Lab_06.qmd" %}
 
-<!-- {% include download.html path="assets/labs/Lab_07.qmd" %}
+{% include download.html path="assets/labs/Lab_07.qmd" %}
 
-{% include download.html path="assets/labs/Lab_08.qmd" %}
+<!-- {% include download.html path="assets/labs/Lab_08.qmd" %}
 
 {% include download.html path="assets/labs/Lab_10.qmd" %} -->
 

@@ -33,7 +33,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 + Section 4.2: 2, 8, 18
 
-+ Section 4.3: 22, 30
++ Section 4.3: 22, 30 (a & b only)
 
 + Section 4.4: 40, 42, 48 
 
