@@ -111,7 +111,7 @@ dpois(2, lambda = 1)
 
 # Tasks
 
-For this lab, you will (re-)do odd problems from HW 05, but rather than solving by hand, you will use the `dgeom()`, `dnbinom()`, `dhyper()`, and `dpois()` to obtain the answer.
+For this lab, you will (re-)do odd problems from HW 06, but rather than solving by hand, you will use the `dgeom()`, `dnbinom()`, `dhyper()`, and `dpois()` to obtain the answer.
 
 ## 3.67
 

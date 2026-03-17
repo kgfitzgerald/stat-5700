@@ -10,56 +10,7 @@ library(distributional)
 
 # Chapter 4 R Practice
 
-## Computing probabilities for continuous distributions in R
-
-The cdf values $F(X) = P(X < x)$ are returned with commands using "p" at the beginning of the R distribution name:
-
--   `pnorm(x, mean = mu, sd = sigma)` - returns $F(x)$ values for a **normal random
-    variable** $X \sim N(\mu,\sigma^2)$
--   `punif(x, min = theta1, max = theta2)` returns $F(x)$ values for a **uniform random
-    variable** $X \sim U(\theta_1, \theta_2)$
--   `pexp(y, rate = lambda)` - returns $F(x)$ values for an **exponential random
-    variable** $X \sim exp(\beta = 1/\lambda)$
-    -   Note our textbook defines exponential distributions in terms of
-        the parameter $\beta$, which is the mean wait time, instead of
-        the rate $\lambda$.
--   `pgamma(y, shape = alpha, scale = beta)` - returns $F(x)$ values for a
-    **gamma random variable** $X \sim(\alpha , \beta)$ with parameters
-    `shape` = $\alpha$ and `scale` = $\beta = 1/\lambda$.
-    -   Because the gamma function can be parameterized in terms of
-        shape or rate, make sure to name the argument inside the
-        `pgamma()` function to specify which parameter you're defining. If you don't specify the name, by default it actually expects `rate` to be the 3rd argument, not `scale`.
--   `pchisq(x, df)` - returns $F(x)$ values for a **chi-square random
-    variable** $X \sim \chi^2(\nu)$ where the argument `df` corresponds to the degrees of freedom parameter `\nu`
-- `pbeta(x, shape1 = alpha, shape2 = beta)` - returns $F(x)$ values for a **beta random variable** $X \sim Beta(\alpha, \beta)$
-
-
-There is a hidden argument in each of these functions called
-`lower.tail`, and the default is set to `lower.tail = TRUE`. Meaning, by
-default, the "p" functions return the probabilities in the *lower tail*
-of the density function: $F(X) = P(X <x)$. Sometimes it will be useful
-to override the default by adding the argument `lower.tail = FALSE`,
-which will return values $P(X > x)$. You can think of these two options
-visually; `lower.tail = TRUE` represents the dark shaded region
-$P(X < 10)$, and `lower.tail = FALSE` represents the light shaded region
-$P(X > 10)$ in the plot below.
-
-```{r, echo = FALSE, out.width="50%"}
-ggplot() +
-  stat_dist_slab(aes(y = "Chisq(5)", 
-                        dist = dist_chisq(df = 5),
-                        fill = after_stat(x > 10)), 
-                 show.legend = FALSE) +
-  scale_fill_viridis_d() +
-  labs(y = "") +
-  theme_minimal()
-```
-
-\pagebreak
-
-### Uniform example
-
-Suppose $X \sim U(0,5)$.
+## Uniform distribution: Suppose $X \sim U(0,5)$.
 
 1.  Sketch the pdf and shade the region $X < 2$
 
@@ -76,7 +27,7 @@ Suppose $X \sim U(0,5)$.
 \
 \
 
-4.  Write out two different lines of code you could use to find
+3.  Write out two different lines of code you could use to find
     $P(X > 2)$ in R. *Hint: one should make use of the `lower.tail`
     argument.* Execute both lines of code in R to verify that they give
     the value you expect.\
@@ -86,7 +37,7 @@ Suppose $X \sim U(0,5)$.
     \
     \
 
-5.  Suppose we want to find $P(2 < X < 3)$. Sketch a graph with this
+4.  Suppose we want to find $P(2 < X < 3)$. Sketch a graph with this
     region shaded.
 
 \
@@ -96,16 +47,77 @@ Suppose $X \sim U(0,5)$.
 \
 
 
-6.  Using your visual as a guide, what would you need to subtract from
+5.  Using your visual as a guide, what would you need to subtract from
     $P(X < 3)$ in order to obtain $P(2 < X < 3)$?
 
 \
 \
 \
 
-7.  Using your answer to part 6 as a guide, write out R code for
+6.  Using your answer to part 5 as a guide, write out R code for
     computing $P(2 < X < 3)$. Execute your code in R and report the
     answer.
+
+## Normal distribution
+
+7. Recall that Z-scores are normally distributed with mean 0 and standard deviation 1. Find each of the following probabilities using R code. Note, you should draw a picture to help you visualize what you are trying to find for each question 
+
+    a)	P(Z < 1.25)
+    \
+    \
+    b)	P(Z > 1.25)
+    \
+    \
+    c)	P(Z < -1.25)
+    \
+    \
+    d)	P(Z > -1.25)
+    \
+    \
+    e)	P(-1 < Z < 1)
+    \
+    \
+    f)	P(-2 < Z < 2)
+    \
+    \
+    g)	P(-3 < Z < 3)
+    \
+    \
+    h)	P(-1.645 < Z < 1.645)
+    \
+    \
+    i)	P(-1.96 < Z < 1.96)
+    \
+    \
+    j)	P(-2.576 < Z < 2.576)
+\
+\
+8. Use the qnorm() function to find:
+
+    a)	the 95th percentile of Z-scores
+    \
+    \
+    b)	the 5th percentile of Z-scores
+    \
+    \
+    c)	the 2.5th percentile of Z-scores
+    \
+    \
+    d)	the 97.5th percentile of Z-scores
+    \
+    \
+    e)	the 99.5th percentile of Z-score
+    \
+    \
+9. Suppose that birthweights of newborn babies in the United States follow a normal distribution with mean 3300 grams and standard deviation 500 grams. Babies who weigh less than 2500 grams at birth are classified as low birthweight. Use R code to answer each of the following:
+
+    a)	What percentage of newborn babies weigh less than 2500 grams?
+    b)	What is the probability that a randomly selected newborn baby weighs more than 10 pounds?
+    c)	What percentage of newborn babies weigh between 3000 and 4000 grams?
+    d)	How little must a baby weight to be among the lightest 2.5% of all newborns? Convert your answer to pounds. Google to figure out the conversion!
+    e)	How much must a baby weigh to be among the heaviest 10%? Convert your answer to pounds.
+
+
 
 \pagebreak
 
@@ -125,7 +137,7 @@ ggplot() +
   theme_minimal()
 ```
 
-8.  What's the mean of this distribution? Does this seem reasonable
+10.  What's the mean of this distribution? Does this seem reasonable
     based on the graph above?
 
 \
@@ -133,19 +145,19 @@ ggplot() +
 \
 \
 
-9.  Shade the region $X < 5$ on the graph above
+11.  Shade the region $X < 5$ on the graph above
 
-10. Write out the code you need to calculate $P(X < 5)$. *Hint: use the
+12. Write out the code you need to calculate $P(X < 5)$. *Hint: use the
     `pgamma()` function.* 
     \
     \
 
-11. Use your code above to compute $P(X < 5)$ and report the answer.
+13. Use your code above to compute $P(X < 5)$ and report the answer.
     Does the value seem reasonable based on the plot above?\
     \
     \
 
-12. Write out two different lines of code you could use to find
+14. Write out two different lines of code you could use to find
     $P(X > 5)$ in R. *Hint: one should make use of the `lower.tail`
     argument.* Execute both lines of code in R to verify they give the
     value you expect.
@@ -166,24 +178,24 @@ ggplot() +
   theme_minimal()
 ```
 
-13. What's the mean of this distribution? Does this seem reasonable
+15. What's the mean of this distribution? Does this seem reasonable
     based on the graph above?
 
 \
 \
 
-14. Shade the region $X < 10$ on the graph above
+16. Shade the region $X < 10$ on the graph above
 
-15. Write out the code you need to calculate $P(X < 10)$. *Hint: use the `pchisq()` function.* 
+17. Write out the code you need to calculate $P(X < 10)$. *Hint: use the `pchisq()` function.* 
 \
     \
     \
 
-16. Use your code above to compute $P(X < 10)$ and report the answer.
+18. Use your code above to compute $P(X < 10)$ and report the answer.
     Does the value seem reasonable based on the plot above?\
     \
 
-17. Write out two different lines of code you could use to find
+19. Write out two different lines of code you could use to find
     $P(X > 10)$ in R. *Hint: one should make use of the `lower.tail`
     argument.* Execute both lines of code in R to verify they give the
     value you expect.
@@ -206,13 +218,13 @@ ggplot() +
   theme_minimal()
 ```
 
-18. What's the mean of this distribution? Does this seem reasonable
+20. What's the mean of this distribution? Does this seem reasonable
     based on the graph above?
 
 \
 \
 
-19. Write out the code you need to calculate $P(X > 20)$. *Hint: use the
+21. Write out the code you need to calculate $P(X > 20)$. *Hint: use the
     `pexp()` function.* How many/what arguments do you need to specify?
 
 \
@@ -220,13 +232,13 @@ ggplot() +
 \
 \
 
-20. Use your code above to compute $P(X > 20)$ and report the answer.
+22. Use your code above to compute $P(X > 20)$ and report the answer.
     Does the value seem reasonable based on the plot above?\
     \
 
-21. Shade $P(10 < X < 20)$ on the plot above.
+23. Shade $P(10 < X < 20)$ on the plot above.
 
-22. Write out the code you need to find $P(10 < X < 20)$. Execute the
+24. Write out the code you need to find $P(10 < X < 20)$. Execute the
     code and report the answer. Does it seem reasonable based on the
     plot above?
 
@@ -238,20 +250,16 @@ The inverse of the cdf, or the $x$ that solves the equation
 $p = F(x) = P(X < x)$, are returned with commands using “q” at the
 beginning of the R distribution name:
 
--   `qunif(p, min = theta1, max = theta2)` – finds $x$ such that $P(X < x) = p$ for a
-    uniform random variable $X \sim U(\theta_1, \theta_2)$
--   `qexp(p, rate = lambda = 1/beta)` - finds $x$ such that $P(X < x) = p$ for an
-    exponential random variable $Y \sim exp(\lambda = 1/\beta)$
--   `qgamma(p, shape = alpha, scale = beta = 1/lambda)` - finds $x$ such that
-    $P(X < x) = p$ for a gamma random variable $X \sim(\alpha , \beta)$
-    with parameters `shape` = $\alpha$ and `scale` =
-    $\beta = 1/\lambda$
--   `qchisq(p, df)` - finds $x$ such that $P(X< x) = p$ for a
-    chi-square random variable $Y \sim \chi^2(\nu)$ where the argument
-    `df` corresponds to the degrees of freedom parameter `\nu`.
--   `qnorm(x, mean = mu, sd = sigma)` - finds $x$ such that $P(X< x) = p$ for a **normal random
-    variable** $X \sim N(\mu,\sigma^2)$
--  `pbeta(x, shape1 = alpha, shape2 = beta)` - finds $x$ such that $P(X< x) = p$ for a **beta random variable** $X \sim Beta(\alpha, \beta)$
+| Distribution | Quantile Function       | Connection to textbook parametrization |
+|---------|-----------------|---------------| 
+| Normal       | `qnorm(p, mean, sd)`       | $\mu, \sigma$
+| Uniform      | `qunif(p, min, max)`       | $\theta_1, \theta_2$
+| Exponential  | `qexp(p, rate)`            | `rate` = $\lambda = 1/\beta$
+| Gamma        | `qgamma(p, shape, rate)`  | `shape` = $\alpha$, `rate` = $\lambda = 1/\beta$
+| Chi-square   | `qchisq(p, df)`            | $\nu$
+| Beta         | `qbeta(p, shape1, shape2)` | $\alpha, \beta$
+
+
 
 Again, set `lower.tail = FALSE` to use upper tail probabilities and find
 $x$ such that $P(X> x) = p.$
@@ -272,7 +280,7 @@ ggplot() +
   theme_minimal()
 ```
 
-23. Write out the code you need to find the median in R. Execute the
+25. Write out the code you need to find the median in R. Execute the
     code and report the value. Does the value seem reasonable based on
     the plot above?
     
@@ -280,7 +288,7 @@ ggplot() +
 \
 \
 \
-24. Write out the code you need to find the 95th percentile in R. Execute the
+26. Write out the code you need to find the 95th percentile in R. Execute the
     code and report the value. Does the value seem reasonable based on
     the plot above?
 

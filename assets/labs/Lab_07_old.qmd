@@ -1,0 +1,178 @@
+---
+title: "Lab 07: Continuous distributions in R"
+subtitle: "STAT 5700"
+author: "Insert your name here"
+date: "Insert due date here"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_float: true
+    number-section: false
+    highlight: tango
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+Let's begin by loading the necessary packages. Most of the functions in this lab are in base R, meaning they don't require any additional packages, but we'll load a few packages to help with plotting. Note you may need to install the `ggdist` and `distributional` packages before using them.
+
+```{r}
+#| message: false
+library(tidyverse)
+library(ggdist)
+library(distributional)
+```
+
+# Tutorial (in-class)
+
+## Example 1: Heinz
+
+At Heinz ketchup factory the amounts which go into bottles of ketchup are supposed to be normally distributed with mean 36 oz. and standard deviation 0.11 oz. Once every 30 minutes a bottle is selected from the production line, and its contents are noted precisely. If the amount of ketchup in the bottle is below 35.8 oz. or above 36.2 oz., then the bottle fails the quality control inspection.
+
+*What percent of bottles have less than 35.8 ounces of ketchup?*
+
+```{r}
+#find once using mean, sd
+
+#find a 2nd time using z-scores
+
+```
+
+*What percent of bottles have MORE than 36.2 ounces of ketchup?*
+
+```{r}
+#with mean, sd
+
+#with z-score
+
+
+```
+
+*What percentage of bottles pass the quality control inspection?*
+
+```{r}
+
+```
+
+## Example 2: body temperatures
+
+Body temperatures of healthy humans are distributed nearly normally with mean 98.2 (degrees Fahrenheit) and standard deviation 0.73.
+
+*What is the cutoff for the lowest 3% of human body temperatures?*
+
+```{r}
+
+```
+
+*What is the cutoff for the highest 10% of human body temperatures?*
+
+```{r}
+
+```
+
+# Tasks
+
+## Task 1
+
+Find $P(X < 18)$ if $X \sim exp(\beta = 20)$
+
+```{r}
+
+
+```
+
+## Task 2
+
+Find $P(X > 5)$ if $X \sim \Gamma(\alpha = 2, \beta = 2)$
+
+```{r}
+
+
+```
+
+## Task 3
+
+If $X$ is $\chi^2(17)$, find
+
+a.  $P(X < 7.564)$
+b.  $P(X > 27.59)$
+c.  $P(6.408 < Z < 27.59)$
+d.  $\chi^2_{0.95}(17)$ (i.e. find the 95th percentile).
+e.  $\chi^2_{0.025}(17)$ (i.e. find the 2.5th percentile)
+
+### Part a
+
+```{r}
+
+```
+
+### Part b
+
+```{r}
+
+```
+
+### Part c
+
+```{r}
+
+```
+
+### Part d
+
+```{r}
+
+```
+
+### Part e
+
+```{r}
+
+```
+
+## Task 4
+
+If $X$ is $\chi^2(12)$, find constants $a$ and $b$ such that $$P(a < X < b) = 0.90$$ and $$P(X < a) = 0.05.$$ Provide comments on how you solve the problem and why you choose the R commands you did.
+
+```{r}
+
+```
+
+> YOUR COMMENTS HERE
+
+## Task 5
+
+Cars arrive at a tollbooth at a mean rate of 5 cars every 10 minutes according to a Poisson process. Find the probability that the toll collector will have to wait longer than 26.30 minutes before collecting the eighth toll. Comment on how you solve the problem including what distribution you use to model this scenario, the parameter values, and why you implemented the R commands you did.
+
+```{r}
+
+```
+
+> YOUR COMMENTS HERE
+
+## Task 6
+
+If $X$ is normally distributed with a mean of 6 and a variance of 25, find
+
+a.  $P(6 \leq X \leq 12)$
+b.  $P(X > 21)$
+c.  $P(|X - 6| < 5)$
+
+### Part a
+
+```{r}
+
+```
+
+### Part b
+
+```{r}
+
+```
+
+### Part c
+
+```{r}
+
+```
