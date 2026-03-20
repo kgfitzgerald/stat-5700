@@ -1,6 +1,6 @@
 ---
 title: "Homework 08"
-subtitle: "Sections 4.4 - 4.6"
+subtitle: "Sections 4.5 - 4.6"
 author: "STAT 5700 - Probability"
 output: pdf_document
 ---
