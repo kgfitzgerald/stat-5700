@@ -10,10 +10,10 @@ nav_order: 6
 + [Formula sheet](https://kgfitzgerald.github.io/stat-5700/assets/resources/formulas.pdf)
 + [Seeing Theory website](https://seeing-theory.brown.edu/index.html)
 
-<!-- [Univariate Distribution Relationships](https://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
++ [Univariate Distribution Relationships](https://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
 + [Why is pi in the normal distribution?](https://www.youtube.com/watch?v=cy8r7WSuT1I)
 + [Distributions cheat sheet from textbook cover](https://kgfitzgerald.github.io/stat-5700/assets/resources/dist_cheat_sheet.pdf)
--->
+
 
 ## Quiz solutions
 
@@ -42,10 +42,10 @@ nav_order: 6
 + [HW 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_05_SOLUTIONS.pdf)
 + [HW 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_06_SOLUTIONS.pdf)
 
-<!-- + [HW 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_07_SOLUTIONS.pdf)
++ [HW 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_07_SOLUTIONS.pdf)
 + [HW 08](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_08_SOLUTIONS.pdf)
 + [HW 09](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_09_SOLUTIONS.pdf)
-+ [HW 10](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_10_SOLUTIONS.pdf)
+<!-- + [HW 10](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_10_SOLUTIONS.pdf)
 + [HW 11](https://kgfitzgerald.github.io/stat-5700/assets/resources/HW_11_SOLUTIONS.pdf)
 -->
 
@@ -54,10 +54,8 @@ nav_order: 6
 + [Chapter 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_2_Group_Work_solutions.pdf)
 + [Chapter 3 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_Group_Work_solutions.pdf)
 + [Chapter 3 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_3_part2_Group_Work_solutions.pdf)
-
-
-<!-- + [Chapter 4 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_4_Group_Work_solutions.pdf)
-+ [Chapter 5 part 1 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_5_Group_Work_solutions.pdf)
++ [Chapter 4 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_4_Group_Work_solutions.pdf)
+<!-- + [Chapter 5 part 1 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_5_Group_Work_solutions.pdf)
 + [Chapter 5 part 2 Group Work](https://kgfitzgerald.github.io/stat-5700/assets/resources/CHAPTER_5_part2_Group_Work_solutions.pdf) --> 
 
 ## Exam 1 Review / practice
@@ -68,12 +66,12 @@ nav_order: 6
 
 + [Practice Exam 1 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_1a_SOLUTIONS.pdf)
 
-<!--
+
 ## Exam 2 Review / practice
 
 + [Exam 2 Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Exam2_review.pdf)
 + [Exam 2 Practice Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_2a.pdf)
-+ [Practice Exam 2 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_2_SOLUTIONS.pdf)
+<!--+ [Practice Exam 2 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_2_SOLUTIONS.pdf)
 
 
 ## Final Exam Review / practice

@@ -1,0 +1,65 @@
+---
+title: "HW 08 SOLUTIONS"
+format: pdf
+---
+
+# Practice Problems
+
+## 4.59  
+(a) $z_0=0$  
+(b) $z_0=1.10$  
+(c) $z_0=1.645$  
+(d) $z_0=2.576$
+
+## 4.73  
+$Y \sim N(950, 10^2)$  
+
+(a) $P(947 \le Y \le 958) = P(-0.3 \le Z \le 0.8) = 0.406$  
+
+(b) $P(Y \le c) = 0.8531 \Rightarrow z_0 = 1.05$  
+$c = 950 + (1.05)(10) = 960.5\ \text{mm}$
+
+## 4.89  
+(a) Note that $\int_2^{\infty} \frac{1}{\beta} e^{-y/\beta} dy = e^{-2/\beta}=0.0821 \Rightarrow \beta = 0.8$  
+(b) $P(Y \le 1.7) = 1 - e^{-1.7/0.8} = 0.5075$
+
+## 4.93  
+Let $Y$ be the time between fatal airplane accidents. So $Y \sim \text{Exponential}(\beta=44)$.  
+(a) $P(Y \le 31) = \int_0^{31}\frac{1}{44}e^{-y/44}=1 - e^{-31/44} = 0.5057$  
+(b) $V(Y) = \beta^2 = 44^2 = 1936$
+
+## 4.109  
+$Y \sim \text{Gamma}(\alpha=3,\ \beta=2)$, $L = 30Y + 2Y^2$  
+$E(L) = 30E(Y)+2E(Y^2)=30(6)+2(12+6^2)=276$  
+$V(L) = E(L^2)-[E(L)]^2=E(900Y^2 + 120Y^3 + 4Y^4) - 276^2.$
+$E(Y^3) = \int+0^{\infty}\frac{y^5}{16}e^{-y/2} = 480$ and $E(Y^4) = \int+0^{\infty}\frac{y^6}{16}e^{-y/2} = 5760$
+Thus, $V(Y) = 900(48)+120(480)+4(5760)-276^2=47664$
+
+
+
+# Submitted Problems
+
+## 4.62  
+(a) $P(Z^2<1)=P(-1<Z<1)=0.6826$  
+(b) $P(Z^2<3.84146)=P(-1.96<Z<1.96)=0.95$
+
+## 4.80  
+$A=L*W=|Y|*3|Y|=3Y^2$  
+$E(A)=3E(Y^2)=3(\sigma^2+\mu^2)$
+
+
+
+
+## 4.96abc
+$Y \sim \text{Gamma}(\alpha=4,\ \beta=2)$
+(a) $k = 1/(\Gamma(4)2^4) = 1/96$
+(b) $Y \sim \chi^2$ with $\nu = 2\alpha = 8$ degrees of freedom
+(c) $E(Y) = \alpha\beta = 4(2) = 8$, $V(Y) = \alpha\beta^2 =4(2^2)= 16$
+
+## 4.104
+$Y \sim \text{Exponential}(\beta=100)$, $P(Y>200)=e^{-2}$ Let the random variable $X$ be the number of components that operate in the equipment for more than 200 hours. Then
+$X \sim \text{Binomial}(n=3, p=e^{-2})$, $P(X\ge2)=P(X=2)+P(X=3)=3(e^{-2})^2(1 - e^{-2}) + (e^{-2})^3=0.05$
+
+## 4.110
+$Y \sim \text{Gamma}(\alpha=3,\ \beta=0.5)$, $E(Y)=1.5$, $V(Y)=0.75$
+
