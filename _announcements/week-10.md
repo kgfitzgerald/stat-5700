@@ -1,36 +1,22 @@
 ---
 title: Week 10 Announcements
 week: 10
-date: 2025-11-04
+date: 2026-03-24
 ---
 
 ## Thursday announcements
 
-+ Quiz to start class today (4.5 - 4.7)
-+ Due tonight: HW 08, Lab 08, Annotations 09 (last one!)
-+ No lab next week, HW 09 posted
-+ Exam 2 two weeks from today. Will cover 3.8 - 5.3:
-    + Poisson & MGFs (3.8 - 3.9)
-    + Continuous distributions (4.1 - 4.7)
-    + Joint, marginal, and conditional distributions (5.1 - 5.3)
-    + Relevant homework: 3.8 problems in HW 05 + all of HW 06, 07, 08, 09
-    + Relevant quizzes: Quiz 5, 6, 7, 8
++ HW 08 due today
++ HW 09 due Tuesday, 3 problems, graded on completion, solutions posted
++ Lab 07 due Saturday, no lab due next week 
 
-## Tuesday announcements
+## Tuesday's exam:
 
-+ Due Thursday:
-  + Homework 08
-  + Lab 08
-  + Annotations 09
-  
-+ Quiz Thursday: 4.5 - 4.7 
-  + Distributions you may have to integrate by hand: exponential, beta, uniform
-  + May be asked to write out the R code you would use to evaluate an integral
++ In-class only
++ 1-page cheat sheet allowed (front & back), no formulas will be projected during exam
++ Will have test corrections again
 
-+ Reminder of office hours & Piazza
-  + Tuesdays 10 - 11
-  + Wednesdays 4 - 5:30
-  + Thursdays 1 - 2
+
 
 ## What to put on your attendance notecard
 
