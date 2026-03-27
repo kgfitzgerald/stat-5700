@@ -19,11 +19,11 @@ nav_order: 6
 
 + [Quiz 01](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_01_SOLUTIONS.pdf)
 + [Quiz 02](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_02_SOLUTIONS.pdf)
-
-<!-- [Quiz 03](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_03_SOLUTIONS.pdf)
++ [Quiz 03](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_03_SOLUTIONS.pdf)
 + [Quiz 04](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_04_SOLUTIONS.pdf)
 + [Quiz 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_05_SOLUTIONS.pdf)
-+ [Quiz 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_06_SOLUTIONS.pdf)
+
+<!-- + [Quiz 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_06_SOLUTIONS.pdf)
 + [Quiz 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_07_SOLUTIONS.pdf)
 + [Quiz 08](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_08_SOLUTIONS.pdf)
 + [Quiz 09](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_09_SOLUTIONS.pdf)
@@ -73,10 +73,9 @@ nav_order: 6
 
 + [Exam 2 Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Exam2_review.pdf)
 + [Exam 2 Practice Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_2a.pdf)
++ [Practice Exam 2 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_2_SOLUTIONS.pdf)
 
-<!-- + [Practice Exam 2 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_2_SOLUTIONS.pdf)
-
-
+<!-- 
 ## Final Exam Review / practice
 
 + [Final Exam Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Final_Exam_Review.pdf)

@@ -1,0 +1,354 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={STAT 5700 formulas},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{STAT 5700 formulas}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+
+\subsection{Chapter 2}\label{chapter-2}
+
+\((A \cup B)' = A' \cap B'\)
+
+\((A \cap B)' = A' \cup B'\)
+
+\(P(A) = 1 - P(A')\)
+
+\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)
+
+\(P(n,r) = \frac{n!}{(n-r)!}\)
+
+\(\binom{n}{r} = _nC_r = \frac{_nP_r}{r!} = \frac{n!}{(n - r)!r!}\)
+
+\(\binom{n}{r} = C(n,r) = \frac{P(n,r)}{r!} = \frac{n!}{(n-r)!r!}\)
+
+\(P(B | A) = \frac{P(A \cap B)}{P(A)}\)
+
+\(P(B'|A) = 1 - P(B|A)\)
+
+Bayes Rule: \(P(A|B) = \frac{P(B|A)P(A)}{P(B)}\)
+
+\textbf{Moment-generating function}: \(m(t) = E(e^{ty})\)
+
+\textbf{Discrete Uniform distribution:}
+
+\[p(y) = \frac{1}{m}\ \ \ y = 1, 2, \dots, m,\]
+
+\$\$F(y) = P(Y \leq y) =
+
+\begin{cases}
+
+0, & y < 1,\\
+
+\frac{k}{m} & k \leq y < k+1,\\
+
+1, & m \leq y.
+
+\end{cases}
+
+\$\$ \pagebreak
+
+\(f_X(x) = \int_y f(x,y)dy\)
+
+\(f_Y(y) = \int_x f(x,y)dx\)
+
+\(p_X(x) = \sum_y p(x,y)\)
+
+\(p_Y(y) = \sum_x p(x,y)\)
+
+\(f(x|y) = \frac{f(x,y)}{f_Y(y)}\)
+
+\(E(X | Y) = \int x f(x|y) dx\)
+
+\(\sigma_{XY} = Cov(X,Y) = E((X - \mu_X)(Y-\mu_Y))\)
+
+\(\rho_{XY} = Corr(X,Y) = \frac{Cov(X,Y)}{\sigma_X\sigma_Y}\)
+
+\(V\left(\sum_{i=1}^n a_i X_i\right)
+= \sum_{i=1}^n a_i^2 V(X_i)
++ 2\sum_{i<j} a_i a_j \operatorname{Cov}(X_i,X_j)\)
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2571}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3714}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1571}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2143}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Distribution}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Probability Function}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Mean}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Variance}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Bernoulli} & \(p^y (1-p)^{1-y}\) & \(p\) & \(p(1-p)\) \\
+\textbf{Binomial} & \(\binom{n}{y} p^y (1-p)^{n-y}\) & \(np\) &
+\(np(1-p)\) \\
+\textbf{Geometric} & \(p(1-p)^{y-1}\) & \(\dfrac{1}{p}\) &
+\(\dfrac{1-p}{p^2}\) \\
+\textbf{Hypergeometric} &
+\(\dfrac{\binom{r}{y}\binom{N-r}{n-y}}{\binom{N}{n}}\) &
+\(\dfrac{nr}{N}\) &
+\(n \left(\dfrac{r}{N}\right)\left(\dfrac{N-r}{N}\right)\left(\dfrac{N-n}{N-1}\right)\) \\
+\textbf{Poisson} & \(\dfrac{\lambda^y e^{-\lambda}}{y!}\) & \(\lambda\)
+& \(\lambda\) \\
+\textbf{Negative Binomial} & \(\binom{y-1}{r-1} p^r (1-p)^{y - r}\) &
+\(\dfrac{r}{p}\) & \(\dfrac{r(1-p)}{p^2}\) \\
+\end{longtable}
+
+\pagebreak
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2048}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4819}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1325}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1807}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Distribution}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Probability Density Function (pdf)}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Mean}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Variance}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Uniform} &
+\(\dfrac{1}{\theta_2 - \theta_1}, \quad \theta_1 \le y \le \theta_2\) &
+\(\dfrac{\theta_1 + \theta_2}{2}\) &
+\(\dfrac{(\theta_2 - \theta_1)^2}{12}\) \\
+\textbf{Normal} &
+\(\dfrac{1}{\sigma \sqrt{2\pi}} \, e^{-(y-\mu)^2/(2\sigma^2)}\) &
+\(\mu\) & \(\sigma^2\) \\
+\textbf{Eyponential} & \(\dfrac{1}{\beta} e^{-y/\beta}, \quad y \ge 0\)
+& \(\beta\) & \(\beta^2\) \\
+\textbf{Gamma} &
+\(\dfrac{1}{\beta^\alpha \Gamma(\alpha)} y^{\alpha-1} e^{-y/\beta}, \quad y \ge 0\)
+& \(\alpha \beta\) & \(\alpha \beta^2\) \\
+\textbf{Chi-square} &
+\(\dfrac{1}{2^{\nu/2} \Gamma(\nu/2)} y^{\nu/2-1} e^{-y/2}, \quad y \ge 0\)
+& \(\nu\) & \(2\nu\) \\
+\textbf{Beta} &
+\(\dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} y^{\alpha-1} (1-y)^{\beta-1}, \quad 0 \le y \le 1\)
+& \(\dfrac{\alpha}{\alpha+\beta}\) &
+\(\dfrac{\alpha \beta}{(\alpha+\beta)^2 (\alpha+\beta+1)}\) \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3056}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3472}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3472}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Definition}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Discrete}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Continuous}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\mu = E(Y)\) & \(\sum_{y \in S}yp(y)\) & \(\int_S yf(y)dy\) \\
+& & \\
+\(\sigma^2 = V(Y) = E[(Y - \mu)^2]\) & \(\sum_{y \in S}(y - \mu)^2p(y)\)
+& \(\int_S (y - \mu)^2f(y)dy\) \\
+& & \\
+\(k^{th} \text{ moment =}E(Y^k)\) & \(\sum_{y \in S}y^kp(y)\) &
+\(\int_S y^kf(y)dy\) \\
+& & \\
+\(m(t) = E(e^{tY})\) & \(\sum_{y \in S}e^{ty}p(y)\) &
+\(\int_S e^{ty}f(y)dy\) \\
+& & \\
+\(E(g(Y))\) & \(\sum_{y \in S}g(y)p(y)\) & \(\int_S g(y)f(y)dy\) \\
+& & \\
+\end{longtable}
+
+\textbf{Geometric series:}
+\(\sum_{n=0}^{\infty} ar^n = \frac{a}{1 - r}\)
+
+\textbf{For geometric random variable}, \(P(Y > k) = (1 - p)^k\)
+
+\textbf{Maclaurin series expansion:}
+\(e^x = \sum_{n = 0}^{\infty} \frac{x^n}{n!}\)
+
+\textbf{Binomial expansion}:
+\((a + b)^n = \sum_{y=0}^{n} \binom{n}{y} a^{y} b^{n -y}\)
+
+
+
+
+\end{document}

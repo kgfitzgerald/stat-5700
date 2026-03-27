@@ -1,0 +1,63 @@
+---
+title-block: false
+format: pdf
+---
+
+**STAT 5700 — Quiz 4**  
+**Date:** March 11, 2026 
+
+\textbf{\textcolor{red}{SOLUTIONS}}
+\
+\
+
+**Problem 1 (0.5pt each)** For each of the following scenarios, fill in the blank with the distribution that is most appropriate to model the random variable $X$.
+
+\textbf{\textcolor{red}{Geometric}} A product team is testing a new mobile app feature. Based on past data, 15% of users who see the feature click on it. Let $X$ be the number of users who see the feature until the first user clicks it.
+
+\textbf{\textcolor{red}{Hypergeometric}} A university randomly selects 3 students from a class of 20 to serve on a student advisory panel. In the class, 9 students are statistics majors. Let $X$ be the number of statistics majors among the selected students.
+
+\textbf{\textcolor{red}{Poisson}} A financial fraud detection system flags suspicious transactions. On average, the system flags 4 suspicious transactions per day. Let $X$ be the number of suspicious transactions flagged in a one-week period.
+
+\textbf{\textcolor{red}{Binomial}} A manufacturing company produces microchips. Historically, 3% of chips are defective. A quality control inspector randomly selects 10 chips from the production line.
+Let $X$ be the number of defective chips in the sample.
+  
+\
+\
+  
+\
+\
+
+[FLIP TO BACK]
+
+\pagebreak
+**Problem 2 (2pts)** A researcher needs a sample size of 35 for their survey. Suppose people only respond with 30% probability. 
+
+a) On average, how many people does the researcher need to contact to ensure 35 people respond? 
+  
+\
+$$
+\textcolor{red}{
+\begin{aligned}
+Y \sim & NegBinomial(r = 35, p = 0.3) \\
+E(Y) &= \frac{r}{p} = \frac{35}{0.3} \approx 117
+\end{aligned}
+}
+$$
+\
+
+b) What is the probability that the researcher will need to contact at most 100 people? Write out the formula (with appropriate numbers plugged in) - you do not need to calculate the result.  
+
+\
+$$
+\textcolor{red}{
+P(Y \leq 100) = \sum_{y = 35}^{100} \binom{y-1}{34}(0.3)^{35}(0.7)^{y - 35}
+}
+$$
+\
+
+
+**TRUE/FALSE (0.5pt each)**
+
+3. \textbf{\textcolor{red}{FALSE}} If $Y\sim Poisson(\lambda)$ and $V(Y) = 4$, then $E(Y^2) = 16$.
+4. \textbf{\textcolor{red}{FALSE}} The geometric distribution is a special case of the hypergeometric distribution, with $r = 1$
+

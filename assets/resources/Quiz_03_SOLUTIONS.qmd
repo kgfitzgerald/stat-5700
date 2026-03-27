@@ -1,0 +1,52 @@
+---
+title-block: false
+format: pdf
+---
+
+**STAT 5700 — Quiz 3**  
+**Date:** February 26, 2026  
+
+\textbf{\textcolor{red}{SOLUTIONS}}
+\
+
+Suppose you are a nurse working at a blood drive.  People with O- (“O-negative") blood type are coveted, because they are considered “universal donors”, meaning their blood can be donated to people of any blood type. About 8% of the population has type O-. Assume you have 50 donors and are interested in modeling how many are O-. Assume each donor's blood type is independent of the others'.  
+
+a. What distribution is appropriate to model this scenario? Provide the name of the distribution and the values of its parameter(s). 
+\
+$$
+\textcolor{red}{
+Binomial(n = 50, p = 0.08)
+}
+$$
+\
+
+b. Write out the probability distribution, $p(y)$, for this scenario. Make sure to include the support. 
+\
+$$
+\textcolor{red}{
+p(y) = \binom{50}{y} (0.08)^y(0.92)^{(50 - y)}, \ \ \ y = 0,1,\dots 50
+}
+$$
+\
+
+c. What is the probability that at least two of the 50 donors are O-?
+\
+\
+$$
+\textcolor{red}{
+\begin{aligned}
+P(Y\geq 2) &= 1 - P(Y = 0) - P(Y = 1) \\
+&=1 - \binom{50}{0}(0.08)^0(0.92)^{50} - \binom{50}{1}(0.08)^1(0.92)^{49}\\
+&= 0.917288
+\end{aligned}
+}
+$$
+
+\
+d. What is the expected (average) number of O- donors among the 50? 
+
+$$
+\textcolor{red}{
+E(Y) = np = 50(0.08) = 4
+}
+$$
