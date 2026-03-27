@@ -97,7 +97,7 @@ If $X$ is $\chi^2(17)$, find
 
 a.  $P(X < 7.564)$
 b.  $P(X > 27.59)$
-c.  $P(6.408 < Z < 27.59)$
+c.  $P(6.408 < X < 27.59)$
 d.  $\chi^2_{0.95}(17)$ (i.e. find the 95th percentile).
 e.  $\chi^2_{0.025}(17)$ (i.e. find the 2.5th percentile)
 
