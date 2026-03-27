@@ -75,6 +75,7 @@ nav_order: 6
 + [Exam 2 Practice Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_2a.pdf)
 + [Practice Exam 2 SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Exam_2_SOLUTIONS.pdf)
 + [In-class review notes](https://kgfitzgerald.github.io/stat-5700/assets/resources/In-class-review-notes.pdf)
+
 <!-- 
 ## Final Exam Review / practice
 
