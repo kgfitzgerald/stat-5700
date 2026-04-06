@@ -1,9 +1,9 @@
 ---
-title: "Chapter 5 Part 1"
+title: "Chapter 5"
 subtitle: "STAT 5700: Probability"
 author: "Prof. Katie Fitzgerald, PhD"
 institute: "Villanova University Department of Mathematics & Statistics"
-date: "Fall 2025"
+date: "Spring 2026"
 output: 
   pdf_document:
     includes:
@@ -65,7 +65,7 @@ The table above gives the **joint pmf** of the random variables $S$ and $H$, whe
 
 ::: {.highlightbox data-latex=""}
 **Defintion 5.1/Theorem 5.1** Let $Y_1$ and $Y_2$ be two discrete random variables. The probability that
-$Y_1 = y_1$ and $Y_2= y_2$ is denoted by $$p(y_1, y_2) = P(Y_1 = y_1, Y_2= y_2)$$, $-\infty < y_1 < \infty, -\infty < y_2 < \infty$. The
+$Y_1 = y_1$ and $Y_2= y_2$ is denoted by $$p(y_1, y_2) = P(Y_1 = y_1, Y_2= y_2),$$ $-\infty < y_1 < \infty, -\infty < y_2 < \infty$. The
 function $p(y_1, y_2)$ is called the
 \textcolor{red}{\textbf{joint probability mass function (joint pmf)}} of
 $Y_1$ and $Y_2$ and has the following properties:
@@ -99,6 +99,23 @@ For discrete random variables,
 
 $$F(y_1, y_2) = \sum_{t_1 \leq y_1}\sum_{t_2 \leq y_2}p(t_1, t_2)$$
 
+::: {.activitybox data-latex=""}
+
+**Example**: Of 9 executives in a business, 4 are married, 3 have never married, and 2 are divorced. Three executives are to be selected for promotion. Let $Y_1$ denote the number of married executives and $Y_2$ denote the number of never married executives among the 3 selected for promotion. Assuming that the 3 are randomly selected from the 9 available, find the joint pmf of $Y_1$ and $Y_2$. 
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
 \pagebreak
 
 Often we will deal with random variables $X$ and $Y$ whose joint pmf can be represented in functional form:
@@ -125,12 +142,6 @@ Represent the pmf as a graph/table\
 
 Confirm this is a valid pmf
 
-\
-\
-\
-\
-Find $P(Y = 1)$ and $P(Y = 2)$
-\
 \
 \
 \
@@ -238,7 +249,7 @@ c. Find $P(0.1 \leq X \leq 0.3, 0 \leq Y \leq 0.5)$
 :::
 
 ::: {.activitybox data-latex=""}
-**Example** Gasoline is stocked in a bulk tank once at the beginning of each week and then sold to invidual customers. Let $X$ denote the proportion of the capacity of the bulk tank that is available after the tank is stocked at the beginning of the week. Becaues of the limited supplies, $X$ varies from week to week. Let $Y$ denote the proportion of the capacity of the bulk tank that is sold during the week. Both are proportions, so are restricted between 0 and 1, and further, the amount sold $y$ cannot exceed the amount available $x$. Suppose that the joint density function for $X$ and $Y$ is given by:
+**Example** Gasoline is stocked in a bulk tank once at the beginning of each week and then sold to individual customers. Let $X$ denote the proportion of capacity of the bulk tank that is full when the tank is stocked at the beginning of the week. Because of the limited supplies, $X$ varies from week to week. Let $Y$ denote the proportion of the capacity of the bulk tank that is sold during the week. Both are proportions, so are restricted between 0 and 1, and further, the amount sold $y$ cannot exceed the amount available $x$. Suppose that the joint density function for $X$ and $Y$ is given by:
 
 $$
 f(x,y) = 
@@ -413,9 +424,9 @@ $$P(B|A) = \frac{P(A\cap B)}{P(A)}= \frac{p(x,y)}{p_X(x)}$$
 ::: {.activitybox data-latex=""}
 **Example:**
 
-Let $$f\left(x,y\right)=\frac{x+y}{21},\ \ \ \ x=1,2,3,\ \ \ \ y=1,2.$$
+Let $$p\left(x,y\right)=\frac{x+y}{21},\ \ \ \ x=1,2,3,\ \ \ \ y=1,2.$$
 We previously found marginal pmf's:
-$$f_x\left(x\right)=\frac{2x+3}{21},\ \ \ \ x=1,2,3,\ \ \ \ \text{and}\ \ \ f_y\left(y\right)=\frac{y+2}{7},\ \ \ \ y=1,2.$$
+$$p_x\left(x\right)=\frac{2x+3}{21},\ \ \ \ x=1,2,3,\ \ \ \ \text{and}\ \ \ p_y\left(y\right)=\frac{y+2}{7},\ \ \ \ y=1,2.$$
 
 1.  Produce a table for the joint/marginal pmfs
 2.  Find the conditional pmfs of $X$ given $Y = y$ and add a table for this
@@ -497,7 +508,7 @@ $$
 That is, the points $(x,y)$ are uniformly distributed over the triangle with the given boundaries.
 
 + Find the conditional pdf of $X$ given $Y = y$
-+ Evaluate the probability that less than 1/2 gallon will be sold, given that teh machine contains 1.5 gallons at the start of the day
++ Evaluate the probability that less than 1/2 gallon will be sold, given that the machine contains 1.5 gallons at the start of the day
 \
 \
 \
@@ -539,7 +550,7 @@ $$f(x,y) = f_X(x)f_Y(y).$$
 **Example (cont'd):**
 
 Continuing the same example as before with
-$$f\left(x,y\right)=\frac{x+y}{21},\ \ \ \ x=1,2,3,\ \ \ \ y=1,2,\ \ \ \ f_X(x) = \frac{2x + 3}{21},\ \ \ \ f_Y(y) = \frac{2 + y}{7}$$
+$$p\left(x,y\right)=\frac{x+y}{21},\ \ \ \ x=1,2,3,\ \ \ \ y=1,2,\ \ \ \ p_X(x) = \frac{2x + 3}{21},\ \ \ \ p_Y(y) = \frac{2 + y}{7}$$
 
 Are $X$ and $Y$ independent?\
 \
@@ -593,13 +604,14 @@ Are $X$ and $Y$ independent?
 
 :::
 
+\pagebreak
 
 # 5.5 Expected Value of a Function of Random Variables
 
 ::: {.highlightbox data-latex=""}
 Let $g(Y_1, Y_2, \dots,Y_k)$ be a function of **discrete** random variables $Y_1, Y_2, \dots,Y_k$ that have joint pmf
 $p(y_1, y_2, \dots, y_k)$. Then
-$$E[g(Y_1, Y_2, \dots,Y_k)] = \sum_{\text{all }y_k} \cdots \sum_{\text{all }y_2}\sum_{\text{all }y_2} g(y_1, y_2, \dots, y_k)p(y_1, y_2, \dots, y_k).$$
+$$E[g(Y_1, Y_2, \dots,Y_k)] = \sum_{\text{all }y_k} \cdots \sum_{\text{all }y_2}\sum_{\text{all }y_1} g(y_1, y_2, \dots, y_k)p(y_1, y_2, \dots, y_k).$$
 
 If $Y_1, Y_2, \dots,Y_k$ are **continuous** random variables with joint pdf $f(y_1, y_2, \dots, y_k)$, then 
 
@@ -608,7 +620,7 @@ $$E[g(Y_1, Y_2, \dots,Y_k)] = \int_{-\infty}^{\infty}\cdots \int_{-\infty}^{\inf
 
 ::: {.activitybox data-latex=""}
 **Exercise (cont'd):** Continuing the same example as before with
-$$f\left(x,y\right)=\frac{x+y}{21},\ \ \ \ x=1,2,3,\ \ \ \ y=1,2$$
+$$p\left(x,y\right)=\frac{x+y}{21},\ \ \ \ x=1,2,3,\ \ \ \ y=1,2$$
 
 Find $E(XY^2)$ using the joint distribution.\
 \
@@ -687,8 +699,10 @@ $f\left(x,y\right)=2,\ \ \ \ 0 <  x <  y < 1$
 **Theorem 5.8** Let $g_1(X,Y)$, $g_2(X,Y), \dots g_k(X,Y)$ be functions of the random variables $X$ and $Y$. Then $E\left[g_1(X,Y) + g_2(X,Y) + \dots + g_k(X,Y)\right] = E(g_1(X,Y)) + E(g_2(X,Y)) + \dots + E(g_k(X,Y))$
 :::
 
+**Example**: $E(2Y_1 + 3Y_2^2 - Y_3)$
+
 ::: {.highlightbox data-latex=""}
-**Theorem 5.9** Let $X$ and $Y$ be independent random variables and $g(X)$ and $h(Y)$ be functions of $X$ and $Y$ only, respectively. Then $$E(g(X)h(Y)) = E(g(X)h(Y))$$ provided the expectations exist.
+**Theorem 5.9** Let $X$ and $Y$ be independent random variables and $g(X)$ and $h(Y)$ be functions of $X$ and $Y$ only, respectively. Then $$E(g(X)h(Y)) = E(g(X))E(h(Y))$$ provided the expectations exist.
 :::
 
 # 5.7 The Correlation Coefficient
@@ -759,14 +773,40 @@ Guess the correlation applet: [https://www.geogebra.org/m/KE6JfuF9](https://www.
 
 ## Graphically understanding Covariance and Correlation
 
-\pagebreak
 
-
-
-## Relationship to regression ("best fit") line
-
-\pagebreak
-
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
 Some important properties of Covariance:
 
 ::: {.highlightbox data-latex=""}
@@ -787,6 +827,15 @@ The variance of a sum of two random variables is equal to the sum of their varia
 ::: {.highlightbox data-latex=""}
 If two random variables are independent, then their covariance is zero. However, zero covariance does NOT imply independence.
 :::
+\pagebreak
+
+
+
+## Relationship to regression ("best fit") line
+
+\pagebreak
+
+
 
 ::: {.activitybox data-latex=""}
 **Example**: Roll a fair four sided die twice. Let $X$ equal the outcome of the first
@@ -821,12 +870,349 @@ roll and $Y$ the sum of the two rolls. Determine the covariance and correlation 
 \
 \
 \
+\
+\
+\
+\
+:::
+
+
+::: {.activitybox data-latex=""}
+
+**Example**: Let X, Y be two independent random variables. Show that $Cov(X,Y) = 0$.
+
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+**Recall:** *independence $\implies Cov(X,Y) = 0$, but the converse is NOT true. It is possible to have $Cov(X,Y) = 0$ when $X$ and $Y$ are dependent.* 
+
+# 5.8 Expected value and variance of linear functions of r.v's
+
+::: {.highlightbox data-latex=""}
+**Theorem 5.12** <br/>
+Let $Y_1, Y_2, \dots Y_n$ and $X_1, X_2, \dots X_m$ be random variables with $E(Y_i) = \mu_i$ and $E(X_j) = \xi_j$. Define $$U_1 = \sum_{i = 1}^na_iY_i \ \ \  \text{ and }  \ \ \ U_2 = \sum_{j = 1}^mb_jX_j$$
+for constants $a_1, a_2, \dots a_n$ and $b_1, b_2, \dots b_m$. Then the following hold: 
+
+(a) $E(U_1) = \sum_{i = 1}^n a_i\mu_i$
+(b) $V(U_1) = \sum_{i = 1}^n a^2_iV(Y_i) + 2\sum \sum_{1 \leq i \leq j \leq n}a_ia_jCov(Y_i, Y_j),$ where the double sum os over all pairs $(i,j)$ with $i< j$
+(c) $Cov(U_1, U_2) = \sum_{i = 1}^n\sum_{j = 1}^mCov(Y_i,X_j)$
+:::
+
+Note, when $n = 2$, (b) is simply $V(a_1Y_1 + a_2Y_2) = a_1^2V(Y_1) + a_2^2V(Y_2) + 2a_1a_2Cov(Y_1,Y_2)$ 
+
+::: {.activitybox data-latex=""}
+
+**Example**: Let $Y_1$ and $Y_2$ be random variables with means $\mu_1$, $\mu_2$, variances $\sigma^2_1$, $\sigma^2_2$, and covariance $\sigma_{12}$ respectively. Suppose $U = 2Y_1 + 3Y_2$. Find $E(U)$ and $V(U)$. 
+\
+\
+\
+\
+\
+\
+:::
+
+::: {.activitybox data-latex=""}
+
+**Example:**
+
+Let the independent random variables $X_1$ and $X_2$ have respective means $\mu_1 = -4$ and $\mu_2 = 3$ and variances $\sigma_1^2 = 4$ and $\sigma_2^2 = 9$. Find the mean and variance of $Y = 3X_1 - 2X_2$.
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+If $X_3$ is a third random variable that has the same mean and variance as $X_2$ but is correlated with $X_1$ by the amount $\rho = 0.3$, what is the mean and variance of $W = 3X_1 - 2X_3$? 
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
 :::
 
 \pagebreak
 
+::: {.activitybox data-latex=""}
+**Example** In the 5.2 gasoline example, we were interested in $X$ and $Y$ that had the joint and marginal pdfs below:
+
+$$f(x,y) = 3x, \ \ \ 0 \leq y \leq x \leq 1$$
+$$f_x(x) = 3x^2, \ \ \ 0 \leq x \leq 1$$
+$$f_y(y) = 3/2(1 - y^2), \ \ \ 0 \leq y \leq 1$$
+
+Supposed we are interested in $W = X - Y$, which in context represents the proportional amount of gasoline remaining at the end of the week. Find the mean and variance of $W$. 
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
 
 
+:::
+
+\pagebreak
+## Sample statistics
+
+::: {.highlightbox data-latex=""}
+Any function of the sample observations $X_1, X_2, \dots X_n$ is called a **statistic**
+
+The **sample mean** of a random sample $X_1, X_2, \dots X_n$ is given by 
+
+$$\overline{X} = \frac{X_1 + X_2 + \dots X_n}{n}$$
+and the **sample variance** is given by $$S^2 = \frac{1}{n-1}\sum_{i =1}^{n}(X_i - \overline{X})^2$$
+
+:::
+
+
+$\overline{X}$ and $S^2$ are two examples of **statistics**. We will see that $\overline{X}$ is an **unbiased estimator** for the population mean $\mu$ and $S^2$ is an **unbiased estimator** for the population variance $\sigma^2$
+
+```{r, echo = FALSE, fig.align="center", out.width="60%"}
+knitr::include_graphics("./images/bias-precision.png")
+```
+
+
+
+::: {.activitybox data-latex=""}
+
+When $X_1, X_2, \dots X_n$ are independent random variables with mean $\mu$ and variance $\sigma^2$, find the mean and variance of $\overline{X}$.
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+:::
+
+\pagebreak
+
+# 5.9 The Multinomial Probability Distribution
+
+Recall a binomial random variable results from an experiment with $n$ trials, with two possible outcomes per trial (success/failure). Sometimes, we're interested in situations where there are more than 2 outcomes per trial. For example, there are at least 4 possible blood types a person can have. 
+
+A **multinomial experiment** is a generalization of the binomial experiment.
+
+::: {.highlightbox data-latex=""}
+A **multinomial experiment** possesses the following properties:
+
+1. The experiment consists of $n$ identical trials
+2. The outcome of each trial falls into one of $k$ classes or cells
+3. THe probability that the outcomes of a single trial falls into cell $i$ is $p_i,$ $i = 1, 2, \dots k$ and remains the same from trial to trial. Notice $p_1 + p_2 + \dots p_k = 1$
+4. The trials are independent
+5. The random variables of interest are $Y_1, Y_2, \dots Y_k$ where $Y_i$ equals the number of trials for which the outcome falls into cell $i$. Notice that $Y_1 + Y_2+ \cdots + Y_k = n$
+
+:::
+
+::: {.highlightbox data-latex=""}
+The joint pmf for $Y_1, Y_2, \dots Y_k$ is given by
+
+$$p(y_1, y_2, \dots y_k) = \frac{n!}{y_1!y_2!\cdots y_k!}p_1^{y_1}p_2^{y_2}\cdots p_k^{y_k},$$
+
+where $\sum_{i = 1}^k p_i = 1$ and $\sum_{i = 1}^k y_i = n$
+
+:::
+
+::: {.activitybox data-latex=""}
+According to recent census figures, the proportions of adults (persons over 18 years of age) in the United States associated with five age catgories are as given in the following table.
+
+| Age | Proportion |
+|-----|-----------|
+| 18-24 | 0.18|
+| 25 - 34 | 0.23 |
+| 35 - 44 | 0.16 | 
+| 45 - 64 | 0.27 |
+| 65+ | 0.16| 
+
+If these figures are accurate and five adults are randomly sampled, find the probability that the sample contains one person between ages of 18 and 24, two between the ages of 25 and 34, and two between the ages of 45 and 64. 
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+
+:::
+
+::: {.highlightbox data-latex=""}
+
+**Theorem 5.13** If $Y_1, Y_2, \dots Y_k$ have a multinomial distribution with parameters $n$ and $p_1, p_2, \dots p_k$, then 
+
+1. $E(Y_i) = np_i$
+2. $V(Y_i) = np_iq_i$
+3. $Cov(Y_s, Y_t) = -np_sp_t$ if $s \neq t$
+
+:::
+
+\pagebreak
+
+# 5.11 Conditional Expectation
+
+Conditional distributions can be used to computed probabilities and
+expected values just as with any distribution.
+
+::: {.highlightbox data-latex=""}
+
+**Definition 5.13** If $X$ and $Y$ are any two random variables, the *conditional expectation of $g(X)$ given that $Y = y$, is defined to be
+
+$$E(g(X) | Y = y) = \int_{-\infty}^{\infty}g(x)f(x|y)dx$$ if $X$ and $Y$ are jointly continuous, and 
+$$E(g(X) | Y = y) = \sum_{x}g(x)p(x|y)$$ if $X$ and $Y$ are jointly discrete.
+
+:::
+
+::: {.activitybox data-latex=""}
+Refer back to our example in 5.3 with $f(x,y) = 1/2, 0 \leq x \leq y \leq 2$, where we found $f(x | y) = 1/y, \ \ \ 0 < x \leq y$. Find the conditional expectation of the amount of sales, $X$, given that $Y = 1.5$.
+\
+\
+\
+\
+\
+
+\
+\
+\
+
+:::
+
+::: {.highlightbox data-latex=""}
+**Theorem 5.14** Let $X$ and $Y$ denote random variables. Then $$E(X) = E[E(X | Y)],$$ where on the right-hand side the inner expectation is with respect to the conditional distribution of $X|Y$ and the outside expectation is with respect to the distribution of $Y$. 
+
+:::
+PROOF
+
+\
+\
+\
+\
+\
+\
+\
+
+
+
+::: {.highlightbox data-latex=""}
+
+The conditional variance of $X$ given $Y$ is defined by 
+
+$$V(X | Y = y) = E(X^2|Y = y) - [E(X | Y = y)]^2$$
+
+:::
+
+::: {.highlightbox data-latex=""}
+**Theorem 5.15** Let $X$ and $Y$ denote random variables. Then 
+
+$$V(X) = E[V(X|Y)] + V[E(X|Y)]$$
+
+:::
+
+PROOF:
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+::: {.activitybox data-latex=""}
+
+A quality control plan for an assembly line involves sampling $n = 10$ finished items per day and counting $Y$, the number of defectives. If $p$ denotes the probability of observing a defective, then $Y$ has a binomial distribution, assuming that a large number of items are produced by the line. But $p$ varies from day to day and is assumed to have a uniform distribution on the interval from 0 to 1/4. Find the expected value and variance of $Y$.
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+:::
+
+\pagebreak
 
 # Chapter 5 Group Work
 
@@ -847,10 +1233,6 @@ e. Find $F(1,1)$
 
 ### Problem 2
 
-Of nine executives in a business firm, four are married, three have never married, and two are divorced. Three of the executives are to be selected for promotion. Let $Y_1$ denote the number of married executives and $Y_2$ denote the number of never married executives among the three selected for promotion. Assuming that the three are randomly selected from the nine available, find the joint pmf of $Y_1$ and $Y_2$. 
-
-### Problem 3
-
 Let $Y_1$ and $Y_2$ have the joint pdf 
 
 $$f(y_1,y_2) = \begin{cases} e^{-(y_1 + y_2)}, & y_1 > 0, y_2 > 0\\
@@ -862,7 +1244,7 @@ a. What is $P(Y_1 < 1, Y_2 > 5)$?
 b. What is $P(Y_1  + Y_2 < 3)$?
 
 
-### Problem 4
+### Problem 3
 
 Return to the scenario in Problem 1. 
 
@@ -871,7 +1253,7 @@ b. Find the marginal distribution of $S$
 c. Find $P(S \leq 2 | M = 1)$
 d. Find $P(M = 1 | S \leq 2)$
 
-### Problem 5
+### Problem 4
 
 Let
 $f\left(x,y\right)=\frac{4}{3}\left(1-xy\right),\ \ \ \ 0\le x\le1,\ \ \ \ 0\le y\le1.$
@@ -880,23 +1262,30 @@ a.  Find the marginal pdfs of $X$ and $Y$.
 b.  Find $P(X \leq Y/2)$
 <!-- 2.  Find the mean of $X$ and the mean of $Y$ -->
 
-### Problem 6
+### Problem 5
 
-Let the joint pmf of $X$ and $Y$ be $$f\left(x,y\right)=\frac{xy^2}{30},\ \ \ x=1,2,3,\ \ \ \ y=1,2$$
+Let the joint pmf of $X$ and $Y$ be $$p\left(x,y\right)=\frac{xy^2}{30},\ \ \ x=1,2,3,\ \ \ \ y=1,2$$
 
 a.  What are the marginal distributions of $X$ and $Y$?
 b.  Are X and Y independent?
 c.  What is $P(X > 1)$?
 d.  What is $E(X)$?
 
-### Problem 7
+### Problem 6
 
 Let $X$ and $Y$ be two continuous random variables with joint pdf $f(x,y) = \frac{3}{16}xy^2, \ \ \ \ 0 \leq x \leq 2, \ \ 0 \leq y \leq 2$. Are the two random variables independent?
 
-### Problem 8
+### Problem 7
 
 Let $X$ and $Y$ have the joint pdf $f(x,y) = x + y, 0 \leq x \leq 1, 0 \leq y \leq 1$. Find the marginal pdfs $f_X(x)$ and $f_Y(y)$ and show that $X$ and $Y$ are dependent.
 
+
+### Problem 8 
+
+Let $Y_1, Y_2, Y_3$ be independent random variables with binomial distributions $b(4, 1/2), \ b(6,1/3), \text{ and } b(12,1/6)$.
+
+a. Find $E(Y_1Y_2Y_3)$
+a. Find the mean and variance of $W = Y_1+ Y_2+ Y_3$.
 
 ### Problem 9
 
@@ -916,11 +1305,34 @@ Show that if two random variables $X$ and $Y$ are independent, then their covari
 
 ### Problem 12
 
-Return to the scenario in Problem 1. 
-
+Return to the scenario in Problem 1 & 3. 
 
 a. Are $M$ and $S$ independent?
 a. Find $E(M)$ and $V(M)$
-a. Find $E(S)$ and $V(S)$
 a. Find $Cov(M,S)$
 a. Suppose that instead of just one student, you sample 12 students. Let $S_1, \dots S_{12}$ represent the number of siblings reported by each student (you can assume that these random variables are independent). Let $\overline{S} = \sum_{i = 1}^{12} \frac{S_i}{12}$ be the average number of siblings in the sample. Find $E(\overline{S})$ and $V(\overline{S})$
+
+### Problem 13
+
+Show that for any constants $a$ and $b$, $Cov(a + X, b + Y) = Cov(X,Y)$. That is, shifting by a constant does not change the covariance. *Note: this fact will be useful on HW 5.110*
+
+### Problem 14
+
+To estimate a proportion of units that meet a given criteria, we often use the estimator $\hat{p} = \frac{Y}{n},$ where $Y \sim binomial(n, p)$. Find the expected value and variance of $\hat{p}$, assuming n is fixed.
+
+### Problem 15
+
+A learning experiment requires a rat to run a maze (a network of pathways) until it locates one of three possible exits. Exit 1 presents a reward of food, but exits 2 and 3 do not. (If the rat eventually selects exit 1 almost every time, learning may have taken place). Let $Y_i$ denote the number of times exit $i$ is chosen in successive runnings. For the following, assume that the rate chooses an exit at random on each run. 
+
+a. Find the probability that $n = 6$ runs result in $Y_1 = 3$, $Y_2 = 1$ and $Y_3 = 2$.
+b. For general $n$, find $E(Y_1)$ and $V(Y_1)$.
+c. For general $n$, find $Cov(Y_2, Y_3)$
+d. To check for the fat's preference between exits 2 and 3, we may look at $Y_2 - Y_3$. Find $E(Y_2 - Y_3)$ and $V(Y_2 - Y_3)$ for general $n$.
+
+### Problem 16
+
+The number of defects per yard in a certain fabric, $Y$, is known to have a Poisson distribution with parameter $\lambda$. The parameter $\lambda$ is assumed to be a random variable with a pdf given by $$f(\lambda) = e^{-\lambda}, \ \ \ \lambda \geq 0$$
+
+a. Find the expected number of defects per yard by first finding the conditional expectation of $Y$ for given $\lambda$.
+b. Find the variance of $Y$.
+

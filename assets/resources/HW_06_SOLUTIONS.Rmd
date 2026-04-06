@@ -136,22 +136,20 @@ $$E(50Y) = 50E(Y) = 50 \cdot 2 = 100$$
 $$V(50Y) = 2500V(Y) = 2500 \cdot 0.6667 = 1666.67$$
 
 ## 3.108
-Use $P(\text{at least one defective}) = 1 - P(\text{none defective})$.
+Use the fact that $P(\text{at least one is defective}) = 1 - P(\text{none are defective})$. Then, we require $P(\text{none are defective}) \leq 0.2$. If $n = 8$,
 
-Want $1 - \frac{\binom{3}{0}\binom{17}{n}}{\binom{20}{n}} \geq 0.8$
-
-For $n=8$:
-$$P(\text{none defective}) = \frac{% raw %}{{17 \choose 8}}{% endraw %}}{% raw %}{{20 \choose 8}}{% endraw %}} = 0.193$$
+$$
+P(\text{none are defective}) = \left(\frac{17}{20}\right)\left(\frac{16}{19}\right)\left(\frac{15}{18}\right)\left(\frac{14}{17}\right)\left(\frac{13}{16}\right)\left(\frac{12}{15}\right)\left(\frac{11}{14}\right)\left(\frac{10}{13}\right) = 0.193.
+$$
 
 ## 3.120
-There are $N$ animals. After marking $k$, we draw a second sample of 3.
+There are $N$ animals in this population. After taking a sample of $k$ animals, marking and releasing them, there are $N - k$ unmarked animals. We then choose a second sample of size $3$ from the $N$ animals. There are $\binom{N}{3}$ ways of choosing this second sample and there are $\binom{N - k}{2}\binom{k}{1}$ ways of finding exactly one of the originally marked animals. For $k = 4$, the probability of finding just one marked animal is
 
-Number of ways to find exactly one marked animal:
-$$P(Y=1) = \frac{% raw %}{{k \choose 1}}{% endraw %} {% raw %}{{N-k \choose 2}}{% endraw %}}{% raw %}{{N \choose 3}}{% endraw %}}$$
+$$
+P(Y = 1) = \frac{\binom{N - 4}{2}\binom{4}{1}}{\binom{N}{3}} = \frac{12(N - 4)(N - 5)}{N(N - 1)(N - 2)}.
+$$
 
-For $k=4$:
-$$P(Y=1) = \frac{% raw %}{{4 \choose 1}}{% endraw %} {% raw %}{{N-4 \choose 2}}{% endraw %}}{% raw %}{{N \choose 3}}{% endraw %}}$$
-This is maximized at $N=11$ or $N=12$, where $P=0.503$.
+Calculating this for various values of $N$, we find that the probability is largest for $N = 11$ or $N = 12$ (the same probability is found: $0.503$).
 
 ## 3.128
 Over one minute, $Y \sim \text{Poisson}(\lambda = 80/60 = 4/3)$.
