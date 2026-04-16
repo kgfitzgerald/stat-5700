@@ -4,6 +4,12 @@ week: 12
 date: 2026-04-14
 ---
 
+## Thursday announcements
+
++ Quiz to start class today
++ HW 11, Lab 09 due next week
++ Today: finish 5.7 + Group work
+
 ## Tuesday announcements
 
 + Annotated test corrections due today (if you're doing them)
