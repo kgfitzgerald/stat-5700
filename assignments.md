@@ -46,7 +46,9 @@ The links below provide the assigned problems for each homework. Your work must 
 
 [HW 11](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_11.pdf) 
 
-<!-- [End of Course Reflection](https://kgfitzgerald.github.io/stat-5700/assets/homework/End of Course Reflection.pdf) -->
+[HW 12](https://kgfitzgerald.github.io/stat-5700/assets/homework/HW_12.pdf) 
+
+[End of Course Reflection](https://kgfitzgerald.github.io/stat-5700/assets/homework/End of Course Reflection.pdf)
 
 ## Labs (due Saturdays, 11:59pm)
 

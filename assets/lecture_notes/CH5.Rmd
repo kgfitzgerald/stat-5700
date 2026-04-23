@@ -1322,12 +1322,12 @@ To estimate a proportion of units that meet a given criteria, we often use the e
 
 ### Problem 15
 
-A learning experiment requires a rat to run a maze (a network of pathways) until it locates one of three possible exits. Exit 1 presents a reward of food, but exits 2 and 3 do not. (If the rat eventually selects exit 1 almost every time, learning may have taken place). Let $Y_i$ denote the number of times exit $i$ is chosen in successive runnings. For the following, assume that the rate chooses an exit at random on each run. 
+A learning experiment requires a rat to run a maze (a network of pathways) until it locates one of three possible exits. Exit 1 presents a reward of food, but exits 2 and 3 do not. (If the rat eventually selects exit 1 almost every time, learning may have taken place). Let $Y_i$ denote the number of times exit $i$ is chosen in successive runnings. For the following, assume that the rat chooses an exit at random on each run. 
 
 a. Find the probability that $n = 6$ runs result in $Y_1 = 3$, $Y_2 = 1$ and $Y_3 = 2$.
 b. For general $n$, find $E(Y_1)$ and $V(Y_1)$.
 c. For general $n$, find $Cov(Y_2, Y_3)$
-d. To check for the fat's preference between exits 2 and 3, we may look at $Y_2 - Y_3$. Find $E(Y_2 - Y_3)$ and $V(Y_2 - Y_3)$ for general $n$.
+d. To check for the rat's preference between exits 2 and 3, we may look at $Y_2 - Y_3$. Find $E(Y_2 - Y_3)$ and $V(Y_2 - Y_3)$ for general $n$.
 
 ### Problem 16
 
