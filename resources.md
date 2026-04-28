@@ -9,7 +9,6 @@ nav_order: 6
 
 + [Formula sheet](https://kgfitzgerald.github.io/stat-5700/assets/resources/formulas.pdf)
 + [Seeing Theory website](https://seeing-theory.brown.edu/index.html)
-
 + [Univariate Distribution Relationships](https://www.math.wm.edu/~leemis/chart/UDR/UDR.html)
 + [Why is pi in the normal distribution?](https://www.youtube.com/watch?v=cy8r7WSuT1I)
 + [Distributions cheat sheet from textbook cover](https://kgfitzgerald.github.io/stat-5700/assets/resources/dist_cheat_sheet.pdf)
@@ -24,10 +23,10 @@ nav_order: 6
 + [Quiz 05](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_05_SOLUTIONS.pdf)
 + [Quiz 06](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_06_SOLUTIONS.pdf)
 + [Quiz 07](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_07_SOLUTIONS.pdf)
+
 <!-- + [Quiz 08](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_08_SOLUTIONS.pdf)
 + [Quiz 09](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_09_SOLUTIONS.pdf)
 + [Quiz 10](https://kgfitzgerald.github.io/stat-5700/assets/resources/Quiz_10_SOLUTIONS.pdf)
-
 --> 
 
 ## Homework solutions
