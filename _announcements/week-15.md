@@ -5,10 +5,11 @@ date: 2026-04-28
 ---
 
 + Today: start w/ 30 minute AI discussion, then exam review
++ Thursday in-class: Quiz, CATS, exam review
 + HW 12 due Thursday (5.8, 5.9, 5.11)
 + End of Course Reflection (~1 page) due Thursday
-+ Thursday in-class: Quiz, CATS, exam review
 + Solutions up to date on website (homework, quizzes, group work)
++ Practice Exam posted
 
 Syllabus reminders:
 
