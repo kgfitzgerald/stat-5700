@@ -1,0 +1,108 @@
+---
+title-block: false
+header-includes:
+  - \pagestyle{empty}
+  - \pagenumbering{gobble}
+format:
+  pdf:
+    fontsize: 10pt
+---
+
+**STAT 5700 — Quiz 7**\
+**Date:** April 13, 2026
+
+**SOLUTIONS**
+\
+\
+
+**FOR ALL 3 PROBLEMS**: Let $X$ and $Y$ be two continuous random variables with join pdf $$f(x,y) = 3xy, \ 0 < x<y, \ x + y \leq 2$$
+
+\textbf{Problem 1}
+
+We are given independent random variables with densities  
+$f_X(x) = 2x, \; 0 < x < 1$ and $f_Y(y) = 3y^2, \; 0 < y < 1$.
+
+We want:
+$$
+P(X < Y) = \int_0^1 \int_0^y f_X(x) f_Y(y)\, dx\, dy
+$$
+
+$$
+= \int_0^1 \int_0^y (2x)(3y^2)\, dx\, dy
+= \int_0^1 3y^2 \left( \int_0^y 2x\, dx \right) dy
+$$
+
+$$
+\int_0^y 2x\, dx = y^2
+$$
+
+So:
+$$
+P(X < Y) = \int_0^1 3y^2 \cdot y^2 \, dy
+= \int_0^1 3y^4 \, dy
+= 3 \cdot \frac{1}{5}
+= \frac{3}{5}
+$$
+
+\textbf{Answer: } $\frac{3}{5}$
+
+
+
+\textbf{Problem 2}
+
+Given:
+$$
+\mu_X = 2, \quad \sigma_X^2 = 9, \quad \mu_Y = 1, \quad \sigma_Y^2 = 16, \quad \sigma_{XY} = 3
+$$
+
+\textbf{(a)} 
+$$
+\mathrm{Cov}(X, 2Y) = 2 \cdot \mathrm{Cov}(X,Y) = 2 \cdot 3 = 6
+$$
+
+\textbf{(b)} 
+$$
+\mathrm{Corr}(X, 2Y) = \frac{\mathrm{Cov}(X, 2Y)}{\sigma_X \sigma_{2Y}}
+$$
+
+Note:
+$$
+\sigma_X = 3, \quad \sigma_{2Y} = 2\sigma_Y = 2 \cdot 4 = 8
+$$
+
+So:
+$$
+\mathrm{Corr}(X, 2Y) = \frac{6}{3 \cdot 8} = \frac{6}{24} = \frac{1}{4}
+$$
+
+\textbf{Answers: } (a) $6$, \quad (b) $\frac{1}{4}$
+
+
+
+\textbf{Problem 3}
+
+Which can be negative?
+
+- $\mu_X$ (mean): \textbf{can be negative}
+- $\sigma_X$ (standard deviation): \textbf{cannot be negative}
+- $\mathrm{Cov}(X,Y)$: \textbf{can be negative}
+- $\rho_{XY}$ (correlation): \textbf{can be negative}
+
+\textbf{Answer: A, C, D}
+
+
+
+\textbf{Problem 4}
+
+If correlation is exactly $1$, then the relationship is:
+$$
+Z = aW + b \quad \text{with } a > 0
+$$
+
+So the slope must be \textbf{positive}.
+
+- Could slope be $0.5$? \textbf{Yes}
+- Could slope be $-2$? \textbf{No}
+
+\textbf{Answer: B}
+
