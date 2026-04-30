@@ -79,12 +79,12 @@ nav_order: 6
 
 + [Final Exam Review packet](https://kgfitzgerald.github.io/stat-5700/assets/resources/Final_Exam_Review.pdf)
 + [Practice Final Exam](https://kgfitzgerald.github.io/stat-5700/assets/resources/Final_Practice_Exam.pdf)
-
-<!-- + [Practice Final Exam SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Final_Exam_SOLUTIONS.pdf)
-
++ [Practice Final Exam SOLUTIONS](https://kgfitzgerald.github.io/stat-5700/assets/resources/Practice_Final_Exam_SOLUTIONS.pdf)
 
 
-## Dr. Fitz's completed notes
+
+
+<!-- ## Dr. Fitz's completed notes
 
 + [Chapter 2](https://kgfitzgerald.github.io/stat-5700/assets/resources/CH2_Fitz.pdf)
 + [Chapter 3 part 1](https://kgfitzgerald.github.io/stat-5700/assets/resources/CH3_part1_Fitz.pdf)

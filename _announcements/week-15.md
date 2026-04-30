@@ -4,6 +4,20 @@ week: 10
 date: 2026-04-28
 ---
 
+## Thursday announcements
+
++ Start class w/ Quiz (5.8, 5.9, 5.11)
++ CATS
++ End of Course reflection (~1 page) due tonight
++ Practice Exam solutions posted
++ Final exam (pending edits): 
+    + 10 questions + 5 multiple choice + Bonus
+    + 36 out of 100 points are from Chapter 5
+
+
+
+## Tuesday announcements
+
 + Today: start w/ 30 minute AI discussion, then exam review
 + Thursday in-class: Quiz, CATS, exam review
 + HW 12 due Thursday (5.8, 5.9, 5.11)
