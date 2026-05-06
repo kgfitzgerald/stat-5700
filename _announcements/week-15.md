@@ -13,6 +13,8 @@ date: 2026-04-28
 + Final exam (pending edits): 
     + 10 questions + 5 multiple choice + Bonus
     + 36 out of 100 points are from Chapter 5
++ >80% filled out AI survey, so whole class gets 2 extra credit points on Final
+
 
 
 
